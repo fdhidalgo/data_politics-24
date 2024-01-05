@@ -1,0 +1,50 @@
+---
+title: "Syllabus"
+---
+
+## Course Objectives
+
+By the end of this course, students will be able to: 
+
+- Describe how experimental and survey methods can be used to understand pressing social problems. 
+- Design surveys and experiments that are applicable to a variety of settings. 
+- Use statistical principles to evaluate the quality of survey and experimental design.
+- Apply machine learning methods to experimental and survey data. 
+- Analyze data using modern statistical computing tools, in particular the statistical programming language `R`. 
+
+### Expectations 
+In this course, you will be expected to: 
+
+- Complete six problem sets. 
+- Complete eight weekly tutorials
+- Design and implement a survey experiment on a topic of your choice.
+
+### Prerequisites
+
+No prerequisites will be assumed. 
+
+## Course Structure
+
+The basic cadence of the course will be as follows, though there may be small differences depending on the week:
+
+- **Monday**: Complete reading, watch course lectures, and complete tutorial.
+- **Tuesday**: Class meets. 
+- **Wednesday**: Submit assignments (if due)
+- **Thursday**: Class meets; assignments are posted
+
+### Class Lectures
+Class lectures will be recorded and posted on the course website. You are expected to watch the lectures before class meetings on Tuesdays. At class meetings, there will be an opportunity to ask questions about lecture material. 
+
+### Tutorials 
+We will assign short weekly tutorials that will assess your knowledge of the class materials and prepare you for the in-class activities. Tutorials will primarily be graded based on completion and not whether the answers are correct. Tutorials will generally be due on Monday by 11:59pm ET. 
+
+### Problem Sets
+Competence at the design and analysis of experiments and surveys requires practice with real world datasets and the design of simulations. For the first 2/3 of the course, we will assign problem sets that will give you the opportunity to practice the methods we learn in the course. The problem sets will often involve the creation of a simulation and/or the analysis of data from an assigned reading.    
+
+We will assign six problem sets throughout the semester. They will be due on Wednesdays by 11:59pm ET. We encourage students to work in groups, but each student must submit their own assignment. 
+
+::: {.callout-note title="Grace Policy"}
+When calculating the overall homework grade, we will drop the lowest homework grade. This is to account for unexpected events that may prevent you from completing an assignment on time.
+::: 
+
+
