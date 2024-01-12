@@ -2,18 +2,55 @@
 title: "Schedule"
 ---
 
-| Date        | Methods Topic                         | Substantive Topic  |
-|-------------|---------------------------------------|--------------------|
-| **Week 1**  | Logic of Experimentation and Sampling | Reducing Prejudice |
-| **Week 2**  | Visualization and Estimation          |                    |
-| **Week 3**  | Quantifying Uncertainty               |                    |
-| **Week 4**  | Measurement                           |                    |
-| **Week 5**  | Sampling Design                       |                    |
-| **Week 6**  | Statistical Power                     |                    |
-| **Week 7**  | Non-Response and Non-Compliance       |                    |
-| **Week 8**  | Predictive Modeling                   |                    |
-| **Week 9**  | Machine Learning and Experiments      |                    |
-| **Week 10** | Adaptive Sampling                     |                    |
-| **Week 11** |                                       |                    |
-| **Week 12** |                                       |                    |
-| **Week 13** |                                       |                    |
+```{r}
+#| label: setup
+#| include: false
+library(tidyverse)
+library(flextable)
+library(ftExtra)
+```
+
+```{r}
+#| label: schedule_data
+#| include: false
+
+schedule_data <- tribble(
+        ~Week, ~Date, ~methods, ~applied, ~comp,
+        1, "2/6", "Introduction", "", "Introduction to `R`",
+        1, "2/8", "Logic of Experiments", "", "`R` Basics",
+        2, "2/13", "Data Visualziation", "Intergroup Prejudice", "`ggplot2` Basics",
+        2, "2/15", "Estimation", "Intergroup Prejudice", "Data Wrangling with `dplyr`",
+        3, "2/22", "Sampling Distributions", "Political Participation", "Functions",
+        4, "2/27", "Randomization Inference", "Partisanship vs Ideology", "Iteration",
+        4, "2/29", "Large Sample Inference", "Partisanship vs Ideology", "Statistics Functions",
+        5, "3/5", "Measurement", "Changing Political Beliefs", "Data Types and Recoding Data",
+        5, "3/7", "Measurement", "Changing Political Beliefs", "Data Types and Recoding Data",
+        6, "3/12", "Experimental Design: Stratification", "Combatting Electoral Fraud", "`randomizr` package",
+        6, "3/14", "Experimental Design: Clustering", "Combatting Electoral Fraud", "`randomizr` package",
+        7, "3/19", "Statistical Power", "Authoritarian Censorship", "Simulations",
+        7, "3/21", "Choosing Experimental Designs", "Authoritarian Censorship", "Simulations",
+        8, "4/2", "Linear Models and Experiments", "", "Linear Modeling with `lm`",
+        8, "4/4", "Covariate Adjustment", "", "`estimatr` package"
+)
+
+```
+
+```{r}
+#| label: schedule
+#| tbl-cap: Course Schedule
+
+flextable(schedule_data) |>
+        set_header_labels(
+                methods = "Methods Topic",
+                applied = "Applied Topic",
+                comp = "Computing Topic"
+        ) |>
+        bold(part = "header") |>
+        merge_v(j = ~ Week + applied + applied + comp) |>
+        valign(j = ~Week, valign = "center") |>
+        align(j = ~Week, align = "center") |>
+        hline(i = c(2, 4, 5, 7, 9, 11, 13)) |>
+        colformat_md() |>
+        fix_border_issues() |>
+        autofit()
+```
