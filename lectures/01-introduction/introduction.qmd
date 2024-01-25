@@ -1,0 +1,220 @@
+---
+title: "Data and Politics"
+subtitle: "Course Introduction"
+date: last-modified
+author: 
+  - name: F. Daniel Hidalgo
+    email: dhidalgo@mit.edu
+    affiliations: MIT
+format: clean-revealjs
+bibliography: ../data_politics_2024.bib
+editor:
+  render-on-save: true
+---
+
+# Welcome and Course Content
+
+## Data and Politics
+
+### Welcome to 17.831!
+
+-   **Instructor:** F. Daniel Hidalgo
+-   **Schedule**: TR 9:30-11:00
+
+## What is this course about? {.center}
+
+::: columns
+::: {.column width="50%"}
+#### Question
+
+What interventions can solve pressing social and political problems?
+:::
+
+::: {.column width="50%"}
+::: fragment
+#### Examples
+
+-   Reducing Intergroup prejudice
+-   Increasing Political Participation
+-   Measuring and Changing Discriminatory Attitudes
+-   Fighting Electoral Fraud
+:::
+:::
+:::
+
+## *Example*: Can Conversations Change Attitudes?
+
+![Credit: New York Times](./images/deep_canvassing.jpg)
+
+## Estimating Effects of Canvassing
+
+![@broockmanDurablyReducingTransphobia2016](./images/broockman_kalla.png)
+
+## How do we measure social facts? {.center}
+
+::: columns
+::: {.column width="50%"}
+#### Question
+
+How do we measure attitudes and behaviors in the general population?
+:::
+
+::: {.column width="50%"}
+::: fragment
+#### Examples
+
+-   Discriminatory Attitudes
+-   Partisan Animosity
+-   Support for democratic institutions
+-   Beliefs in conspiracies
+:::
+:::
+:::
+
+## *Example*: Presidential Polling
+
+![[538](https://projects.fivethirtyeight.com/polls/president-primary-r/2024/national/?ex_cid=abcpromo)](images/538_polls.png)
+
+## Research Design
+
+This class is about [research design]{.alert}, which is a blend of:
+
+-   Theory and substantive knowledge
+-   Craft
+-   Statistics
+-   Computation
+
+. . .
+
+In particular, we will focus on the design and analysis of [randomized experiments]{.fg style="--col: #e64173"} and [survey samples]{.fg style="--col: #5d41e6"}.
+
+## Design Based Inference
+
+Randomized experiments and surveys are examples of [design based inference]{.alert}.
+
+. . .
+
+We will learn to:
+
+-   Read and critique scientific papers that use these approaches
+-   Understand the statistical theory underpinning this mode of inference
+-   Analyze experimental and survey data using modern statistical computing tools
+-   Design and implement our own studies
+
+## Experiments and Surveys
+
+|                                        | [Experiments]{.fg style="--col: #e64173"} | [Surveys]{.fg style="--col: #5d41e6"} |
+|----------------------------|-------------------|--------------------------|
+| [Target of Inference]{.alert}          | Counterfactuals                           | Out of Sample Observations            |
+| [Threats to Internal Validity]{.alert} | Omitted Variable Bias                     | Non-Response                          |
+| [Selection Mechanism]{.alert}          | Random Assignment                         | Random Sampling                       |
+| [Threats to External Validity]{.alert} | Lack of Realism                           | Measurement Error                     |
+| [Statistical Analysis]{.alert}         | Modeling                                  | Weighting                             |
+
+## Substantive Topics: Experiments
+
+::: incremental
+-   [Week 2]{.alert}: Combating Inter-Group Prejudice
+-   [Week 3]{.alert}: Increasing Political Participation
+-   [Week 4]{.alert}: The Role of Partisanship vs Ideology in Public Opinion
+-   [Week 5]{.alert}: Political Persuasion
+-   [Week 6]{.alert}: Combating Electoral Fraud
+-   [Week 7]{.alert}: Censorship in Authoritarian Regimes
+:::
+
+## Substantive Topics: Surveys
+
+## Computation: ![](images/Rlogo.png){width="75"} + ![](./images/RStudio-Logo-Flat.png){width=150}
+
+
+
+-   We will use the [`R`](https://www.r-project.org) statistical environment to analyze data.
+    -   It's free.
+    -   Excellent for data analysis and visualization.
+    -   Rich ecosystem of packages for social science and statistics.
+    -  Infrastructure for inter-mingling code, data, and text.
+
+- Used extensively in Academia, media, and industry
+
+    
+-   We will use [`RStudio`](https://www.rstudio.com) as our development environment.
+
+
+# Course Details
+
+## Should I take this course? {.center}
+
+-   [Prerequisites]{.alert}: **NONE**
+-   Interest in using data to answer social science questions
+-   Willing to work consistently throughout semester and learn new tools
+-   Material useful to students interested in public policy, political science, economics, computational social science, etc
+
+## Flow of the Course
+
+::: columns
+::: {.column width="50%"}
+### Lectures
+
+-   I generally will *not* lecture during class sessions
+-   Class sessions will be a mix of:
+    -   Discussion
+    -   Live coding
+    -   Class activities
+-   Bring laptop to class!
+:::
+
+::: {.column width="50%"}
+::: fragment
+### Home
+
+-   Watch lecture videos
+-   Read assigned readings
+-   Complete:
+    -   Problem Sets
+    -   Reading quizzes and coding tutorials
+    -   Final Project
+:::
+:::
+:::
+
+## Assignments
+
+::: columns
+::: {.column width="50%"}
+### Problem Sets
+
+-   Focused on data analysis and simulations
+-   Roughly every two weeks
+-   Drop lowest grade
+
+::: fragment
+### Reading Quizzes and Coding Tutorials
+
+-   Generally due weekly
+    -   Quizzes due before Tuesday's class
+    -   Coding tutorials due before Thursday's class
+-   Graded on completion
+:::
+:::
+
+::: {.column width="50%"}
+::: fragment
+### Class Project
+
+-   We will collectively design and implement an experiment embedded in a survey
+-   You will:
+    -   Propose ideas
+    -   Write a questionnaire
+    -   Write a pre-analysis plan
+    -   Analyze and write up the results
+-   Mostly done in second half of semester
+:::
+:::
+:::
+
+## Grading and Help
+
+## What You Should Do Today
+
+
+## References

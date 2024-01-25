@@ -18,19 +18,29 @@ schedule_data <- tribble(
         ~Week, ~Date, ~methods, ~applied, ~comp,
         1, "2/6", "Introduction", "", "Introduction to `R`",
         1, "2/8", "Logic of Experiments", "", "`R` Basics",
-        2, "2/13", "Data Visualziation", "Intergroup Prejudice", "`ggplot2` Basics",
+        2, "2/13", "Data Visualization", "Intergroup Prejudice", "`ggplot2` Basics",
         2, "2/15", "Estimation", "Intergroup Prejudice", "Data Wrangling with `dplyr`",
         3, "2/22", "Sampling Distributions", "Political Participation", "Functions",
         4, "2/27", "Randomization Inference", "Partisanship vs Ideology", "Iteration",
         4, "2/29", "Large Sample Inference", "Partisanship vs Ideology", "Statistics Functions",
-        5, "3/5", "Measurement", "Changing Political Beliefs", "Data Types and Recoding Data",
-        5, "3/7", "Measurement", "Changing Political Beliefs", "Data Types and Recoding Data",
+        5, "3/5", "Measurement: Asking Questions", "Changing Political Beliefs", "Data Types and Recoding Data",
+        5, "3/7", "Measurement: Measurement Error", "Changing Political Beliefs", "Data Types and Recoding Data",
         6, "3/12", "Experimental Design: Stratification", "Combatting Electoral Fraud", "`randomizr` package",
         6, "3/14", "Experimental Design: Clustering", "Combatting Electoral Fraud", "`randomizr` package",
         7, "3/19", "Statistical Power", "Authoritarian Censorship", "Simulations",
         7, "3/21", "Choosing Experimental Designs", "Authoritarian Censorship", "Simulations",
-        8, "4/2", "Linear Models and Experiments", "", "Linear Modeling with `lm`",
-        8, "4/4", "Covariate Adjustment", "", "`estimatr` package"
+        8, "4/2", "Linear Models and Experiments", "TBD", "Linear Modeling with `lm`",
+        8, "4/4", "Covariate Adjustment", "TBD", "`estimatr` package",
+        9, "4/9", "Public Opinion Surveys", "TBD", "",
+        9, "4/11", "Survey Methodology", "TBD", "`survey` package",
+        10, "4/18", "Survey Non-Response", "TBD", "",
+        11, "4/23", "Modeling and Surveys", "TBD", "",
+        11, "4/25", "TBD", "TBD", "",
+        12, "4/30", "TBD", "TBD", "",
+        12, "5/2", "TBD", "TBD", "",
+        13, "5/7", "TBD", "TBD", "",
+        13, "5/9", "TBD", "TBD", "",
+        14, "5/14", "TBD", "TBD", "",
 )
 
 ```
@@ -49,7 +59,7 @@ flextable(schedule_data) |>
         merge_v(j = ~ Week + applied + applied + comp) |>
         valign(j = ~Week, valign = "center") |>
         align(j = ~Week, align = "center") |>
-        hline(i = c(2, 4, 5, 7, 9, 11, 13)) |>
+        hline(i = c(2, 4, 5, 7, 9, 11, 13, 15, 17, 18)) |>
         colformat_md() |>
         fix_border_issues() |>
         autofit()
