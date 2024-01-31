@@ -1,5 +1,6 @@
 ---
 title: "Schedule"
+bibliography: lectures/data_politics_2024.bib
 ---
 
 ```{r}
@@ -8,7 +9,15 @@ title: "Schedule"
 library(tidyverse)
 library(flextable)
 library(ftExtra)
+gdtools::register_gfont(family = "Roboto")
+set_flextable_defaults(font.family = "Roboto")
 ```
+
+Below are the Topics and Assignment schedules for the course. Materials for each week will be posted on the course website, with links appearing in the schedule below.
+
+Readings, lecture slides, and related materials will be posted on each week's page, which can be reached either by clicking on the week in the schedule below or by clicking on the week on the [Materials](materials.qmd) page.
+
+## Topics Overview
 
 ```{r}
 #| label: schedule_data
@@ -16,38 +25,39 @@ library(ftExtra)
 
 schedule_data <- tribble(
         ~Week, ~Date, ~methods, ~applied, ~comp,
-        1, "2/6", "Introduction", "", "Introduction to `R`",
-        1, "2/8", "Logic of Experiments", "", "`R` Basics",
-        2, "2/13", "Data Visualization", "Intergroup Prejudice", "`ggplot2` Basics",
-        2, "2/15", "Estimation", "Intergroup Prejudice", "Data Wrangling with `dplyr`",
-        3, "2/22", "Sampling Distributions", "Political Participation", "Functions",
-        4, "2/27", "Randomization Inference", "Partisanship vs Ideology", "Iteration",
-        4, "2/29", "Large Sample Inference", "Partisanship vs Ideology", "Statistics Functions",
-        5, "3/5", "Measurement: Asking Questions", "Changing Political Beliefs", "Data Types and Recoding Data",
-        5, "3/7", "Measurement: Measurement Error", "Changing Political Beliefs", "Data Types and Recoding Data",
-        6, "3/12", "Experimental Design: Stratification", "Combatting Electoral Fraud", "`randomizr` package",
-        6, "3/14", "Experimental Design: Clustering", "Combatting Electoral Fraud", "`randomizr` package",
-        7, "3/19", "Statistical Power", "Authoritarian Censorship", "Simulations",
-        7, "3/21", "Choosing Experimental Designs", "Authoritarian Censorship", "Simulations",
-        8, "4/2", "Linear Models and Experiments", "TBD", "Linear Modeling with `lm`",
-        8, "4/4", "Covariate Adjustment", "TBD", "`estimatr` package",
-        9, "4/9", "Public Opinion Surveys", "TBD", "",
-        9, "4/11", "Survey Methodology", "TBD", "`survey` package",
-        10, "4/18", "Survey Non-Response", "TBD", "",
-        11, "4/23", "Modeling and Surveys", "TBD", "",
-        11, "4/25", "TBD", "TBD", "",
-        12, "4/30", "TBD", "TBD", "",
-        12, "5/2", "TBD", "TBD", "",
-        13, "5/7", "TBD", "TBD", "",
-        13, "5/9", "TBD", "TBD", "",
-        14, "5/14", "TBD", "TBD", "",
+        "[1](materials/week_1.qmd)", "2/6", "Introduction", "", "Introduction to `R`",
+        "[1](materials/week_1.qmd)", "2/8", "Logic of Experiments", "", "`R` Basics",
+        "2", "2/13", "Data Visualization", "Intergroup Prejudice", "`ggplot2` Basics",
+        "2", "2/15", "Estimation", "Intergroup Prejudice", "Data Wrangling with `dplyr`",
+        "3", "2/22", "Sampling Distributions", "Political Participation", "Base R",
+        "4", "2/27", "Randomization Inference", "Partisanship vs Ideology", "Functions",
+        "4", "2/29", "Large Sample Inference", "Partisanship vs Ideology", "Iteration",
+        "5", "3/5", "Measurement: Asking Questions", "Changing Political Beliefs", "Data Types and Recoding Data",
+        "5", "3/7", "Measurement: Measurement Error", "Changing Political Beliefs", "Data Types and Recoding Data",
+        "6", "3/12", "Experimental Design: Stratification", "Combatting Electoral Fraud", "`randomizr` package",
+        "6", "3/14", "Experimental Design: Clustering", "Combatting Electoral Fraud", "`randomizr` package",
+        "7", "3/19", "Statistical Power", "Authoritarian Censorship", "Simulations",
+        "7", "3/21", "Choosing Experimental Designs", "Authoritarian Censorship", "Simulations",
+        "8", "4/2", "Linear Models and Experiments", "Misinformation", "Linear Modeling with `lm`",
+        "8", "4/4", "Covariate Adjustment", "Misinformation", "`estimatr` package",
+        "9", "4/9", "Public Opinion Surveys", "Affective Polarization", "`survey` package",
+        "9", "4/11", "Survey Methodology", "Affective Polarization", "`survey` package",
+        "10", "4/18", "Survey Non-Response", "Non-Response Bias in Recent Elections", " ",
+        "11", "4/23", "Addressing Non-Response", "Predicting Electoral Outcomes", "",
+        "11", "4/25", "Modeling and Surveys", "Predicting Electoral Outcomes", "",
+        "12", "4/30", "Final Project", " ", " ",
+        "12", "5/2", "Final Project", " ", " ",
+        "13", "5/7", "Final Project", "", "",
+        "13", "5/9", "Final Project", "", "",
+        "14", "5/14", "Final Project", " ", " ",
 )
 
 ```
 
 ```{r}
 #| label: schedule
-#| tbl-cap: Course Schedule
+#| tbl-cap: Topics Schedule
+#| echo: false
 
 flextable(schedule_data) |>
         set_header_labels(
@@ -59,7 +69,88 @@ flextable(schedule_data) |>
         merge_v(j = ~ Week + applied + applied + comp) |>
         valign(j = ~Week, valign = "center") |>
         align(j = ~Week, align = "center") |>
-        hline(i = c(2, 4, 5, 7, 9, 11, 13, 15, 17, 18)) |>
+        hline(i = c(2, 4, 5, 7, 9, 11, 13, 15, 17, 18, 20, 22, 24)) |>
+        colformat_md() |>
+        fix_border_issues() |>
+        autofit()
+```
+
+## Readings Schedule
+
+| **Week 1** | **Methods**    | **Applied**                                       | **Computation**                                                                                                                            |
+|---------------------|-----------------|-----------------|-----------------|
+| 1          | GG pgs 1-30    |                                                   | RDS [2](https://r4ds.hadley.nz/workflow-basics)                                                                                            |
+| 2          | GG pgs 30-45   | @mousaBuildingSocialCohesion2020                  | RDS [1](https://r4ds.hadley.nz/data-visualize), [3](https://r4ds.hadley.nz/data-transform)                                                 |
+| 3          | GG pgs 51-61   | @gerberSocialPressureVoter2008                    | RDS [27.1-27.2](https://r4ds.hadley.nz/base-r)                                                                                             |
+| 4          | GG pgs 61-71   | @barberDoesPartyTrump2019                         | RDS [25.1-25.2](https://r4ds.hadley.nz/functions), [26](https://r4ds.hadley.nz/iteration), [27.5](https://r4ds.hadley.nz/base-r#for-loops) |
+| 5          | TBD            | @broockmanDurablyReducingTransphobia2016          |                                                                                                                                            |
+| 6          | GG pgs. 71-85  | @garbiras-diazAllEyesThem2022                     |                                                                                                                                            |
+| 7          |                | @kingReverseengineeringCensorshipChina2014        |                                                                                                                                            |
+| 8          | GG pgs. 95-105 | @arecharUnderstandingCombattingMisinformation2023 |                                                                                                                                            |
+| 9          |                |                                                   |                                                                                                                                            |
+| 10         |                |                                                   |                                                                                                                                            |
+| 11         |                | @jenningsElectionPollingErrors2018                |                                                                                                                                            |
+
+## Assignments Schedule
+
+```{r}
+#| label: assignments_data
+#| include: false
+
+assignments_data <- tribble(
+        ~Week, ~due_date, ~Assignment,
+        "2", "2/12", "Reading Quiz",
+        "2", "2/14", "Tutorial",
+        "3", "2/21", "Reading Quiz",
+        "3", "2/21", "Tutorial",
+        "3", "2/22", "*Problem Set 1*",
+        "4", "2/26", "Reading Quiz",
+        "4", "2/28", "Tutorial",
+        "5", "3/4", "Reading Quiz",
+        "5", "3/6", "Tutorial",
+        "5", "3/7", "*Problem Set 2*",
+        "6", "3/11", "Reading Quiz",
+        "6", "3/13", "Tutorial",
+        "7", "3/18", "Reading Quiz",
+        "7", "3/20", "Tutorial",
+        "7", "3/21", "*Problem Set 3*",
+        "8", "4/1", "Reading Quiz",
+        "8", "4/3", "Tutorial",
+        "9", "4/8", "Reading Quiz",
+        "9", "4/10", "Tutorial",
+        "9", "4/11", "*Problem Set 4*",
+        "10", "4/17", "Reading Quiz",
+        "11", "4/25", "*Problem Set 5*",
+        "13", "5/9", "*Problem Set 6*"
+)
+
+## function to find index of row of last row of each week
+find_last_row <- function(x) {
+        x |>
+                mutate(row_num = 1:nrow(x)) |>
+                group_by(Week) |>
+                summarise(last_row = max(row_num)) |>
+                pull(last_row)
+}
+
+
+```
+
+```{r}
+#| label: assignments
+#| tbl-cap: Assignments Schedule
+#| echo: false
+
+flextable(assignments_data) |>
+        set_header_labels(
+                due_date = "Due Date",
+                Assignment = "Assignment"
+        ) |>
+        bold(part = "header") |>
+        merge_v(j = ~ Week + due_date + Assignment) |>
+        valign(j = ~Week, valign = "center") |>
+        align(j = ~Week, align = "center") |>
+        hline(i = find_last_row(assignments_data)) |>
         colformat_md() |>
         fix_border_issues() |>
         autofit()

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,13 +39,23 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/academicons-1.9.2/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/academicons-1.9.2/size.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -54,6 +64,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -68,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">17.831 - Data and Politics</span>
     </a>
@@ -82,25 +93,25 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link active" href="./syllabus.html" aria-current="page"> 
+<span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./syllabus.html" rel="" target="" aria-current="page">
- <span class="menu-text">Syllabus</span></a>
+    <a class="nav-link" href="./schedule.html"> 
+<span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./schedule.html" rel="" target="">
- <span class="menu-text">Schedule</span></a>
+    <a class="nav-link" href="./materials.html"> 
+<span class="menu-text">Materials</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -123,10 +134,21 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#class-lectures" id="toc-class-lectures" class="nav-link" data-scroll-target="#class-lectures">Class Lectures</a></li>
   <li><a href="#tutorials" id="toc-tutorials" class="nav-link" data-scroll-target="#tutorials">Tutorials</a></li>
   <li><a href="#problem-sets" id="toc-problem-sets" class="nav-link" data-scroll-target="#problem-sets">Problem Sets</a></li>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
+  <li><a href="#online-forum" id="toc-online-forum" class="nav-link" data-scroll-target="#online-forum">Online Forum</a></li>
   <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
   </ul></li>
-  <li><a href="#final-project" id="toc-final-project" class="nav-link" data-scroll-target="#final-project">Final Project</a></li>
+  <li><a href="#class-project" id="toc-class-project" class="nav-link" data-scroll-target="#class-project">Class Project</a></li>
+  <li><a href="#course-policies" id="toc-course-policies" class="nav-link" data-scroll-target="#course-policies">Course Policies</a>
+  <ul class="collapse">
+  <li><a href="#late-policy" id="toc-late-policy" class="nav-link" data-scroll-target="#late-policy">Late Policy</a></li>
+  <li><a href="#office-hours-and-getting-help" id="toc-office-hours-and-getting-help" class="nav-link" data-scroll-target="#office-hours-and-getting-help">Office Hours and Getting Help</a></li>
+  <li><a href="#large-language-models" id="toc-large-language-models" class="nav-link" data-scroll-target="#large-language-models">Large Language Models</a></li>
+  </ul></li>
+  <li><a href="#course-materials" id="toc-course-materials" class="nav-link" data-scroll-target="#course-materials">Course Materials</a>
+  <ul class="collapse">
+  <li><a href="#books" id="toc-books" class="nav-link" data-scroll-target="#books">Books</a></li>
+  <li><a href="#computing" id="toc-computing" class="nav-link" data-scroll-target="#computing">Computing</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -148,16 +170,41 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
+
+<div class="columns">
+<div class="column" style="width:50%;">
+<section id="instructor" class="level3">
+<h3 class="anchored" data-anchor-id="instructor">Instructor</h3>
+<ul>
+<li><i class="fa-solid fa-user" aria-label="user"></i> <a href="https://www.dhidalgo.me">F. Daniel Hidalgo</a></li>
+<li><i class="fa-solid fa-building" aria-label="building"></i> E53-402</li>
+<li><i class="fa-solid fa-envelope" aria-label="envelope"></i> <a href="mailto:dhidalgo@mit.edu">dhidalgo@mit.edu</a></li>
+<li><i class="fa-solid fa-calendar" aria-label="calendar"></i> <a href="https://fantastical.app/dhidalgo/office-hours">Office Hours</a></li>
+</ul>
+</section>
+</div><div class="column" style="width:50%;">
+<section id="course-details" class="level3">
+<h3 class="anchored" data-anchor-id="course-details">Course Details</h3>
+<ul>
+<li><i class="fa-solid fa-calendar" aria-label="calendar"></i> Tuesdays and Thursdays</li>
+<li><i class="fa-solid fa-clock" aria-label="clock"></i> 9:30-11:00am</li>
+<li><i class="fa-solid fa-location-dot" aria-label="location-dot"></i> 56-154</li>
+<li><i class="ai  ai-piazza"></i> Piazza</li>
+</ul>
+</section>
+</div>
+</div>
 <section id="course-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="course-objectives">Course Objectives</h2>
 <p>By the end of this course, students will be able to:</p>
 <ul>
 <li>Describe how experimental and survey methods can be used to understand pressing social problems.</li>
 <li>Design surveys and experiments that are applicable to a variety of settings.</li>
-<li>Use statistical principles to evaluate the quality of survey and experimental design.</li>
-<li>Apply machine learning methods to experimental and survey data.</li>
+<li>Use statistical principles to evaluate the quality of survey and experimental designs.</li>
+<li>Apply statistical models to experimental and survey data.</li>
 <li>Analyze data using modern statistical computing tools, in particular the statistical programming language <code>R</code>.</li>
 </ul>
 <section id="expectations" class="level3">
@@ -166,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Complete six problem sets.</li>
 <li>Complete eight weekly tutorials</li>
-<li>Design and implement a survey experiment on a topic of your choice.</li>
+<li>Design and implement a survey experiment with a diverse sample.</li>
 </ul>
 </section>
 <section id="prerequisites" class="level3">
@@ -178,23 +225,23 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="course-structure">Course Structure</h2>
 <p>The basic cadence of the course will be as follows, though there may be small differences depending on the week:</p>
 <ul>
-<li><strong>Monday</strong>: Complete reading, watch course lectures, and complete tutorial.</li>
+<li><strong>Monday</strong>: Complete reading, watch course lectures, and complete reading quiz.</li>
 <li><strong>Tuesday</strong>: Class meets.</li>
-<li><strong>Wednesday</strong>: Submit assignments (if due)</li>
+<li><strong>Wednesday</strong>: Complete coding tutorial, submit assignments (if due)</li>
 <li><strong>Thursday</strong>: Class meets; assignments are posted</li>
 </ul>
 <section id="class-lectures" class="level3">
 <h3 class="anchored" data-anchor-id="class-lectures">Class Lectures</h3>
-<p>Class lectures will be recorded and posted on the course website. You are expected to watch the lectures before class meetings on Tuesdays. At class meetings, there will be an opportunity to ask questions about lecture material.</p>
+<p>Class lectures will be recorded and posted on the course canvas website. You are expected to watch the lectures before class meetings on Tuesdays. At class meetings, there will be an opportunity to ask questions about lecture material and readings</p>
 </section>
 <section id="tutorials" class="level3">
 <h3 class="anchored" data-anchor-id="tutorials">Tutorials</h3>
-<p>We will assign short weekly tutorials that will assess your knowledge of the class materials and prepare you for the in-class activities. Tutorials will primarily be graded based on completion and not whether the answers are correct. Tutorials will generally be due on Monday by 11:59pm ET.</p>
+<p>We will assign short weekly coding tutorials that will assess your knowledge of the class materials and prepare you for the in-class activities. Tutorials will primarily be graded based on completion and not whether the answers are correct. Tutorials will generally be due on Wednesday by 11:59pm ET.</p>
 </section>
 <section id="problem-sets" class="level3">
 <h3 class="anchored" data-anchor-id="problem-sets">Problem Sets</h3>
-<p>Competence at the design and analysis of experiments and surveys requires practice with real world datasets and the design of simulations. For the first 2/3 of the course, I will assign problem sets that will give you the opportunity to practice the methods I learn in the course. The problem sets will often involve the creation of a simulation and/or the analysis of data from an assigned reading.</p>
-<p>I will assign six problem sets throughout the semester. They will be due on Wednesdays by 11:59pm ET. I encourage students to work in groups, but each student must submit their own assignment.</p>
+<p>Competence at the design and analysis of experiments and surveys requires practice with real world datasets and the design of simulations. For the first 2/3 of the course, I will assign problem sets that will give you the opportunity to practice the methods you learn in the course. The problem sets will often involve the creation of a simulation and/or the analysis of data from an assigned reading. In the second half of the course, parts of the problem set will be devoted to the design of the class project.</p>
+<p>I will assign <em>six</em> problem sets throughout the semester. They will be due on Thursdays by 11:59pm ET. I encourage students to work in groups, but each student must submit their own assignment.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Lowest Homework Grade is Dropped">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -209,18 +256,86 @@ Lowest Homework Grade is Dropped
 </div>
 </div>
 </section>
-<section id="discussion" class="level3">
-<h3 class="anchored" data-anchor-id="discussion">Discussion</h3>
+<section id="online-forum" class="level3">
+<h3 class="anchored" data-anchor-id="online-forum">Online Forum</h3>
 <p>We will use Piazza for class discussions. If you are having trouble with a question on a problem set or on a reading, please post your question using Piazza. I strongly encourage students to assist in answering questions as they come up. Except under unusual circumstances, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours. The site is: XXX</p>
 </section>
 <section id="grading" class="level3">
 <h3 class="anchored" data-anchor-id="grading">Grading</h3>
+<p>The final grade in the course will be based on the following components:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Percent of Final Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Coding Tutorials</td>
+<td>5%</td>
+</tr>
+<tr class="even">
+<td>Reading Quizzes</td>
+<td>5%</td>
+</tr>
+<tr class="odd">
+<td>Problem Sets</td>
+<td>50%</td>
+</tr>
+<tr class="even">
+<td>Class Participation</td>
+<td>15%</td>
+</tr>
+<tr class="odd">
+<td>Class Project</td>
+<td>25%</td>
+</tr>
+</tbody>
+</table>
+<p>Class participation is based on participation in class discussions and activities, as well as participation in Piazza discussions.</p>
 </section>
 </section>
-<section id="final-project" class="level2">
-<h2 class="anchored" data-anchor-id="final-project">Final Project</h2>
+<section id="class-project" class="level2">
+<h2 class="anchored" data-anchor-id="class-project">Class Project</h2>
+<p>For the final project, we will collectively design and implement an experiment embedded in a short survey. In the second half of the semester, we will devote time each week to design the survey and experiment. The goal of this project is to give students experience crafting a research design and collecting real data on a question of interest. The data will be collected on US adults through a crowd-sourcing platform. While we will collectively design the survey and experiment, each student will be responsible for pre-registering their analysis, analyzing the data and writing up the results on their own.</p>
+<p>Students in the class will:</p>
+<ol type="1">
+<li>Propose a research question.</li>
+<li>Design an intervention suitable for a survey experiment.</li>
+<li>Write a questionnaire.</li>
+<li>Design a sampling plan and analysis strategy sufficient for answering their research question.</li>
+<li>Pre-register their study.</li>
+<li>Analyze and write up the results of the study.</li>
+</ol>
+</section>
+<section id="course-policies" class="level2">
+<h2 class="anchored" data-anchor-id="course-policies">Course Policies</h2>
+<section id="late-policy" class="level3">
+<h3 class="anchored" data-anchor-id="late-policy">Late Policy</h3>
+<p>For problem sets submitted late, we will deduct 10% of the grade for each day late. Problem sets will not be accepted more than three days after the due date. This penalty will be waived in the case of a documented medical or family emergency.</p>
+</section>
+<section id="office-hours-and-getting-help" class="level3">
+<h3 class="anchored" data-anchor-id="office-hours-and-getting-help">Office Hours and Getting Help</h3>
+<p>I hold regular weekly office hours on Friday afternoons. Please sign up for in-person or zoom office hours at the following link: <a href="https://fantastical.app/dhidalgo/office-hours">https://fantastical.app/dhidalgo/office-hours</a>.</p>
+<p>If you run into problems that you can’t solve on your own, please use the class website on Piazza to post questions. I strongly encourage students to assist in answering questions as they come up. Unless absolutely necessary, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours.</p>
+</section>
+<section id="large-language-models" class="level3">
+<h3 class="anchored" data-anchor-id="large-language-models">Large Language Models</h3>
+</section>
+</section>
+<section id="course-materials" class="level2">
+<h2 class="anchored" data-anchor-id="course-materials">Course Materials</h2>
+<section id="books" class="level3">
+<h3 class="anchored" data-anchor-id="books">Books</h3>
+</section>
+<section id="computing" class="level3">
+<h3 class="anchored" data-anchor-id="computing">Computing</h3>
+<p>We will use <a href="https://www.r-project.org/"><code>R</code></a> for all of the data analysis in this course. <code>R</code> is a free, open-source statistical programming language that is widely used in the social sciences. We will use the <a href="https://www.rstudio.com/"><code>RStudio</code></a> integrated development environment (IDE) to write and execute <code>R</code> code. <code>RStudio</code> is also free and open-source.</p>
+<p>You should install <code>R</code> on your own computer, but to forestall any installation problems, we will provide the option to use the Posit Cloud service for the first few weeks of the course. This service allows you to run <code>R</code> and <code>RStudio</code> in your web browser. This cloud service can be resource constrained, however, so it is strongly recommended that you install <code>R</code> and <code>RStudio</code> on your own computer as soon as possible.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -303,10 +418,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -316,8 +430,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -330,6 +453,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -373,6 +615,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -398,6 +641,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -458,6 +727,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

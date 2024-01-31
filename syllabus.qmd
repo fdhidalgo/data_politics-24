@@ -2,54 +2,127 @@
 title: "Syllabus"
 ---
 
+::: {.columns}
+
+::: {.column width="50%"}
+### Instructor
+
+- {{< fa user >}} [F. Daniel Hidalgo](https://www.dhidalgo.me)
+- {{< fa building >}} E53-402
+- {{< fa  envelope >}} [dhidalgo@mit.edu](mailto:dhidalgo@mit.edu)
+- {{< fa calendar >}} [Office Hours](https://fantastical.app/dhidalgo/office-hours)
+
+:::
+::: {.column width="50%"}
+### Course Details
+- {{< fa calendar >}} Tuesdays and Thursdays
+- {{< fa clock >}} 9:30-11:00am
+- {{< fa location-dot >}} 56-154 
+- {{< ai piazza >}} Piazza
+:::
+:::
+
 ## Course Objectives
 
-By the end of this course, students will be able to: 
+By the end of this course, students will be able to:
 
-- Describe how experimental and survey methods can be used to understand pressing social problems. 
-- Design surveys and experiments that are applicable to a variety of settings. 
-- Use statistical principles to evaluate the quality of survey and experimental design.
-- Apply machine learning methods to experimental and survey data. 
-- Analyze data using modern statistical computing tools, in particular the statistical programming language `R`. 
+-   Describe how experimental and survey methods can be used to understand pressing social problems.
+-   Design surveys and experiments that are applicable to a variety of settings.
+-   Use statistical principles to evaluate the quality of survey and experimental designs.
+-   Apply statistical models to experimental and survey data.
+-   Analyze data using modern statistical computing tools, in particular the statistical programming language `R`.
 
-### Expectations 
-In this course, you will be expected to: 
+### Expectations
 
-- Complete six problem sets. 
-- Complete eight weekly tutorials
-- Design and implement a survey experiment on a topic of your choice.
+In this course, you will be expected to:
+
+-   Complete six problem sets.
+-   Complete eight weekly tutorials
+-   Design and implement a survey experiment with a diverse sample.
 
 ### Prerequisites
 
-No prerequisites will be assumed. 
+No prerequisites will be assumed.
 
 ## Course Structure
 
 The basic cadence of the course will be as follows, though there may be small differences depending on the week:
 
-- **Monday**: Complete reading, watch course lectures, and complete tutorial.
-- **Tuesday**: Class meets. 
-- **Wednesday**: Submit assignments (if due)
-- **Thursday**: Class meets; assignments are posted
+-   **Monday**: Complete reading, watch course lectures, and complete reading quiz.
+-   **Tuesday**: Class meets.
+-   **Wednesday**: Complete coding tutorial, submit assignments (if due)
+-   **Thursday**: Class meets; assignments are posted
 
 ### Class Lectures
-Class lectures will be recorded and posted on the course website. You are expected to watch the lectures before class meetings on Tuesdays. At class meetings, there will be an opportunity to ask questions about lecture material. 
 
-### Tutorials 
-We will assign short weekly tutorials that will assess your knowledge of the class materials and prepare you for the in-class activities. Tutorials will primarily be graded based on completion and not whether the answers are correct. Tutorials will generally be due on Monday by 11:59pm ET. 
+Class lectures will be recorded and posted on the course canvas website. You are expected to watch the lectures before class meetings on Tuesdays. At class meetings, there will be an opportunity to ask questions about lecture material and readings
+
+### Tutorials
+
+We will assign short weekly coding tutorials that will assess your knowledge of the class materials and prepare you for the in-class activities. Tutorials will primarily be graded based on completion and not whether the answers are correct. Tutorials will generally be due on Wednesday by 11:59pm ET.
 
 ### Problem Sets
-Competence at the design and analysis of experiments and surveys requires practice with real world datasets and the design of simulations. For the first 2/3 of the course, I will assign problem sets that will give you the opportunity to practice the methods I learn in the course. The problem sets will often involve the creation of a simulation and/or the analysis of data from an assigned reading.    
 
-I will assign six problem sets throughout the semester. They will be due on Wednesdays by 11:59pm ET. I encourage students to work in groups, but each student must submit their own assignment. 
+Competence at the design and analysis of experiments and surveys requires practice with real world datasets and the design of simulations. For the first 2/3 of the course, I will assign problem sets that will give you the opportunity to practice the methods you learn in the course. The problem sets will often involve the creation of a simulation and/or the analysis of data from an assigned reading. In the second half of the course, parts of the problem set will be devoted to the design of the class project.
+
+I will assign *six* problem sets throughout the semester. They will be due on Thursdays by 11:59pm ET. I encourage students to work in groups, but each student must submit their own assignment. 
 
 ::: {.callout-note title="Lowest Homework Grade is Dropped"}
 When calculating the overall homework grade, I will drop the lowest homework grade. This is to account for unexpected events that may prevent you from completing an assignment on time.
-::: 
+:::
 
-### Discussion
+### Online Forum
+
 We will use Piazza for class discussions. If you are having trouble with a question on a problem set or on a reading, please post your question using Piazza. I strongly encourage students to assist in answering questions as they come up. Except under unusual circumstances, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours. The site is: XXX
 
 ### Grading
 
-## Final Project
+The final grade in the course will be based on the following components:
+
+| Category            | Percent of Final Grade |
+|---------------------|------------------------|
+| Coding Tutorials    | 5%                     |
+| Reading Quizzes     | 5%                     |
+| Problem Sets        | 50%                    |
+| Class Participation | 15%                    |
+| Class Project       | 25%                    |
+
+Class participation is based on participation in class discussions and activities, as well as participation in Piazza discussions. 
+
+## Class Project
+
+For the final project, we will collectively design and implement an experiment embedded in a short survey. In the second half of the semester, we will devote time each week to design the survey and experiment. The goal of this project is to give students experience crafting a research design and collecting real data on a question of interest. The data will be collected on US adults through a crowd-sourcing platform.  While we will collectively design the survey and experiment, each student will be responsible for pre-registering their analysis,  analyzing the data and writing up the results on their own.
+
+Students in the class will:
+
+1. Propose a research question.
+2. Design an intervention suitable for a survey experiment.
+3. Write a questionnaire.
+4. Design a sampling plan and analysis strategy sufficient for answering their research question.
+5. Pre-register their study.
+6. Analyze and write up the results of the study. 
+
+
+## Course Policies
+
+### Late Policy
+
+For problem sets submitted late, we will deduct 10% of the grade for each day late. Problem sets will not be accepted more than three days after the due date. This penalty will be waived in the case of a documented medical or family emergency.
+
+### Office Hours and Getting Help
+I hold regular weekly office hours on Friday afternoons. Please sign up for in-person or zoom office hours at the following link: [https://fantastical.app/dhidalgo/office-hours](https://fantastical.app/dhidalgo/office-hours). 
+
+If you run into problems that you can’t solve on your own, please use the class website on Piazza to post questions. I strongly encourage students to assist in answering questions as they come up. Unless absolutely necessary, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours.
+
+### Large Language Models
+
+## Course Materials
+
+### Books
+
+### Computing 
+
+We will use [`R`](https://www.r-project.org/) for all of the data  analysis in this course. `R` is a free, open-source statistical programming language that is widely used in the social sciences. We will use the [`RStudio`](https://www.rstudio.com/) integrated development environment (IDE) to write and execute `R` code. `RStudio` is also free and open-source.
+
+You should install `R` on your own computer, but to forestall any installation problems, we will provide the option to use the Posit Cloud service for the first few weeks of the course. This service allows you to run `R` and `RStudio` in your web browser. This cloud service can be resource constrained, however, so it is strongly recommended that you install `R` and `RStudio` on your own computer as soon as possible.  
+

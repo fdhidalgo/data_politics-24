@@ -1,11 +1,9 @@
 ---
 title: "Data and Politics"
+about:
+  template: solana
 ---
 
-This is a Quarto website.
+Welcome to the course website of 17.831 Data and Politics. This course is taught by [F. Daniel Hidalgo](https://www.dhidalgo.me) at MIT in the Spring of 2024. 
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
+## Instructor
