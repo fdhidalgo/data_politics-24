@@ -35,10 +35,12 @@ title: "Syllabus"
 
 ## Course Objectives
 
+Many of the most pressing social problems ultimately have political causes and consequences. Not only do social scientists seek to document these problems, but also develop and evaluate policies to address them. Some of the most important tools for understanding social dynamics are experiments and surveys. Experiments allow us to understand the causal effects of policies and interventions, while surveys allow us to understand the distribution of attitudes and behaviors in a population. This course will provide an introduction to the design and analysis of experiments and surveys through the lens of innovative research in political science and public policy. Substantively, the course will focus on a range of topics including discriminatory attitudes, political participation, combatting voter fraud, and misinformation. 
+
 By the end of this course, students will be able to:
 
 -   Describe how experimental and survey methods can be used to understand pressing social problems.
--   Design surveys and experiments that are applicable to a variety of settings.
+-   Design surveys and experiments that are applicable to a variety of social settings.
 -   Use statistical principles to evaluate the quality of survey and experimental designs.
 -   Apply statistical models to experimental and survey data.
 -   Analyze data using modern statistical computing tools, in particular the statistical programming language `R`.
@@ -133,7 +135,16 @@ If you do use AI-generated content in your assignments, you must clearly indicat
 
 ## Course Materials
 
-### Books
+### Readings
+
+Almost all readings for the course are available online and linked from the course website in the [schedule](schedule.qmd) page or in each week's [materials page](materials.qmd) page.
+
+The one exception is that you should purchase the following book: 
+
+::: {.callout-warning}
+## Required Purchase
+Gerber, Alan S., and Donald P. Green. *Field Experiments: Design, Analysis, and Interpretation*.  New York London: W. W. Norton & Company, 2012.
+:::
 
 ### Computing 
 
