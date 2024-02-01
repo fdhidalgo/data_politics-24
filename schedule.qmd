@@ -121,7 +121,7 @@ assignments_data <- tribble(
         "9", "4/11", "*Problem Set 4*",
         "10", "4/17", "Reading Quiz",
         "11", "4/25", "*Problem Set 5*",
-        "13", "5/9", "*Problem Set 6*"
+        "13", "5/9", "*Problem Set 6*",
 		"14", "5/14", "*Class Project Writeup*"
 )
 
