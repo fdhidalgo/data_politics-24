@@ -1,0 +1,10 @@
+/* css styles */
+
+.course-details {
+	line-height: 0;
+}
+
+/* remove spacing between paragraphs */
+.course-details p {
+	margin: 0 0 .6em;
+}
