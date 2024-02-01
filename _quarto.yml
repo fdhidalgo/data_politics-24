@@ -2,11 +2,11 @@ project:
   type: website
 
 website:
-  title: "17.831 - Data and Politics"
+  title: "Data and Politics"
   navbar:
     left:
       - href: index.qmd
-        text: Home
+        text: "17.831"
       - syllabus.qmd
       - schedule.qmd
       - materials.qmd
