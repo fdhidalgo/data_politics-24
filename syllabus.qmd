@@ -28,7 +28,7 @@ title: "Syllabus"
 
 {{< fa location-dot >}} 56-154 
 
-{{< ai piazza >}} Piazza
+{{< ai piazza >}} [Piazza](https://piazza.com/mit/spring2024/17831/home)
 ::::
 :::
 :::
@@ -86,7 +86,7 @@ When calculating the overall homework grade, I will drop the lowest homework gra
 
 ### Online Forum
 
-We will use Piazza for class discussions. If you are having trouble with a question on a problem set or on a reading, please post your question using Piazza. I strongly encourage students to assist in answering questions as they come up. Except under unusual circumstances, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours. The site is: XXX
+We will use [Piazza](https://piazza.com/mit/spring2024/17831/home) for class discussions. If you are having trouble with a question on a problem set or on a reading, please post your question using Piazza. I strongly encourage students to assist in answering questions as they come up. Except under unusual circumstances, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours. The site is: [https://piazza.com/mit/spring2024/17831/home](https://piazza.com/mit/spring2024/17831/home)
 
 ### Grading
 

@@ -40,7 +40,7 @@ Welcome to the course website of 17.831 Data and Politics. This course is taught
 :::: {.course-details}
 {{< fa calendar >}} [Office Hours](https://fantastical.app/dhidalgo/office-hours)
 
-{{< ai piazza >}} Piazza
+{{< ai piazza >}} [Piazza](https://piazza.com/mit/spring2024/17831/home)
 
 ::::
 
