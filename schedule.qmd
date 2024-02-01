@@ -13,9 +13,9 @@ gdtools::register_gfont(family = "Roboto")
 set_flextable_defaults(font.family = "Roboto")
 ```
 
-Below are the Topics and Assignment schedules for the course. Materials for each week will be posted on the course website, with links appearing in the schedule below.
+Below are the Topics, Readings, and Assignment schedules for the course. Materials for each week will be posted on the course website, with links appearing in the Readings schedule below. In a few cases, PDFs will be uploaded to the course Canvas site.
 
-Readings, lecture slides, and related materials will be posted on each week's page, which can be reached either by clicking on the week in the schedule below or by clicking on the week on the [Materials](materials.qmd) page.
+Readings, lecture slides, and related materials will be posted on each week's page, which can be reached either by clicking on the week in the Topics schedule below or by clicking on the week on the [Materials](materials.qmd) page.
 
 ## Topics Overview
 
@@ -40,8 +40,8 @@ schedule_data <- tribble(
         "7", "3/21", "Choosing Experimental Designs", "Authoritarian Censorship", "Simulations",
         "8", "4/2", "Linear Models and Experiments", "Misinformation", "Linear Modeling with `lm`",
         "8", "4/4", "Covariate Adjustment", "Misinformation", "`estimatr` package",
-        "9", "4/9", "Public Opinion Surveys", "Affective Polarization", "`survey` package",
-        "9", "4/11", "Survey Methodology", "Affective Polarization", "`survey` package",
+        "9", "4/9", "Public Opinion Surveys", "Affective Polarization", "`survyr` package",
+        "9", "4/11", "Survey Methodology", "Affective Polarization", "`survyr` package",
         "10", "4/18", "Survey Non-Response", "Non-Response Bias in Recent Elections", " ",
         "11", "4/23", "Addressing Non-Response", "Predicting Electoral Outcomes", "",
         "11", "4/25", "Modeling and Surveys", "Predicting Electoral Outcomes", "",
@@ -77,19 +77,19 @@ flextable(schedule_data) |>
 
 ## Readings Schedule
 
-| **Week 1** | **Methods**    | **Applied**                                       | **Computation**                                                                                                                            |
-|---------------------|-----------------|-----------------|-----------------|
-| 1          | GG pgs 1-30    |                                                   | RDS [2](https://r4ds.hadley.nz/workflow-basics)                                                                                            |
-| 2          | GG pgs 30-45   | @mousaBuildingSocialCohesion2020                  | RDS [1](https://r4ds.hadley.nz/data-visualize), [3](https://r4ds.hadley.nz/data-transform)                                                 |
-| 3          | GG pgs 51-61   | @gerberSocialPressureVoter2008                    | RDS [27.1-27.2](https://r4ds.hadley.nz/base-r)                                                                                             |
-| 4          | GG pgs 61-71   | @barberDoesPartyTrump2019                         | RDS [25.1-25.2](https://r4ds.hadley.nz/functions), [26](https://r4ds.hadley.nz/iteration), [27.5](https://r4ds.hadley.nz/base-r#for-loops) |
-| 5          | TBD            | @broockmanDurablyReducingTransphobia2016          |                                                                                                                                            |
-| 6          | GG pgs. 71-85  | @garbiras-diazAllEyesThem2022                     |                                                                                                                                            |
-| 7          |                | @kingReverseengineeringCensorshipChina2014        |                                                                                                                                            |
-| 8          | GG pgs. 95-105 | @arecharUnderstandingCombattingMisinformation2023 |                                                                                                                                            |
-| 9          |                |                                                   |                                                                                                                                            |
-| 10         |                |                                                   |                                                                                                                                            |
-| 11         |                | @jenningsElectionPollingErrors2018                |                                                                                                                                            |
+| **Week 1** | **Methods**                           | **Applied**                                       | **Computation**                                                                                                                            |
+|-------------------|------------------|------------------|------------------|
+| 1          | GG pgs 1-30                           |                                                   | RDS [2](https://r4ds.hadley.nz/workflow-basics)                                                                                            |
+| 2          | GG pgs 30-45                          | @mousaBuildingSocialCohesion2020                  | RDS [1](https://r4ds.hadley.nz/data-visualize), [3](https://r4ds.hadley.nz/data-transform)                                                 |
+| 3          | GG pgs 51-61                          | @gerberSocialPressureVoter2008                    | RDS [27.1-27.2](https://r4ds.hadley.nz/base-r)                                                                                             |
+| 4          | GG pgs 61-71                          | @barberDoesPartyTrump2019                         | RDS [25.1-25.2](https://r4ds.hadley.nz/functions), [26](https://r4ds.hadley.nz/iteration), [27.5](https://r4ds.hadley.nz/base-r#for-loops) |
+| 5          | @stantchevaHowRunSurveys2023          | @broockmanDurablyReducingTransphobia2016          | RDS [12](https://r4ds.hadley.nz/logicals), [13](https://r4ds.hadley.nz/numbers), [14](14)                                                  |
+| 6          | GG pgs. 71-85                         | @garbiras-diazAllEyesThem2022                     | `randomizr` [vignette](https://declaredesign.org/r/randomizr/articles/randomizr_vignette.html)                                             |
+| 7          |                                       | @kingReverseengineeringCensorshipChina2014        |                                                                                                                                            |
+| 8          | GG pgs. 95-105                        | @arecharUnderstandingCombattingMisinformation2023 |                                                                                                                                            |
+| 9          | Ch. 4 in @grovesSurveyMethodology2009 | @ahlerPartiesOurHeads2018                         | `surveyr` [vignette](http://gdfe.co/srvyr/articles/srvyr-vs-survey.html)                                                                   |
+| 10         | Ch. 6 in @grovesSurveyMethodology2009 | @cohnnate2023CitrinAward2023                      |                                                                                                                                            |
+| 11         |                                       | @jenningsElectionPollingErrors2018                |                                                                                                                                            |
 
 ## Assignments Schedule
 
@@ -122,6 +122,7 @@ assignments_data <- tribble(
         "10", "4/17", "Reading Quiz",
         "11", "4/25", "*Problem Set 5*",
         "13", "5/9", "*Problem Set 6*"
+		"14", "5/14", "*Class Project Writeup*"
 )
 
 ## function to find index of row of last row of each week

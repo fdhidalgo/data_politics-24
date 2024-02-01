@@ -5,20 +5,31 @@ title: "Syllabus"
 ::: {.columns}
 
 ::: {.column width="50%"}
+:::: {.course-details}
 ### Instructor
 
-- {{< fa user >}} [F. Daniel Hidalgo](https://www.dhidalgo.me)
-- {{< fa building >}} E53-402
-- {{< fa  envelope >}} [dhidalgo@mit.edu](mailto:dhidalgo@mit.edu)
-- {{< fa calendar >}} [Office Hours](https://fantastical.app/dhidalgo/office-hours)
+{{< fa user >}} [F. Daniel Hidalgo](https://www.dhidalgo.me)
 
+{{< fa building >}} E53-402
+
+{{< fa  envelope >}} [dhidalgo@mit.edu](mailto:dhidalgo@mit.edu)
+
+{{< fa calendar >}} [Office Hours](https://fantastical.app/dhidalgo/office-hours)
+
+::::
 :::
 ::: {.column width="50%"}
+:::: {.course-details}
 ### Course Details
-- {{< fa calendar >}} Tuesdays and Thursdays
-- {{< fa clock >}} 9:30-11:00am
-- {{< fa location-dot >}} 56-154 
-- {{< ai piazza >}} Piazza
+
+{{< fa calendar >}} Tuesdays and Thursdays
+
+{{< fa clock >}} 9:30-11:00am
+
+{{< fa location-dot >}} 56-154 
+
+{{< ai piazza >}} Piazza
+::::
 :::
 :::
 
@@ -63,7 +74,7 @@ We will assign short weekly coding tutorials that will assess your knowledge of 
 
 ### Problem Sets
 
-Competence at the design and analysis of experiments and surveys requires practice with real world datasets and the design of simulations. For the first 2/3 of the course, I will assign problem sets that will give you the opportunity to practice the methods you learn in the course. The problem sets will often involve the creation of a simulation and/or the analysis of data from an assigned reading. In the second half of the course, parts of the problem set will be devoted to the design of the class project.
+Competence at the design and analysis of experiments and surveys requires practice with real world datasets and the design of simulations. For the first 2/3 of the course, I will assign problem sets that will give you the opportunity to practice the methods you learn in the course. The problem sets will often involve the creation of a simulation and/or the analysis of data from an assigned reading. In the second half of the course, substantial parts of the problem set will be devoted to the design of the class project.
 
 I will assign *six* problem sets throughout the semester. They will be due on Thursdays by 11:59pm ET. I encourage students to work in groups, but each student must submit their own assignment. 
 
@@ -84,10 +95,10 @@ The final grade in the course will be based on the following components:
 | Coding Tutorials    | 5%                     |
 | Reading Quizzes     | 5%                     |
 | Problem Sets        | 50%                    |
-| Class Participation | 15%                    |
-| Class Project       | 25%                    |
+| Class Participation | 25%                    |
+| Class Project Writeup      | 15%                    |
 
-Class participation is based on participation in class discussions and activities, as well as participation in Piazza discussions. 
+Class participation is based on participation in class discussions, presentations, and activities, as well as participation in Piazza discussions. 
 
 ## Class Project
 
@@ -114,7 +125,11 @@ I hold regular weekly office hours on Friday afternoons. Please sign up for in-p
 
 If you run into problems that you can’t solve on your own, please use the class website on Piazza to post questions. I strongly encourage students to assist in answering questions as they come up. Unless absolutely necessary, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours.
 
-### Large Language Models
+### AI Tools
+
+The use of generative AI tools such as ChatGPT is allowed for your assignments in this class. However, a central goal of the class is to help you become independent and critical thinkers, so we discourage you from the extensive use of generative AI tools for writing code or answers to problem sets.
+
+If you do use AI-generated content in your assignments, you must clearly indicate what work is yours and what part is AI-generated through proper attribution. We also ask you provide a short one-paragraph summary at the beginning of the assignment on how you used AI tools. 
 
 ## Course Materials
 
