@@ -10,6 +10,7 @@ website:
       - syllabus.qmd
       - schedule.qmd
       - materials.qmd
+      - resources.qmd
 
 format:
   html:

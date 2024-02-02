@@ -1,0 +1,6 @@
+---
+title: "Resources"
+---
+
+## Computation
+- [Setting Up `R` and `RStudio` for the class](/resources/r_setup.qmd)

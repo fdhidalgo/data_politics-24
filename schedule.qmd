@@ -87,7 +87,7 @@ flextable(schedule_data) |>
 | 6          | GG pgs. 71-85                         | @garbiras-diazAllEyesThem2022                     | `randomizr` [vignette](https://declaredesign.org/r/randomizr/articles/randomizr_vignette.html)                                             |
 | 7          |                                       | @kingReverseengineeringCensorshipChina2014        |                                                                                                                                            |
 | 8          | GG pgs. 95-105                        | @arecharUnderstandingCombattingMisinformation2023 |                                                                                                                                            |
-| 9          | Ch. 4 in @grovesSurveyMethodology2009 | @ahlerPartiesOurHeads2018                         | `surveyr` [vignette](http://gdfe.co/srvyr/articles/srvyr-vs-survey.html)                                                                   |
+| 9          | Ch. 4 in @grovesSurveyMethodology2009 | @ahlerPartiesOurHeads2018                         | `srvyr` [vignette](http://gdfe.co/srvyr/articles/srvyr-vs-survey.html)                                                                     |
 | 10         | Ch. 6 in @grovesSurveyMethodology2009 | @cohnnate2023CitrinAward2023                      |                                                                                                                                            |
 | 11         |                                       | @jenningsElectionPollingErrors2018                |                                                                                                                                            |
 
