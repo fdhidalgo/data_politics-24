@@ -18,7 +18,7 @@
     "href": "schedule.html#readings-schedule",
     "title": "Schedule",
     "section": "Readings Schedule",
-    "text": "Readings Schedule\n\n\n\nWeek 1\nMethods\nApplied\nComputation\n\n\n\n\n1\nGG pgs 1-30\n\nRDS 2\n\n\n2\nGG pgs 30-45\nMousa (2020)\nRDS 1, 3\n\n\n3\nGG pgs 51-61\nGerber, Green, and Larimer (2008)\nRDS 27.1-27.2\n\n\n4\nGG pgs 61-71\nBarber and Pope (2019)\nRDS 25.1-25.2, 26, 27.5\n\n\n5\nStantcheva (2023)\nBroockman and Kalla (2016)\nRDS 12, 13, 14\n\n\n6\nGG pgs. 71-85\nGarbiras-Díaz and Montenegro (2022)\nrandomizr vignette\n\n\n7\n\nKing, Pan, and Roberts (2014)\n\n\n\n8\nGG pgs. 95-105\nArechar et al. (2023)\n\n\n\n9\nCh. 4 in Groves et al. (2009)\nAhler and Sood (2018)\nsurveyr vignette\n\n\n10\nCh. 6 in Groves et al. (2009)\nCohn, Nate (2023)\n\n\n\n11\n\nJennings and Wlezien (2018)"
+    "text": "Readings Schedule\n\n\n\nWeek 1\nMethods\nApplied\nComputation\n\n\n\n\n1\nGG pgs 1-30\n\nRDS 2\n\n\n2\nGG pgs 30-45\nMousa (2020)\nRDS 1, 3\n\n\n3\nGG pgs 51-61\nGerber, Green, and Larimer (2008)\nRDS 27.1-27.2\n\n\n4\nGG pgs 61-71\nBarber and Pope (2019)\nRDS 25.1-25.2, 26, 27.5\n\n\n5\nStantcheva (2023)\nBroockman and Kalla (2016)\nRDS 12, 13, 14\n\n\n6\nGG pgs. 71-85\nGarbiras-Díaz and Montenegro (2022)\nrandomizr vignette\n\n\n7\n\nKing, Pan, and Roberts (2014)\n\n\n\n8\nGG pgs. 95-105\nArechar et al. (2023)\n\n\n\n9\nCh. 4 in Groves et al. (2009)\nAhler and Sood (2018)\nsrvyr vignette\n\n\n10\nCh. 6 in Groves et al. (2009)\nCohn, Nate (2023)\n\n\n\n11\n\nJennings and Wlezien (2018)"
   },
   {
     "objectID": "schedule.html#assignments-schedule",
@@ -26,6 +26,223 @@
     "title": "Schedule",
     "section": "Assignments Schedule",
     "text": "Assignments Schedule\n\n\nAssignments ScheduleWeekDue DateAssignment22/12Reading Quiz2/14Tutorial32/21Reading QuizTutorial2/22Problem Set 142/26Reading Quiz2/28Tutorial53/4Reading Quiz3/6Tutorial3/7Problem Set 263/11Reading Quiz3/13Tutorial73/18Reading Quiz3/20Tutorial3/21Problem Set 384/1Reading Quiz4/3Tutorial94/8Reading Quiz4/10Tutorial4/11Problem Set 4104/17Reading Quiz114/25Problem Set 5135/9Problem Set 6145/14Class Project Writeup"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#data-and-politics",
+    "href": "lectures/01-introduction/introduction.html#data-and-politics",
+    "title": "Data and Politics",
+    "section": "Data and Politics",
+    "text": "Data and Politics\nWelcome to 17.831!\n\nInstructor: F. Daniel Hidalgo\nSchedule: TR 9:30-11:00"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#what-is-this-course-about",
+    "href": "lectures/01-introduction/introduction.html#what-is-this-course-about",
+    "title": "Data and Politics",
+    "section": "What is this course about?",
+    "text": "What is this course about?\n\n\nQuestion\nWhat interventions can solve pressing social and political problems?\n\n\n\nExamples\n\nReducing Intergroup prejudice\nIncreasing Political Participation\nMeasuring and Changing Discriminatory Attitudes\nFighting Electoral Fraud"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#example-can-conversations-change-attitudes",
+    "href": "lectures/01-introduction/introduction.html#example-can-conversations-change-attitudes",
+    "title": "Data and Politics",
+    "section": "Example: Can Conversations Change Attitudes?",
+    "text": "Example: Can Conversations Change Attitudes?\n\nCredit: New York Times"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#estimating-effects-of-canvassing",
+    "href": "lectures/01-introduction/introduction.html#estimating-effects-of-canvassing",
+    "title": "Data and Politics",
+    "section": "Estimating Effects of Canvassing",
+    "text": "Estimating Effects of Canvassing\n\nBroockman and Kalla (2016)"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#how-do-we-measure-social-facts",
+    "href": "lectures/01-introduction/introduction.html#how-do-we-measure-social-facts",
+    "title": "Data and Politics",
+    "section": "How do we measure social facts?",
+    "text": "How do we measure social facts?\n\n\nQuestion\nHow do we measure attitudes and behaviors in the general population?\n\n\n\nExamples\n\nDiscriminatory Attitudes\nPartisan Animosity\nSupport for democratic institutions\nBeliefs in conspiracies"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#example-presidential-polling",
+    "href": "lectures/01-introduction/introduction.html#example-presidential-polling",
+    "title": "Data and Politics",
+    "section": "Example: Presidential Polling",
+    "text": "Example: Presidential Polling\n\n538"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#research-design",
+    "href": "lectures/01-introduction/introduction.html#research-design",
+    "title": "Data and Politics",
+    "section": "Research Design",
+    "text": "Research Design\nThis class is about research design, which is a blend of:\n\nTheory and substantive knowledge\nCraft\nStatistics\nComputation\n\n\nIn particular, we will focus on the design and analysis of randomized experiments and survey samples."
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#design-based-inference",
+    "href": "lectures/01-introduction/introduction.html#design-based-inference",
+    "title": "Data and Politics",
+    "section": "Design Based Inference",
+    "text": "Design Based Inference\nRandomized experiments and surveys are examples of design based inference.\n\nWe will learn to:\n\nRead and critique scientific papers that use these approaches\nUnderstand the statistical theory underpinning this mode of inference\nAnalyze experimental and survey data using modern statistical computing tools\nDesign and implement our own studies"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#experiments-and-surveys",
+    "href": "lectures/01-introduction/introduction.html#experiments-and-surveys",
+    "title": "Data and Politics",
+    "section": "Experiments and Surveys",
+    "text": "Experiments and Surveys\n\n\n\n\n\n\n\n\n\nExperiments\nSurveys\n\n\n\n\nTarget of Inference\nCounterfactuals\nOut of Sample Observations\n\n\nThreats to Internal Validity\nOmitted Variable Bias\nNon-Response\n\n\nSelection Mechanism\nRandom Assignment\nRandom Sampling\n\n\nThreats to External Validity\nLack of Realism\nMeasurement Error\n\n\nStatistical Analysis\nModeling\nWeighting"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#substantive-topics-experiments",
+    "href": "lectures/01-introduction/introduction.html#substantive-topics-experiments",
+    "title": "Data and Politics",
+    "section": "Substantive Topics: Experiments",
+    "text": "Substantive Topics: Experiments\n\n\nWeek 2: Combating Inter-Group Prejudice\nWeek 3: Increasing Political Participation\nWeek 4: The Role of Partisanship vs Ideology in Public Opinion\nWeek 5: Political Persuasion\nWeek 6: Combating Electoral Fraud\nWeek 7: Censorship in Authoritarian Regimes"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#substantive-topics-surveys",
+    "href": "lectures/01-introduction/introduction.html#substantive-topics-surveys",
+    "title": "Data and Politics",
+    "section": "Substantive Topics: Surveys",
+    "text": "Substantive Topics: Surveys"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#computation",
+    "href": "lectures/01-introduction/introduction.html#computation",
+    "title": "Data and Politics",
+    "section": "Computation:  + ",
+    "text": "Computation:  + \n\nWe will use the R statistical environment to analyze data.\n\nIt’s free.\nExcellent for data analysis and visualization.\nRich ecosystem of packages for social science and statistics.\nInfrastructure for inter-mingling code, data, and text.\n\nUsed extensively in Academia, media, and industry\nWe will use RStudio as our development environment."
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#should-i-take-this-course",
+    "href": "lectures/01-introduction/introduction.html#should-i-take-this-course",
+    "title": "Data and Politics",
+    "section": "Should I take this course?",
+    "text": "Should I take this course?\n\nPrerequisites: NONE\nInterest in using data to answer social science questions\nWilling to work consistently throughout semester and learn new tools\nMaterial useful to students interested in public policy, political science, economics, computational social science, etc"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#flow-of-the-course",
+    "href": "lectures/01-introduction/introduction.html#flow-of-the-course",
+    "title": "Data and Politics",
+    "section": "Flow of the Course",
+    "text": "Flow of the Course\n\n\nLectures\n\nI generally will not lecture during class sessions\nClass sessions will be a mix of:\n\nDiscussion\nLive coding\nClass activities\n\nBring laptop to class!\n\n\n\n\nHome\n\nWatch lecture videos\nRead assigned readings\nComplete:\n\nProblem Sets\nReading quizzes and coding tutorials\nFinal Project"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#assignments",
+    "href": "lectures/01-introduction/introduction.html#assignments",
+    "title": "Data and Politics",
+    "section": "Assignments",
+    "text": "Assignments\n\n\nProblem Sets\n\nFocused on data analysis and simulations\nRoughly every two weeks\nDrop lowest grade\n\n\n\nReading Quizzes and Coding Tutorials\n\nGenerally due weekly\n\nQuizzes due before Tuesday’s class\nCoding tutorials due before Thursday’s class\n\nGraded on completion\n\n\n\n\n\nClass Project\n\nWe will collectively design and implement an experiment embedded in a survey\nYou will:\n\nPropose ideas\nWrite a questionnaire\nWrite a pre-analysis plan\nAnalyze and write up the results\n\nMostly done in second half of semester"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#grading-and-help",
+    "href": "lectures/01-introduction/introduction.html#grading-and-help",
+    "title": "Data and Politics",
+    "section": "Grading and Help",
+    "text": "Grading and Help"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#what-you-should-do-today",
+    "href": "lectures/01-introduction/introduction.html#what-you-should-do-today",
+    "title": "Data and Politics",
+    "section": "What You Should Do Today",
+    "text": "What You Should Do Today"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#references",
+    "href": "lectures/01-introduction/introduction.html#references",
+    "title": "Data and Politics",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\n\n\nBroockman, David, and Joshua Kalla. 2016. “Durably Reducing Transphobia: A Field Experiment on Door-to-Door Canvassing.” Science 352 (6282): 220–24. https://doi.org/10.1126/science.aad9713."
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "F. Daniel Hidalgo\n E53-402\n dhidalgo@mit.edu\n Office Hours\n\n\n\n\n Tuesdays and Thursdays\n 9:30-11:00am\n 56-154\n Piazza"
+  },
+  {
+    "objectID": "syllabus.html#course-objectives",
+    "href": "syllabus.html#course-objectives",
+    "title": "Syllabus",
+    "section": "Course Objectives",
+    "text": "Course Objectives\nMany of the most pressing social problems have political causes and consequences. Rather than just passively observing these problems, social scientists have developed a range of tools that involve interventions and data collection to understand and address these problems. This course will focus on two essential data-intensive tools for understanding social dynamics: experiments and surveys. Experiments allow us to understand the causal effects of policies and interventions, while surveys allow us to measure difficult-to-observe attitudes and behaviors in a population. This course will provide an introduction to the design and analysis of experiments and surveys through the lens of innovative research in political science and public policy. The course will focus on various substantive topics, including discriminatory attitudes, political participation, combatting voter fraud, and misinformation. Students will analyze actual data and design and field their survey experiment on a chosen topic.\nBy the end of this course, students will be able to:\n\nDescribe how experimental and survey methods can be used to understand pressing social problems.\nDesign surveys and experiments that are applicable to a variety of social settings.\nUse statistical principles to evaluate the quality of survey and experimental designs.\nApply statistical models to experimental and survey data.\nAnalyze data using modern statistical computing tools, in particular the statistical programming language R.\n\n\nExpectations\nIn this course, you will be expected to:\n\nComplete six problem sets.\nComplete regular reading quizzes.\nComplete eight weekly tutorials.\nParticipate in in-person and online class discussions.\nDesign and implement a survey experiment with a diverse sample.\n\n\n\nPrerequisites\nNo prerequisites will be assumed."
+  },
+  {
+    "objectID": "syllabus.html#course-structure",
+    "href": "syllabus.html#course-structure",
+    "title": "Syllabus",
+    "section": "Course Structure",
+    "text": "Course Structure\nThe basic cadence of the course will be as follows, though there may be small differences depending on the week:\n\nMonday: Complete reading, watch course lectures, and complete reading quiz.\nTuesday: Class meets.\nWednesday: Complete coding tutorial, submit assignments (if due)\nThursday: Class meets; assignments are posted\n\n\nClass Lectures\nClass lectures will be recorded and posted on the course canvas website. You are expected to watch the lectures before class meetings on Tuesdays. At class meetings, there will be an opportunity to ask questions about lecture material and readings\n\n\nTutorials\nWe will assign short weekly coding tutorials that will assess your knowledge of the class materials and prepare you for the in-class activities. Tutorials will primarily be graded based on completion and not whether the answers are correct. Tutorials will generally be due on Wednesday by 11:59pm ET.\n\n\nProblem Sets\nCompetence at the design and analysis of experiments and surveys requires practice with real world datasets and the design of simulations. For the first 2/3 of the course, I will assign problem sets that will give you the opportunity to practice the methods you learn in the course. The problem sets will often involve the creation of a simulation and/or the analysis of data from an assigned reading. In the second half of the course, substantial parts of the problem set will be devoted to the design of the class project.\nI will assign six problem sets throughout the semester. They will be due on Thursdays by 11:59pm ET. I encourage students to work in groups, but each student must submit their own assignment.\n\n\n\n\n\n\nLowest Homework Grade is Dropped\n\n\n\nWhen calculating the overall homework grade, I will drop the lowest homework grade. This is to account for unexpected events that may prevent you from completing an assignment on time.\n\n\n\n\nOnline Forum\nWe will use Piazza for class discussions. If you are having trouble with a question on a problem set or on a reading, please post your question using Piazza. I strongly encourage students to assist in answering questions as they come up. Except under unusual circumstances, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours. The site is: https://piazza.com/mit/spring2024/17831/home\n\n\nGrading\nThe final grade in the course will be based on the following components:\n\n\n\nCategory\nPercent of Final Grade\n\n\n\n\nCoding Tutorials\n5%\n\n\nReading Quizzes\n5%\n\n\nProblem Sets\n50%\n\n\nClass Participation\n25%\n\n\nClass Project Writeup\n15%\n\n\n\nClass participation is based on participation in class discussions, presentations, and activities, as well as participation in Piazza discussions."
+  },
+  {
+    "objectID": "syllabus.html#class-project",
+    "href": "syllabus.html#class-project",
+    "title": "Syllabus",
+    "section": "Class Project",
+    "text": "Class Project\nFor the final project, we will collectively design and implement an experiment embedded in a short survey. In the second half of the semester, we will devote time each week to design the survey and experiment. The goal of this project is to give students experience crafting a research design and collecting real data on a question of interest. The data will be collected on US adults through a crowd-sourcing platform. While we will collectively design the survey and experiment, each student will be responsible for pre-registering their analysis, analyzing the data and writing up the results on their own.\nStudents in the class will:\n\nPropose a research question.\nDesign an intervention suitable for a survey experiment.\nWrite a questionnaire.\nDesign a sampling plan and analysis strategy sufficient for answering their research question.\nPre-register their study.\nAnalyze and write up the results of the study."
+  },
+  {
+    "objectID": "syllabus.html#course-policies",
+    "href": "syllabus.html#course-policies",
+    "title": "Syllabus",
+    "section": "Course Policies",
+    "text": "Course Policies\n\nLate Policy\nFor problem sets submitted late, we will deduct 10% of the grade for each day late. Problem sets will not be accepted more than three days after the due date. This penalty will be waived in the case of a documented medical or family emergency.\n\n\nOffice Hours and Getting Help\nI hold regular weekly office hours on Friday afternoons. Please sign up for in-person or zoom office hours at the following link: https://fantastical.app/dhidalgo/office-hours.\nIf you run into problems that you can’t solve on your own, please use the class website on Piazza to post questions. I strongly encourage students to assist in answering questions as they come up. Unless absolutely necessary, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours.\n\n\nAI Tools\nThe use of generative AI tools such as ChatGPT is allowed for your assignments in this class. However, a central goal of the class is to help you become independent and critical thinkers, so we discourage you from the extensive use of generative AI tools for writing code or answers to problem sets.\nIf you do use AI-generated content in your assignments, you must clearly indicate what work is yours and what part is AI-generated through proper attribution. We also ask you provide a short one-paragraph summary at the beginning of the assignment on how you used AI tools."
+  },
+  {
+    "objectID": "syllabus.html#course-materials",
+    "href": "syllabus.html#course-materials",
+    "title": "Syllabus",
+    "section": "Course Materials",
+    "text": "Course Materials\n\nReadings\nAlmost all readings for the course are available online and linked from the course website in the schedule page or in each week’s materials page page.\nThe one exception is that you should purchase the following book:\n\n\n\n\n\n\nRequired Purchase\n\n\n\nGerber, Alan S., and Donald P. Green. Field Experiments: Design, Analysis, and Interpretation. New York London: W. W. Norton & Company, 2012.\n\n\n\n\nComputing\nWe will use R for all of the data analysis in this course. R is a free, open-source statistical programming language that is widely used in the social sciences. We will use the RStudio integrated development environment (IDE) to write and execute R code. RStudio is also free and open-source.\nYou should install R on your own computer, but to forestall any installation problems, we will provide the option to use the Posit Cloud service for the first few weeks of the course. This service allows you to run R and RStudio in your web browser. This cloud service can be resource constrained, however, so it is strongly recommended that you install R and RStudio on your own computer as soon as possible."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data and Politics",
+    "section": "",
+    "text": "Welcome to the course website of 17.831 Data and Politics. This course is taught by F. Daniel Hidalgo at MIT in the Spring of 2024."
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "Data and Politics",
+    "section": "Instructor",
+    "text": "Instructor\n\n F. Daniel Hidalgo\n E53-402\n dhidalgo@mit.edu"
+  },
+  {
+    "objectID": "index.html#course-details",
+    "href": "index.html#course-details",
+    "title": "Data and Politics",
+    "section": "Course Details",
+    "text": "Course Details\n\n Tuesdays and Thursdays\n 9:30-11:00am\n 56-154"
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "Data and Politics",
+    "section": "Contact",
+    "text": "Contact\n\n Office Hours\n Piazza"
+  },
+  {
+    "objectID": "resources/r_setup.html",
+    "href": "resources/r_setup.html",
+    "title": "Setting up R and RStudio",
+    "section": "",
+    "text": "Go to the CRAN website and click on the download link for your operating system (Windows, Mac, or Linux).\n\n\nMacWindows\n\n\nClick on the R-X.X.X-arm64.pkg or R-X.X.X-x86_64.pkg link to download the installer. The precise file name depends on the latest version and whether you have an Intel processor or a newer ARM processor such as the M1, i.e. R-4.3.2-arm64.pkg. Once the download is complete, open the file and follow the installation instructions.\n\n\n\n\n\n\nTip\n\n\n\nTo determine whether you have an Intel or ARM processor, click on the Apple logo in the top left corner of your screen, select “About This Mac”, and look for the line that indicates “Chip” or “Processor”. If the line says something like “Apple M1” or “Apple M1 Pro”, you have an ARM processor. If it says something like “Intel Core i5” or “Intel Core i7”, you have an Intel processor.\n\n\n\n\nClick on the link that says base. Then click on the “Download R-X.X.X for Windows” link to download the installer. Once the download is complete, open the file and follow the installation instructions.\n\n\n\n\nOnce you have installed R, go to the download page for RStudio Desktop and click on the button that says “Download RStudio Desktop”. Once the download is complete, open the file and follow the installation instructions.\n\n\n\nThere are a few packages that we will use throughout the course. You can install them by starting RStudio and running the following commands in the console (lower left panel by default):\n\npackages &lt;- c(\n        \"tidyverse\", \"learnr\", \"estimatr\",\n        \"randomizr\", \"srvyr\"\n)\ninstall.packages(packages, repos = \"http://cran.rstudio.com\")\n\nFor assignments, we’ll need to produce PDFs from R and that requires a LaTeX distribution. We recommend using tinytex to install a minimal LaTeX distribution if you haven’t already installed LaTex on your system. You can install it by running the following command in the console:\n\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex() # install TinyTeX"
+  },
+  {
+    "objectID": "resources/r_setup.html#installing-required-r-packages",
+    "href": "resources/r_setup.html#installing-required-r-packages",
+    "title": "Setting up R and RStudio",
+    "section": "",
+    "text": "There are a few packages that we will use throughout the course. You can install them by starting RStudio and running the following commands in the console (lower left panel by default):\n\npackages &lt;- c(\n        \"tidyverse\", \"learnr\", \"estimatr\",\n        \"randomizr\", \"srvyr\"\n)\ninstall.packages(packages, repos = \"http://cran.rstudio.com\")\n\nFor assignments, we’ll need to produce PDFs from R and that requires a LaTeX distribution. We recommend using tinytex to install a minimal LaTeX distribution if you haven’t already installed LaTex on your system. You can install it by running the following command in the console:\n\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex() # install TinyTeX"
+  },
+  {
+    "objectID": "materials.html",
+    "href": "materials.html",
+    "title": "Materials",
+    "section": "",
+    "text": "Course Introduction"
   },
   {
     "objectID": "lectures/00-template/00-template.html#example-slide",
@@ -168,206 +385,17 @@
     "text": "Appendix\n\n\n\n\nTable 1: Summary of the base R attitude dataset\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnique (#)\nMissing (%)\nMean\nSD\nMin\nMedian\nMax\n\n\n\n\n\nrating\n22\n0\n64.6\n12.2\n40.0\n65.5\n85.0\n\n\n\n   \n\n\n\ncomplaints\n23\n0\n66.6\n13.3\n37.0\n65.0\n90.0\n\n\n\n   \n\n\n\nprivileges\n24\n0\n53.1\n12.2\n30.0\n51.5\n83.0\n\n\n\n   \n\n\n\nlearning\n23\n0\n56.4\n11.7\n34.0\n56.5\n75.0\n\n\n\n   \n\n\n\nraises\n21\n0\n64.6\n10.4\n43.0\n63.5\n88.0\n\n\n\n   \n\n\n\ncritical\n21\n0\n74.8\n9.9\n49.0\n77.5\n92.0\n\n\n\n   \n\n\n\nadvance\n20\n0\n42.9\n10.3\n25.0\n41.0\n72.0\n\n\n\n   \n\n\n\n\n\n\n\n\n\n\n\nBack to main"
   },
   {
-    "objectID": "materials.html",
-    "href": "materials.html",
-    "title": "Materials",
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
     "section": "",
-    "text": "Course Introduction"
+    "text": "Setting Up R and RStudio for the class"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Data and Politics",
+    "objectID": "resources.html#computation",
+    "href": "resources.html#computation",
+    "title": "Resources",
     "section": "",
-    "text": "Welcome to the course website of 17.831 Data and Politics. This course is taught by F. Daniel Hidalgo at MIT in the Spring of 2024."
-  },
-  {
-    "objectID": "index.html#instructor",
-    "href": "index.html#instructor",
-    "title": "Data and Politics",
-    "section": "Instructor",
-    "text": "Instructor\n\n F. Daniel Hidalgo\n E53-402\n dhidalgo@mit.edu"
-  },
-  {
-    "objectID": "index.html#course-details",
-    "href": "index.html#course-details",
-    "title": "Data and Politics",
-    "section": "Course Details",
-    "text": "Course Details\n\n Tuesdays and Thursdays\n 9:30-11:00am\n 56-154"
-  },
-  {
-    "objectID": "index.html#contact",
-    "href": "index.html#contact",
-    "title": "Data and Politics",
-    "section": "Contact",
-    "text": "Contact\n\n Office Hours\n Piazza"
-  },
-  {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "F. Daniel Hidalgo\n E53-402\n dhidalgo@mit.edu\n Office Hours\n\n\n\n\n Tuesdays and Thursdays\n 9:30-11:00am\n 56-154\n Piazza"
-  },
-  {
-    "objectID": "syllabus.html#course-objectives",
-    "href": "syllabus.html#course-objectives",
-    "title": "Syllabus",
-    "section": "Course Objectives",
-    "text": "Course Objectives\nMany of the most pressing social problems have political causes and consequences. Rather than just passively observing these problems, social scientists have developed a range of tools that involve interventions and data collection to understand and address these problems. This course will focus on two essential data-intensive tools for understanding social dynamics: experiments and surveys. Experiments allow us to understand the causal effects of policies and interventions, while surveys allow us to measure difficult-to-observe attitudes and behaviors in a population. This course will provide an introduction to the design and analysis of experiments and surveys through the lens of innovative research in political science and public policy. The course will focus on various substantive topics, including discriminatory attitudes, political participation, combatting voter fraud, and misinformation. Students will analyze actual data and design and field their survey experiment on a chosen topic.\nBy the end of this course, students will be able to:\n\nDescribe how experimental and survey methods can be used to understand pressing social problems.\nDesign surveys and experiments that are applicable to a variety of social settings.\nUse statistical principles to evaluate the quality of survey and experimental designs.\nApply statistical models to experimental and survey data.\nAnalyze data using modern statistical computing tools, in particular the statistical programming language R.\n\n\nExpectations\nIn this course, you will be expected to:\n\nComplete six problem sets.\nComplete regular reading quizzes.\nComplete eight weekly tutorials.\nParticipate in in-person and online class discussions.\nDesign and implement a survey experiment with a diverse sample.\n\n\n\nPrerequisites\nNo prerequisites will be assumed."
-  },
-  {
-    "objectID": "syllabus.html#course-structure",
-    "href": "syllabus.html#course-structure",
-    "title": "Syllabus",
-    "section": "Course Structure",
-    "text": "Course Structure\nThe basic cadence of the course will be as follows, though there may be small differences depending on the week:\n\nMonday: Complete reading, watch course lectures, and complete reading quiz.\nTuesday: Class meets.\nWednesday: Complete coding tutorial, submit assignments (if due)\nThursday: Class meets; assignments are posted\n\n\nClass Lectures\nClass lectures will be recorded and posted on the course canvas website. You are expected to watch the lectures before class meetings on Tuesdays. At class meetings, there will be an opportunity to ask questions about lecture material and readings\n\n\nTutorials\nWe will assign short weekly coding tutorials that will assess your knowledge of the class materials and prepare you for the in-class activities. Tutorials will primarily be graded based on completion and not whether the answers are correct. Tutorials will generally be due on Wednesday by 11:59pm ET.\n\n\nProblem Sets\nCompetence at the design and analysis of experiments and surveys requires practice with real world datasets and the design of simulations. For the first 2/3 of the course, I will assign problem sets that will give you the opportunity to practice the methods you learn in the course. The problem sets will often involve the creation of a simulation and/or the analysis of data from an assigned reading. In the second half of the course, substantial parts of the problem set will be devoted to the design of the class project.\nI will assign six problem sets throughout the semester. They will be due on Thursdays by 11:59pm ET. I encourage students to work in groups, but each student must submit their own assignment.\n\n\n\n\n\n\nLowest Homework Grade is Dropped\n\n\n\nWhen calculating the overall homework grade, I will drop the lowest homework grade. This is to account for unexpected events that may prevent you from completing an assignment on time.\n\n\n\n\nOnline Forum\nWe will use Piazza for class discussions. If you are having trouble with a question on a problem set or on a reading, please post your question using Piazza. I strongly encourage students to assist in answering questions as they come up. Except under unusual circumstances, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours. The site is: https://piazza.com/mit/spring2024/17831/home\n\n\nGrading\nThe final grade in the course will be based on the following components:\n\n\n\nCategory\nPercent of Final Grade\n\n\n\n\nCoding Tutorials\n5%\n\n\nReading Quizzes\n5%\n\n\nProblem Sets\n50%\n\n\nClass Participation\n25%\n\n\nClass Project Writeup\n15%\n\n\n\nClass participation is based on participation in class discussions, presentations, and activities, as well as participation in Piazza discussions."
-  },
-  {
-    "objectID": "syllabus.html#class-project",
-    "href": "syllabus.html#class-project",
-    "title": "Syllabus",
-    "section": "Class Project",
-    "text": "Class Project\nFor the final project, we will collectively design and implement an experiment embedded in a short survey. In the second half of the semester, we will devote time each week to design the survey and experiment. The goal of this project is to give students experience crafting a research design and collecting real data on a question of interest. The data will be collected on US adults through a crowd-sourcing platform. While we will collectively design the survey and experiment, each student will be responsible for pre-registering their analysis, analyzing the data and writing up the results on their own.\nStudents in the class will:\n\nPropose a research question.\nDesign an intervention suitable for a survey experiment.\nWrite a questionnaire.\nDesign a sampling plan and analysis strategy sufficient for answering their research question.\nPre-register their study.\nAnalyze and write up the results of the study."
-  },
-  {
-    "objectID": "syllabus.html#course-policies",
-    "href": "syllabus.html#course-policies",
-    "title": "Syllabus",
-    "section": "Course Policies",
-    "text": "Course Policies\n\nLate Policy\nFor problem sets submitted late, we will deduct 10% of the grade for each day late. Problem sets will not be accepted more than three days after the due date. This penalty will be waived in the case of a documented medical or family emergency.\n\n\nOffice Hours and Getting Help\nI hold regular weekly office hours on Friday afternoons. Please sign up for in-person or zoom office hours at the following link: https://fantastical.app/dhidalgo/office-hours.\nIf you run into problems that you can’t solve on your own, please use the class website on Piazza to post questions. I strongly encourage students to assist in answering questions as they come up. Unless absolutely necessary, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours.\n\n\nAI Tools\nThe use of generative AI tools such as ChatGPT is allowed for your assignments in this class. However, a central goal of the class is to help you become independent and critical thinkers, so we discourage you from the extensive use of generative AI tools for writing code or answers to problem sets.\nIf you do use AI-generated content in your assignments, you must clearly indicate what work is yours and what part is AI-generated through proper attribution. We also ask you provide a short one-paragraph summary at the beginning of the assignment on how you used AI tools."
-  },
-  {
-    "objectID": "syllabus.html#course-materials",
-    "href": "syllabus.html#course-materials",
-    "title": "Syllabus",
-    "section": "Course Materials",
-    "text": "Course Materials\n\nReadings\nAlmost all readings for the course are available online and linked from the course website in the schedule page or in each week’s materials page page.\nThe one exception is that you should purchase the following book:\n\n\n\n\n\n\nRequired Purchase\n\n\n\nGerber, Alan S., and Donald P. Green. Field Experiments: Design, Analysis, and Interpretation. New York London: W. W. Norton & Company, 2012.\n\n\n\n\nComputing\nWe will use R for all of the data analysis in this course. R is a free, open-source statistical programming language that is widely used in the social sciences. We will use the RStudio integrated development environment (IDE) to write and execute R code. RStudio is also free and open-source.\nYou should install R on your own computer, but to forestall any installation problems, we will provide the option to use the Posit Cloud service for the first few weeks of the course. This service allows you to run R and RStudio in your web browser. This cloud service can be resource constrained, however, so it is strongly recommended that you install R and RStudio on your own computer as soon as possible."
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#data-and-politics",
-    "href": "lectures/01-introduction/introduction.html#data-and-politics",
-    "title": "Data and Politics",
-    "section": "Data and Politics",
-    "text": "Data and Politics\nWelcome to 17.831!\n\nInstructor: F. Daniel Hidalgo\nSchedule: TR 9:30-11:00"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#what-is-this-course-about",
-    "href": "lectures/01-introduction/introduction.html#what-is-this-course-about",
-    "title": "Data and Politics",
-    "section": "What is this course about?",
-    "text": "What is this course about?\n\n\nQuestion\nWhat interventions can solve pressing social and political problems?\n\n\n\nExamples\n\nReducing Intergroup prejudice\nIncreasing Political Participation\nMeasuring and Changing Discriminatory Attitudes\nFighting Electoral Fraud"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#example-can-conversations-change-attitudes",
-    "href": "lectures/01-introduction/introduction.html#example-can-conversations-change-attitudes",
-    "title": "Data and Politics",
-    "section": "Example: Can Conversations Change Attitudes?",
-    "text": "Example: Can Conversations Change Attitudes?\n\nCredit: New York Times"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#estimating-effects-of-canvassing",
-    "href": "lectures/01-introduction/introduction.html#estimating-effects-of-canvassing",
-    "title": "Data and Politics",
-    "section": "Estimating Effects of Canvassing",
-    "text": "Estimating Effects of Canvassing\n\nBroockman and Kalla (2016)"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#how-do-we-measure-social-facts",
-    "href": "lectures/01-introduction/introduction.html#how-do-we-measure-social-facts",
-    "title": "Data and Politics",
-    "section": "How do we measure social facts?",
-    "text": "How do we measure social facts?\n\n\nQuestion\nHow do we measure attitudes and behaviors in the general population?\n\n\n\nExamples\n\nDiscriminatory Attitudes\nPartisan Animosity\nSupport for democratic institutions\nBeliefs in conspiracies"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#example-presidential-polling",
-    "href": "lectures/01-introduction/introduction.html#example-presidential-polling",
-    "title": "Data and Politics",
-    "section": "Example: Presidential Polling",
-    "text": "Example: Presidential Polling\n\n538"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#research-design",
-    "href": "lectures/01-introduction/introduction.html#research-design",
-    "title": "Data and Politics",
-    "section": "Research Design",
-    "text": "Research Design\nThis class is about research design, which is a blend of:\n\nTheory and substantive knowledge\nCraft\nStatistics\nComputation\n\n\nIn particular, we will focus on the design and analysis of randomized experiments and survey samples."
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#design-based-inference",
-    "href": "lectures/01-introduction/introduction.html#design-based-inference",
-    "title": "Data and Politics",
-    "section": "Design Based Inference",
-    "text": "Design Based Inference\nRandomized experiments and surveys are examples of design based inference.\n\nWe will learn to:\n\nRead and critique scientific papers that use these approaches\nUnderstand the statistical theory underpinning this mode of inference\nAnalyze experimental and survey data using modern statistical computing tools\nDesign and implement our own studies"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#experiments-and-surveys",
-    "href": "lectures/01-introduction/introduction.html#experiments-and-surveys",
-    "title": "Data and Politics",
-    "section": "Experiments and Surveys",
-    "text": "Experiments and Surveys\n\n\n\n\n\n\n\n\n\nExperiments\nSurveys\n\n\n\n\nTarget of Inference\nCounterfactuals\nOut of Sample Observations\n\n\nThreats to Internal Validity\nOmitted Variable Bias\nNon-Response\n\n\nSelection Mechanism\nRandom Assignment\nRandom Sampling\n\n\nThreats to External Validity\nLack of Realism\nMeasurement Error\n\n\nStatistical Analysis\nModeling\nWeighting"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#substantive-topics-experiments",
-    "href": "lectures/01-introduction/introduction.html#substantive-topics-experiments",
-    "title": "Data and Politics",
-    "section": "Substantive Topics: Experiments",
-    "text": "Substantive Topics: Experiments\n\n\nWeek 2: Combating Inter-Group Prejudice\nWeek 3: Increasing Political Participation\nWeek 4: The Role of Partisanship vs Ideology in Public Opinion\nWeek 5: Political Persuasion\nWeek 6: Combating Electoral Fraud\nWeek 7: Censorship in Authoritarian Regimes"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#substantive-topics-surveys",
-    "href": "lectures/01-introduction/introduction.html#substantive-topics-surveys",
-    "title": "Data and Politics",
-    "section": "Substantive Topics: Surveys",
-    "text": "Substantive Topics: Surveys"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#computation",
-    "href": "lectures/01-introduction/introduction.html#computation",
-    "title": "Data and Politics",
-    "section": "Computation:  + ",
-    "text": "Computation:  + \n\nWe will use the R statistical environment to analyze data.\n\nIt’s free.\nExcellent for data analysis and visualization.\nRich ecosystem of packages for social science and statistics.\nInfrastructure for inter-mingling code, data, and text.\n\nUsed extensively in Academia, media, and industry\nWe will use RStudio as our development environment."
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#should-i-take-this-course",
-    "href": "lectures/01-introduction/introduction.html#should-i-take-this-course",
-    "title": "Data and Politics",
-    "section": "Should I take this course?",
-    "text": "Should I take this course?\n\nPrerequisites: NONE\nInterest in using data to answer social science questions\nWilling to work consistently throughout semester and learn new tools\nMaterial useful to students interested in public policy, political science, economics, computational social science, etc"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#flow-of-the-course",
-    "href": "lectures/01-introduction/introduction.html#flow-of-the-course",
-    "title": "Data and Politics",
-    "section": "Flow of the Course",
-    "text": "Flow of the Course\n\n\nLectures\n\nI generally will not lecture during class sessions\nClass sessions will be a mix of:\n\nDiscussion\nLive coding\nClass activities\n\nBring laptop to class!\n\n\n\n\nHome\n\nWatch lecture videos\nRead assigned readings\nComplete:\n\nProblem Sets\nReading quizzes and coding tutorials\nFinal Project"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#assignments",
-    "href": "lectures/01-introduction/introduction.html#assignments",
-    "title": "Data and Politics",
-    "section": "Assignments",
-    "text": "Assignments\n\n\nProblem Sets\n\nFocused on data analysis and simulations\nRoughly every two weeks\nDrop lowest grade\n\n\n\nReading Quizzes and Coding Tutorials\n\nGenerally due weekly\n\nQuizzes due before Tuesday’s class\nCoding tutorials due before Thursday’s class\n\nGraded on completion\n\n\n\n\n\nClass Project\n\nWe will collectively design and implement an experiment embedded in a survey\nYou will:\n\nPropose ideas\nWrite a questionnaire\nWrite a pre-analysis plan\nAnalyze and write up the results\n\nMostly done in second half of semester"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#grading-and-help",
-    "href": "lectures/01-introduction/introduction.html#grading-and-help",
-    "title": "Data and Politics",
-    "section": "Grading and Help",
-    "text": "Grading and Help"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#what-you-should-do-today",
-    "href": "lectures/01-introduction/introduction.html#what-you-should-do-today",
-    "title": "Data and Politics",
-    "section": "What You Should Do Today",
-    "text": "What You Should Do Today"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#references",
-    "href": "lectures/01-introduction/introduction.html#references",
-    "title": "Data and Politics",
-    "section": "References",
-    "text": "References\n\n\n\n\n\n\n\n\nBroockman, David, and Joshua Kalla. 2016. “Durably Reducing Transphobia: A Field Experiment on Door-to-Door Canvassing.” Science 352 (6282): 220–24. https://doi.org/10.1126/science.aad9713."
+    "text": "Setting Up R and RStudio for the class"
   }
 ]

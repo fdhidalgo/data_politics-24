@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://fdhidalgo.github.io/data_politics-24/schedule.html</loc>
+    <lastmod>2024-02-02T16:28:23.459Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/lectures/01-introduction/introduction.html</loc>
+    <lastmod>2024-02-01T16:34:30.399Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/syllabus.html</loc>
+    <lastmod>2024-02-01T19:22:37.409Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/index.html</loc>
+    <lastmod>2024-02-02T00:48:40.239Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/materials/week_1.html</loc>
+    <lastmod>2024-02-01T16:34:30.400Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/resources/r_setup.html</loc>
+    <lastmod>2024-02-02T16:51:41.803Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/materials.html</loc>
     <lastmod>2024-02-01T16:34:30.400Z</lastmod>
   </url>
   <url>
@@ -9,23 +33,7 @@
     <lastmod>2024-02-01T16:34:30.389Z</lastmod>
   </url>
   <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/materials.html</loc>
-    <lastmod>2024-02-01T16:34:30.400Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/materials/week_1.html</loc>
-    <lastmod>2024-02-01T16:34:30.400Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/index.html</loc>
-    <lastmod>2024-02-01T16:34:30.388Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/syllabus.html</loc>
-    <lastmod>2024-02-01T19:22:37.409Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/lectures/01-introduction/introduction.html</loc>
-    <lastmod>2024-02-01T16:34:30.399Z</lastmod>
+    <loc>https://fdhidalgo.github.io/data_politics-24/resources.html</loc>
+    <lastmod>2024-02-02T16:14:58.999Z</lastmod>
   </url>
 </urlset>
