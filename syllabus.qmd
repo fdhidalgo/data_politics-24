@@ -70,7 +70,7 @@ The basic cadence of the course will be as follows, though there may be small di
 
 ### Class Lectures
 
-Class lectures will be recorded and posted on the course canvas website. You are expected to watch the lectures before class meetings on Tuesdays. At class meetings, there will be an opportunity to ask questions about lecture material and readings
+Class lectures will be a mix of traditional lectures, in-class activities, and group discussions. In addition to in-class lectures, I may occasionally post a recorded lecture.  During lecture, we will often be working with data and code, so please bring a computer to class, if possible. 
 
 ### Tutorials
 
