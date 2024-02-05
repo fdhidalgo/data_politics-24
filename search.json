@@ -247,9 +247,51 @@
   {
     "objectID": "materials/week_1.html",
     "href": "materials/week_1.html",
-    "title": "Week 1",
+    "title": "Week 1: Course Introduction",
     "section": "",
-    "text": "Syllabus\nSchedule\nSlides:\n\nCourse Introduction\n\nInstalling R and Rstudio"
+    "text": "Syllabus\nSchedule"
+  },
+  {
+    "objectID": "materials/week_1.html#readings",
+    "href": "materials/week_1.html#readings",
+    "title": "Week 1: Course Introduction",
+    "section": "",
+    "text": "Syllabus\nSchedule"
+  },
+  {
+    "objectID": "materials/week_1.html#slides",
+    "href": "materials/week_1.html#slides",
+    "title": "Week 1: Course Introduction",
+    "section": "Slides",
+    "text": "Slides\n\nCourse Introduction"
+  },
+  {
+    "objectID": "materials/week_1.html#resources",
+    "href": "materials/week_1.html#resources",
+    "title": "Week 1: Course Introduction",
+    "section": "Resources",
+    "text": "Resources\n\nInstalling R and Rstudio"
+  },
+  {
+    "objectID": "materials/week_1.html#assignments",
+    "href": "materials/week_1.html#assignments",
+    "title": "Week 1: Course Introduction",
+    "section": "Assignments",
+    "text": "Assignments\n\nTutorial 1"
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Tutorial 1: Introduction to R and Data Visualization`"
+  },
+  {
+    "objectID": "assignments.html#tutorials",
+    "href": "assignments.html#tutorials",
+    "title": "Assignments",
+    "section": "",
+    "text": "Tutorial 1: Introduction to R and Data Visualization`"
   },
   {
     "objectID": "resources/r_setup.html",
