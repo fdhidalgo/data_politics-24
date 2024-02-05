@@ -1,9 +1,17 @@
 ---
-title: "Week 1"
+title: "Week 1: Course Introduction"
 ---
 
+## Readings
 - [Syllabus](../syllabus.qmd)
 - [Schedule](../schedule.qmd)
-- Slides: 
+
+## Slides
+
   - [Course Introduction](../lectures/01-introduction/introduction.qmd)
-- [Installing `R` and Rstudio](../resources/r_setup.qmd)
+  
+## Resources
+  - [Installing `R` and Rstudio](../resources/r_setup.qmd)
+
+## Assignments
+- [Tutorial 1](https://dhidalgo.shinyapps.io/Tutorial-1/)

@@ -1,0 +1,6 @@
+---
+title: "Assignments"
+---
+
+## Tutorials
+- [Tutorial 1: Introduction to `R` and Data Visualization`](https://dhidalgo.shinyapps.io/Tutorial-1/)

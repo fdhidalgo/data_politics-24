@@ -2,28 +2,30 @@
 title: "Setting up `R` and RStudio"
 editor: 
   render-on-save: true
- 
 ---
 
 # Installing `R` and `RStudio` on your computer
 
-1. Go to the [CRAN website](https://cloud.r-project.org) and click on the download link for your operating system (Windows, Mac, or Linux).
+1.  Go to the [CRAN website](https://cloud.r-project.org) and click on the download link for your operating system (Windows, Mac, or Linux).
 
-::: {.panel-tabset}
+::: panel-tabset
 ## Mac
+
 Click on the `R-X.X.X-arm64.pkg` or `R-X.X.X-x86_64.pkg` link to download the installer. The precise file name depends on the latest version and whether you have an Intel processor or a newer ARM processor such as the M1, i.e. `R-4.3.2-arm64.pkg`. Once the download is complete, open the file and follow the installation instructions.
 
-:::: {.callout-tip}
+::: callout-tip
 To determine whether you have an *Intel* or *ARM* processor, click on the Apple logo in the top left corner of your screen, select "About This Mac", and look for the line that indicates "Chip" or "Processor". If the line says something like "Apple M1" or "Apple M1 Pro", you have an ARM processor. If it says something like "Intel Core i5" or "Intel Core i7", you have an Intel processor.
-::::
+:::
 
 ## Windows
+
 Click on the link that says [base](https://cloud.r-project.org/bin/windows/base/). Then click on the "Download R-X.X.X for Windows" link to download the installer. Once the download is complete, open the file and follow the installation instructions.
 :::
 
-2. Once you have installed `R`, go to the [download](https://posit.co/download/rstudio-desktop/) page for RStudio Desktop and click on the button that says  "Download RStudio Desktop". Once the download is complete, open the file and follow the installation instructions.
+2.  Once you have installed `R`, go to the [download](https://posit.co/download/rstudio-desktop/) page for RStudio Desktop and click on the button that says "Download RStudio Desktop". Once the download is complete, open the file and follow the installation instructions.
 
 ## Installing required `R` packages
+
 There are a few packages that we will use throughout the course. You can install them by starting `RStudio` and running the following commands in the console (lower left panel by default):
 
 ```{r}
@@ -48,5 +50,4 @@ tinytex::install_tinytex() # install TinyTeX
 
 While I strongly recommend installing `R` and `RStudio` on your local machine, you can also use the [Posit Cloud](https://cloud.posit.co) to run `R` and `RStudio` in the cloud. While this will work in the short to medium term, Posit Cloud can suffer from resource limitations and may not be able to handle larger datasets or more complex analyses.
 
-To get started, go to [Posit Cloud](https://cloud.posit.co) and create a **free** account. I will send you an invitation to join the course workspace. 
-
+To get started, go to [Posit Cloud](https://cloud.posit.co) and create a **free** account. I will send you an invitation to join the course workspace.
