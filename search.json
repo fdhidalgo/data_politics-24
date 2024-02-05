@@ -217,6 +217,13 @@
     "text": "Course Materials\n\nReadings\nAlmost all readings for the course are available online and linked from the course website in the schedule page or in each week’s materials page page.\nThe one exception is that you should purchase the following book:\n\n\n\n\n\n\nRequired Purchase\n\n\n\nGerber, Alan S., and Donald P. Green. Field Experiments: Design, Analysis, and Interpretation. New York London: W. W. Norton & Company, 2012.\n\n\n\n\nComputing\nWe will use R for all of the data analysis in this course. R is a free, open-source statistical programming language that is widely used in the social sciences. We will use the RStudio integrated development environment (IDE) to write and execute R code. RStudio is also free and open-source.\nYou should install R on your own computer, but to forestall any installation problems, we will provide the option to use the Posit Cloud service for the first few weeks of the course. This service allows you to run R and RStudio in your web browser. This cloud service can be resource constrained, however, so it is strongly recommended that you install R and RStudio on your own computer as soon as possible."
   },
   {
+    "objectID": "syllabus.html#acknowledgements",
+    "href": "syllabus.html#acknowledgements",
+    "title": "Syllabus",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nPartly inspired by courses offered by Graeme Blair, Brendan Nyan, Matt Blackwell, and Andrew Heiss. Many thanks to them for sharing their materials and syllabi."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Data and Politics",
