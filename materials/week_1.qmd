@@ -1,3 +1,9 @@
 ---
 title: "Week 1"
 ---
+
+- [Syllabus](../syllabus.qmd)
+- [Schedule](../schedule.qmd)
+- Slides: 
+  - [Course Introduction](../lectures/01-introduction/introduction.qmd)
+- [Installing `R` and Rstudio](../resources/r_setup.qmd)

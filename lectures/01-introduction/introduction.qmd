@@ -12,7 +12,7 @@ editor:
   render-on-save: true
 ---
 
-# Welcome and Course Content
+# Welcome to Data and Politics
 
 ## Data and Politics
 
@@ -50,6 +50,14 @@ What interventions can solve pressing social and political problems?
 
 ![@broockmanDurablyReducingTransphobia2016](./images/broockman_kalla.png)
 
+## *Example*: Can Sustained Contact Reduce Prejudice?
+
+![@mousaBuildingSocialCohesion2020](images/mousa_soccer.jpeg)
+
+## *Example*: Can Facebook Ads Help Combat Election Fraud?
+
+![@garbiras-diazAllEyesThem2022](images/garbiras-diaz_montenegro_ads.png)
+
 ## How do we measure social facts? {.center}
 
 ::: columns
@@ -74,6 +82,24 @@ How do we measure attitudes and behaviors in the general population?
 ## *Example*: Presidential Polling
 
 ![[538](https://projects.fivethirtyeight.com/polls/president-primary-r/2024/national/?ex_cid=abcpromo)](images/538_polls.png)
+
+## *Example*: How Do Partisans View Each Other?
+
+![@ahlerPartiesOurHeads2018](images/ahler_sood_perceptions.png)
+
+## Substantive Topics
+
+::: incremental
+-   [Week 2]{.alert}: Combating Inter-Group Prejudice
+-   [Week 3]{.alert}: Increasing Political Participation
+-   [Week 4]{.alert}: The Role of Partisanship vs Ideology in Public Opinion
+-   [Week 5]{.alert}: Political Persuasion
+-   [Week 6]{.alert}: Combating Electoral Fraud
+-   [Week 7]{.alert}: Censorship in Authoritarian Regimes
+-   [Week 8]{.alert}: Fighting Misinformation
+-   [Week 9]{.alert}: Partisan Animosity and Polarization
+-   [Week 10]{.alert}: Polling and Election Forecasting
+:::
 
 ## Research Design
 
@@ -111,34 +137,18 @@ We will learn to:
 | [Threats to External Validity]{.alert} | Lack of Realism                           | Measurement Error                     |
 | [Statistical Analysis]{.alert}         | Modeling                                  | Weighting                             |
 
-## Substantive Topics: Experiments
-
-::: incremental
--   [Week 2]{.alert}: Combating Inter-Group Prejudice
--   [Week 3]{.alert}: Increasing Political Participation
--   [Week 4]{.alert}: The Role of Partisanship vs Ideology in Public Opinion
--   [Week 5]{.alert}: Political Persuasion
--   [Week 6]{.alert}: Combating Electoral Fraud
--   [Week 7]{.alert}: Censorship in Authoritarian Regimes
-:::
-
-## Substantive Topics: Surveys
-
-## Computation: ![](images/Rlogo.png){width="75"} + ![](./images/RStudio-Logo-Flat.png){width=150}
-
-
+## Computation: ![](images/Rlogo.png){width="75"} + ![](./images/RStudio-Logo-Flat.png){width="150"}
 
 -   We will use the [`R`](https://www.r-project.org) statistical environment to analyze data.
+
     -   It's free.
     -   Excellent for data analysis and visualization.
     -   Rich ecosystem of packages for social science and statistics.
-    -  Infrastructure for inter-mingling code, data, and text.
+    -   Infrastructure for inter-mingling code, data, and text.
 
-- Used extensively in Academia, media, and industry
+-   Used extensively in Academia, media, and industry
 
-    
 -   We will use [`RStudio`](https://www.rstudio.com) as our development environment.
-
 
 # Course Details
 
@@ -155,8 +165,8 @@ We will learn to:
 ::: {.column width="50%"}
 ### Lectures
 
--   I generally will *not* lecture during class sessions
 -   Class sessions will be a mix of:
+    -   Lecture
     -   Discussion
     -   Live coding
     -   Class activities
@@ -167,7 +177,6 @@ We will learn to:
 ::: fragment
 ### Home
 
--   Watch lecture videos
 -   Read assigned readings
 -   Complete:
     -   Problem Sets
@@ -212,9 +221,50 @@ We will learn to:
 :::
 :::
 
-## Grading and Help
+## Readings
+
+::: columns
+::: {.column width="50%"}
+1 required [book](https://wwnorton.com/books/9780393979954) for purchase: ![https://wwnorton.com/books/9780393979954](images/green_gerber_cover.jpeg)
+:::
+
+::: {.column width="50%"}
+-   All other readings will be posted on [Materials](../../materials.qmd) page of class website. Also see the [schedule](../../schedule.qmd).
+
+-   We will use [Perusall](https://perusall.com) to annotate and discuss readings.
+
+    -   Ask questions so that classmates and I can help answer them.
+    -   Counts for class participation
+:::
+:::
+
+## Grades and Help
+
+::: columns
+::: {.column width="50%"}
+| Category              | \%  |
+|-----------------------|-----|
+| Coding Tutorials      | 5%  |
+| Reading Quizzes       | 5%  |
+| Problem Sets          | 50% |
+| Class Participation   | 25% |
+| Class Project Writeup | 15% |
+:::
+
+::: {.column width="50%"}
+::: fragment
+-   Ask questions about readings on **Perusall**.
+-   Ask questions about coding or assignments on **Piazza**.
+-   Office hours: Friday 12-2:30pm. Best if you [sign up](https://fantastical.app/dhidalgo/office-hours) in advance.
+:::
+:::
+:::
 
 ## What You Should Do Today
 
+-   Get `R` and RStudio setup on your computer. See instructions on [Resources](../../resources.qmd) page.
+    -   If you have trouble with this, can also use [Posit Cloud](https://cloud.posit.org) to run `R` and RStudio in your browser (details to follow)
+-   Start Tutorial 1 on basics of `R` and data visualization. 
+    -   Can be done on the web before installing `R` on your computer. 
 
 ## References
