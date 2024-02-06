@@ -42,6 +42,8 @@ Welcome to the course website of 17.831 Data and Politics. This course is taught
 
 {{< ai piazza >}} [Piazza](https://piazza.com/mit/spring2024/17831/home)
 
+{{< fa  c >}} [Canvas](https://canvas.mit.edu/courses/24619)
+
 ::::
 
 :::
