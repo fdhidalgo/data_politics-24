@@ -14,7 +14,7 @@ editor:
 
 # Welcome to Data and Politics
 
-## Data and Politics
+## Data and Politics {.center}
 
 ### Welcome to 17.831!
 
@@ -22,6 +22,11 @@ editor:
 -   **Schedule**: TR 9:30-11:00
 
 ## What is this course about? {.center}
+
+::: {.notes}
+- This course is about using data to answer social science questions.
+- Focus on interventions to lead to change or to measure social facts.
+:::
 
 ::: columns
 ::: {.column width="50%"}
@@ -41,6 +46,8 @@ What interventions can solve pressing social and political problems?
 :::
 :::
 :::
+
+
 
 ## *Example*: Can Conversations Change Attitudes?
 
@@ -88,6 +95,10 @@ How do we measure attitudes and behaviors in the general population?
 ![@ahlerPartiesOurHeads2018](images/ahler_sood_perceptions.png)
 
 ## Substantive Topics
+::: {.notes}
+- Show schedule
+- Ask students about what they are interested in
+:::
 
 ::: incremental
 -   [Week 2]{.alert}: Combating Inter-Group Prejudice
