@@ -159,7 +159,7 @@ We will learn to:
 -   Willing to work consistently throughout semester and learn new tools
 -   Material useful to students interested in public policy, political science, economics, computational social science, etc
 
-## Flow of the Course
+## Flow of the Course {.center}
 
 ::: columns
 ::: {.column width="50%"}
@@ -238,7 +238,7 @@ We will learn to:
 :::
 :::
 
-## Grades and Help
+## Grades and Help {.center}
 
 ::: columns
 ::: {.column width="50%"}
@@ -260,7 +260,7 @@ We will learn to:
 :::
 :::
 
-## What You Should Do Today
+## What You Should Do Today {.center}
 
 -   Get `R` and RStudio setup on your computer. See instructions on [Resources](../../resources.qmd) page.
     -   If you have trouble with this, can also use [Posit Cloud](https://cloud.posit.org) to run `R` and RStudio in your browser (details to follow)

@@ -2,9 +2,10 @@
 title: "Week 1: Course Introduction"
 ---
 
-## Readings
-- [Syllabus](../syllabus.qmd)
-- [Schedule](../schedule.qmd)
+## Readings 
+- [RDS Chapter 2](https://r4ds.hadley.nz/workflow-basics)
+- [Gerber and Green, pgs. 1-30](https://app.perusall.com/courses/17-831-data-and-politics/field-experiments-design-analysis-and-interpretation-chapter-1?assignmentId=KW5XdPnfzNS4cLpyR&part=1)
+
 
 ## Slides
 
@@ -13,9 +14,6 @@ title: "Week 1: Course Introduction"
 ## Resources
   - [Installing `R` and Rstudio](../resources/r_setup.qmd)
 
-## Readings 
-- [RDS Chapter 2](https://r4ds.hadley.nz/workflow-basics)
-- [Gerber and Green, pgs. 1-30](https://app.perusall.com/courses/17-831-data-and-politics/field-experiments-design-analysis-and-interpretation-chapter-1?assignmentId=KW5XdPnfzNS4cLpyR&part=1)
 
 ## Assignments
 - [Tutorial 1](https://dhidalgo.shinyapps.io/Tutorial-1/)
