@@ -1,0 +1,210 @@
+---
+title: "Data and Politics"
+subtitle: "Causality and Introduction to `R`"
+date: last-modified
+author: 
+  - name: F. Daniel Hidalgo
+    email: dhidalgo@mit.edu
+    affiliations: MIT
+format: clean-revealjs
+bibliography: ../data_politics_2024.bib
+editor:
+  render-on-save: true
+---
+
+# What is Causality?
+
+##  {background-image="images/road-less-traveled-frost.jpg" background-size="100%"}
+
+
+## What is a Causal Effect?
+
+- Students with diverse friend groups express less discriminatory attitudes and are supportive of policies that promote diversity. 
+  - Would these students be supportive of these policies if they did not have diverse friend groups?
+
+. . .
+
+- Heavy social media users are less happy on average than those who use social media less. 
+  - Is this because social media use causes unhappiness, or are unhappy people more likely to use social media?
+
+. . .
+
+
+::: {.callout-note}
+## Fundamental Problem of Causal Inference
+We never observe counterfactuals, they must be inferred
+
+:::
+
+## The Effect of Social Media
+
+::: {.columns}
+::: {.column width="40%"}
+
+![](images/facebook_grannies.jpg)
+
+:::
+
+::: {.column width="60%"}
+
+- Much concern about the effect of social media on:
+  - Mental health
+  - Political polarization
+  - Interactions with friends and families
+:::
+:::
+
+. . .
+
+Imagine two respondents:
+
+| Respondent | Social Media Use | Happiness |
+|------------|------------------|-----------|
+| 1          | High             | Low       |
+| 2          | Low              | High      |
+
+. . .
+
+[Did social media use cause the difference in happiness?]{.alert}
+
+## Some notation 
+
+The **causal** or **treatment** variable is: 
+
+$$
+T_i= \begin{cases} 1 & \text { if respondent } i \text { used social media } \\ 0 & \text { if respondent } i \text { did not use social media }\end{cases}
+$$
+
+The *observed* **outcome** variable is:
+
+$$
+Y_i= \begin{cases} 1 & \text { if respondent } i \text { is happy } \\ 0 & \text { if respondent } i \text { is unhappy }\end{cases}
+$$
+
+. . .
+
+So now, are data becomes:
+
+| Respondent | $T_i$ | $Y_i$ |
+|------------|-------|-------|
+| 1          | 1     | 0     |
+| 2          | 0     | 1     |
+
+## Causal Effects & Counterfactuals
+
+How do we translate "what if" questions into a mathematical language?
+
+. . . 
+
+::: {.incremental}
+- Two **potential outcomes**: 
+  - $Y_i(1)$: the outcome for respondent $i$ if they used social media
+  - $Y_i(0)$: the outcome for respondent $i$ if they did not use social media
+:::
+
+. . .
+
+::: {.incremental}
+- Causal effect for person $i$: [$Y_i(1) - Y_i(0)$]{.fg style="--col: #5d41e6"}
+  - $Y_i(1) - Y_i(0) = 0$ $\rightarrow$ no effect
+  - $Y_i(1) - Y_i(0) = 1$ $\rightarrow$ Social media causes happiness
+  - $Y_i(1) - Y_i(0) = -1$ $\rightarrow$ Social media causes unhappiness
+:::
+
+## Potential Outcomes
+
+| Respondent | $T_i$ | $Y_i$ | $Y_i(0)$ | $Y_i(1)$ |
+|------------|-------|------|----------|----------|
+| 1          | 1     | 0    | ?        | 0        |
+| 2          | 0     | 1    | 1        | ?        |
+
+
+[**Fundamental Problem of Causal Inference**]{.alert}
+
+- We only observe one of the potential outcomes
+- Observe $Y_i(1)$ if $T_i=1$ and $Y_i(0)$ if $T_i=0$
+
+## Average Treatment Effects 
+
+Because we cannot observe individual causal effects, we often focus on the **Average Treatment Effect** (ATE): 
+
+$$ \text{ATE} = \frac{1}{N} \sum_{i=1}^N (Y_i(1) - Y_i(0)) $$
+
+. . . 
+
+The **ATE** compares the average outcome when everyone is treated to the average outcome when no one is treated.
+
+. . . 
+
+**Can we observe the ATE?**
+
+## Comparing Groups
+
+Imagine the following dataset: 
+
+| Respondent | $T_i$ | $Y_i$ | $Y_i(0)$ | $Y_i(1)$ |
+|------------|-------|------|----------|----------|
+| 1          | 1     | 0    | ?        | 0        |
+| 2          | 0     | 1    | 1        | ?        |
+| 3	  | 1     | 0    | ?        | 0        |
+| 4	  | 0     | 1    | 1        | ?        |
+
+. . .
+
+We might [estimate]{.alert} the ATE from this data by comparing the average **observed** outcome for those who used social media to those who did not: 
+
+$$ \textrm{Difference in Means} =  \frac{\sum_{i=1}^N Y_i \cdot T_i}{ \sum_{i=1}^N T_i} - \frac{\sum_{i=1}^N Y_i \cdot (1-T_i)}{ \sum_{i=1}^N 1-T_i} $$
+
+In our case, the *estimated* ATE would be: [**-1**]{.alert}
+
+## Counfounding
+
+Now imagine we could observe the potential outcomes for each respondent:
+
+| $i$ | $T_i$ | $Y_i$ | $Y_i(0)$ | $Y_i(1)$ | $Y_i(1) - Y_i(0)$ |
+|------------|-------|------|----------|----------|-------------------|
+| 1          | 1     | 0    | [0]{style="color:blue;"}        | 0        | 0                 |
+| 2          | 0     | 1    | 1        | [1]{style="color:blue;"}        | 0                 |
+| 3	  | 1     | 0    | 0      | [0]{style="color:blue;"}          | 0                 |
+| 4	  | 0     | 1    | [1]{style="color:blue;"}          | 1        | 0                 |
+
+. . . 
+
+Even though our *estimated* ATE is -1, the true ATE is 0. Why? 
+
+. . .
+
+There is an association between the treatment variable and potential outcomes, but it is not causal. 
+
+In our example, social media users are less happy, but this is not because of social media use $\rightarrow$ the comparison across groups is *confounded*. 
+
+## Randomization {.center}
+
+
+
+We will discuss in more detail later, but key idea is that **random assignment** of a treatment *breaks* the association between treatment and potential outcomes. 
+
+This allows for *unconfounded* comparisons across groups.
+
+
+## Facebook Cessation Experiment {{< fa brands facebook >}} 
+
+
+
+@allcottWelfareEffectsSocial2020 presents a randomized experiment where half of around 2,800 Facebook users were paid about \$100 to deactivate their accounts for a month.
+
+What do they find? 
+
+. . . 
+
+Facebook cessation: 
+
+- Freed up on average of 60 minutes per day
+- Led to spending less time online and more time with friends and family
+- Resulted in 15% decrease in news consumption; also decreased knowledge of politics
+- Resulted in less extreme political opinions 
+- Caused small improvements in subjective wellbeing
+
+
+
+## References
