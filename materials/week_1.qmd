@@ -12,6 +12,7 @@ title: "Week 1: Course Introduction"
   - 2/6: [Course Introduction](../lectures/01-introduction/introduction.qmd)
   - 2/8: [Casuality and Introduction to R](../lectures/02-causality/causality.qmd)
   
+  
 ## Class Excercises
 
   - 2/8: Facebook Study
