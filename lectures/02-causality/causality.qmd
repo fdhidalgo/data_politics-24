@@ -1,6 +1,6 @@
 ---
-title: "Data and Politics"
-subtitle: "Causality and Introduction to `R`"
+title: "Causality and Introduction to `R`"
+subtitle: "Lecture 2"
 date: last-modified
 author: 
   - name: F. Daniel Hidalgo
@@ -199,12 +199,189 @@ What do they find?
 
 Facebook cessation: 
 
+::: {.incremental}
+
 - Freed up on average of 60 minutes per day
 - Led to spending less time online and more time with friends and family
 - Resulted in 15% decrease in news consumption; also decreased knowledge of politics
 - Resulted in less extreme political opinions 
 - Caused small improvements in subjective wellbeing
 
+::: 
 
+## R and RStudio
+::: columns
+::: {.column width="50%"}
+![](images/r-logo.png){fig-alt="R logo" fig-align="center"}
+
+-   R is an open-source statistical **programming language**
+-   R is also an environment for statistical computing and graphics
+-   It's easily extensible with *packages*
+:::
+
+::: {.column .fragment width="50%"}
+![](images/rstudio-logo.png){fig-alt="RStudio logo"}
+
+-   RStudio is a convenient interface for R called an **IDE** (integrated development environment), e.g. *"I write R code in the RStudio IDE"*
+-   RStudio is not a requirement for programming with R, but it's very commonly used by R programmers and data scientists
+:::
+:::
+
+## R vs. RStudio
+
+[![](images/r_vs_rstudio.png){fig-alt="On the left: a car engine. On the right: a car dashboard. The engine is labelled R. The dashboard is labelled RStudio." fig-align="center" width="1001"}](https://moderndive.com/1-getting-started.html)
+
+::: aside
+Source: [Modern Dive](https://moderndive.com/1-getting-started.html).
+:::
+
+## R packages {.center}
+
+::: incremental
+-   **Packages**: Fundamental units of reproducible R code, including reusable R functions, the documentation that describes how to use them, and sample data.
+
+-   As of 15 January 2023, there are 20,252 R packages available on **CRAN** (the Comprehensive R Archive Network).
+
+-   We're going to work with a small subset of these.
+:::
+
+## Tour recap: R + RStudio
+
+![](images/tour-r-rstudio.png)
+
+## A short list (for now) of R essentials
+
+-   Functions are (most often) verbs, followed by what they will be applied to in parentheses:
+
+```{r}
+#| eval: false
+#| echo: true
+
+do_this(to_this)
+do_that(to_this, to_that, with_those)
+```
+
+. . .
+
+-   Packages are installed with the `install.packages()` function and loaded with the `library` function, once per session:
+
+```{r}
+#| eval: false
+#| echo: true
+
+install.packages("package_name")
+library(package_name)
+```
+
+## R essentials (continued)
+
+-   Columns (variables) in data frames are accessed with `$`:
+
+```{r}
+#| eval: false
+#| echo: true
+
+dataframe$var_name
+```
+
+. . .
+
+-   Object documentation can be accessed with `?`
+
+```{r}
+#| eval: false
+#| echo: true
+
+?mean
+```
+
+## tidyverse
+
+::: columns
+::: {.column width="50%"}
+[![](images/tidyverse.png){fig-alt="Hex logos for dplyr, ggplot2, forcats, tibble, readr, stringr, tidyr, and purrr"}](https://tidyverse.org)
+:::
+
+::: {.column width="50%"}
+[tidyverse.org](https://www.tidyverse.org/)
+
+-   The **tidyverse** is an opinionated collection of R packages designed for data science
+-   All packages share an underlying philosophy and a common grammar
+:::
+:::
+
+# Quarto
+
+## Quarto {.center}
+
+::: incremental
+-   Fully reproducible reports -- each time you render the analysis is ran from the beginning
+-   Code goes in chunks narrative goes outside of chunks
+-   A visual editor for a familiar / Google docs-like editing experience
+:::
+
+## Tour recap: Quarto
+
+![](images/tour-quarto.png){fig-alt="RStudio IDE with a Quarto document, source code on the left and output on the right. Annotated to show the YAML, a link, a header, and a code chunk." fig-align="center"}
+
+## Environments {.center}
+
+::: callout-important
+The environment of your Quarto document is separate from the Console!
+:::
+
+Remember this, and expect it to bite you a few times as you're learning to work with Quarto!
+
+## Environments
+
+::: columns
+::: {.column width="50%"}
+First, run the following in the console:
+
+```{r}
+#| eval: false
+#| echo: true
+
+x <- 2
+x * 3
+```
+
+<br>
+
+::: {.fragment}
+All looks good?
+:::
+:::
+
+::: {.column .fragment width="50%"}
+Then, add the following in an R chunk in your Quarto document
+
+```{r}
+#| eval: false
+#| echo: true
+
+x * 3
+```
+
+<br>
+
+::: {.fragment}
+What happens?
+Why the error?
+:::
+:::
+:::
+
+## How will we use Quarto?
+
+-   Every class activity, problem set, project, etc. is an Quarto document
+-   You'll always have a template Quarto document to start with
+-   The amount of scaffolding in the template will decrease over the semester
+
+## Awknowledgements {.center}
+
+- This lecture draws partly from: 
+  - [GOV50](https://gov50-f23.github.io) taught by Matt Blackwell at Harvard University
+  - [STA 199] taught by Mine Çetinkaya-Rundel at Duke University. 
 
 ## References
