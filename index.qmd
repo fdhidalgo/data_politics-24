@@ -3,49 +3,42 @@ title: "Data and Politics"
 toc: false
 ---
 
-Welcome to the course website of 17.831 Data and Politics. This course is taught by [F. Daniel Hidalgo](https://www.dhidalgo.me) at [MIT](https://www.mit.edu) in the Spring of 2024. 
+Welcome to the course website of 17.831 Data and Politics. This course is taught by [F. Daniel Hidalgo](https://www.dhidalgo.me) at [MIT](https://www.mit.edu) in the Spring of 2024.
 
-::: {.columns}
-
+::: columns
 ::: {.column width="33%"}
+## Instructor
 
-## Instructor 
-
-:::: {.course-details}
+::: course-details
 {{< fa user >}} [F. Daniel Hidalgo](https://www.dhidalgo.me)
 
 {{< fa building >}} E53-402
 
-{{< fa  envelope >}} [dhidalgo@mit.edu](mailto:dhidalgo@mit.edu)
-::::
-
+{{< fa envelope >}} [dhidalgo\@mit.edu](mailto:dhidalgo@mit.edu)
+:::
 :::
 
 ::: {.column width="33%"}
-
 ## Course Details
-:::: {.course-details}
- {{< fa calendar >}} Tuesdays and Thursdays
+
+::: course-details
+{{< fa calendar >}} Tuesdays and Thursdays
 
 {{< fa clock >}} 9:30-11:00am
 
-{{< fa location-dot >}} 56-154 
-::::
-
+{{< fa location-dot >}} 56-154
+:::
 :::
 
 ::: {.column width="33%"}
-
 ## Contact
-:::: {.course-details}
+
+::: course-details
 {{< fa calendar >}} [Office Hours](https://fantastical.app/dhidalgo/office-hours)
 
 {{< ai piazza >}} [Piazza](https://piazza.com/mit/spring2024/17831/home)
 
-{{< fa  c >}} [Canvas](https://canvas.mit.edu/courses/24619)
-
-::::
-
+{{< fa c >}} [Canvas](https://canvas.mit.edu/courses/24619)
 :::
-
+:::
 :::

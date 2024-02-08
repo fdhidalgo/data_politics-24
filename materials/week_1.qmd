@@ -9,7 +9,14 @@ title: "Week 1: Course Introduction"
 
 ## Slides
 
-  - [Course Introduction](../lectures/01-introduction/introduction.qmd)
+  - 2/6: [Course Introduction](../lectures/01-introduction/introduction.qmd)
+  - 2/8: [Casuality and Introduction to R](../lectures/02-causality/causality.qmd)
+  
+## Class Excercises
+
+  - 2/8: Facebook Study
+    - [`R` Script](../excercises/excercise_01/fb_script.R)
+    - [Quarto File](https://www.dropbox.com/scl/fi/v0u8tbzm46zzjw9fzvxun/fb.qmd?rlkey=8p0lnul39lwaji4m3hfcn4pqx&dl=1)
   
 ## Resources
   - [Installing `R` and Rstudio](../resources/r_setup.qmd)
