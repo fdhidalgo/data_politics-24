@@ -11,3 +11,4 @@ title: "Week 1: Course Introduction"
 
 ## Assignments
 - [Reading Quiz 1](https://canvas.mit.edu/courses/24619/quizzes/39502)
+- [Tutorial 1](https://dhidalgo.shinyapps.io/Tutorial-1/)
