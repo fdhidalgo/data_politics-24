@@ -364,6 +364,27 @@
     "text": "There are a few packages that we will use throughout the course. You can install them by starting RStudio and running the following commands in the console (lower left panel by default):\n\npackages &lt;- c(\n        \"tidyverse\", \"learnr\", \"estimatr\",\n        \"randomizr\", \"srvyr\"\n)\ninstall.packages(packages, repos = \"http://cran.rstudio.com\")\n\nFor assignments, we’ll need to produce PDFs from R and that requires a LaTeX distribution. We recommend using tinytex to install a minimal LaTeX distribution if you haven’t already installed LaTex on your system. You can install it by running the following command in the console:\n\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex() # install TinyTeX"
   },
   {
+    "objectID": "materials/week_2.html",
+    "href": "materials/week_2.html",
+    "title": "Week 1: Course Introduction",
+    "section": "",
+    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
+  },
+  {
+    "objectID": "materials/week_2.html#readings",
+    "href": "materials/week_2.html#readings",
+    "title": "Week 1: Course Introduction",
+    "section": "",
+    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
+  },
+  {
+    "objectID": "materials/week_2.html#assignments",
+    "href": "materials/week_2.html#assignments",
+    "title": "Week 1: Course Introduction",
+    "section": "Assignments",
+    "text": "Assignments\n\nReading Quiz 1"
+  },
+  {
     "objectID": "assignments.html",
     "href": "assignments.html",
     "title": "Assignments",
