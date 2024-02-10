@@ -4,4 +4,4 @@ title: "Materials"
 
 **Week 1**: [Course Introduction](materials/week_1.qmd)
 
-**Week 2:**: [Estimating Causal Effects](materials/week_2.qmd)
+**Week 2:**: [Intergroup Prejudice](materials/week_2.qmd)
