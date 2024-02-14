@@ -385,6 +385,34 @@
     "text": "Assignments\n\nReading Quiz 1\nTutorial 1"
   },
   {
+    "objectID": "psets/pset1/pset1.html",
+    "href": "psets/pset1/pset1.html",
+    "title": "Problem Set 1",
+    "section": "",
+    "text": "Please submit this assignment on Gradescope by February 27.\nYou will need to submit the following files:\n\nAn .qmd file (or “Quarto file” when spoken) that is a plain-text file that contains the text of your write-up and the code used to do all of the calculations for the assignment. You can write directly into this file in RStudio. You can download the qmd version of this file at this link: pset.qmd.\nAn output .pdf file that contains the compiled version of the qmd file. Usually, you might call this the write-up and it will be nicely formatted."
+  },
+  {
+    "objectID": "psets/pset1/pset1.html#instructions",
+    "href": "psets/pset1/pset1.html#instructions",
+    "title": "Problem Set 1",
+    "section": "",
+    "text": "Please submit this assignment on Gradescope by February 27.\nYou will need to submit the following files:\n\nAn .qmd file (or “Quarto file” when spoken) that is a plain-text file that contains the text of your write-up and the code used to do all of the calculations for the assignment. You can write directly into this file in RStudio. You can download the qmd version of this file at this link: pset.qmd.\nAn output .pdf file that contains the compiled version of the qmd file. Usually, you might call this the write-up and it will be nicely formatted."
+  },
+  {
+    "objectID": "psets/pset1/pset1.html#background",
+    "href": "psets/pset1/pset1.html#background",
+    "title": "Problem Set 1",
+    "section": "Background",
+    "text": "Background\nIn this problem set, we will analyze data from the following paper, published by a former MIT graduate student:\n\nLowe, Matt. “Types of Contact: A Field Experiment on Collaborative and Adversarial Caste Integration.” American Economic Review 111, no. 6 (June 2021): 1807–44. https://doi.org/10.1257/aer.20191780.\n\nAn overview of the paper that I recommend you read is available at the following link: https://www.povertyactionlab.org/evaluation/promoting-intercaste-harmony-through-sports\nThis field experiment was conducted in India and designed to test how different types of contact between members of different castes affects social relations. Like the Mousa paper, this study uses sports—in this case cricket—to create opportunities for sustained contact between members of different groups. The study took place in localities where residents tended to be segregated by caste and where cross-caste interactions were rare.\nWhile on a similar topic as the Mousa paper, the Lowe study has several additional components to the research design. The three main treatment arms that individual cricket players were randomly assigned to are:\n\nHomogenous teams: Assignment to a team with only members of the same caste.\nMixed teams: Assignment to a team with at least 1 team-mate from a different caste. Note that the proportion of players from different castes on the team was also randomly varied.\nPure Control: Members of the control group were not assigned to a team and did not play in the local league.\n\nIn addition to these treatment arms, the 8 matches in each tournament were randomly constructed. This second element of randomization created variation in the proportion of players from other castes that each player played against. Lowe argues that this variation can be used to test the effect of adversarial contact, which may have different effects than collaborative contact.\nIn this problem set, we will explore both forms of contact. You will use data visualization to both assess the validity of the design and to explore the effects of the treatment.\nThe pset1_data data includes the following variables:\n\ntreat_cond: whether or not the player was assigned to pure control (control), mixed teams (team_mix), or homogenous teams (team_hom).\nprop_teammates_other_caste: for players on a team, the proportion of teammates from a different caste. For players not on a team, this variable is coded as missing (NA).\nbins_teammates_other_caste: a categorical version of prop_teammates_other_caste that divides the variable into 4 bins: “0-25%”, “25-50%”, “50-75%”, and “75-100%”.\nprop_opponents_other_caste: the proportion of opponents from a different caste.\nbins_opponents_other_caste: a categorical version of prop_opponents_other_caste that divides the variable into 10 quantile bins.\nbin_midpoint_opponents: the midpoint of the bin for prop_opponents_other_caste.\nbaseline_prop_other_caste_friends: the proportion of neighbors from a different caste as measured before assignment to teams.\nbaseline_bowl_test_speed: Maximum bowling speed in the pre-tournament test.\nn_other_caste_friends: After the conclusion of the tournaments, respondents were shown photos of all other players in their league and asked to identify those they considered friends. This variable measures the number of named friends from other castes.\nn_other_caste_future_friends: This post-tournament variable measures the number of players from other castes that the respondent is currently friends with or who they would like to be friends with."
+  },
+  {
+    "objectID": "psets/pset1/pset1.html#import-the-data",
+    "href": "psets/pset1/pset1.html#import-the-data",
+    "title": "Problem Set 1",
+    "section": "Import the Data",
+    "text": "Import the Data\nThe following code will import the data needed for this assignment:\n\npset1_data &lt;- read_csv(\"https://www.dropbox.com/scl/fi/fc64m81fu12nvbzd1x6h4/pset1_data.csv?rlkey=vy6hy3gh1sqc0j6byfmxx0kny&dl=1\")\n\n\nProblem 1\nUnlike in the Mousa paper, this study has a third treatment arm: the pure control group. What is the role of this group in the research design? What questions does it allow the researchers to answer that the two arm design used by Mousa does not?\n\n\nProblem 2\nLet’s examine if the randomization was successful. The first step is to examine whether players assigned to the different treatment arms are similar in terms of observable characteristics.\nWe will focus on the following two variables:\n\nbaseline_prop_other_caste_friends\nbaseline_bowl_test_speed\n\nUsing ggplot2, recreate the following box plot for each of the two variables. This plot was generated using fake data, but you should use the real data from the Lowe study. You might take a look at the geom_boxplot function in the ggplot2 documentation to get started.\n\nWhat can you conclude about the extent to which the design created comparable groups?\n\n\nProblem 3\nBox plots like the ones you created in Problem 2 are useful for comparing the distribution of a variable across different groups. An alternative way to compare the distribution of a variable across groups is to use a density plot.\nUsing ggplot2, create a density plot for the variable baseline_prop_other_caste_nbrs for each of the three treatment arms. Overlay the densities from each group over each other, but use different colors to distinguish each group.\n\n\nProblem 4\nEstimate the average treatment effect of being assigned to a mixed or homogenous team (relative to the control group) on n_other_caste_friends and n_other_caste_future_friends. Report these estimates in a figure or a table. What do these estimates suggest about the effect of playing on a homogenous team and the effect of playing on a mixed caste team?\n\n\nProblem 5\nThe Lowe paper also examines the effect of the proportion of teammates from other castes on the number of friends from other castes. Calculate the average of n_other_caste_future_friends for each of the four bins of prop_teammates_other_caste.\nReport these averages in a figure or a table. What do these averages suggest about the effect of the proportion of teammates from other castes on the number of friends from other castes? Does this analysis tell you something different from the analysis in Problem 4?\n\n\nProblem 6\nNow let’s examine the effect of the proportion of opponents from other castes on the number of friends from other castes. Calculate the average of n_other_caste_future_friends for each of the ten quantile bins of prop_opponents_other_caste. Plot these averages against the midpoint of each quantile bin (bin_midpoint_opponents).\nWhat does this plot suggest about the effect of “adversarial” contact? Given the collective results of the experiment, how should we think about the “contact hypothesis”?"
+  },
+  {
     "objectID": "assignments.html",
     "href": "assignments.html",
     "title": "Assignments",
@@ -397,6 +425,13 @@
     "title": "Assignments",
     "section": "",
     "text": "Tutorial 1: Introduction to R and Data Visualization`"
+  },
+  {
+    "objectID": "assignments.html#problem-sets",
+    "href": "assignments.html#problem-sets",
+    "title": "Assignments",
+    "section": "Problem Sets",
+    "text": "Problem Sets\n\nProblem Set 1, qmd link"
   },
   {
     "objectID": "materials/week_1.html",
