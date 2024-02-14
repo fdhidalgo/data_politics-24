@@ -12,3 +12,4 @@ title: "Week 2: Intergroup Prejudice"
 ## Assignments
 - [Reading Quiz 1](https://canvas.mit.edu/courses/24619/quizzes/39502)
 - [Tutorial 1](https://dhidalgo.shinyapps.io/Tutorial-1/)
+-  [Problem Set 1](../psets/pset1/pset1.qmd), [qmd link](https://raw.githubusercontent.com/fdhidalgo/data_politics-24/main/psets/pset1/pset1.qmd)
