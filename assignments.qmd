@@ -6,4 +6,4 @@ title: "Assignments"
 - [Tutorial 1: Introduction to `R` and Data Visualization`](https://dhidalgo.shinyapps.io/Tutorial-1/)
 
 ## Problem Sets
-- [Problem Set 1](psets/pset1/pset1.qmd)
+- [Problem Set 1](psets/pset1/pset1.qmd), [qmd link](https://raw.githubusercontent.com/fdhidalgo/data_politics-24/main/psets/pset1/pset1.qmd)

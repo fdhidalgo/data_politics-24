@@ -18,7 +18,7 @@ Please submit this assignment on Gradescope by February 27.
 
 You will need to submit the following files:
 
-1.  An .qmd file (or “Quarto file” when spoken) that is a plain-text file that contains the text of your write-up and the code used to do all of the calculations for the assignment. You can write directly into this file in RStudio.
+1.  An .qmd file (or “Quarto file” when spoken) that is a plain-text file that contains the text of your write-up and the code used to do all of the calculations for the assignment. You can write directly into this file in RStudio. You can download the qmd version of this file at this link: [pset.qmd](https://raw.githubusercontent.com/fdhidalgo/data_politics-24/main/psets/pset1/pset1.qmd).
 2.  An output .pdf file that contains the compiled version of the qmd file. Usually, you might call this the write-up and it will be nicely formatted.
 
 ## Background
