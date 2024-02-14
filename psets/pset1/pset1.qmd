@@ -41,7 +41,7 @@ In addition to these treatment arms, the 8 matches in each tournament were rando
 
 In this problem set, we will explore both forms of contact. You will use data visualization to both assess the validity of the design and to explore the effects of the treatment.
 
-The data includes the following variables:
+The `pset1_data` data includes the following variables:
 
 -   `treat_cond`: whether or not the player was assigned to pure control (`control`), mixed teams (`team_mix`), or homogenous teams (`team_hom`).
 -   `prop_teammates_other_caste`: for players on a team, the proportion of teammates from a different caste. For players not on a team, this variable is coded as missing (`NA`).
