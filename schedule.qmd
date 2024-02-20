@@ -27,11 +27,13 @@ schedule_data <- tribble(
         ~Week, ~Date, ~methods, ~applied, ~comp,
         "[1](materials/week_1.qmd)", "2/6", "Introduction", "", "Introduction to `R`",
         "[1](materials/week_1.qmd)", "2/8", "Logic of Experiments", "", "`R` Basics",
-        "2", "2/13", "Data Visualization", "Intergroup Prejudice", "`ggplot2` Basics",
-        "2", "2/15", "Estimation", "Intergroup Prejudice", "Data Wrangling with `dplyr`",
-        "3", "2/22", "Sampling Distributions", "Political Participation", "Base R",
-        "4", "2/27", "Randomization Inference", "Partisanship vs Ideology", "Functions",
-        "4", "2/29", "Large Sample Inference", "Partisanship vs Ideology", "Iteration",
+        #      "2", "2/13", "Data Visualization", "Intergroup Prejudice", "`ggplot2` Basics",
+        #      "2", "2/15", "Estimation", "Intergroup Prejudice", "Data Wrangling with `dplyr`",
+        "3", "2/22", "Data Visualization", "Intergroup Prejudice", "`ggplot2` Basics",
+        #      "3", "2/22", "Sampling Distributions", "Political Participation", "Base R",
+        "4", "2/27", "Estimation & Sampling Distributions", "Partisanship vs Ideology", "Data Wrangling with `dplyr`",
+        # "4", "2/27", "Sampling Distributions", "Partisanship vs Ideology", "Data Wrangling with `dplyr`",
+        "4", "2/29", "Inference", "Partisanship vs Ideology", "Functions & Iteration",
         "5", "3/5", "Measurement: Asking Questions", "Changing Political Beliefs", "Data Types and Recoding Data",
         "5", "3/7", "Measurement: Measurement Error", "Changing Political Beliefs", "Data Types and Recoding Data",
         "6", "3/12", "Experimental Design: Stratification", "Combatting Electoral Fraud", "`randomizr` package",
@@ -42,8 +44,9 @@ schedule_data <- tribble(
         "8", "4/4", "Covariate Adjustment", "Misinformation", "`estimatr` package",
         "9", "4/9", "Public Opinion Surveys", "Affective Polarization", "`survyr` package",
         "9", "4/11", "Survey Methodology", "Affective Polarization", "`survyr` package",
-        "10", "4/18", "Survey Non-Response", "Non-Response Bias in Recent Elections", " ",
-        "11", "4/23", "Addressing Non-Response", "Predicting Electoral Outcomes", "",
+        "10", "4/16", "Survey Non-Response", "Non-Response Bias in Recent Elections", " ",
+        "10", "4/18", "Addressing Non-Response", "Non-Response Bias in Recent Elections", " ",
+        "11", "4/23", "Predictive Modeling", "Predicting Electoral Outcomes", "",
         "11", "4/25", "Modeling and Surveys", "Predicting Electoral Outcomes", "",
         "12", "4/30", "Final Project", " ", " ",
         "12", "5/2", "Final Project", " ", " ",
@@ -69,7 +72,7 @@ flextable(schedule_data) |>
         merge_v(j = ~ Week + applied + applied + comp) |>
         valign(j = ~Week, valign = "center") |>
         align(j = ~Week, align = "center") |>
-        hline(i = c(2, 4, 5, 7, 9, 11, 13, 15, 17, 18, 20, 22, 24)) |>
+        hline(i = c(2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23)) |>
         colformat_md() |>
         fix_border_issues() |>
         autofit()
@@ -122,7 +125,7 @@ assignments_data <- tribble(
         "10", "4/17", "Reading Quiz",
         "11", "4/25", "*Problem Set 5*",
         "13", "5/9", "*Problem Set 6*",
-		"14", "5/14", "*Class Project Writeup*"
+        "14", "5/14", "*Class Project Writeup*"
 )
 
 ## function to find index of row of last row of each week
