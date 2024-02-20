@@ -347,7 +347,7 @@
     "href": "materials.html",
     "title": "Materials",
     "section": "",
-    "text": "Week 1: Course Introduction\nWeek 2:: Intergroup Prejudice"
+    "text": "Week 1: Course Introduction\nWeek 2: Intergroup Prejudice\nWeek 3: Intergroup Prejudice\nWeek 4: Partisanship vs Ideology"
   },
   {
     "objectID": "resources/r_setup.html",
@@ -364,25 +364,46 @@
     "text": "There are a few packages that we will use throughout the course. You can install them by starting RStudio and running the following commands in the console (lower left panel by default):\n\npackages &lt;- c(\n        \"tidyverse\", \"learnr\", \"estimatr\",\n        \"randomizr\", \"srvyr\"\n)\ninstall.packages(packages, repos = \"http://cran.rstudio.com\")\n\nFor assignments, we’ll need to produce PDFs from R and that requires a LaTeX distribution. We recommend using tinytex to install a minimal LaTeX distribution if you haven’t already installed LaTex on your system. You can install it by running the following command in the console:\n\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex() # install TinyTeX"
   },
   {
-    "objectID": "materials/week_2.html",
-    "href": "materials/week_2.html",
-    "title": "Week 2: Intergroup Prejudice",
+    "objectID": "materials/week_3.html",
+    "href": "materials/week_3.html",
+    "title": "Week 3: Intergroup Prejudice",
     "section": "",
     "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
   },
   {
-    "objectID": "materials/week_2.html#readings",
-    "href": "materials/week_2.html#readings",
-    "title": "Week 2: Intergroup Prejudice",
+    "objectID": "materials/week_3.html#readings",
+    "href": "materials/week_3.html#readings",
+    "title": "Week 3: Intergroup Prejudice",
     "section": "",
     "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
   },
   {
-    "objectID": "materials/week_2.html#assignments",
-    "href": "materials/week_2.html#assignments",
-    "title": "Week 2: Intergroup Prejudice",
+    "objectID": "materials/week_3.html#assignments",
+    "href": "materials/week_3.html#assignments",
+    "title": "Week 3: Intergroup Prejudice",
     "section": "Assignments",
-    "text": "Assignments\n\nReading Quiz 1\nTutorial 1\nProblem Set 1, qmd link"
+    "text": "Assignments\n\nProblem Set 1, qmd link"
+  },
+  {
+    "objectID": "materials/week_4.html",
+    "href": "materials/week_4.html",
+    "title": "Week 3: Intergroup Prejudice",
+    "section": "",
+    "text": "Barber and Pope (2019): direct link"
+  },
+  {
+    "objectID": "materials/week_4.html#readings",
+    "href": "materials/week_4.html#readings",
+    "title": "Week 3: Intergroup Prejudice",
+    "section": "",
+    "text": "Barber and Pope (2019): direct link"
+  },
+  {
+    "objectID": "materials/week_4.html#assignments",
+    "href": "materials/week_4.html#assignments",
+    "title": "Week 3: Intergroup Prejudice",
+    "section": "Assignments",
+    "text": "Assignments\n\nProblem Set 1, qmd link"
   },
   {
     "objectID": "psets/pset1/pset1.html",
@@ -432,6 +453,27 @@
     "title": "Assignments",
     "section": "Problem Sets",
     "text": "Problem Sets\n\nProblem Set 1, qmd link"
+  },
+  {
+    "objectID": "materials/week_2.html",
+    "href": "materials/week_2.html",
+    "title": "Week 2: Intergroup Prejudice",
+    "section": "",
+    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
+  },
+  {
+    "objectID": "materials/week_2.html#readings",
+    "href": "materials/week_2.html#readings",
+    "title": "Week 2: Intergroup Prejudice",
+    "section": "",
+    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
+  },
+  {
+    "objectID": "materials/week_2.html#assignments",
+    "href": "materials/week_2.html#assignments",
+    "title": "Week 2: Intergroup Prejudice",
+    "section": "Assignments",
+    "text": "Assignments\n\nReading Quiz 1\nTutorial 1\nProblem Set 1, qmd link"
   },
   {
     "objectID": "materials/week_1.html",
