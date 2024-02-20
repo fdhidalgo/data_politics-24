@@ -83,12 +83,11 @@ flextable(schedule_data) |>
 | **Week 1** | **Methods**                           | **Applied**                                       | **Computation**                                                                                                                            |
 |-------------------|------------------|------------------|------------------|
 | 1          | GG pgs 1-30                           |                                                   | RDS [2](https://r4ds.hadley.nz/workflow-basics)                                                                                            |
-| 2          | GG pgs 30-45                          | @mousaBuildingSocialCohesion2020                  | RDS [1](https://r4ds.hadley.nz/data-visualize), [3](https://r4ds.hadley.nz/data-transform)                                                 |
-| 3          | GG pgs 51-61                          | @gerberSocialPressureVoter2008                    | RDS [27.1-27.2](https://r4ds.hadley.nz/base-r)                                                                                             |
-| 4          | GG pgs 61-71                          | @barberDoesPartyTrump2019                         | RDS [25.1-25.2](https://r4ds.hadley.nz/functions), [26](https://r4ds.hadley.nz/iteration), [27.5](https://r4ds.hadley.nz/base-r#for-loops) |
+| 3          | GG pgs 30-45                          | @mousaBuildingSocialCohesion2020                  | RDS [1](https://r4ds.hadley.nz/data-visualize), [3](https://r4ds.hadley.nz/data-transform)                                                 |
+| 4          | GG pgs 51-71                          | @barberDoesPartyTrump2019                         | RDS [25.1-25.2](https://r4ds.hadley.nz/functions), [26](https://r4ds.hadley.nz/iteration), [27.5](https://r4ds.hadley.nz/base-r#for-loops) |
 | 5          | @stantchevaHowRunSurveys2023          | @broockmanDurablyReducingTransphobia2016          | RDS [12](https://r4ds.hadley.nz/logicals), [13](https://r4ds.hadley.nz/numbers), [14](14)                                                  |
-| 6          | GG pgs. 71-85                         | @garbiras-diazAllEyesThem2022                     | `randomizr` [vignette](https://declaredesign.org/r/randomizr/articles/randomizr_vignette.html)                                             |
-| 7          |                                       | @kingReverseengineeringCensorshipChina2014        |                                                                                                                                            |
+| 6          | GG pgs. 71-80                         | @garbiras-diazAllEyesThem2022                     | `randomizr` [vignette](https://declaredesign.org/r/randomizr/articles/randomizr_vignette.html)                                             |
+| 7          | GG pgs 80-85                          | @kingReverseengineeringCensorshipChina2014        |                                                                                                                                            |
 | 8          | GG pgs. 95-105                        | @arecharUnderstandingCombattingMisinformation2023 |                                                                                                                                            |
 | 9          | Ch. 4 in @grovesSurveyMethodology2009 | @ahlerPartiesOurHeads2018                         | `srvyr` [vignette](http://gdfe.co/srvyr/articles/srvyr-vs-survey.html)                                                                     |
 | 10         | Ch. 6 in @grovesSurveyMethodology2009 | @cohnnate2023CitrinAward2023                      |                                                                                                                                            |
@@ -104,14 +103,15 @@ assignments_data <- tribble(
         ~Week, ~due_date, ~Assignment,
         "2", "2/12", "Reading Quiz",
         "2", "2/14", "Tutorial",
-        "3", "2/21", "Reading Quiz",
-        "3", "2/21", "Tutorial",
-        "3", "2/22", "*Problem Set 1*",
+        #"3", "2/21", "Reading Quiz",
+        #"3", "2/21", "Tutorial",
+ 
         "4", "2/26", "Reading Quiz",
         "4", "2/28", "Tutorial",
+	    "4", "2/29", "*Problem Set 1*",
         "5", "3/4", "Reading Quiz",
         "5", "3/6", "Tutorial",
-        "5", "3/7", "*Problem Set 2*",
+        "5", "3/9", "*Problem Set 2*",
         "6", "3/11", "Reading Quiz",
         "6", "3/13", "Tutorial",
         "7", "3/18", "Reading Quiz",
