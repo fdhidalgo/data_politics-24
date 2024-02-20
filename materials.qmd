@@ -4,4 +4,8 @@ title: "Materials"
 
 **Week 1**: [Course Introduction](materials/week_1.qmd)
 
-**Week 2:**: [Intergroup Prejudice](materials/week_2.qmd)
+**Week 2**: [Intergroup Prejudice](materials/week_2.qmd)
+
+**Week 3**: [Intergroup Prejudice](materials/week_3.qmd)
+
+**Week 4**: [Partisanship vs Ideology](materials/week_4.qmd)

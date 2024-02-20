@@ -1,0 +1,13 @@
+---
+title: "Week 3: Intergroup Prejudice"
+---
+
+## Readings
+
+-   Mousa (2020): [Perusall link](https://app.perusall.com/courses/17-831-data-and-politics/building-social-cohesion-between-christians-and-muslims-through-soccer-in-post-isis-iraq-294650249), [direct link](https://www.science.org/doi/10.1126/science.abb3153)
+    - *Optional*: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, [link](https://www.scopeconditionspodcast.com/episodes/episode-01salmamousa)
+- Green and Gerber (2012), pgs. 30-45: [Perusall link](https://app.perusall.com/courses/17-831-data-and-politics/field-experiments-design-analysis-and-interpretation-chapter-2)
+- RDS: [Chapter 1](https://r4ds.hadley.nz/data-visualize), [Chapter 3](https://r4ds.hadley.nz/data-transform)
+
+## Assignments
+-  [Problem Set 1](../psets/pset1/pset1.qmd), [qmd link](https://raw.githubusercontent.com/fdhidalgo/data_politics-24/main/psets/pset1/pset1.qmd)

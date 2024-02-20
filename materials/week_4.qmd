@@ -1,0 +1,9 @@
+---
+title: "Week 3: Intergroup Prejudice"
+---
+
+## Readings
+- Barber and Pope (2019): [direct link](https://www.cambridge.org/core/journals/american-political-science-review/article/does-party-trump-ideology-disentangling-party-and-ideology-in-america/B5BAD0AE947BD3CF18D51D399263C8D3)
+
+## Assignments
+-  [Problem Set 1](../psets/pset1/pset1.qmd), [qmd link](https://raw.githubusercontent.com/fdhidalgo/data_politics-24/main/psets/pset1/pset1.qmd)
