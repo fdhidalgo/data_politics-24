@@ -81,7 +81,7 @@ flextable(schedule_data) |>
 ## Readings Schedule
 
 | **Week 1** | **Methods**                           | **Applied**                                       | **Computation**                                                                                                                            |
-|-------------------|------------------|------------------|------------------|
+|------------|---------------------------------------|---------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | 1          | GG pgs 1-30                           |                                                   | RDS [2](https://r4ds.hadley.nz/workflow-basics)                                                                                            |
 | 3          | GG pgs 30-45                          | @mousaBuildingSocialCohesion2020                  | RDS [1](https://r4ds.hadley.nz/data-visualize), [3](https://r4ds.hadley.nz/data-transform)                                                 |
 | 4          | GG pgs 51-71                          | @barberDoesPartyTrump2019                         | RDS [25.1-25.2](https://r4ds.hadley.nz/functions), [26](https://r4ds.hadley.nz/iteration), [27.5](https://r4ds.hadley.nz/base-r#for-loops) |
