@@ -2,36 +2,51 @@
 title: "Syllabus"
 ---
 
-::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
-:::: {.course-details}
+::: course-details
 ### Instructor
 
 {{< fa user >}} [F. Daniel Hidalgo](https://www.dhidalgo.me)
 
 {{< fa building >}} E53-402
 
-{{< fa  envelope >}} [dhidalgo@mit.edu](mailto:dhidalgo@mit.edu)
+{{< fa envelope >}} [dhidalgo\@mit.edu](mailto:dhidalgo@mit.edu)
 
 {{< fa calendar >}} [Office Hours](https://fantastical.app/dhidalgo/office-hours)
-
-::::
 :::
+:::
+
+
+
 ::: {.column width="50%"}
-:::: {.course-details}
+::: course-details
 ### Course Details
 
 {{< fa calendar >}} Tuesdays and Thursdays
 
 {{< fa clock >}} 9:30-11:00am
 
-{{< fa location-dot >}} 56-154 
+{{< fa location-dot >}} 56-154
 
 {{< ai piazza >}} [Piazza](https://piazza.com/mit/spring2024/17831/home)
-::::
 :::
 :::
+:::
+
+::: course-details
+
+### TA
+
+{{< fa user >}} Alejandro Frydman
+
+{{< fa building >}} 3rd Floor Lounge, E53
+
+{{< fa envelope >}} [afrydman@mit.edu](mailto:afrydman@mit.edu)
+
+{{< fa calendar >}} Office hours: Tuesdays, 2-4pm
+::: 
+
 
 ## Course Objectives
 
@@ -50,8 +65,8 @@ By the end of this course, students will be able to:
 In this course, you will be expected to:
 
 -   Complete six problem sets.
--   Complete regular reading quizzes. 
--   Complete eight weekly tutorials. 
+-   Complete regular reading quizzes.
+-   Complete eight weekly tutorials.
 -   Participate in in-person and online class discussions.
 -   Design and implement a survey experiment with a diverse sample.
 
@@ -70,7 +85,7 @@ The basic cadence of the course will be as follows, though there may be small di
 
 ### Class Lectures
 
-Class lectures will be a mix of traditional lectures, in-class activities, and group discussions. In addition to in-class lectures, I may occasionally post a recorded lecture.  During lecture, we will often be working with data and code, so please bring a computer to class, if possible. 
+Class lectures will be a mix of traditional lectures, in-class activities, and group discussions. In addition to in-class lectures, I may occasionally post a recorded lecture. During lecture, we will often be working with data and code, so please bring a computer to class, if possible.
 
 ### Tutorials
 
@@ -80,7 +95,7 @@ We will assign short weekly coding tutorials that will assess your knowledge of 
 
 Competence at the design and analysis of experiments and surveys requires practice with real world datasets and the design of simulations. For the first 2/3 of the course, I will assign problem sets that will give you the opportunity to practice the methods you learn in the course. The problem sets will often involve the creation of a simulation and/or the analysis of data from an assigned reading. In the second half of the course, substantial parts of the problem set will be devoted to the design of the class project.
 
-I will assign *six* problem sets throughout the semester. They will be due on Thursdays by 11:59pm ET. I encourage students to work in groups, but each student must submit their own assignment. 
+I will assign *six* problem sets throughout the semester. They will be due on Thursdays by 11:59pm ET. I encourage students to work in groups, but each student must submit their own assignment.
 
 ::: {.callout-note title="Lowest Homework Grade is Dropped"}
 When calculating the overall homework grade, I will drop the lowest homework grade. This is to account for unexpected events that may prevent you from completing an assignment on time.
@@ -88,35 +103,34 @@ When calculating the overall homework grade, I will drop the lowest homework gra
 
 ### Online Forum
 
-We will use [Piazza](https://piazza.com/mit/spring2024/17831/home) for class discussions. If you are having trouble with a question on a problem set or on a reading, please post your question using Piazza. I strongly encourage students to assist in answering questions as they come up. Except under unusual circumstances, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours. The site is: [https://piazza.com/mit/spring2024/17831/home](https://piazza.com/mit/spring2024/17831/home)
+We will use [Piazza](https://piazza.com/mit/spring2024/17831/home) for class discussions. If you are having trouble with a question on a problem set or on a reading, please post your question using Piazza. I strongly encourage students to assist in answering questions as they come up. Except under unusual circumstances, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours. The site is: <https://piazza.com/mit/spring2024/17831/home>
 
 ### Grading
 
 The final grade in the course will be based on the following components:
 
-| Category            | Percent of Final Grade |
-|---------------------|------------------------|
-| Coding Tutorials    | 5%                     |
-| Reading Quizzes     | 5%                     |
-| Problem Sets        | 50%                    |
-| Class Participation | 25%                    |
-| Class Project Writeup      | 15%                    |
+| Category              | Percent of Final Grade |
+|-----------------------|------------------------|
+| Coding Tutorials      | 5%                     |
+| Reading Quizzes       | 5%                     |
+| Problem Sets          | 50%                    |
+| Class Participation   | 25%                    |
+| Class Project Writeup | 15%                    |
 
-Class participation is based on participation in class discussions, presentations, and activities, as well as participation in Piazza discussions. 
+Class participation is based on participation in class discussions, presentations, and activities, as well as participation in Piazza discussions.
 
 ## Class Project
 
-For the final project, we will collectively design and implement an experiment embedded in a short survey. In the second half of the semester, we will devote time each week to design the survey and experiment. The goal of this project is to give students experience crafting a research design and collecting real data on a question of interest. The data will be collected on US adults through a crowd-sourcing platform.  While we will collectively design the survey and experiment, each student will be responsible for pre-registering their analysis,  analyzing the data and writing up the results on their own.
+For the final project, we will collectively design and implement an experiment embedded in a short survey. In the second half of the semester, we will devote time each week to design the survey and experiment. The goal of this project is to give students experience crafting a research design and collecting real data on a question of interest. The data will be collected on US adults through a crowd-sourcing platform. While we will collectively design the survey and experiment, each student will be responsible for pre-registering their analysis, analyzing the data and writing up the results on their own.
 
 Students in the class will:
 
-1. Propose a research question.
-2. Design an intervention suitable for a survey experiment.
-3. Write a questionnaire.
-4. Design a sampling plan and analysis strategy sufficient for answering their research question.
-5. Pre-register their study.
-6. Analyze and write up the results of the study. 
-
+1.  Propose a research question.
+2.  Design an intervention suitable for a survey experiment.
+3.  Write a questionnaire.
+4.  Design a sampling plan and analysis strategy sufficient for answering their research question.
+5.  Pre-register their study.
+6.  Analyze and write up the results of the study.
 
 ## Course Policies
 
@@ -125,7 +139,8 @@ Students in the class will:
 For problem sets submitted late, we will deduct 10% of the grade for each day late. Problem sets will not be accepted more than three days after the due date. This penalty will be waived in the case of a documented medical or family emergency.
 
 ### Office Hours and Getting Help
-I hold regular weekly office hours on Friday afternoons. Please sign up for in-person or zoom office hours at the following link: [https://fantastical.app/dhidalgo/office-hours](https://fantastical.app/dhidalgo/office-hours). 
+
+I hold regular weekly office hours on Friday afternoons. Please sign up for in-person or zoom office hours at the following link: <https://fantastical.app/dhidalgo/office-hours>.
 
 If you run into problems that you can’t solve on your own, please use the class website on Piazza to post questions. I strongly encourage students to assist in answering questions as they come up. Unless absolutely necessary, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours.
 
@@ -133,7 +148,7 @@ If you run into problems that you can’t solve on your own, please use the clas
 
 The use of generative AI tools such as ChatGPT is allowed for your assignments in this class. However, a central goal of the class is to help you become independent and critical thinkers, so we discourage you from the extensive use of generative AI tools for writing code or answers to problem sets.
 
-If you do use AI-generated content in your assignments, you must clearly indicate what work is yours and what part is AI-generated through proper attribution. We also ask you provide a short one-paragraph summary at the beginning of the assignment on how you used AI tools. 
+If you do use AI-generated content in your assignments, you must clearly indicate what work is yours and what part is AI-generated through proper attribution. We also ask you provide a short one-paragraph summary at the beginning of the assignment on how you used AI tools.
 
 ## Course Materials
 
@@ -141,19 +156,20 @@ If you do use AI-generated content in your assignments, you must clearly indicat
 
 Almost all readings for the course are available online and linked from the course website in the [schedule](schedule.qmd) page or in each week's [materials page](materials.qmd) page.
 
-The one exception is that you should purchase the following book: 
+The one exception is that you should purchase the following book:
 
-::: {.callout-warning}
+::: callout-warning
 ## Required Purchase
-Gerber, Alan S., and Donald P. Green. *Field Experiments: Design, Analysis, and Interpretation*.  New York London: W. W. Norton & Company, 2012.
+
+Gerber, Alan S., and Donald P. Green. *Field Experiments: Design, Analysis, and Interpretation*. New York London: W. W. Norton & Company, 2012.
 :::
 
-### Computing 
+### Computing
 
-We will use [`R`](https://www.r-project.org/) for all of the data  analysis in this course. `R` is a free, open-source statistical programming language that is widely used in the social sciences. We will use the [`RStudio`](https://www.rstudio.com/) integrated development environment (IDE) to write and execute `R` code. `RStudio` is also free and open-source.
+We will use [`R`](https://www.r-project.org/) for all of the data analysis in this course. `R` is a free, open-source statistical programming language that is widely used in the social sciences. We will use the [`RStudio`](https://www.rstudio.com/) integrated development environment (IDE) to write and execute `R` code. `RStudio` is also free and open-source.
 
-You should install `R` on your own computer, but to forestall any installation problems, we will provide the option to use the Posit Cloud service for the first few weeks of the course. This service allows you to run `R` and `RStudio` in your web browser. This cloud service can be resource constrained, however, so it is strongly recommended that you install `R` and `RStudio` on your own computer as soon as possible.  
+You should install `R` on your own computer, but to forestall any installation problems, we will provide the option to use the Posit Cloud service for the first few weeks of the course. This service allows you to run `R` and `RStudio` in your web browser. This cloud service can be resource constrained, however, so it is strongly recommended that you install `R` and `RStudio` on your own computer as soon as possible.
 
 ## Acknowledgements
 
-Partly inspired by courses offered by Graeme Blair, Brendan Nyan, Matt Blackwell, and Andrew Heiss.  Many thanks to them for sharing their materials and syllabi.
+Partly inspired by courses offered by Graeme Blair, Brendan Nyan, Matt Blackwell, and Andrew Heiss. Many thanks to them for sharing their materials and syllabi.
