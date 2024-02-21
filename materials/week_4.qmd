@@ -3,7 +3,11 @@ title: "Week 3: Intergroup Prejudice"
 ---
 
 ## Readings
-- Barber and Pope (2019): [direct link](https://www.cambridge.org/core/journals/american-political-science-review/article/does-party-trump-ideology-disentangling-party-and-ideology-in-america/B5BAD0AE947BD3CF18D51D399263C8D3)
+
+-   Barber and Pope (2019): [Perusall link](https://app.perusall.com/courses/17-831-data-and-politics/does-party-trump-ideology-disentangling-party-and-ideology-in-america), [direct link](https://www.cambridge.org/core/journals/american-political-science-review/article/does-party-trump-ideology-disentangling-party-and-ideology-in-america/B5BAD0AE947BD3CF18D51D399263C8D3)
+    -   *Optional Reading*: [Trump is a real world political science experiment](https://www.vox.com/science-and-health/2017/10/11/16288690/trump-political-science-psychology-follow-the-leader)
+-   Green and Gerber, pgs 51-71: [Perusall link](https://app.perusall.com/courses/17-831-data-and-politics/_/dashboard/documents/document-NbSW5QLZB992ExiG4)
 
 ## Assignments
--  [Problem Set 1](../psets/pset1/pset1.qmd), [qmd link](https://raw.githubusercontent.com/fdhidalgo/data_politics-24/main/psets/pset1/pset1.qmd)
+
+-   [Problem Set 1](../psets/pset1/pset1.qmd), [qmd link](https://raw.githubusercontent.com/fdhidalgo/data_politics-24/main/psets/pset1/pset1.qmd)
