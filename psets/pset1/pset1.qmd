@@ -49,7 +49,7 @@ The `pset1_data` data includes the following variables:
 -   `prop_opponents_other_caste`: the proportion of opponents from a different caste.
 -   `bins_opponents_other_caste`: a categorical version of `prop_opponents_other_caste` that divides the variable into 10 quantile bins.
 -   `bin_midpoint_opponents`: the midpoint of the bin for `prop_opponents_other_caste`.
--   `baseline_prop_other_caste_friends`: the proportion of neighbors from a different caste as measured before assignment to teams.
+-   `baseline_prop_other_caste_nbrs`: the proportion of neighbors from a different caste as measured before assignment to teams.
 -   `baseline_bowl_test_speed`: Maximum bowling speed in the pre-tournament test.
 -   `n_other_caste_friends`: After the conclusion of the tournaments, respondents were shown photos of all other players in their league and asked to identify those they considered friends. This variable measures the number of named friends from other castes.
 -   `n_other_caste_future_friends`: This post-tournament variable measures the number of players from other castes that the respondent is currently friends with or who they would like to be friends with.
