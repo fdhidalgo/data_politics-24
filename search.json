@@ -28,6 +28,55 @@
     "text": "Assignments Schedule\n\n\nAssignments ScheduleWeekDue DateAssignment22/12Reading Quiz2/14Tutorial42/26Reading Quiz2/28Tutorial2/29Problem Set 153/4Reading Quiz3/6Tutorial3/9Problem Set 263/11Reading Quiz3/13Tutorial73/18Reading Quiz3/20Tutorial3/21Problem Set 384/1Reading Quiz4/3Tutorial94/8Reading Quiz4/10Tutorial4/11Problem Set 4104/17Reading Quiz114/25Problem Set 5135/9Problem Set 6145/14Class Project Writeup"
   },
   {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#what-works-to-reduce-prejudice",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#what-works-to-reduce-prejudice",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "What works to reduce prejudice?",
+    "text": "What works to reduce prejudice?\n\nInter-group animus or prejudice can be enduring and pervasive\n\nEthnic\nSexual identity\nAge\nPartisanship\n\n\n\n\nHow can we reduce prejudice?\n\nMedia campaigns?\nSensitivity trainings?\nMulticultural education?\nInter-group contact\n\n\n\n\nMany possible interventions, but most have poor evidence of effectiveness."
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#what-types-of-interventions-are-studied",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#what-types-of-interventions-are-studied",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "What Types of Interventions are Studied?",
+    "text": "What Types of Interventions are Studied?"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#inter-group-contact",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#inter-group-contact",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Inter-group Contact",
+    "text": "Inter-group Contact\n\n\n Segregation in the Boston Area (Source: NY Times)\n\nContact Theory (Allport 1954):\n\nPositive contact between members of different groups can reduce prejudice\nConditions:\n\nEqual status\nCommon goals\nIntergroup cooperation\nSupport of authorities, law, or custom"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#research-design",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#research-design",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Research Design",
+    "text": "Research Design\n\n\nMost common study ask if attitudes or behavior (less common) is correlated with contact\n\nSome include demographic or other controls\nConsistent evidence for contact theory\n\n\n\n\n\n\nSecond most common study uses “laboratory” experiments\n\nControlled (i.e. scripted) settings and random assignment\nIntergroup contact is brief\nMeasurement occurs shortly after contact\nExample: Pagtolun-an and Clair (1986) had a gay man answer questions about homosexuality for 90 minutes and then post-tested students"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#field-experiments",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#field-experiments",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Field Experiments",
+    "text": "Field Experiments\n\n\n\n\n\nField experiments:\n\nRandom assignment to treatment and control\nReal-world (less controlled) settings\nShort and Long-term follow-up"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mousa-2020",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mousa-2020",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Mousa (2020)",
+    "text": "Mousa (2020)\n\n\n\n\n\n\nAftermath of genocide\nNaturalistic study\nMeasuring behavior and attitudes\nRandom assignment to treatment and control\n\nEnsures potential outcomes are independent of treatment assignment\nBackground characteristics (covariates) are balanced across treatment and control"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mousa-2020-1",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mousa-2020-1",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Mousa (2020)",
+    "text": "Mousa (2020)\n\n\n\n459 players, 42 Christian soccer teams\nOn the field outcomes:\n\nSign up for mixed team\nVote for Muslim for Sportsmanship prize\nTrain with Muslims\n\nOff the field outcomes:\n\nAttend mixed event\nPatronize Muslim events\nDonate to neutral NGO\n\n\n\n\nAttitudinal indexes:\n\nNational unity\nMuslim blame\nMuslim neighbor"
+  },
+  {
     "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#ggplot2-in-tidyverse",
     "href": "lectures/03-contact_dataviz/contact_dataviz.html#ggplot2-in-tidyverse",
     "title": "Contact Theory and Data Visualization in R",
@@ -607,6 +656,13 @@
     "title": "Week 3: Intergroup Prejudice",
     "section": "",
     "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
+  },
+  {
+    "objectID": "materials/week_3.html#slides",
+    "href": "materials/week_3.html#slides",
+    "title": "Week 3: Intergroup Prejudice",
+    "section": "Slides",
+    "text": "Slides\n\nIntergroup Contact and Data Visualization"
   },
   {
     "objectID": "materials/week_3.html#class-exercises",
