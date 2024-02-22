@@ -12,6 +12,150 @@ editor:
   render-on-save: true
 ---
 
+# Contact Theory
+
+## What works to reduce prejudice?
+
+-   Inter-group animus or prejudice can be enduring and pervasive
+    -   Ethnic
+    -   Sexual identity
+    -   Age
+    -   Partisanship
+
+. . .
+
+-   How can we reduce prejudice?
+    -   Media campaigns?
+    -   Sensitivity trainings?
+    -   Multicultural education?
+    -   **Inter-group contact**
+
+. . .
+
+Many possible interventions, but most have poor evidence of effectiveness.
+
+## What Types of Interventions are Studied?
+
+::: columns
+::: {.column width="50%"}
+![](images/paluck_intervention_approaches.png)
+:::
+
+::: {.column .fragment width="50%"}
+![](images/paluck_types.png)
+:::
+:::
+
+## Inter-group Contact
+
+::: columns
+::: {.column width="50%"}
+![](images/segregation-boston.png) Segregation in the Boston Area (Source: [NY Times](https://www.nytimes.com/interactive/2015/07/08/us/census-race-map.html))
+:::
+
+::: {.column .fragment width="50%"}
+**Contact Theory** (Allport 1954):
+
+-   **Positive contact** between members of different groups can reduce prejudice
+-   **Conditions**:
+    -   Equal status
+    -   Common goals
+    -   Intergroup cooperation
+    -   Support of authorities, law, or custom
+:::
+:::
+
+## Research Design
+
+::: incremental
+-   Most common study ask if attitudes or behavior (less common) is correlated with contact
+    -   Some include demographic or other controls
+    -   Consistent evidence for contact theory
+:::
+
+. . .
+
+::: incremental
+-   Second most common study uses "laboratory" experiments
+    -   Controlled (i.e. scripted) settings and random assignment
+    -   Intergroup contact is brief
+    -   Measurement occurs shortly after contact
+    -   *Example:* Pagtolun-an and Clair (1986) had a gay man answer questions about homosexuality for 90 minutes and then post-tested students
+:::
+
+
+
+## Field Experiments
+
+::: columns
+::: {.column width="50%"}
+![](images/paluck_settings.png)
+
+:::
+
+::: {.column .fragment width="50%"}
+-   **Field experiments**:
+    -   Random assignment to treatment and control
+    -   Real-world (less controlled) settings
+    -   Short and Long-term follow-up
+:::
+:::
+
+## Mousa (2020)
+
+::: columns
+::: {.column width="50%"}
+![](images/science.png)
+:::
+
+
+::: {.column .fragment width="50%"}
+::: incremental
+
+
+- Aftermath of genocide
+
+- Naturalistic study
+
+- Measuring behavior and attitudes
+
+- Random assignment to treatment and control
+  - Ensures potential outcomes are independent of treatment assignment
+  - Background characteristics (covariates) are **balanced** across treatment and control
+:::
+
+:::
+
+:::
+
+## Mousa (2020)
+
+::: columns
+
+::: {.column width="50%"}
+
+- 459 players, 42 Christian soccer teams
+
+- On the field outcomes: 
+  - Sign up for mixed team
+  - Vote for Muslim for Sportsmanship prize
+  - Train with Muslims
+
+- Off the field outcomes:
+  - Attend mixed event
+  - Patronize Muslim events
+  - Donate to neutral NGO 
+
+:::
+
+::: {.column .fragment width="50%"}
+- Attitudinal indexes: 
+  - National unity
+  - Muslim blame
+  - Muslim neighbor
+:::
+:::
+
 # `ggplot2`
 
 ## ggplot2 $\in$ tidyverse
@@ -22,17 +166,16 @@ editor:
 :::
 
 ::: {.column width="50%"}
+-   **ggplot2** is tidyverse's data visualization package
+-   Structure of the code for plots can be summarized as
 
-- **ggplot2** is tidyverse's data visualization package 
-- Structure of the code for plots can be summarized as
-
-````r
+``` r
 ggplot(data = [dataset], 
        mapping = aes(x = [x-variable], 
                      y = [y-variable])) +
    geom_xxx() +
    other options
-````
+```
 :::
 :::
 
@@ -289,14 +432,13 @@ ggplot(data = midwest,
 
 ## Boxplots in `R`
 
-::: {.incremental}
-
-- “Box” represents middle 50% of the data.
-  - 25% of the data is below the bottom of the box, 25% is above
-  - Height of the box is the interquartile range (IQR)
-- Horizontal line in the box is the median
-  - 50% of the data is below the median, 50% is above
-- "Whiskers" represent either:
-  - 1.5 $\times$ IQR or max/min of the data, whichever is smaller
-  - Points beyond the whiskers are considered outliers
+::: incremental
+-   “Box” represents middle 50% of the data.
+    -   25% of the data is below the bottom of the box, 25% is above
+    -   Height of the box is the interquartile range (IQR)
+-   Horizontal line in the box is the median
+    -   50% of the data is below the median, 50% is above
+-   "Whiskers" represent either:
+    -   1.5 $\times$ IQR or max/min of the data, whichever is smaller
+    -   Points beyond the whiskers are considered outliers
 :::

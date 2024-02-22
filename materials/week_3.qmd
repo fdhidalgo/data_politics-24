@@ -9,6 +9,10 @@ title: "Week 3: Intergroup Prejudice"
 -   Green and Gerber (2012), pgs. 30-45: [Perusall link](https://app.perusall.com/courses/17-831-data-and-politics/field-experiments-design-analysis-and-interpretation-chapter-2)
 -   RDS: [Chapter 1](https://r4ds.hadley.nz/data-visualize), [Chapter 3](https://r4ds.hadley.nz/data-transform)
 
+## Slides
+
+- [Intergroup Contact and Data Visualization](../lectures/03-contact_dataviz/contact_dataviz.qmd)
+
 ## Class Exercises
 - [Intergroup Contact](https://www.dropbox.com/scl/fi/7ja9yilul28tqlxu4r223/contact.qmd?rlkey=yz71byb82mkafgrxxlv1lzkww&dl=1)
 
