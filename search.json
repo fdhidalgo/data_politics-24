@@ -599,14 +599,14 @@
     "href": "psets/pset1/pset1.html",
     "title": "Problem Set 1",
     "section": "",
-    "text": "Please submit this assignment on Gradescope by February 27.\nYou will need to submit the following files:\n\nAn .qmd file (or “Quarto file” when spoken) that is a plain-text file that contains the text of your write-up and the code used to do all of the calculations for the assignment. You can write directly into this file in RStudio. You can download the qmd version of this file at this link: pset.qmd.\nAn output .pdf file that contains the compiled version of the qmd file. Usually, you might call this the write-up and it will be nicely formatted."
+    "text": "Please submit the PDF version of this assignment on Gradescope by February 27. The qmd file can be submitted at the following link: https://www.dropbox.com/request/3VsDLGIdfMSSCHapm6Ey\nYou will need to submit the following files:\n\nAn .qmd file (or “Quarto file” when spoken) that is a plain-text file that contains the text of your write-up and the code used to do all of the calculations for the assignment. You can write directly into this file in RStudio. You can download the qmd version of this file at this link: pset.qmd.\nAn output .pdf file that contains the compiled version of the qmd file. Usually, you might call this the write-up and it will be nicely formatted."
   },
   {
     "objectID": "psets/pset1/pset1.html#instructions",
     "href": "psets/pset1/pset1.html#instructions",
     "title": "Problem Set 1",
     "section": "",
-    "text": "Please submit this assignment on Gradescope by February 27.\nYou will need to submit the following files:\n\nAn .qmd file (or “Quarto file” when spoken) that is a plain-text file that contains the text of your write-up and the code used to do all of the calculations for the assignment. You can write directly into this file in RStudio. You can download the qmd version of this file at this link: pset.qmd.\nAn output .pdf file that contains the compiled version of the qmd file. Usually, you might call this the write-up and it will be nicely formatted."
+    "text": "Please submit the PDF version of this assignment on Gradescope by February 27. The qmd file can be submitted at the following link: https://www.dropbox.com/request/3VsDLGIdfMSSCHapm6Ey\nYou will need to submit the following files:\n\nAn .qmd file (or “Quarto file” when spoken) that is a plain-text file that contains the text of your write-up and the code used to do all of the calculations for the assignment. You can write directly into this file in RStudio. You can download the qmd version of this file at this link: pset.qmd.\nAn output .pdf file that contains the compiled version of the qmd file. Usually, you might call this the write-up and it will be nicely formatted."
   },
   {
     "objectID": "psets/pset1/pset1.html#background",
