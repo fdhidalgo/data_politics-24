@@ -14,7 +14,7 @@ library(tidyverse)
 
 ## Instructions
 
-Please submit this assignment on Gradescope by February 27.
+Please submit the PDF version of this assignment on Gradescope by February 27. The qmd file can be submitted at the following link: <https://www.dropbox.com/request/3VsDLGIdfMSSCHapm6Ey>
 
 You will need to submit the following files:
 
@@ -65,7 +65,6 @@ The following code will import the data needed for this assignment:
 
 pset1_data <- read_csv("https://www.dropbox.com/scl/fi/fc64m81fu12nvbzd1x6h4/pset1_data.csv?rlkey=vy6hy3gh1sqc0j6byfmxx0kny&dl=1")
 ```
-
 
 ### Problem 1
 
