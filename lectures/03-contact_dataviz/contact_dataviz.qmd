@@ -83,14 +83,11 @@ Many possible interventions, but most have poor evidence of effectiveness.
     -   *Example:* Pagtolun-an and Clair (1986) had a gay man answer questions about homosexuality for 90 minutes and then post-tested students
 :::
 
-
-
 ## Field Experiments
 
 ::: columns
 ::: {.column width="50%"}
 ![](images/paluck_settings.png)
-
 :::
 
 ::: {.column .fragment width="50%"}
@@ -108,51 +105,46 @@ Many possible interventions, but most have poor evidence of effectiveness.
 ![](images/science.png)
 :::
 
-
 ::: {.column .fragment width="50%"}
 ::: incremental
+-   Aftermath of genocide
 
+-   Naturalistic study
 
-- Aftermath of genocide
+-   Measuring behavior and attitudes
 
-- Naturalistic study
+-   Random assignment to treatment and control
 
-- Measuring behavior and attitudes
-
-- Random assignment to treatment and control
-  - Ensures potential outcomes are independent of treatment assignment
-  - Background characteristics (covariates) are **balanced** across treatment and control
+    -   Ensures potential outcomes are independent of treatment assignment
+    -   Background characteristics (covariates) are **balanced** across treatment and control
 :::
-
 :::
-
 :::
 
 ## Mousa (2020)
 
 ::: columns
-
 ::: {.column width="50%"}
+-   459 players, 42 Christian soccer teams
 
-- 459 players, 42 Christian soccer teams
+-   On the field outcomes:
 
-- On the field outcomes: 
-  - Sign up for mixed team
-  - Vote for Muslim for Sportsmanship prize
-  - Train with Muslims
+    -   Sign up for mixed team
+    -   Vote for Muslim for Sportsmanship prize
+    -   Train with Muslims
 
-- Off the field outcomes:
-  - Attend mixed event
-  - Patronize Muslim events
-  - Donate to neutral NGO 
+-   Off the field outcomes:
 
+    -   Attend mixed event
+    -   Patronize Muslim events
+    -   Donate to neutral NGO
 :::
 
 ::: {.column .fragment width="50%"}
-- Attitudinal indexes: 
-  - National unity
-  - Muslim blame
-  - Muslim neighbor
+-   Attitudinal indexes:
+    -   National unity
+    -   Muslim blame
+    -   Muslim neighbor
 :::
 :::
 
@@ -179,6 +171,7 @@ ggplot(data = [dataset],
 :::
 :::
 
+
 ## Midwest data
 
 ```{r}
@@ -188,6 +181,11 @@ library(ggplot2)
 midwest
 
 ```
+
+::: aside
+This section draws heavily on [slides](https://gov50-f23.github.io/slides/03_data_viz_handout.pdf) prepared by Matt Blackwell. 
+:::
+
 
 ## Building up a graph in pieces
 
