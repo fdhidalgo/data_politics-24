@@ -46,6 +46,10 @@ Many possible interventions, but most have poor evidence of effectiveness.
 :::
 :::
 
+::: aside
+@paluck2021
+:::
+
 ## Inter-group Contact
 
 ::: columns
@@ -171,7 +175,6 @@ ggplot(data = [dataset],
 :::
 :::
 
-
 ## Midwest data
 
 ```{r}
@@ -183,9 +186,8 @@ midwest
 ```
 
 ::: aside
-This section draws heavily on [slides](https://gov50-f23.github.io/slides/03_data_viz_handout.pdf) prepared by Matt Blackwell. 
+This section draws heavily on [slides](https://gov50-f23.github.io/slides/03_data_viz_handout.pdf) prepared by Matt Blackwell.
 :::
-
 
 ## Building up a graph in pieces
 
@@ -440,3 +442,5 @@ ggplot(data = midwest,
     -   1.5 $\times$ IQR or max/min of the data, whichever is smaller
     -   Points beyond the whiskers are considered outliers
 :::
+
+## References
