@@ -227,7 +227,7 @@ Under simple random assignment, we can estimate these quantities using the sampl
 $$
 \begin{align}
 E\left[\frac{\sum_{i=1}^{m} Y_i}{m} - \frac{\sum_{i=m+1}^{N} Y_i}{N - m}\right] &= E\left[\frac{\sum_{i=1}^{m} Y_i}{m}\right] - E\left[\frac{\sum_{i=m+1}^{N} Y_i}{N - m}\right] \\
-&= \frac{E[Y_i(1) | D_i = 1]}{m} - \frac{E[Y_i(0) | D_i = 0]}{N - m} \\
+&= E[Y_i(1) | D_i = 1] - E[Y_i(0) | D_i = 0] \\
 &= E[Y_i(1)] - E[Y_i(0)] \\
 &= E[\tau_i] = \text{ATE}.
 \end{align} 
