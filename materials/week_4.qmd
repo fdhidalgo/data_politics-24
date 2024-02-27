@@ -10,7 +10,7 @@ title: "Week 3: Intergroup Prejudice"
 
 ## Slides
 
-- Lecture 4 (2/27): [Estimation of Causal Effectsand Data Manipulation in `R`](../lectures/04-estimation_dplyr/estimation_dplyr.qmd)
+- Lecture 4 (2/27): [Estimation of Causal Effects and Data Manipulation in `R`](../lectures/04-estimation_dplyr/estimation_dplyr.qmd)
 
 ## Assignments
 
