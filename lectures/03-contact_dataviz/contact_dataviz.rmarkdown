@@ -12,6 +12,7 @@ editor:
   render-on-save: true
 ---
 
+
 # Contact Theory
 
 ## What works to reduce prejudice?
@@ -177,6 +178,7 @@ ggplot(data = [dataset],
 
 ## Midwest data
 
+
 ```{r}
 #| echo: true
 
@@ -184,6 +186,7 @@ library(ggplot2)
 midwest
 
 ```
+
 
 ::: aside
 This section draws heavily on [slides](https://gov50-f23.github.io/slides/03_data_viz_handout.pdf) prepared by Matt Blackwell.
@@ -193,12 +196,15 @@ This section draws heavily on [slides](https://gov50-f23.github.io/slides/03_dat
 
 Create ggplot object and direct it to the correct data:
 
+
 ```{r}
 #| echo: true
 p <- ggplot(data = midwest)
 ```
 
+
 **Mapping**: tell ggplot what visual aesthetics correspond to which variables
+
 
 ```{r}
 #| echo: true
@@ -207,9 +213,11 @@ p <- ggplot(data = midwest,
                           y = percbelowpoverty))
 ```
 
+
 Other aesthetic mappings: color, shape, size, etc.
 
 ## Adding a geom layer
+
 
 ```{r}
 #| echo: true
@@ -220,7 +228,9 @@ ggplot(data = midwest,
   geom_point()
 ```
 
+
 ## Trying a new geom
+
 
 ```{r}
 #| echo: true
@@ -233,7 +243,9 @@ ggplot(data = midwest,
 
 ```
 
+
 ## Layering geoms is additive
+
 
 ```{r}
 #| echo: true
@@ -248,7 +260,9 @@ ggplot(data = midwest,
   scale_x_log10()
 ```
 
+
 ## Geoms are functions
+
 
 ```{r}
 #| echo: true
@@ -262,7 +276,9 @@ ggplot(data = midwest,
   scale_x_log10()
 ```
 
+
 ## Adding Informative Labels
+
 
 ```{r}
 #| echo: true
@@ -284,7 +300,9 @@ p2 <- ggplot(data = midwest,
 p2
 ```
 
+
 ## Mapping vs setting aesthetics
+
 
 ```{r}
 #| echo: true
@@ -299,9 +317,11 @@ ggplot(data = midwest,
   scale_x_log10()
 ```
 
+
 ## Mapping always refers to variables
 
 If passed a value other than a variable name, ggplot will implicitly create a variable with that value (in this case "purple" that is constant)
+
 
 ```{r}
 #| echo: true
@@ -315,9 +335,11 @@ ggplot(data = midwest,
   scale_x_log10()
 ```
 
+
 . . .
 
 Set the color outside the `mapping = aes()` format.
+
 
 ```{r}
 #| echo: true
@@ -331,7 +353,9 @@ ggplot(data = midwest,
   scale_x_log10()
 ```
 
+
 ## Mapping more aesthetics
+
 
 ```{r}
 #| echo: true
@@ -348,7 +372,9 @@ ggplot(data = midwest,
   scale_x_log10()
 ```
 
+
 ## Mappings can be done on a per geom basis
+
 
 ```{r}
 #| echo: true
@@ -363,11 +389,13 @@ ggplot(data = midwest,
   scale_x_log10()
 ```
 
+
 # Histograms and Boxplots
 
 ## Histograms
 
 **Histograms** show where there are more or fewer observations of a numeric variable.
+
 
 ```{r}
 #| echo: true
@@ -379,6 +407,7 @@ ggplot(data = midwest,
   geom_histogram()
 ```
 
+
 Split up range of variable into bins, count how many are in each bin.
 
 y aesthetic calculated automatically.
@@ -386,6 +415,7 @@ y aesthetic calculated automatically.
 ## Creating small multiples with facets
 
 **Small multiples**: a series of similar graphs with the same scale/axes to help with comparing different partitions of a dataset.
+
 
 ```{r}
 #| echo: true
@@ -398,11 +428,13 @@ ggplot(data = midwest,
   facet_wrap(~ state)
 ```
 
+
 We’ll see more of the `~` variable syntax (called a formula).
 
 ## Density as alternative to histograms
 
 A kernel density plot is a smoothed version of a histogram and slightly easier to overlay.
+
 
 ```{r}
 #| echo: true
@@ -415,9 +447,11 @@ ggplot(data = midwest,
   geom_density(alpha = .3)
 ```
 
+
 ## Boxplots
 
 Boxplots are another way to compare distributions across discrete groups.
+
 
 ```{r}
 #| echo: true
@@ -429,6 +463,7 @@ ggplot(data = midwest,
                      y = percbelowpoverty)) +
   geom_boxplot()
 ```
+
 
 ## Boxplots in `R`
 
@@ -444,3 +479,4 @@ ggplot(data = midwest,
 :::
 
 ## References
+

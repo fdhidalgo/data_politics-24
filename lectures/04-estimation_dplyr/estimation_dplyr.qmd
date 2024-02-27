@@ -1,0 +1,538 @@
+---
+title: "Estimation of Causal Effects<BR>and Data Manipulation in `R`"
+subtitle: "Lecture 4"
+date: last-modified
+author: 
+  - name: F. Daniel Hidalgo
+    email: dhidalgo@mit.edu
+    affiliations: MIT
+format: clean-revealjs
+engine: knitr
+webr:
+  packages: ['ggplot2', 'dplyr', 'gapminder'] # Install R packages on document open
+  show-startup-message: false
+filters: 
+  - timer
+  - webr
+bibliography: ../data_politics_2024.bib
+editor:
+  render-on-save: true
+---
+
+```{r}
+#| label: echo
+#| echo: false
+#| warning: false
+
+library(tidyverse)
+library(hrbrthemes)
+library(gganimate)
+theme_set(theme_ipsum())
+```
+
+# Estimation of Causal Effects
+
+## Potential Outcomes
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: potential_outcomes
+#| echo: true
+## Potential Outcomes
+po <- tibble(
+  X = rnorm(n = 50, mean = 2, sd = 2),
+  Y0 = rnorm(50, 10, 5) +
+    5 * X,
+  Y1 = Y0 + 3
+)
+
+head(po)
+
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r}
+#| label: potential_outcomes_plot
+#| echo: true
+#| code-fold: true
+#| fig.height: 8
+
+pivot_longer(po, cols = c(Y0, Y1), names_to = "Y") |>
+  ggplot(aes(x = value, color = Y, fill = Y)) +
+  geom_density(alpha = .3) +
+#  theme_minimal() +
+  labs(title = "Potential Outcomes",
+       x = "Outcome",
+       y = "Density") +
+  theme(legend.position = "bottom") +
+  scale_fill_ipsum() +
+  scale_color_ipsum()
+
+
+```
+:::
+:::
+
+## A Single Draw
+
+```{r}
+#| label: estimation
+#| echo: true
+
+po$D <- sample(c(0, 1), 50, replace = TRUE)
+po$Y <- po$D * po$Y1 + (1 - po$D) * po$Y0
+
+est_ate <- mean(po$Y[po$D == 1]) -
+  mean(po$Y[po$D == 0])
+
+est_ate
+```
+
+```{r}
+#| label: estimation_plot
+#| echo: true
+#| code-fold: true
+#| fig.width: 20
+
+
+draws <- ggplot() +
+  xlim(-1,7) +
+  ylim(0,1) +
+  geom_point(aes(x = 3, y = .5), size = 5,  color = "orange") +
+  geom_point(aes(x = est_ate, y = .5), size = 5, color = "darkgray") +
+# remove y-axis 
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) 
+  
+
+draws
+```
+
+## Another Draw
+
+```{r}
+#| label: another_draw
+#| echo: true
+#| code-fold: false
+#| fig.width: 20
+
+estim_ate <- function(data){
+  data$D <- sample(c(0, 1), 50, replace = TRUE)
+  data$Y <- data$D * data$Y1 + (1 - data$D) * data$Y0
+  mean(data$Y[data$D == 1]) -
+    mean(data$Y[data$D == 0])
+}
+
+another_draw <- estim_ate(po)
+another_draw
+```
+
+```{r}
+#| label: another_draw_plot
+#| echo: true
+#| code-fold: true
+#| fig.width: 20
+
+draws <- draws +
+  geom_point(aes(x = another_draw, y = .5), size = 5, color = "darkgray")
+
+draws
+```
+
+## Many Draws
+
+```{r}
+#| label: many_draws
+#| echo: true
+
+estimates <- replicate(1000, estim_ate(po))
+
+```
+
+. . .
+
+```{r}
+#| label: many_draws_plot
+#| echo: true
+#| code-fold: true
+#| fig.width: 20
+#| cache: true
+
+ests_df <- tibble(draw = 1:1000, 
+                  ests = estimates)
+ests_df |>
+ggplot() +
+  xlim(min(ests_df$ests), max(ests_df$ests)) +
+  ylim(0,1) +
+  geom_point(aes(x = ests, y = .5, group = draw), size = 5, color = "darkgray") +
+  geom_point(aes(x = 3, y = .5), size = 10,  color = "orange") +
+# remove y-axis 
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) +
+  transition_reveal(draw)
+
+```
+
+. . .
+
+```{r}
+#| label: mean_draws
+#| echo: true
+mean(estimates)
+```
+
+## Expectations
+
+The [**expectation**]{.alert} of a discrete random variable $Y$ is given by: $$E[Y] = \sum y \Pr[Y=y]$$ . . .
+
+The [**conditional expectation**]{.alert} of $Y$ given $X$ is given by: $$E[Y|X] = \sum y \Pr[Y=y|X=x] $$
+
+## Estimand
+
+The [**average treatment effect**]{.alert} (ATE) is given by: $$
+\begin{align*}
+\tau &= E[Y(1) - Y(0)] = E[Y(1)] - E[Y(0)]  \\
+&= \frac{1}{N} \sum_{i=1}^N (Y_i(1) - Y_i(0)) \equiv \textrm{ATE}
+\end{align*}
+$$
+
+This is the number we want to **estimate**.
+
+## Random Assignment and Unbiased Inference
+
+Because random assignment ensures that potential outcomes are **independent** of treatment assignment, we have that:
+
+$$E[Y(1)|D=1] = E[Y(1)|D=0] = E[Y(1)]$$
+
+$$E[Y(0)|D=1] = E[Y(0)|D=0] = E[Y(0)]$$
+
+. . .
+
+As a result: $$\textrm{ATE} = E[Y(1)] - E[Y(0)] = E[Y(1)|D=1] - E[Y(0)|D=0]$$
+
+## Estimation
+
+We need to estimate $E[Y(1)|D=1]$ and $E[Y(0)|D=0]$.
+
+Under simple random assignment, we can estimate these quantities using the sample **means** of the treated and control groups:
+
+. . .
+
+$$
+\begin{align}
+E\left[\frac{\sum_{i=1}^{m} Y_i}{m} - \frac{\sum_{i=m+1}^{N} Y_i}{N - m}\right] &= E\left[\frac{\sum_{i=1}^{m} Y_i}{m}\right] - E\left[\frac{\sum_{i=m+1}^{N} Y_i}{N - m}\right] \\
+&= \frac{E[Y_i(1) | D_i = 1]}{m} - \frac{E[Y_i(0) | D_i = 0]}{N - m} \\
+&= E[Y_i(1)] - E[Y_i(0)] \\
+&= E[\tau_i] = \text{ATE}.
+\end{align} 
+$$
+
+## Unbiased Estimation
+
+::: columns
+::: {.column width="50%"}
+
+Our [**estimator**]{.alert} is the *difference-in-means*. 
+
+Our [**estimator**]{.alert} is unbiased if over repeated randomization, the expected value of the estimator is equal to the true value of the [**estimand**]{.alert}.
+
+:::
+
+::: {.column .fragment width="50%"}
+
+```{r}
+#| label: ests_hist
+#| echo: true
+#| code-fold: true
+#| fig.height: 10
+
+ests_df |>
+  ggplot() +
+  geom_histogram(aes(x = ests), bins = 30, fill = "lightblue", color = "black") +
+  geom_vline(aes(xintercept = 3), color = "orange", linewidth = 2) +
+  labs(title = "Distribution of Estimates",
+       x = "Estimate",
+       y = "Frequency")
+
+```
+
+
+:::
+:::
+
+## Covariate Balance
+::: columns
+::: {.column width="50%"}
+
+We can use *pre-treatment* [**covariates**]{.alert} $X$ to identify bad draws. 
+
+If $X$ is predictive of outcomes and we find that $X$ is not *balanced* across treatment and control groups, then  our **estimate** might be far from our  **estimand**.
+
+:::
+
+::: {.column .fragment width="50%"}
+```{r}
+#| label: covariate_balance
+#| echo: true
+#| code-fold: true
+#| fig.height: 7
+
+estim_ate_bal <- function(data){
+  data$D <- sample(c(0, 1), 50, replace = TRUE)
+  data$Y <- data$D * data$Y1 + (1 - data$D) * data$Y0
+  tibble(est_y = mean(data$Y[data$D == 1]) - mean(data$Y[data$D == 0]),
+         est_x = mean(data$X[data$D == 1]) - mean(data$X[data$D == 0]))
+}
+
+ests <- map(1:1000, ~estim_ate_bal(po)) |>
+  bind_rows()
+
+ests |>
+  ggplot() +
+  geom_point(aes(x = est_x, y = est_y), color = "lightblue") +
+  geom_smooth(aes(x = est_x, y = est_y), method = "lm", color = "red",
+              se = FALSE) +
+  geom_hline(yintercept = 3, color = "orange", linetype = "dashed", size = 3) +
+  labs(title = "ATE Estimates and Covariate Balance",
+       x = "Covariate Balance",
+       y = "Estimate",
+       caption = "Orange line is the true ATE")
+
+```
+
+
+:::
+:::
+
+# Data Wrangling with `dplyr`
+
+## Messy Data
+
+- Data almost **never** comes in the form we need
+
+- The potential problems are endless:
+  - Missing values
+  - Need to transform the variable in some way
+  - Need to summarize within groups
+  - Need to rename the variables
+  - Need to reorder the data
+
+- Today we will learn how to use the `dplyr` package to solve these problems
+
+## The `dplyr` Package
+
+:::: columns
+
+::: {.column width="30%"}
+![](images/dplyr.png)
+:::
+
+::: {.column width="70%" }
+
+- `dplyr` is a set of functions for data manipulation. These functions:
+
+  - Take a dataset as their input
+  - Manipulate the dataset in some way
+  - Return a new dataset as their output
+
+:::
+
+::::
+
+## The Pipe
+
+Nested calls can be hard to read:
+
+```r
+mean(sd(log(x)))
+```
+
+The pipe operator (`|>`) allows us to write this as:
+
+```r
+x |> 
+  log() |> 
+  sd() |> 
+  mean()
+```
+
+## Operating on Rows
+
+ `filter()`: subset rows based on a condition
+ 
+ ![](images/filter.png)
+ 
+## `filter`
+ 
+```{webr-r}
+#| label: filter
+#| echo: true
+
+library(gapminder)
+
+gapminder |> 
+  filter(country == "Brazil")
+
+```
+ 
+## Logicals
+
+- Comparing two values/vectors: 
+  - `>` or `>=`: greater than or equal to
+  - `<` or `<=`: less than or equal to
+  - `==` or `!=`: equal to or not equal to
+  
+- Combining multiple logical conditions:
+  - `&`: and
+  - `|`: or
+  - `!`: not
+  
+## Multiple Conditions
+
+```{webr-r}
+
+gapminder |> 
+  filter(country == "Brazil" & year == 2007)
+
+```
+
+## Combining `%in%`
+
+When combining `|` and `==`, useful to use `%in%`:
+
+```{webr-r}
+
+gapminder |> 
+  filter(country %in% c("Brazil", "Argentina") & year == 2007)
+
+```
+
+## Arrange
+
+`arrange()`: reorder rows based on a variable.
+
+With multiple variables, `arrange()` will sort by the first variable, then the second, and so on.
+
+```{webr-r}
+
+gapminder |> 
+  arrange(year, country)
+
+```
+
+## Rich and Poor Countries
+
+Which country years have the highest and lowest GDP per capita?
+
+```{webr-r}
+
+gapminder |> 
+  arrange(gdpPercap)
+
+```
+
+Use `desc()` to sort in descending order:
+
+```{webr-r}
+
+gapminder |> 
+  arrange(desc(gdpPercap))
+
+```
+
+## Operating on columns
+
+`select()`: subset columns based on their names
+
+```{webr-r}
+
+gapminder |> 
+  select(country, year, gdpPercap)
+
+```
+
+## `rename`
+
+`rename()`: rename columns
+
+```{webr-r}
+
+gapminder |> 
+  rename(population = pop)
+
+```
+
+## `mutate`
+
+![](images/mutate.png)
+
+
+## `mutate`
+
+`mutate()`: add new variables or modify existing ones
+
+
+```{webr-r}
+
+gapminder |> 
+  mutate(gdp = gdpPercap * pop)
+
+```
+
+## `ifelse`
+
+`ifelse(test, yes, no)`: a vectorized if-else statement
+
+New vector is `yes` where `test` is `TRUE`, and `no` where `test` is `FALSE`
+
+```{webr-r}
+
+gapminder |> 
+  mutate(high_gdp = ifelse(gdpPercap > 10000, "High", "Low"))
+
+
+```
+
+## `group_by`
+
+`group_by()`: group the data by one or more variables
+
+Doesn't change the data, but tells `dplyr` that you want to operate on the data in groups
+
+```{webr-r}
+
+gapminder |> 
+  group_by(country) 
+
+```
+
+## `summarize`
+
+`summarize()`: collapse each group into a single row
+
+```{webr-r}
+
+gapminder |>
+  filter(year == 2007) |>
+  group_by(continent) |>
+  summarize(mean_gdp = mean(gdpPercap),
+            total_pop = sum(pop))
+
+```
+
+## `mutate` and `group_by`
+
+`mutate()` and `group_by()` can be used together to create new variables that are calculated within groups
+
+```{webr-r}
+
+gapminder |>
+  filter(year == 2007) |>
+  group_by(continent) |>
+  mutate(rank = rank(desc(gdpPercap)))
+
+```
