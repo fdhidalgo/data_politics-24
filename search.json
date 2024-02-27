@@ -683,7 +683,7 @@
     "href": "materials/week_4.html#slides",
     "title": "Week 3: Intergroup Prejudice",
     "section": "Slides",
-    "text": "Slides\n\nLecture 4 (2/27): Estimation of Causal Effectsand Data Manipulation in R"
+    "text": "Slides\n\nLecture 4 (2/27): Estimation of Causal Effects and Data Manipulation in R"
   },
   {
     "objectID": "materials/week_4.html#assignments",
@@ -1033,28 +1033,28 @@
     "href": "lectures/04-estimation_dplyr/estimation_dplyr.html#potential-outcomes",
     "title": "Estimation of Causal Effectsand Data Manipulation in R",
     "section": "Potential Outcomes",
-    "text": "Potential Outcomes\n\n\n\n## Potential Outcomes\npo &lt;- tibble(\n  X = rnorm(n = 50, mean = 2, sd = 2),\n  Y0 = rnorm(50, 10, 5) +\n    5 * X,\n  Y1 = Y0 + 3\n)\n\nhead(po)\n\n# A tibble: 6 × 3\n       X    Y0    Y1\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 -0.315 10.8   13.8\n2 -0.144 15.4   18.4\n3  2.27  20.3   23.3\n4  0.502 13.0   16.0\n5  3.61  31.7   34.7\n6  0.287  8.40  11.4\n\n\n\n\n\nCode\npivot_longer(po, cols = c(Y0, Y1), names_to = \"Y\") |&gt;\n  ggplot(aes(x = value, color = Y, fill = Y)) +\n  geom_density(alpha = .3) +\n#  theme_minimal() +\n  labs(title = \"Potential Outcomes\",\n       x = \"Outcome\",\n       y = \"Density\") +\n  theme(legend.position = \"bottom\") +\n  scale_fill_ipsum() +\n  scale_color_ipsum()"
+    "text": "Potential Outcomes\n\n\n\n## Potential Outcomes\npo &lt;- tibble(\n  X = rnorm(n = 50, mean = 2, sd = 2),\n  Y0 = rnorm(50, 10, 5) +\n    5 * X,\n  Y1 = Y0 + 3\n)\n\nhead(po)\n\n# A tibble: 6 × 3\n       X    Y0    Y1\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  5.54  32.2  35.2 \n2  2.24  21.2  24.2 \n3 -0.375  4.27  7.27\n4 -0.451 11.2  14.2 \n5  3.03  15.7  18.7 \n6  1.60  19.4  22.4 \n\n\n\n\n\nCode\npivot_longer(po, cols = c(Y0, Y1), names_to = \"Y\") |&gt;\n  ggplot(aes(x = value, color = Y, fill = Y)) +\n  geom_density(alpha = .3) +\n#  theme_minimal() +\n  labs(title = \"Potential Outcomes\",\n       x = \"Outcome\",\n       y = \"Density\") +\n  theme(legend.position = \"bottom\") +\n  scale_fill_ipsum() +\n  scale_color_ipsum()"
   },
   {
     "objectID": "lectures/04-estimation_dplyr/estimation_dplyr.html#a-single-draw",
     "href": "lectures/04-estimation_dplyr/estimation_dplyr.html#a-single-draw",
     "title": "Estimation of Causal Effectsand Data Manipulation in R",
     "section": "A Single Draw",
-    "text": "A Single Draw\n\npo$D &lt;- sample(c(0, 1), 50, replace = TRUE)\npo$Y &lt;- po$D * po$Y1 + (1 - po$D) * po$Y0\n\nest_ate &lt;- mean(po$Y[po$D == 1]) -\n  mean(po$Y[po$D == 0])\n\nest_ate\n\n[1] 5.499512\n\n\n\n\nCode\ndraws &lt;- ggplot() +\n  xlim(-1,7) +\n  ylim(0,1) +\n  geom_point(aes(x = 3, y = .5), size = 5,  color = \"orange\") +\n  geom_point(aes(x = est_ate, y = .5), size = 5, color = \"darkgray\") +\n# remove y-axis \n  theme(axis.title.y=element_blank(),\n        axis.text.y=element_blank(),\n        axis.ticks.y=element_blank()) \n  \n\ndraws"
+    "text": "A Single Draw\n\npo$D &lt;- sample(c(0, 1), 50, replace = TRUE)\npo$Y &lt;- po$D * po$Y1 + (1 - po$D) * po$Y0\n\nest_ate &lt;- mean(po$Y[po$D == 1]) -\n  mean(po$Y[po$D == 0])\n\nest_ate\n\n[1] 0.9883974\n\n\n\n\nCode\ndraws &lt;- ggplot() +\n  xlim(-1,7) +\n  ylim(0,1) +\n  geom_point(aes(x = 3, y = .5), size = 5,  color = \"orange\") +\n  geom_point(aes(x = est_ate, y = .5), size = 5, color = \"darkgray\") +\n# remove y-axis \n  theme(axis.title.y=element_blank(),\n        axis.text.y=element_blank(),\n        axis.ticks.y=element_blank()) \n  \n\ndraws"
   },
   {
     "objectID": "lectures/04-estimation_dplyr/estimation_dplyr.html#another-draw",
     "href": "lectures/04-estimation_dplyr/estimation_dplyr.html#another-draw",
     "title": "Estimation of Causal Effectsand Data Manipulation in R",
     "section": "Another Draw",
-    "text": "Another Draw\n\nestim_ate &lt;- function(data){\n  data$D &lt;- sample(c(0, 1), 50, replace = TRUE)\n  data$Y &lt;- data$D * data$Y1 + (1 - data$D) * data$Y0\n  mean(data$Y[data$D == 1]) -\n    mean(data$Y[data$D == 0])\n}\n\nanother_draw &lt;- estim_ate(po)\nanother_draw\n\n[1] -0.6909809\n\n\n\n\nCode\ndraws &lt;- draws +\n  geom_point(aes(x = another_draw, y = .5), size = 5, color = \"darkgray\")\n\ndraws"
+    "text": "Another Draw\n\nestim_ate &lt;- function(data){\n  data$D &lt;- sample(c(0, 1), 50, replace = TRUE)\n  data$Y &lt;- data$D * data$Y1 + (1 - data$D) * data$Y0\n  mean(data$Y[data$D == 1]) -\n    mean(data$Y[data$D == 0])\n}\n\nanother_draw &lt;- estim_ate(po)\nanother_draw\n\n[1] 2.086027\n\n\n\n\nCode\ndraws &lt;- draws +\n  geom_point(aes(x = another_draw, y = .5), size = 5, color = \"darkgray\")\n\ndraws"
   },
   {
     "objectID": "lectures/04-estimation_dplyr/estimation_dplyr.html#many-draws",
     "href": "lectures/04-estimation_dplyr/estimation_dplyr.html#many-draws",
     "title": "Estimation of Causal Effectsand Data Manipulation in R",
     "section": "Many Draws",
-    "text": "Many Draws\n\nestimates &lt;- replicate(1000, estim_ate(po))\n\n\n\n\nCode\nests_df &lt;- tibble(draw = 1:1000, \n                  ests = estimates)\nests_df |&gt;\nggplot() +\n  xlim(min(ests_df$ests), max(ests_df$ests)) +\n  ylim(0,1) +\n  geom_point(aes(x = ests, y = .5, group = draw), size = 5, color = \"darkgray\") +\n  geom_point(aes(x = 3, y = .5), size = 10,  color = \"orange\") +\n# remove y-axis \n  theme(axis.title.y=element_blank(),\n        axis.text.y=element_blank(),\n        axis.ticks.y=element_blank()) +\n  transition_reveal(draw)\n\n\n\n\n\n\n\n\n\n\n\n\nmean(estimates)\n\n[1] 2.815682"
+    "text": "Many Draws\n\nestimates &lt;- replicate(1000, estim_ate(po))\n\n\n\n\nCode\nests_df &lt;- tibble(draw = 1:1000, \n                  ests = estimates)\nests_df |&gt;\nggplot() +\n  xlim(min(ests_df$ests), max(ests_df$ests)) +\n  ylim(0,1) +\n  geom_point(aes(x = ests, y = .5, group = draw), size = 5, color = \"darkgray\") +\n  geom_point(aes(x = 3, y = .5), size = 10,  color = \"orange\") +\n# remove y-axis \n  theme(axis.title.y=element_blank(),\n        axis.text.y=element_blank(),\n        axis.ticks.y=element_blank()) +\n  transition_reveal(draw)\n\n\n\n\n\n\n\n\n\n\n\n\nmean(estimates)\n\n[1] 3.008488"
   },
   {
     "objectID": "lectures/04-estimation_dplyr/estimation_dplyr.html#expectations",
