@@ -8,7 +8,11 @@ title: "Week 3: Intergroup Prejudice"
     -   *Optional Reading*: [Trump is a real world political science experiment](https://www.vox.com/science-and-health/2017/10/11/16288690/trump-political-science-psychology-follow-the-leader)
 -   Green and Gerber, pgs 51-71: [Perusall link](https://app.perusall.com/courses/17-831-data-and-politics/_/dashboard/documents/document-NbSW5QLZB992ExiG4)
 
+## Slides
+
+- Lecture 4 (2/27): [Estimation of Causal Effectsand Data Manipulation in `R`](../lectures/04-estimation_dplyr/estimation_dplyr.qmd)
+
 ## Assignments
 
 -   [Problem Set 1](../psets/pset1/pset1.qmd), [qmd link](https://raw.githubusercontent.com/fdhidalgo/data_politics-24/main/psets/pset1/pset1.qmd)
--  [Tutorial 2](https://dhidalgo.shinyapps.io/Tutorial-2/)
+-   [Tutorial 2](https://dhidalgo.shinyapps.io/Tutorial-2/)
