@@ -187,7 +187,9 @@ mean(estimates)
 
 ## Expectations
 
-The [**expectation**]{.alert} of a discrete random variable $Y$ is given by: $$E[Y] = \sum y \Pr[Y=y]$$ . . .
+The [**expectation**]{.alert} of a discrete random variable $Y$ is given by: $$E[Y] = \sum y \Pr[Y=y]$$ 
+
+. . .
 
 The [**conditional expectation**]{.alert} of $Y$ given $X$ is given by: $$E[Y|X] = \sum y \Pr[Y=y|X=x] $$
 
