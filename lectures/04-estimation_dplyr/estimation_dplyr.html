@@ -554,7 +554,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"id":1,"options":{"label":"filter","comment":"","out-width":"700px","context":"interactive","fig-width":7,"message":"true","warning":"true","classes":"","results":"markup","fig-cap":"","dpi":72,"out-height":"","echo":"true","fig-height":5,"read-only":"false","autorun":"false","output":"true"},"code":"\nlibrary(gapminder)\n\ngapminder |> \n  filter(country == \"Brazil\")"},{"id":2,"options":{"classes":"","warning":"true","output":"true","label":"unnamed-chunk-2","comment":"","results":"markup","context":"interactive","autorun":"false","fig-cap":"","message":"true","fig-width":7,"read-only":"false","fig-height":5,"dpi":72,"out-width":"700px","out-height":""},"code":"\ngapminder |> \n  filter(country == \"Brazil\" & year == 2007)"},{"id":3,"options":{"classes":"","warning":"true","output":"true","label":"unnamed-chunk-3","comment":"","results":"markup","context":"interactive","autorun":"false","fig-cap":"","message":"true","fig-width":7,"read-only":"false","fig-height":5,"dpi":72,"out-width":"700px","out-height":""},"code":"\ngapminder |> \n  filter(country %in% c(\"Brazil\", \"Argentina\") & year == 2007)"},{"id":4,"options":{"classes":"","warning":"true","output":"true","label":"unnamed-chunk-4","comment":"","results":"markup","context":"interactive","autorun":"false","fig-cap":"","message":"true","fig-width":7,"read-only":"false","fig-height":5,"dpi":72,"out-width":"700px","out-height":""},"code":"\ngapminder |> \n  arrange(year, country)"},{"id":5,"options":{"classes":"","warning":"true","output":"true","label":"unnamed-chunk-5","comment":"","results":"markup","context":"interactive","autorun":"false","fig-cap":"","message":"true","fig-width":7,"read-only":"false","fig-height":5,"dpi":72,"out-width":"700px","out-height":""},"code":"\ngapminder |> \n  arrange(gdpPercap)"},{"id":6,"options":{"classes":"","warning":"true","output":"true","label":"unnamed-chunk-6","comment":"","results":"markup","context":"interactive","autorun":"false","fig-cap":"","message":"true","fig-width":7,"read-only":"false","fig-height":5,"dpi":72,"out-width":"700px","out-height":""},"code":"\ngapminder |> \n  arrange(desc(gdpPercap))"},{"id":7,"options":{"classes":"","warning":"true","output":"true","label":"unnamed-chunk-7","comment":"","results":"markup","context":"interactive","autorun":"false","fig-cap":"","message":"true","fig-width":7,"read-only":"false","fig-height":5,"dpi":72,"out-width":"700px","out-height":""},"code":"\ngapminder |> \n  select(country, year, gdpPercap)"},{"id":8,"options":{"classes":"","warning":"true","output":"true","label":"unnamed-chunk-8","comment":"","results":"markup","context":"interactive","autorun":"false","fig-cap":"","message":"true","fig-width":7,"read-only":"false","fig-height":5,"dpi":72,"out-width":"700px","out-height":""},"code":"\ngapminder |> \n  rename(population = pop)"},{"id":9,"options":{"classes":"","warning":"true","output":"true","label":"unnamed-chunk-9","comment":"","results":"markup","context":"interactive","autorun":"false","fig-cap":"","message":"true","fig-width":7,"read-only":"false","fig-height":5,"dpi":72,"out-width":"700px","out-height":""},"code":"\ngapminder |> \n  mutate(gdp = gdpPercap * pop)"},{"id":10,"options":{"classes":"","warning":"true","output":"true","label":"unnamed-chunk-10","comment":"","results":"markup","context":"interactive","autorun":"false","fig-cap":"","message":"true","fig-width":7,"read-only":"false","fig-height":5,"dpi":72,"out-width":"700px","out-height":""},"code":"\ngapminder |> \n  mutate(high_gdp = ifelse(gdpPercap > 10000, \"High\", \"Low\"))\n"},{"id":11,"options":{"classes":"","warning":"true","output":"true","label":"unnamed-chunk-11","comment":"","results":"markup","context":"interactive","autorun":"false","fig-cap":"","message":"true","fig-width":7,"read-only":"false","fig-height":5,"dpi":72,"out-width":"700px","out-height":""},"code":"\ngapminder |> \n  group_by(country) "},{"id":12,"options":{"classes":"","warning":"true","output":"true","label":"unnamed-chunk-12","comment":"","results":"markup","context":"interactive","autorun":"false","fig-cap":"","message":"true","fig-width":7,"read-only":"false","fig-height":5,"dpi":72,"out-width":"700px","out-height":""},"code":"\ngapminder |>\n  filter(year == 2007) |>\n  group_by(continent) |>\n  summarize(mean_gdp = mean(gdpPercap),\n            total_pop = sum(pop))"},{"id":13,"options":{"classes":"","warning":"true","output":"true","label":"unnamed-chunk-13","comment":"","results":"markup","context":"interactive","autorun":"false","fig-cap":"","message":"true","fig-width":7,"read-only":"false","fig-height":5,"dpi":72,"out-width":"700px","out-height":""},"code":"\ngapminder |>\n  filter(year == 2007) |>\n  group_by(continent) |>\n  mutate(rank = rank(desc(gdpPercap)))"}];
+  globalThis.qwebrCellDetails = [{"code":"\nlibrary(gapminder)\n\ngapminder |> \n  filter(country == \"Brazil\")","options":{"out-height":"","warning":"true","fig-height":5,"classes":"","comment":"","dpi":72,"output":"true","fig-width":7,"message":"true","label":"filter","echo":"true","results":"markup","autorun":"false","context":"interactive","out-width":"700px","fig-cap":"","read-only":"false"},"id":1},{"code":"\ngapminder |> \n  filter(country == \"Brazil\" & year == 2007)","options":{"label":"unnamed-chunk-2","out-height":"","output":"true","dpi":72,"fig-width":7,"comment":"","fig-height":5,"message":"true","read-only":"false","context":"interactive","results":"markup","classes":"","autorun":"false","out-width":"700px","fig-cap":"","warning":"true"},"id":2},{"code":"\ngapminder |> \n  filter(country %in% c(\"Brazil\", \"Argentina\") & year == 2007)","options":{"label":"unnamed-chunk-3","out-height":"","output":"true","dpi":72,"fig-width":7,"comment":"","fig-height":5,"message":"true","read-only":"false","context":"interactive","results":"markup","classes":"","autorun":"false","out-width":"700px","fig-cap":"","warning":"true"},"id":3},{"code":"\ngapminder |> \n  arrange(year, country)","options":{"label":"unnamed-chunk-4","out-height":"","output":"true","dpi":72,"fig-width":7,"comment":"","fig-height":5,"message":"true","read-only":"false","context":"interactive","results":"markup","classes":"","autorun":"false","out-width":"700px","fig-cap":"","warning":"true"},"id":4},{"code":"\ngapminder |> \n  arrange(gdpPercap)","options":{"label":"unnamed-chunk-5","out-height":"","output":"true","dpi":72,"fig-width":7,"comment":"","fig-height":5,"message":"true","read-only":"false","context":"interactive","results":"markup","classes":"","autorun":"false","out-width":"700px","fig-cap":"","warning":"true"},"id":5},{"code":"\ngapminder |> \n  arrange(desc(gdpPercap))","options":{"label":"unnamed-chunk-6","out-height":"","output":"true","dpi":72,"fig-width":7,"comment":"","fig-height":5,"message":"true","read-only":"false","context":"interactive","results":"markup","classes":"","autorun":"false","out-width":"700px","fig-cap":"","warning":"true"},"id":6},{"code":"\ngapminder |> \n  select(country, year, gdpPercap)","options":{"label":"unnamed-chunk-7","out-height":"","output":"true","dpi":72,"fig-width":7,"comment":"","fig-height":5,"message":"true","read-only":"false","context":"interactive","results":"markup","classes":"","autorun":"false","out-width":"700px","fig-cap":"","warning":"true"},"id":7},{"code":"\ngapminder |> \n  rename(population = pop)","options":{"label":"unnamed-chunk-8","out-height":"","output":"true","dpi":72,"fig-width":7,"comment":"","fig-height":5,"message":"true","read-only":"false","context":"interactive","results":"markup","classes":"","autorun":"false","out-width":"700px","fig-cap":"","warning":"true"},"id":8},{"code":"\ngapminder |> \n  mutate(gdp = gdpPercap * pop)","options":{"label":"unnamed-chunk-9","out-height":"","output":"true","dpi":72,"fig-width":7,"comment":"","fig-height":5,"message":"true","read-only":"false","context":"interactive","results":"markup","classes":"","autorun":"false","out-width":"700px","fig-cap":"","warning":"true"},"id":9},{"code":"\ngapminder |> \n  mutate(high_gdp = ifelse(gdpPercap > 10000, \"High\", \"Low\"))\n","options":{"label":"unnamed-chunk-10","out-height":"","output":"true","dpi":72,"fig-width":7,"comment":"","fig-height":5,"message":"true","read-only":"false","context":"interactive","results":"markup","classes":"","autorun":"false","out-width":"700px","fig-cap":"","warning":"true"},"id":10},{"code":"\ngapminder |> \n  group_by(country) ","options":{"label":"unnamed-chunk-11","out-height":"","output":"true","dpi":72,"fig-width":7,"comment":"","fig-height":5,"message":"true","read-only":"false","context":"interactive","results":"markup","classes":"","autorun":"false","out-width":"700px","fig-cap":"","warning":"true"},"id":11},{"code":"\ngapminder |>\n  filter(year == 2007) |>\n  group_by(continent) |>\n  summarize(mean_gdp = mean(gdpPercap),\n            total_pop = sum(pop))","options":{"label":"unnamed-chunk-12","out-height":"","output":"true","dpi":72,"fig-width":7,"comment":"","fig-height":5,"message":"true","read-only":"false","context":"interactive","results":"markup","classes":"","autorun":"false","out-width":"700px","fig-cap":"","warning":"true"},"id":12},{"code":"\ngapminder |>\n  filter(year == 2007) |>\n  group_by(continent) |>\n  mutate(rank = rank(desc(gdpPercap)))","options":{"label":"unnamed-chunk-13","out-height":"","output":"true","dpi":72,"fig-width":7,"comment":"","fig-height":5,"message":"true","read-only":"false","context":"interactive","results":"markup","classes":"","autorun":"false","out-width":"700px","fig-cap":"","warning":"true"},"id":13}];
 
   </script>
   <script type="module">
@@ -1490,14 +1490,14 @@ F. Daniel Hidalgo
 <span id="cb1-9"><a></a><span class="fu">head</span>(po)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
-       X    Y0    Y1
-   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1  5.54  32.2  35.2 
-2  2.24  21.2  24.2 
-3 -0.375  4.27  7.27
-4 -0.451 11.2  14.2 
-5  3.03  15.7  18.7 
-6  1.60  19.4  22.4 </code></pre>
+      X    Y0    Y1
+  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 2.09   21.8  24.8
+2 4.47   30.2  33.2
+3 3.85   23.9  26.9
+4 1.79   21.7  24.7
+5 0.932  17.3  20.3
+6 2.75   17.4  20.4</code></pre>
 </div>
 </div>
 </div><div class="column fragment" style="width:50%;">
@@ -1537,7 +1537,7 @@ F. Daniel Hidalgo
 <span id="cb4-6"><a></a></span>
 <span id="cb4-7"><a></a>est_ate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9883974</code></pre>
+<pre><code>[1] 5.78439</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -1572,7 +1572,7 @@ F. Daniel Hidalgo
 <span id="cb7-8"><a></a>another_draw <span class="ot">&lt;-</span> <span class="fu">estim_ate</span>(po)</span>
 <span id="cb7-9"><a></a>another_draw</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.086027</code></pre>
+<pre><code>[1] 3.674837</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -1622,15 +1622,17 @@ F. Daniel Hidalgo
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">mean</span>(estimates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.008488</code></pre>
+<pre><code>[1] 2.829947</code></pre>
 </div>
 </div>
 </div>
 </section>
 <section id="expectations" class="slide level2">
 <h2>Expectations</h2>
-<p>The <span class="alert"><strong>expectation</strong></span> of a discrete random variable <span class="math inline">\(Y\)</span> is given by: <span class="math display">\[E[Y] = \sum y \Pr[Y=y]\]</span> . . .</p>
+<p>The <span class="alert"><strong>expectation</strong></span> of a discrete random variable <span class="math inline">\(Y\)</span> is given by: <span class="math display">\[E[Y] = \sum y \Pr[Y=y]\]</span></p>
+<div class="fragment">
 <p>The <span class="alert"><strong>conditional expectation</strong></span> of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span> is given by: <span class="math display">\[E[Y|X] = \sum y \Pr[Y=y|X=x] \]</span></p>
+</div>
 </section>
 <section id="estimand" class="slide level2">
 <h2>Estimand</h2>
