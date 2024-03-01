@@ -9,4 +9,5 @@ title: "Assignments"
 
 ## Problem Sets
 
--   [Problem Set 1](psets/pset1/pset1.qmd), [qmd link](https://raw.githubusercontent.com/fdhidalgo/data_politics-24/main/psets/pset1/pset1.qmd){download="pset1.qmd"}
+-   Problem Set 1: [qmd link](https://www.dropbox.com/scl/fi/d8ywmrj5jk3olgmji9pd6/pset1.qmd?rlkey=g609rnq5kckjiq0rohwb7w8eb&dl=1)
+-   Problem Set 2: [qmd link](https://www.dropbox.com/scl/fi/bx2xw731n3b5g77y5h604/pset2.qmd?rlkey=j189jf2wsrzflybr6s446oil3&dl=1)
