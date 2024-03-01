@@ -19,5 +19,5 @@ title: "Week 3: Intergroup Prejudice"
 
 ## Assignments
 
--   [Problem Set 1](../psets/pset1/pset1.qmd), [qmd link](https://raw.githubusercontent.com/fdhidalgo/data_politics-24/main/psets/pset1/pset1.qmd)
+-   Problem Set 1:  [qmd link](https://www.dropbox.com/scl/fi/d8ywmrj5jk3olgmji9pd6/pset1.qmd?rlkey=g609rnq5kckjiq0rohwb7w8eb&dl=0)
 -   [Tutorial 2](https://dhidalgo.shinyapps.io/Tutorial-2/)
