@@ -9,3 +9,5 @@ title: "Materials"
 **Week 3**: [Intergroup Prejudice](materials/week_3.qmd)
 
 **Week 4**: [Partisanship vs Ideology](materials/week_4.qmd)
+
+**Week 5**: [Persuasion](materials/week_5.qmd)
