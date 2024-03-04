@@ -1,0 +1,14 @@
+---
+title: "Week 5: Persuasion and Measurement"
+---
+
+## Readings
+
+-  Broockman and Kalla (2016): [link](https://www.science.org/doi/10.1126/science.aad9713)
+-  Stantcheva (2023): [link](https://doi.org/10.1146/annurev-economics-091622-010157)
+
+## Assignments
+
+- Problem Set 2: [qmd link](https://www.dropbox.com/scl/fi/bx2xw731n3b5g77y5h604/pset2.qmd?rlkey=j189jf2wsrzflybr6s446oil3&dl=1)
+- [Tutorial 2](https://dhidalgo.shinyapps.io/Tutorial-2/)
+- [Reading Quiz](https://canvas.mit.edu/courses/24619/quizzes/39667)
