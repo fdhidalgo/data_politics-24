@@ -637,6 +637,34 @@
     "text": "Assignments\n\nReading Quiz 1\nTutorial 1\nProblem Set 1: qmd link"
   },
   {
+    "objectID": "materials/week_4.html",
+    "href": "materials/week_4.html",
+    "title": "Week 4: Partisanship and Ideology",
+    "section": "",
+    "text": "Barber and Pope (2019): Perusall link, direct link\n\nOptional Reading: Trump is a real world political science experiment\n\nGreen and Gerber, pgs 51-71: Perusall link"
+  },
+  {
+    "objectID": "materials/week_4.html#readings",
+    "href": "materials/week_4.html#readings",
+    "title": "Week 4: Partisanship and Ideology",
+    "section": "",
+    "text": "Barber and Pope (2019): Perusall link, direct link\n\nOptional Reading: Trump is a real world political science experiment\n\nGreen and Gerber, pgs 51-71: Perusall link"
+  },
+  {
+    "objectID": "materials/week_4.html#slides",
+    "href": "materials/week_4.html#slides",
+    "title": "Week 4: Partisanship and Ideology",
+    "section": "Slides",
+    "text": "Slides\n\nLecture 4 (2/27): Estimation of Causal Effects and Data Manipulation in R\nLecture 5 (2/29): Partisanship and Ideology and Inference in Experiments"
+  },
+  {
+    "objectID": "materials/week_4.html#assignments",
+    "href": "materials/week_4.html#assignments",
+    "title": "Week 4: Partisanship and Ideology",
+    "section": "Assignments",
+    "text": "Assignments\n\nProblem Set 1: qmd link\nTutorial 2"
+  },
+  {
     "objectID": "assignments.html",
     "href": "assignments.html",
     "title": "Assignments",
@@ -658,32 +686,25 @@
     "text": "Problem Sets\n\nProblem Set 1: qmd link\nProblem Set 2: qmd link"
   },
   {
-    "objectID": "materials/week_4.html",
-    "href": "materials/week_4.html",
-    "title": "Week 3: Intergroup Prejudice",
+    "objectID": "materials/week_5.html",
+    "href": "materials/week_5.html",
+    "title": "Week 5: Persuasion and Measurement",
     "section": "",
-    "text": "Barber and Pope (2019): Perusall link, direct link\n\nOptional Reading: Trump is a real world political science experiment\n\nGreen and Gerber, pgs 51-71: Perusall link"
+    "text": "Broockman and Kalla (2016): link\nStantcheva (2023): link"
   },
   {
-    "objectID": "materials/week_4.html#readings",
-    "href": "materials/week_4.html#readings",
-    "title": "Week 3: Intergroup Prejudice",
+    "objectID": "materials/week_5.html#readings",
+    "href": "materials/week_5.html#readings",
+    "title": "Week 5: Persuasion and Measurement",
     "section": "",
-    "text": "Barber and Pope (2019): Perusall link, direct link\n\nOptional Reading: Trump is a real world political science experiment\n\nGreen and Gerber, pgs 51-71: Perusall link"
+    "text": "Broockman and Kalla (2016): link\nStantcheva (2023): link"
   },
   {
-    "objectID": "materials/week_4.html#slides",
-    "href": "materials/week_4.html#slides",
-    "title": "Week 3: Intergroup Prejudice",
-    "section": "Slides",
-    "text": "Slides\n\nLecture 4 (2/27): Estimation of Causal Effects and Data Manipulation in R\nLecture 5 (2/29): Partisanship and Ideology and Inference in Experiments"
-  },
-  {
-    "objectID": "materials/week_4.html#assignments",
-    "href": "materials/week_4.html#assignments",
-    "title": "Week 3: Intergroup Prejudice",
+    "objectID": "materials/week_5.html#assignments",
+    "href": "materials/week_5.html#assignments",
+    "title": "Week 5: Persuasion and Measurement",
     "section": "Assignments",
-    "text": "Assignments\n\nProblem Set 1: qmd link\nTutorial 2"
+    "text": "Assignments\n\nProblem Set 2: qmd link\nTutorial 2\nReading Quiz"
   },
   {
     "objectID": "materials/week_3.html",
@@ -739,7 +760,7 @@
     "href": "materials.html",
     "title": "Materials",
     "section": "",
-    "text": "Week 1: Course Introduction\nWeek 2: Intergroup Prejudice\nWeek 3: Intergroup Prejudice\nWeek 4: Partisanship vs Ideology"
+    "text": "Week 1: Course Introduction\nWeek 2: Intergroup Prejudice\nWeek 3: Intergroup Prejudice\nWeek 4: Partisanship vs Ideology\nWeek 5: Persuasion"
   },
   {
     "objectID": "lectures/00-template/00-template.html#example-slide",
