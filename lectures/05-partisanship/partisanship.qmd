@@ -1,0 +1,173 @@
+---
+title: "Partisanship and Ideology"
+subtitle: "Lecture 5"
+date: last-modified
+author: 
+  - name: F. Daniel Hidalgo
+    email: dhidalgo@mit.edu
+    affiliations: MIT
+format: 
+  clean-revealjs:
+    incremental: true
+engine: knitr
+webr:
+  packages: ['tidyverse'] # Install R packages on document open
+  show-startup-message: false
+filters: 
+  - timer
+  - webr
+bibliography: ../data_politics_2024.bib
+editor:
+  render-on-save: true
+---
+
+```{r}
+#| label: echo
+#| echo: false
+#| warning: false
+
+library(tidyverse)
+library(hrbrthemes)
+library(gganimate)
+theme_set(theme_ipsum())
+```
+
+# Partisanship and Ideology
+
+## Elites vs Citizens
+
+::: columns
+::: {.column width="50%"}
+Political [**elites**]{.alert}:
+
+-   Know and care a lot about politics
+-   Operate in institional settings with clear incentives
+-   Can be modeled as rational actors with consistent preferences who optimize their behavior to achieve their goals
+:::
+
+::: {.column .fragment width="50%"}
+[**Ordinary Citizens**]{.alert}:
+
+-   Do not know or care about politics
+-   Much of their political behavior occurs in unstructured contexts in which their actions are not individually consequential and their goals/incentives are unclear.
+-   Their opinions and behavior are often best analyzed using *psychological* rather than rationalist models.
+:::
+:::
+
+## What Have We Learned from Survey Data? {.center}
+
+Relative to political elites, citizens’ attitudes are:
+
+-   [Ignorant]{.alert}: Citizens lack basic information about politics.
+-   [Unstable]{.alert}: Citizens’ attitudes are often inconsistent and unstable.
+-   [Unconstrained]{.alert}: Citizens are much less ideological or consistent
+
+## How Voters Talk
+
+> "When we first did that big trade agreement I thought it was a good idea, but now I’m getting a little more conservative about it,” said Phyllis Arthur, a 74-year-old Republican from Walnut Creek, Calif. “I think we’re being overwhelmed by the goods coming in. That’s practically all that’s available in the stores."[^1]
+
+[^1]: [NY Times](https://www.nytimes.com/2016/03/30/business/economy/trade-donald-trump-bernie-sanders.html)
+
+. . .
+
+Voters will also answer almost any question you ask them: [link](https://www.youtube.com/watch?v=_22Y-K4wtzo)
+
+## Inconsistent Opinions, but Stable Partisanship?
+
+-   Despite this inconsistency, voters actual votes are quite predictable.
+
+-   The vast majority of Americans to vote consistent with their party identification, which is itself quite stable over time.
+
+. . .
+
+![](images/party_id.png)
+
+## State Trends
+
+![](images/state_trends.png)
+
+## Partisanship and Ideology
+
+::: columns
+::: {.column width="30%"}
+While partisanship is mostly stable, the correlation between partisanship and ideology has increased, especially among elites.
+:::
+
+::: {.column .fragment width="70%"}
+![](images/dw_nominate.jpg)
+:::
+:::
+
+## Ideological Sorting
+
+::: columns
+::: {.column width="30%"}
+Ideological sorting among citizens has also increased, but not as much as among elites.
+:::
+
+::: {.column width="70%"}
+![](images/sorting.png)
+:::
+:::
+
+## Ideological Sorting
+
+![](images/anes_ideological_sorting.png)
+
+## What Comes First?
+
+Increasing correlation beteen partisanship and ideology among elites and citizens. Why?
+
+. . .
+
+-   Citizens polarize and then elites follow
+-   Elites polarize and then citizens follow
+
+. . .
+
+Barber and Pope (2018) is designed to inform this debate by using a party leaders' shifting [stances](https://www.nbcnews.com/politics/2016-election/full-list-donald-trump-s-rapidly-changing-policy-positions-n547801).
+
+## Survey Experiment
+
+::: nonincremental
+-   Randomized treatment embedded in a 2017 survey
+-   Treatment arms:
+    -   Control group (500 respondents)
+    -   Liberal Trump (200 respondents)
+    -   Conservative Trump (200 respondents)
+:::
+
+. . .
+
+> Please indicate whether or not you support or oppose the statement.
+
+::: columns
+::: {.column width="33%"}
+Donald Trump has said that he supports this policy. How about **you**?
+:::
+
+::: {.column .fragment width="33%"}
+Donald Trump has said that he opposes this policy. How about **you**?
+:::
+
+::: {.column .fragment width="33%"}
+Do you support or oppose increasing the minimum wage to over \$10 an hour?
+:::
+:::
+
+## ATE Estimates
+
+![](images/barber_pope_ate.png)
+
+## ATE Estimates by Political Knowledge
+
+![](images/barber_pope_knowledge.png)
+
+## ATE Estimates by Self-Reported Ideology
+
+![](images/barber_pope_ideology.png)
+
+## Ideological Distribution by Condition
+
+![](images/barber_pope_ideo_dist.png)
+
