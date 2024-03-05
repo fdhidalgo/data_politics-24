@@ -28,130 +28,1229 @@
     "text": "Assignments Schedule\n\n\nAssignments ScheduleWeekDue DateAssignment22/12Reading Quiz2/14Tutorial42/26Reading Quiz2/28Tutorial2/29Problem Set 153/4Reading Quiz3/6Tutorial3/8Problem Set 263/11Reading Quiz3/13Tutorial73/18Reading Quiz3/20Tutorial3/21Problem Set 384/1Reading Quiz4/3Tutorial94/8Reading Quiz4/10Tutorial4/11Problem Set 4104/17Reading Quiz114/25Problem Set 5135/9Problem Set 6145/14Class Project Writeup"
   },
   {
-    "objectID": "lectures/05-partisanship_inference/partisanship_inference.html#elites-vs-citizens",
-    "href": "lectures/05-partisanship_inference/partisanship_inference.html#elites-vs-citizens",
-    "title": "Partisanship and Ideologyand Inference in Experiments",
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#what-works-to-reduce-prejudice",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#what-works-to-reduce-prejudice",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "What works to reduce prejudice?",
+    "text": "What works to reduce prejudice?\n\nInter-group animus or prejudice can be enduring and pervasive\n\nEthnic\nSexual identity\nAge\nPartisanship\n\n\n\n\nHow can we reduce prejudice?\n\nMedia campaigns?\nSensitivity trainings?\nMulticultural education?\nInter-group contact\n\n\n\n\nMany possible interventions, but most have poor evidence of effectiveness."
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#what-types-of-interventions-are-studied",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#what-types-of-interventions-are-studied",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "What Types of Interventions are Studied?",
+    "text": "What Types of Interventions are Studied?\n\n\n\n\n\n\n\n\n\nPaluck et al. (2021)"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#inter-group-contact",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#inter-group-contact",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Inter-group Contact",
+    "text": "Inter-group Contact\n\n\n Segregation in the Boston Area (Source: NY Times)\n\nContact Theory (Allport 1954):\n\nPositive contact between members of different groups can reduce prejudice\nConditions:\n\nEqual status\nCommon goals\nIntergroup cooperation\nSupport of authorities, law, or custom"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#research-design",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#research-design",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Research Design",
+    "text": "Research Design\n\n\nMost common study ask if attitudes or behavior (less common) is correlated with contact\n\nSome include demographic or other controls\nConsistent evidence for contact theory\n\n\n\n\n\n\nSecond most common study uses “laboratory” experiments\n\nControlled (i.e. scripted) settings and random assignment\nIntergroup contact is brief\nMeasurement occurs shortly after contact\nExample: Pagtolun-an and Clair (1986) had a gay man answer questions about homosexuality for 90 minutes and then post-tested students"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#field-experiments",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#field-experiments",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Field Experiments",
+    "text": "Field Experiments\n\n\n\n\n\nField experiments:\n\nRandom assignment to treatment and control\nReal-world (less controlled) settings\nShort and Long-term follow-up"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mousa-2020",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mousa-2020",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Mousa (2020)",
+    "text": "Mousa (2020)\n\n\n\n\n\n\nAftermath of genocide\nNaturalistic study\nMeasuring behavior and attitudes\nRandom assignment to treatment and control\n\nEnsures potential outcomes are independent of treatment assignment\nBackground characteristics (covariates) are balanced across treatment and control"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mousa-2020-1",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mousa-2020-1",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Mousa (2020)",
+    "text": "Mousa (2020)\n\n\n\n459 players, 42 Christian soccer teams\nOn the field outcomes:\n\nSign up for mixed team\nVote for Muslim for Sportsmanship prize\nTrain with Muslims\n\nOff the field outcomes:\n\nAttend mixed event\nPatronize Muslim events\nDonate to neutral NGO\n\n\n\n\nAttitudinal indexes:\n\nNational unity\nMuslim blame\nMuslim neighbor"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#ggplot2-in-tidyverse",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#ggplot2-in-tidyverse",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "ggplot2 \\(\\in\\) tidyverse",
+    "text": "ggplot2 \\(\\in\\) tidyverse\n\n\n\n\n\nggplot2 is tidyverse’s data visualization package\nStructure of the code for plots can be summarized as\n\nggplot(data = [dataset], \n       mapping = aes(x = [x-variable], \n                     y = [y-variable])) +\n   geom_xxx() +\n   other options"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#midwest-data",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#midwest-data",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Midwest data",
+    "text": "Midwest data\n\nlibrary(ggplot2)\nmidwest\n\n# A tibble: 437 × 28\n     PID county  state  area poptotal popdensity popwhite popblack popamerindian\n   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;\n 1   561 ADAMS   IL    0.052    66090      1271.    63917     1702            98\n 2   562 ALEXAN… IL    0.014    10626       759      7054     3496            19\n 3   563 BOND    IL    0.022    14991       681.    14477      429            35\n 4   564 BOONE   IL    0.017    30806      1812.    29344      127            46\n 5   565 BROWN   IL    0.018     5836       324.     5264      547            14\n 6   566 BUREAU  IL    0.05     35688       714.    35157       50            65\n 7   567 CALHOUN IL    0.017     5322       313.     5298        1             8\n 8   568 CARROLL IL    0.027    16805       622.    16519      111            30\n 9   569 CASS    IL    0.024    13437       560.    13384       16             8\n10   570 CHAMPA… IL    0.058   173025      2983.   146506    16559           331\n# ℹ 427 more rows\n# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,\n#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,\n#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,\n#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,\n#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,\n#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;\n\n\n\n\nThis section draws heavily on slides prepared by Matt Blackwell."
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#building-up-a-graph-in-pieces",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#building-up-a-graph-in-pieces",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Building up a graph in pieces",
+    "text": "Building up a graph in pieces\nCreate ggplot object and direct it to the correct data:\n\np &lt;- ggplot(data = midwest)\n\nMapping: tell ggplot what visual aesthetics correspond to which variables\n\np &lt;- ggplot(data = midwest,\n            mapping = aes(x = popdensity,\n                          y = percbelowpoverty))\n\nOther aesthetic mappings: color, shape, size, etc."
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#adding-a-geom-layer",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#adding-a-geom-layer",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Adding a geom layer",
+    "text": "Adding a geom layer\n\nggplot(data = midwest, \n      mapping = aes(x = popdensity, y = percbelowpoverty)) + \n  geom_point()"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#adding-a-geom-layer-output",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#adding-a-geom-layer-output",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Adding a geom layer",
+    "text": "Adding a geom layer"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#trying-a-new-geom",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#trying-a-new-geom",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Trying a new geom",
+    "text": "Trying a new geom\n\nggplot(data = midwest, \n      mapping = aes(x = popdensity, y = percbelowpoverty)) + \n  geom_smooth()"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#trying-a-new-geom-output",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#trying-a-new-geom-output",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Trying a new geom",
+    "text": "Trying a new geom\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#layering-geoms-is-additive",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#layering-geoms-is-additive",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Layering geoms is additive",
+    "text": "Layering geoms is additive\n\nggplot(data = midwest, \n      mapping = aes(x = popdensity, y = percbelowpoverty)) + \n  geom_point() + \n  geom_smooth() +\n  scale_x_log10()"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#layering-geoms-is-additive-output",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#layering-geoms-is-additive-output",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Layering geoms is additive",
+    "text": "Layering geoms is additive\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#geoms-are-functions",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#geoms-are-functions",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Geoms are functions",
+    "text": "Geoms are functions\n\nggplot(data = midwest, \n      mapping = aes(x = popdensity, y = percbelowpoverty)) + \n  geom_point() + \n  geom_smooth(method = \"lm\", se = FALSE) +\n  scale_x_log10()"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#geoms-are-functions-output",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#geoms-are-functions-output",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Geoms are functions",
+    "text": "Geoms are functions\n\n`geom_smooth()` using formula = 'y ~ x'"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#adding-informative-labels",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#adding-informative-labels",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Adding Informative Labels",
+    "text": "Adding Informative Labels\n\np2 &lt;- ggplot(data = midwest, \n      mapping = aes(x = popdensity, y = percbelowpoverty)) + \n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  scale_x_log10() +\n  labs(\n    x = \"Population Density\",\n    y = \"Percent of County Below Poverty Line\", \n    title = \"Poverty and Population Density\",\n    subtitle = \"Among US Midwestern Counties\", \n    caption = \"US Census, 2000\"\n  )\np2"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#adding-informative-labels-output",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#adding-informative-labels-output",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Adding Informative Labels",
+    "text": "Adding Informative Labels\n\n`geom_smooth()` using formula = 'y ~ x'"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-vs-setting-aesthetics",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-vs-setting-aesthetics",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Mapping vs setting aesthetics",
+    "text": "Mapping vs setting aesthetics\n\nggplot(data = midwest, \n      mapping = aes(x = popdensity, y = percbelowpoverty,\n                    color = \"purple\")) + \n  geom_point() + \n  geom_smooth(method = \"lm\", se = FALSE) +\n  scale_x_log10()"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-vs-setting-aesthetics-output",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-vs-setting-aesthetics-output",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Mapping vs setting aesthetics",
+    "text": "Mapping vs setting aesthetics\n\n`geom_smooth()` using formula = 'y ~ x'"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-always-refers-to-variables",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-always-refers-to-variables",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Mapping always refers to variables",
+    "text": "Mapping always refers to variables\nIf passed a value other than a variable name, ggplot will implicitly create a variable with that value (in this case “purple” that is constant)\n\nggplot(data = midwest, \n      mapping = aes(x = popdensity, y = percbelowpoverty,\n                    color = \"purple\")) + \n  geom_point() + \n  geom_smooth() +\n  scale_x_log10()\n\n\nSet the color outside the mapping = aes() format.\n\nggplot(data = midwest, \n      mapping = aes(x = popdensity, y = percbelowpoverty)) + \n  geom_point(color = \"purple\") + \n  geom_smooth() +\n  scale_x_log10()"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-always-refers-to-variables-output",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-always-refers-to-variables-output",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Mapping always refers to variables",
+    "text": "Mapping always refers to variables\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-more-aesthetics",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-more-aesthetics",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Mapping more aesthetics",
+    "text": "Mapping more aesthetics\n\nggplot(data = midwest, \n      mapping = aes(x = popdensity, \n                    y = percbelowpoverty,\n                    color = state, \n                    fill= state)) + \n  geom_point() + \n  geom_smooth() +\n  scale_x_log10()"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-more-aesthetics-output",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-more-aesthetics-output",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Mapping more aesthetics",
+    "text": "Mapping more aesthetics\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mappings-can-be-done-on-a-per-geom-basis",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mappings-can-be-done-on-a-per-geom-basis",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Mappings can be done on a per geom basis",
+    "text": "Mappings can be done on a per geom basis\n\nggplot(data = midwest, \n      mapping = aes(x = popdensity, \n                    y = percbelowpoverty)) + \n  geom_point(mapping = aes(color = state)) + \n  geom_smooth(color = \"black\") +\n  scale_x_log10()"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mappings-can-be-done-on-a-per-geom-basis-output",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mappings-can-be-done-on-a-per-geom-basis-output",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Mappings can be done on a per geom basis",
+    "text": "Mappings can be done on a per geom basis\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#histograms",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#histograms",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Histograms",
+    "text": "Histograms\nHistograms show where there are more or fewer observations of a numeric variable.\n\nggplot(data = midwest,\n       mapping = aes(x = percbelowpoverty)) +\n  geom_histogram()\n\n\nSplit up range of variable into bins, count how many are in each bin.\ny aesthetic calculated automatically."
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#histograms-output",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#histograms-output",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Histograms",
+    "text": "Histograms\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#creating-small-multiples-with-facets",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#creating-small-multiples-with-facets",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Creating small multiples with facets",
+    "text": "Creating small multiples with facets\nSmall multiples: a series of similar graphs with the same scale/axes to help with comparing different partitions of a dataset.\n\nggplot(data = midwest,\n       mapping = aes(x = percbelowpoverty)) +\n  geom_histogram() +\n  facet_wrap(~ state)\n\n\nWe’ll see more of the ~ variable syntax (called a formula)."
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#creating-small-multiples-with-facets-output",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#creating-small-multiples-with-facets-output",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Creating small multiples with facets",
+    "text": "Creating small multiples with facets\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#density-as-alternative-to-histograms",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#density-as-alternative-to-histograms",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Density as alternative to histograms",
+    "text": "Density as alternative to histograms\nA kernel density plot is a smoothed version of a histogram and slightly easier to overlay.\n\nggplot(data = midwest,\n       mapping = aes(x = percbelowpoverty,\n                     fill = state, color = state)) +\n  geom_density(alpha = .3)"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#density-as-alternative-to-histograms-output",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#density-as-alternative-to-histograms-output",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Density as alternative to histograms",
+    "text": "Density as alternative to histograms"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#boxplots",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#boxplots",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Boxplots",
+    "text": "Boxplots\nBoxplots are another way to compare distributions across discrete groups.\n\nggplot(data = midwest,\n       mapping = aes(x = state,\n                     y = percbelowpoverty)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#boxplots-output",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#boxplots-output",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Boxplots",
+    "text": "Boxplots"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#boxplots-in-r",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#boxplots-in-r",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "Boxplots in R",
+    "text": "Boxplots in R\n\n\n“Box” represents middle 50% of the data.\n\n25% of the data is below the bottom of the box, 25% is above\nHeight of the box is the interquartile range (IQR)\n\nHorizontal line in the box is the median\n\n50% of the data is below the median, 50% is above\n\n“Whiskers” represent either:\n\n1.5 \\(\\times\\) IQR or max/min of the data, whichever is smaller\nPoints beyond the whiskers are considered outliers"
+  },
+  {
+    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#references",
+    "href": "lectures/03-contact_dataviz/contact_dataviz.html#references",
+    "title": "Contact Theory and Data Visualization in R",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\n\n\nPaluck, Elizabeth Levy, Roni Porat, Chelsey S. Clark, and Donald P. Green. 2021. “Prejudice Reduction: Progress and Challenges.” Annual Review of Psychology 72 (1): 533–60. https://doi.org/10.1146/annurev-psych-071620-030619."
+  },
+  {
+    "objectID": "lectures/05-partisanship/partisanship.html#elites-vs-citizens",
+    "href": "lectures/05-partisanship/partisanship.html#elites-vs-citizens",
+    "title": "Partisanship and Ideology",
     "section": "Elites vs Citizens",
     "text": "Elites vs Citizens\n\n\nPolitical elites:\n\nKnow and care a lot about politics\nOperate in institional settings with clear incentives\nCan be modeled as rational actors with consistent preferences who optimize their behavior to achieve their goals\n\n\nOrdinary Citizens:\n\nDo not know or care about politics\nMuch of their political behavior occurs in unstructured contexts in which their actions are not individually consequential and their goals/incentives are unclear.\nTheir opinions and behavior are often best analyzed using psychological rather than rationalist models."
   },
   {
-    "objectID": "lectures/05-partisanship_inference/partisanship_inference.html#what-have-we-learned-from-survey-data",
-    "href": "lectures/05-partisanship_inference/partisanship_inference.html#what-have-we-learned-from-survey-data",
-    "title": "Partisanship and Ideologyand Inference in Experiments",
+    "objectID": "lectures/05-partisanship/partisanship.html#what-have-we-learned-from-survey-data",
+    "href": "lectures/05-partisanship/partisanship.html#what-have-we-learned-from-survey-data",
+    "title": "Partisanship and Ideology",
     "section": "What Have We Learned from Survey Data?",
     "text": "What Have We Learned from Survey Data?\nRelative to political elites, citizens’ attitudes are:\n\nIgnorant: Citizens lack basic information about politics.\nUnstable: Citizens’ attitudes are often inconsistent and unstable.\nUnconstrained: Citizens are much less ideological or consistent"
   },
   {
-    "objectID": "lectures/05-partisanship_inference/partisanship_inference.html#how-voters-talk",
-    "href": "lectures/05-partisanship_inference/partisanship_inference.html#how-voters-talk",
-    "title": "Partisanship and Ideologyand Inference in Experiments",
+    "objectID": "lectures/05-partisanship/partisanship.html#how-voters-talk",
+    "href": "lectures/05-partisanship/partisanship.html#how-voters-talk",
+    "title": "Partisanship and Ideology",
     "section": "How Voters Talk",
     "text": "How Voters Talk\n\n“When we first did that big trade agreement I thought it was a good idea, but now I’m getting a little more conservative about it,” said Phyllis Arthur, a 74-year-old Republican from Walnut Creek, Calif. “I think we’re being overwhelmed by the goods coming in. That’s practically all that’s available in the stores.”1\n\n\nVoters will also answer almost any question you ask them: link\n\nNY Times"
   },
   {
-    "objectID": "lectures/05-partisanship_inference/partisanship_inference.html#inconsistent-opinions-but-stable-partisanship",
-    "href": "lectures/05-partisanship_inference/partisanship_inference.html#inconsistent-opinions-but-stable-partisanship",
-    "title": "Partisanship and Ideologyand Inference in Experiments",
+    "objectID": "lectures/05-partisanship/partisanship.html#inconsistent-opinions-but-stable-partisanship",
+    "href": "lectures/05-partisanship/partisanship.html#inconsistent-opinions-but-stable-partisanship",
+    "title": "Partisanship and Ideology",
     "section": "Inconsistent Opinions, but Stable Partisanship?",
     "text": "Inconsistent Opinions, but Stable Partisanship?\n\nDespite this inconsistency, voters actual votes are quite predictable.\nThe vast majority of Americans to vote consistent with their party identification, which is itself quite stable over time."
   },
   {
-    "objectID": "lectures/05-partisanship_inference/partisanship_inference.html#state-trends",
-    "href": "lectures/05-partisanship_inference/partisanship_inference.html#state-trends",
-    "title": "Partisanship and Ideologyand Inference in Experiments",
+    "objectID": "lectures/05-partisanship/partisanship.html#state-trends",
+    "href": "lectures/05-partisanship/partisanship.html#state-trends",
+    "title": "Partisanship and Ideology",
     "section": "State Trends",
     "text": "State Trends"
   },
   {
-    "objectID": "lectures/05-partisanship_inference/partisanship_inference.html#partisanship-and-ideology-1",
-    "href": "lectures/05-partisanship_inference/partisanship_inference.html#partisanship-and-ideology-1",
-    "title": "Partisanship and Ideologyand Inference in Experiments",
+    "objectID": "lectures/05-partisanship/partisanship.html#partisanship-and-ideology-1",
+    "href": "lectures/05-partisanship/partisanship.html#partisanship-and-ideology-1",
+    "title": "Partisanship and Ideology",
     "section": "Partisanship and Ideology",
     "text": "Partisanship and Ideology\n\n\nWhile partisanship is mostly stable, the correlation between partisanship and ideology has increased, especially among elites."
   },
   {
-    "objectID": "lectures/05-partisanship_inference/partisanship_inference.html#ideological-sorting",
-    "href": "lectures/05-partisanship_inference/partisanship_inference.html#ideological-sorting",
-    "title": "Partisanship and Ideologyand Inference in Experiments",
+    "objectID": "lectures/05-partisanship/partisanship.html#ideological-sorting",
+    "href": "lectures/05-partisanship/partisanship.html#ideological-sorting",
+    "title": "Partisanship and Ideology",
     "section": "Ideological Sorting",
     "text": "Ideological Sorting\n\n\nIdeological sorting among citizens has also increased, but not as much as among elites."
   },
   {
-    "objectID": "lectures/05-partisanship_inference/partisanship_inference.html#ideological-sorting-1",
-    "href": "lectures/05-partisanship_inference/partisanship_inference.html#ideological-sorting-1",
-    "title": "Partisanship and Ideologyand Inference in Experiments",
+    "objectID": "lectures/05-partisanship/partisanship.html#ideological-sorting-1",
+    "href": "lectures/05-partisanship/partisanship.html#ideological-sorting-1",
+    "title": "Partisanship and Ideology",
     "section": "Ideological Sorting",
     "text": "Ideological Sorting"
   },
   {
-    "objectID": "lectures/05-partisanship_inference/partisanship_inference.html#what-comes-first",
-    "href": "lectures/05-partisanship_inference/partisanship_inference.html#what-comes-first",
-    "title": "Partisanship and Ideologyand Inference in Experiments",
+    "objectID": "lectures/05-partisanship/partisanship.html#what-comes-first",
+    "href": "lectures/05-partisanship/partisanship.html#what-comes-first",
+    "title": "Partisanship and Ideology",
     "section": "What Comes First?",
     "text": "What Comes First?\nIncreasing correlation beteen partisanship and ideology among elites and citizens. Why?\n\n\nCitizens polarize and then elites follow\nElites polarize and then citizens follow\n\n\n\nBarber and Pope (2018) is designed to inform this debate by using a party leaders’ shifting stances."
   },
   {
-    "objectID": "lectures/05-partisanship_inference/partisanship_inference.html#survey-experiment",
-    "href": "lectures/05-partisanship_inference/partisanship_inference.html#survey-experiment",
-    "title": "Partisanship and Ideologyand Inference in Experiments",
+    "objectID": "lectures/05-partisanship/partisanship.html#survey-experiment",
+    "href": "lectures/05-partisanship/partisanship.html#survey-experiment",
+    "title": "Partisanship and Ideology",
     "section": "Survey Experiment",
     "text": "Survey Experiment\n\n\nRandomized treatment embedded in a 2017 survey\nTreatment arms:\n\nControl group (500 respondents)\nLiberal Trump (200 respondents)\nConservative Trump (200 respondents)\n\n\n\n\n\nPlease indicate whether or not you support or oppose the statement.\n\n\n\nDonald Trump has said that he supports this policy. How about you?\n\nDonald Trump has said that he opposes this policy. How about you?\n\nDo you support or oppose increasing the minimum wage to over $10 an hour?"
   },
   {
-    "objectID": "lectures/05-partisanship_inference/partisanship_inference.html#ate-estimates",
-    "href": "lectures/05-partisanship_inference/partisanship_inference.html#ate-estimates",
-    "title": "Partisanship and Ideologyand Inference in Experiments",
+    "objectID": "lectures/05-partisanship/partisanship.html#ate-estimates",
+    "href": "lectures/05-partisanship/partisanship.html#ate-estimates",
+    "title": "Partisanship and Ideology",
     "section": "ATE Estimates",
     "text": "ATE Estimates"
   },
   {
-    "objectID": "lectures/05-partisanship_inference/partisanship_inference.html#ate-estimates-by-political-knowledge",
-    "href": "lectures/05-partisanship_inference/partisanship_inference.html#ate-estimates-by-political-knowledge",
-    "title": "Partisanship and Ideologyand Inference in Experiments",
+    "objectID": "lectures/05-partisanship/partisanship.html#ate-estimates-by-political-knowledge",
+    "href": "lectures/05-partisanship/partisanship.html#ate-estimates-by-political-knowledge",
+    "title": "Partisanship and Ideology",
     "section": "ATE Estimates by Political Knowledge",
     "text": "ATE Estimates by Political Knowledge"
   },
   {
-    "objectID": "lectures/05-partisanship_inference/partisanship_inference.html#ate-estimates-by-self-reported-ideology",
-    "href": "lectures/05-partisanship_inference/partisanship_inference.html#ate-estimates-by-self-reported-ideology",
-    "title": "Partisanship and Ideologyand Inference in Experiments",
+    "objectID": "lectures/05-partisanship/partisanship.html#ate-estimates-by-self-reported-ideology",
+    "href": "lectures/05-partisanship/partisanship.html#ate-estimates-by-self-reported-ideology",
+    "title": "Partisanship and Ideology",
     "section": "ATE Estimates by Self-Reported Ideology",
     "text": "ATE Estimates by Self-Reported Ideology"
   },
   {
-    "objectID": "lectures/05-partisanship_inference/partisanship_inference.html#ideological-distribution-by-condition",
-    "href": "lectures/05-partisanship_inference/partisanship_inference.html#ideological-distribution-by-condition",
-    "title": "Partisanship and Ideologyand Inference in Experiments",
+    "objectID": "lectures/05-partisanship/partisanship.html#ideological-distribution-by-condition",
+    "href": "lectures/05-partisanship/partisanship.html#ideological-distribution-by-condition",
+    "title": "Partisanship and Ideology",
     "section": "Ideological Distribution by Condition",
     "text": "Ideological Distribution by Condition"
   },
   {
-    "objectID": "lectures/05-partisanship_inference/partisanship_inference.html#hypothesis-testing",
-    "href": "lectures/05-partisanship_inference/partisanship_inference.html#hypothesis-testing",
-    "title": "Partisanship and Ideologyand Inference in Experiments",
+    "objectID": "lectures/02-causality/causality.html#section",
+    "href": "lectures/02-causality/causality.html#section",
+    "title": "Causality and Introduction to R",
+    "section": "",
+    "text": "The Road not Taken by Robert Frost\nTwo roads diverged in a yellow wood, And sorry I could not travel both And be one traveler, long I stood And looked down one as far as I could To where it bent in the undergrowth;"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#what-is-a-causal-effect",
+    "href": "lectures/02-causality/causality.html#what-is-a-causal-effect",
+    "title": "Causality and Introduction to R",
+    "section": "What is a Causal Effect?",
+    "text": "What is a Causal Effect?\n\nStudents with diverse friend groups express less discriminatory attitudes and are supportive of policies that promote diversity.\n\nWould these students be supportive of these policies if they did not have diverse friend groups?\n\n\n\n\nHeavy social media users are less happy on average than those who use social media less.\n\nIs this because social media use causes unhappiness, or are unhappy people more likely to use social media?\n\n\n\n\n\n\n\n\n\n\nFundamental Problem of Causal Inference\n\n\nWe never observe counterfactuals, they must be inferred"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#the-effect-of-social-media",
+    "href": "lectures/02-causality/causality.html#the-effect-of-social-media",
+    "title": "Causality and Introduction to R",
+    "section": "The Effect of Social Media",
+    "text": "The Effect of Social Media\n\n\n\n\n\nMuch concern about the effect of social media on:\n\nMental health\nPolitical polarization\nInteractions with friends and families\n\n\n\n\n\nImagine two respondents:\n\n\n\nRespondent\nSocial Media Use\nHappiness\n\n\n\n\n1\nHigh\nLow\n\n\n2\nLow\nHigh\n\n\n\n\n\nDid social media use cause the difference in happiness?"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#some-notation",
+    "href": "lectures/02-causality/causality.html#some-notation",
+    "title": "Causality and Introduction to R",
+    "section": "Some notation",
+    "text": "Some notation\nThe causal or treatment variable is:\n\\[\nT_i= \\begin{cases} 1 & \\text { if respondent } i \\text { used social media } \\\\ 0 & \\text { if respondent } i \\text { did not use social media }\\end{cases}\n\\]\nThe observed outcome variable is:\n\\[\nY_i= \\begin{cases} 1 & \\text { if respondent } i \\text { is happy } \\\\ 0 & \\text { if respondent } i \\text { is unhappy }\\end{cases}\n\\]\n\nSo now, are data becomes:\n\n\n\nRespondent\n\\(T_i\\)\n\\(Y_i\\)\n\n\n\n\n1\n1\n0\n\n\n2\n0\n1"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#causal-effects-counterfactuals",
+    "href": "lectures/02-causality/causality.html#causal-effects-counterfactuals",
+    "title": "Causality and Introduction to R",
+    "section": "Causal Effects & Counterfactuals",
+    "text": "Causal Effects & Counterfactuals\nHow do we translate “what if” questions into a mathematical language?\n\n\n\nTwo potential outcomes:\n\n\\(Y_i(1)\\): the outcome for respondent \\(i\\) if they used social media\n\\(Y_i(0)\\): the outcome for respondent \\(i\\) if they did not use social media\n\n\n\n\n\n\n\nCausal effect for person \\(i\\): \\(Y_i(1) - Y_i(0)\\)\n\n\\(Y_i(1) - Y_i(0) = 0\\) \\(\\rightarrow\\) no effect\n\\(Y_i(1) - Y_i(0) = 1\\) \\(\\rightarrow\\) Social media causes happiness\n\\(Y_i(1) - Y_i(0) = -1\\) \\(\\rightarrow\\) Social media causes unhappiness"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#potential-outcomes",
+    "href": "lectures/02-causality/causality.html#potential-outcomes",
+    "title": "Causality and Introduction to R",
+    "section": "Potential Outcomes",
+    "text": "Potential Outcomes\n\n\n\nRespondent\n\\(T_i\\)\n\\(Y_i\\)\n\\(Y_i(0)\\)\n\\(Y_i(1)\\)\n\n\n\n\n1\n1\n0\n?\n0\n\n\n2\n0\n1\n1\n?\n\n\n\nFundamental Problem of Causal Inference\n\nWe only observe one of the potential outcomes\nObserve \\(Y_i(1)\\) if \\(T_i=1\\) and \\(Y_i(0)\\) if \\(T_i=0\\)"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#average-treatment-effects",
+    "href": "lectures/02-causality/causality.html#average-treatment-effects",
+    "title": "Causality and Introduction to R",
+    "section": "Average Treatment Effects",
+    "text": "Average Treatment Effects\nBecause we cannot observe individual causal effects, we often focus on the Average Treatment Effect (ATE):\n\\[ \\text{ATE} = \\frac{1}{N} \\sum_{i=1}^N (Y_i(1) - Y_i(0)) \\]\n\nThe ATE compares the average outcome when everyone is treated to the average outcome when no one is treated.\n\n\nCan we observe the ATE?"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#comparing-groups",
+    "href": "lectures/02-causality/causality.html#comparing-groups",
+    "title": "Causality and Introduction to R",
+    "section": "Comparing Groups",
+    "text": "Comparing Groups\nImagine the following dataset:\n\n\n\nRespondent\n\\(T_i\\)\n\\(Y_i\\)\n\\(Y_i(0)\\)\n\\(Y_i(1)\\)\n\n\n\n\n1\n1\n0\n?\n0\n\n\n2\n0\n1\n1\n?\n\n\n3\n1\n0\n?\n0\n\n\n4\n0\n1\n1\n?\n\n\n\n\nWe might estimate the ATE from this data by comparing the average observed outcome for those who used social media to those who did not:\n\\[ \\textrm{Difference in Means} =  \\frac{\\sum_{i=1}^N Y_i \\cdot T_i}{ \\sum_{i=1}^N T_i} - \\frac{\\sum_{i=1}^N Y_i \\cdot (1-T_i)}{ \\sum_{i=1}^N 1-T_i} \\]\nIn our case, the estimated ATE would be: -1"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#counfounding",
+    "href": "lectures/02-causality/causality.html#counfounding",
+    "title": "Causality and Introduction to R",
+    "section": "Counfounding",
+    "text": "Counfounding\nNow imagine we could observe the potential outcomes for each respondent:\n\n\n\n\n\n\n\n\n\n\n\n\\(i\\)\n\\(T_i\\)\n\\(Y_i\\)\n\\(Y_i(0)\\)\n\\(Y_i(1)\\)\n\\(Y_i(1) - Y_i(0)\\)\n\n\n\n\n1\n1\n0\n0\n0\n0\n\n\n2\n0\n1\n1\n1\n0\n\n\n3\n1\n0\n0\n0\n0\n\n\n4\n0\n1\n1\n1\n0\n\n\n\n\nEven though our estimated ATE is -1, the true ATE is 0. Why?\n\n\nThere is an association between the treatment variable and potential outcomes, but it is not causal.\nIn our example, social media users are less happy, but this is not because of social media use \\(\\rightarrow\\) the comparison across groups is confounded."
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#randomization",
+    "href": "lectures/02-causality/causality.html#randomization",
+    "title": "Causality and Introduction to R",
+    "section": "Randomization",
+    "text": "Randomization\nWe will discuss in more detail later, but key idea is that random assignment of a treatment breaks the association between treatment and potential outcomes.\nThis allows for unconfounded comparisons across groups."
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#facebook-cessation-experiment",
+    "href": "lectures/02-causality/causality.html#facebook-cessation-experiment",
+    "title": "Causality and Introduction to R",
+    "section": "Facebook Cessation Experiment ",
+    "text": "Facebook Cessation Experiment \nAllcott et al. (2020) presents a randomized experiment where half of around 2,800 Facebook users were paid about $100 to deactivate their accounts for a month.\nWhat do they find?\n\nFacebook cessation:\n\n\nFreed up on average of 60 minutes per day\nLed to spending less time online and more time with friends and family\nResulted in 15% decrease in news consumption; also decreased knowledge of politics\nResulted in less extreme political opinions\nCaused small improvements in subjective wellbeing"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#r-and-rstudio",
+    "href": "lectures/02-causality/causality.html#r-and-rstudio",
+    "title": "Causality and Introduction to R",
+    "section": "R and RStudio",
+    "text": "R and RStudio\n\n\n\n\n\n\n\n\nR is an open-source statistical programming language\nR is also an environment for statistical computing and graphics\nIt’s easily extensible with packages\n\n\n\n\nRStudio is a convenient interface for R called an IDE (integrated development environment), e.g. “I write R code in the RStudio IDE”\nRStudio is not a requirement for programming with R, but it’s very commonly used by R programmers and data scientists"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#r-vs.-rstudio",
+    "href": "lectures/02-causality/causality.html#r-vs.-rstudio",
+    "title": "Causality and Introduction to R",
+    "section": "R vs. RStudio",
+    "text": "R vs. RStudio\n\n\n\n\n\n\n\nSource: Modern Dive."
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#r-packages",
+    "href": "lectures/02-causality/causality.html#r-packages",
+    "title": "Causality and Introduction to R",
+    "section": "R packages",
+    "text": "R packages\n\n\nPackages: Fundamental units of reproducible R code, including reusable R functions, the documentation that describes how to use them, and sample data.\nAs of 15 January 2023, there are 20,252 R packages available on CRAN (the Comprehensive R Archive Network).\nWe’re going to work with a small subset of these."
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#tour-recap-r-rstudio",
+    "href": "lectures/02-causality/causality.html#tour-recap-r-rstudio",
+    "title": "Causality and Introduction to R",
+    "section": "Tour recap: R + RStudio",
+    "text": "Tour recap: R + RStudio"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#a-short-list-for-now-of-r-essentials",
+    "href": "lectures/02-causality/causality.html#a-short-list-for-now-of-r-essentials",
+    "title": "Causality and Introduction to R",
+    "section": "A short list (for now) of R essentials",
+    "text": "A short list (for now) of R essentials\n\nFunctions are (most often) verbs, followed by what they will be applied to in parentheses:\n\n\ndo_this(to_this)\ndo_that(to_this, to_that, with_those)\n\n\n\nPackages are installed with the install.packages() function and loaded with the library function, once per session:\n\n\ninstall.packages(\"package_name\")\nlibrary(package_name)"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#r-essentials-continued",
+    "href": "lectures/02-causality/causality.html#r-essentials-continued",
+    "title": "Causality and Introduction to R",
+    "section": "R essentials (continued)",
+    "text": "R essentials (continued)\n\nColumns (variables) in data frames are accessed with $:\n\n\ndataframe$var_name\n\n\n\nObject documentation can be accessed with ?\n\n\n?mean"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#tidyverse",
+    "href": "lectures/02-causality/causality.html#tidyverse",
+    "title": "Causality and Introduction to R",
+    "section": "tidyverse",
+    "text": "tidyverse\n\n\n\n\ntidyverse.org\n\nThe tidyverse is an opinionated collection of R packages designed for data science\nAll packages share an underlying philosophy and a common grammar"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#quarto-1",
+    "href": "lectures/02-causality/causality.html#quarto-1",
+    "title": "Causality and Introduction to R",
+    "section": "Quarto",
+    "text": "Quarto\n\n\nFully reproducible reports – each time you render the analysis is ran from the beginning\nCode goes in chunks narrative goes outside of chunks\nA visual editor for a familiar / Google docs-like editing experience"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#tour-recap-quarto",
+    "href": "lectures/02-causality/causality.html#tour-recap-quarto",
+    "title": "Causality and Introduction to R",
+    "section": "Tour recap: Quarto",
+    "text": "Tour recap: Quarto"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#environments",
+    "href": "lectures/02-causality/causality.html#environments",
+    "title": "Causality and Introduction to R",
+    "section": "Environments",
+    "text": "Environments\n\n\n\n\n\n\nImportant\n\n\nThe environment of your Quarto document is separate from the Console!\n\n\n\nRemember this, and expect it to bite you a few times as you’re learning to work with Quarto!"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#environments-1",
+    "href": "lectures/02-causality/causality.html#environments-1",
+    "title": "Causality and Introduction to R",
+    "section": "Environments",
+    "text": "Environments\n\n\nFirst, run the following in the console:\n\nx &lt;- 2\nx * 3\n\n\n\nAll looks good?\n\n\nThen, add the following in an R chunk in your Quarto document\n\nx * 3\n\n\n\nWhat happens? Why the error?"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#how-will-we-use-quarto",
+    "href": "lectures/02-causality/causality.html#how-will-we-use-quarto",
+    "title": "Causality and Introduction to R",
+    "section": "How will we use Quarto?",
+    "text": "How will we use Quarto?\n\nEvery class activity, problem set, project, etc. is an Quarto document\nYou’ll always have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#awknowledgements",
+    "href": "lectures/02-causality/causality.html#awknowledgements",
+    "title": "Causality and Introduction to R",
+    "section": "Awknowledgements",
+    "text": "Awknowledgements\n\nThis lecture draws partly from:\n\nGOV50 taught by Matt Blackwell at Harvard University\nSTA 199 taught by Mine Çetinkaya-Rundel at Duke University."
+  },
+  {
+    "objectID": "lectures/02-causality/causality.html#references",
+    "href": "lectures/02-causality/causality.html#references",
+    "title": "Causality and Introduction to R",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\n\n\nAllcott, Hunt, Luca Braghieri, Sarah Eichmeyer, and Matthew Gentzkow. 2020. “The Welfare Effects of Social Media.” American Economic Review 110 (3): 629–76. https://doi.org/10.1257/aer.20190658."
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#example-slide",
+    "href": "lectures/00-template/00-template.html#example-slide",
+    "title": "Quarto reveal.js clean",
+    "section": "Example slide",
+    "text": "Example slide\nThis is a subtitle\nBefore we dive a bit deeper, here is a simple example of the clean theme in action.\n\nNo pictures or anything fancy. Just text for the moment.\n\nNext, we’ll take a brief tour of some theme components.\n\nWe’ll use the same basic structure as the original LaTeX slides.\nNote that the full suite of Reveal.js features are available for this Quarto implementation, even if we don’t cover everything here."
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#before-you-proceed",
+    "href": "lectures/00-template/00-template.html#before-you-proceed",
+    "title": "Quarto reveal.js clean",
+    "section": "Before you proceed…",
+    "text": "Before you proceed…\nRequirements for the coding examples in this demo\n\n\n\n\n\n\nR libraries\n\n\nWhile the clean theme is language agnostic, we will use several R coding examples in this demo to highlight some advanced theme features.\nYou will need the following libraries if you’d like to render the template “as-is”:\ninstall.packages(c(\"modelsummary\", \"gt\", \"fixest\", \"pdftools\", \"tinytex\", \"threejs\"))\n\n\n\n\n\n\n\n\n\nTinyTex\n\n\nWhile reveal.js presentations are HTML format, we will show an example of how to embed LaTeX tables as images. This requires a working Tex distribution, of which TinyTex provides by far the easiest and lightest integration with Quarto. More details here.\nquarto install tinytex"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#components-1",
+    "href": "lectures/00-template/00-template.html#components-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nOrdered and Unordered Lists\nHere we have an unordered list.\n\nfirst item\n\nsub-item\n\nsecond item\n\nAnd next we have an ordered one.\n\nfirst item\n\nsub-item\n\nsecond item"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#components-2",
+    "href": "lectures/00-template/00-template.html#components-2",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nAlerts & Cross-refs\nTo emphasize specific words or text, you can:\n\nUse the default .alert class, e.g. important note.\nUse the .fg class for custom colour, e.g. important note.\nUse the .bg class for custom background, e.g. important note.\n\nTo cross-reference, you have several options, for example:\n\nBeamer-like .button class provided by this theme, e.g. Appendix\nQuarto’s native cross-ref syntax, e.g., “See Section 4.3.”"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#components-3",
+    "href": "lectures/00-template/00-template.html#components-3",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nCitations\nCitations follow the standard Quarto format and be sourced from BibLaTex, BibTeX, or CLS files. For example:\n\nTopic 1: Spatial Frictions (Fajgelbaum et al. 2018; Hsieh and Moretti 2019; Moretti 2011)\nTopic 2: Blah (Suárez Serrato and Zidar 2016)"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#components-4",
+    "href": "lectures/00-template/00-template.html#components-4",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nBlocks\nQuarto provides dedicated environments for theorems, lemmas, and so forth.\nBut in presentation format, it’s arguably more effective just to use a Callout Block.\n\n\n\n\n\n\nRegression Specification\n\n\nThe main specification is as follows:\n\\[\ny_{it} = X_{it} \\beta + \\mu_i + \\varepsilon_{it}\n\\]"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#components-5",
+    "href": "lectures/00-template/00-template.html#components-5",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nMulticolumn I: Text only\n\n\nColumn 1\nHere is a long sentence that will wrap onto the next line as it hits the column width, and continue this way until it stops.\n\nColumn 2\nSome other text in another column.\nA second paragraph.\n\n\nMulticolumn support is very flexible and we can continue with a single full span column in the same slide."
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#components-6",
+    "href": "lectures/00-template/00-template.html#components-6",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nMulticolumn II: Text and figures\n\n\n\n\n\nA point about the figure that is potentially important.\nAnother point about the figure that is also potentially important.\n\n\n\nNote that sub- and multi-panel figures are also natively supported by Quarto. See here."
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#components-7",
+    "href": "lectures/00-template/00-template.html#components-7",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nMulticolumn III: Code and output\n\n\npalette(\"Classic Tableau\")\n\npar(\n        family = \"HersheySans\",\n        las = 1, pch = 19, cex = 1.5\n)\n\npairs(\n        iris[, 1:4],\n        col = iris$Species\n)\n\n\n\n\n\n\n\n\nFigure 1: Pairwise scatterplot"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#tables-1",
+    "href": "lectures/00-template/00-template.html#tables-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Tables",
+    "text": "Tables\nRegression example\nQuarto offers excellent table support, with further customization via user libraries. Let’s illustrate with a regression example:\n\nlibrary(fixest)\n\nmods &lt;- feols(\n        rating ~ complaints + privileges + learning + csw0(raises + critical) + advance,\n        data = attitude\n)\n\ndict &lt;- c(\n        \"rating\" = \"Overall Rating\",\n        \"complaints\" = \"Handling of Complaints\",\n        \"privileges\" = \"No Special Priviledges\",\n        \"learning\" = \"Opportunity to Learn\",\n        \"raises\" = \"Performance-Based Raises\",\n        \"critical\" = \"Too Critical\",\n        \"advance\" = \"Advancement\"\n)"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#regression-table",
+    "href": "lectures/00-template/00-template.html#regression-table",
+    "title": "Quarto reveal.js clean",
+    "section": "Regression table",
+    "text": "Regression table\nmodelsummary\nIf you use modelsummary with this Quarto theme, we advise setting the gt backend for a cleaner aesthetic. More details here.\n\nlibrary(modelsummary)\noptions(modelsummary_factory_default = \"gt\")\n\nmodelsummary(\n        setNames(mods, c(\"(1)\", \"(2)\")),\n        coef_map = dict, stars = TRUE,\n        gof_omit = \"Adj|IC|F|Log|RMSE\"\n) |&gt;\n        gt::tab_spanner(\n                label = \"Dependent variable: Overall Rating\",\n                columns = 2:3\n        )"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#regression-table-output",
+    "href": "lectures/00-template/00-template.html#regression-table-output",
+    "title": "Quarto reveal.js clean",
+    "section": "Regression table",
+    "text": "Regression table\n\n\n\n\n\n\n\n\n\nDependent variable: Overall Rating\n\n\n(1)\n(2)\n\n\n\n\nHandling of Complaints\n0.653***\n0.613***\n\n\n\n(0.131)\n(0.161)\n\n\nNo Special Priviledges\n-0.077\n-0.073\n\n\n\n(0.131)\n(0.136)\n\n\nOpportunity to Learn\n0.324+\n0.320+\n\n\n\n(0.157)\n(0.169)\n\n\nPerformance-Based Raises\n\n0.082\n\n\n\n\n(0.221)\n\n\nToo Critical\n\n0.038\n\n\n\n\n(0.147)\n\n\nAdvancement\n-0.172\n-0.217\n\n\n\n(0.149)\n(0.178)\n\n\nNum.Obs.\n30\n30\n\n\nR2\n0.729\n0.733\n\n\nStd.Errors\nIID\nIID\n\n\n\n+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#regression-table-1",
+    "href": "lectures/00-template/00-template.html#regression-table-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Regression table",
+    "text": "Regression table\netable\nfixest’s powerful native tabling functions were designed for LaTeX output. But we can use the markdown = TRUE option to make them work with this theme too. (Details here.) Quick notes:\n\nInstall the tinytex & pdftools packages first.\nSet the R chunk option output: asis.\n\n```{{r}}\n#| output: asis\n\nsetFixest_etable(markdown = TRUE, drop = \"Constant\")\nsetFixest_dict(dict)\n\netable(mods, highlight = .(\"se\" = \"complaints\"))\n```"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#regression-table-2",
+    "href": "lectures/00-template/00-template.html#regression-table-2",
+    "title": "Quarto reveal.js clean",
+    "section": "Regression table",
+    "text": "Regression table\netable (cont.)"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#figure",
+    "href": "lectures/00-template/00-template.html#figure",
+    "title": "Quarto reveal.js clean",
+    "section": "Figure",
+    "text": "Figure"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#figure-1",
+    "href": "lectures/00-template/00-template.html#figure-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Figure",
+    "text": "Figure\nFull-size Figures\nYou can use the {.background-image} container environment to completely fill the slide background with an image.\nIdeally, your figure will be the same aspect ratio as the screen that you’re presenting on.\n\nThis can be a bit tricky because of the dynamic nature of reveal.js / HTML. But it’s probably something close to 16:9.\nAspect ratio can also matter for a regular full-frame images (previous slide)."
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#interactive-plots",
+    "href": "lectures/00-template/00-template.html#interactive-plots",
+    "title": "Quarto reveal.js clean",
+    "section": "Interactive plots",
+    "text": "Interactive plots\n\n\n\n\n\n\nNote: Simple flight data example using threejs. There are many interactive plotting options beyond this. (More details.)"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#summary-1",
+    "href": "lectures/00-template/00-template.html#summary-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Summary",
+    "text": "Summary\nA minimal and elegant presentation theme\nThe Quarto reveal.js clean theme aims to be a minimal and elegant presention theme.\nWe have highlighted some theme-specific components. But all of the regular reveal.js functionality is supported (chalkboard, etc.)\nInstall the theme:\nquarto install extension grantmcdermott/quarto-revealjs-clean\nUse these demo slides as a template:\nquarto use template grantmcdermott/quarto-revealjs-clean-demo"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#references",
+    "href": "lectures/00-template/00-template.html#references",
+    "title": "Quarto reveal.js clean",
+    "section": "References",
+    "text": "References\n\n\nFajgelbaum, Pablo D, Eduardo Morales, Juan Carlos Suarez Serrato, and Owen Zidar. 2018. “State Taxes and Spatial Misallocation,” 90.\n\n\nHsieh, Chang-Tai, and Enrico Moretti. 2019. “Housing Constraints and Spatial Misallocation.” American Economic Journal: Macroeconomics 11 (2): 39.\n\n\nMoretti, Enrico. 2011. “Local Labor Markets.” In Handbook of Labor Economics. Vol. 4. Elsevier.\n\n\nSuárez Serrato, Juan Carlos, and Owen Zidar. 2016. “Who Benefits from State Corporate Tax Cuts? A Local Labor Markets Approach with Heterogeneous Firms.” American Economic Review 106 (9)."
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#sec-appendix",
+    "href": "lectures/00-template/00-template.html#sec-appendix",
+    "title": "Quarto reveal.js clean",
+    "section": "Appendix",
+    "text": "Appendix\n\n\n\n\nTable 1: Summary of the base R attitude dataset\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnique (#)\nMissing (%)\nMean\nSD\nMin\nMedian\nMax\n\n\n\n\n\nrating\n22\n0\n64.6\n12.2\n40.0\n65.5\n85.0\n\n\n\n   \n\n\n\ncomplaints\n23\n0\n66.6\n13.3\n37.0\n65.0\n90.0\n\n\n\n   \n\n\n\nprivileges\n24\n0\n53.1\n12.2\n30.0\n51.5\n83.0\n\n\n\n   \n\n\n\nlearning\n23\n0\n56.4\n11.7\n34.0\n56.5\n75.0\n\n\n\n   \n\n\n\nraises\n21\n0\n64.6\n10.4\n43.0\n63.5\n88.0\n\n\n\n   \n\n\n\ncritical\n21\n0\n74.8\n9.9\n49.0\n77.5\n92.0\n\n\n\n   \n\n\n\nadvance\n20\n0\n42.9\n10.3\n25.0\n41.0\n72.0\n\n\n\n   \n\n\n\n\n\n\n\n\n\n\n\n\nBack to main"
+  },
+  {
+    "objectID": "materials.html",
+    "href": "materials.html",
+    "title": "Materials",
+    "section": "",
+    "text": "Week 1: Course Introduction\nWeek 2: Intergroup Prejudice\nWeek 3: Intergroup Prejudice\nWeek 4: Partisanship vs Ideology\nWeek 5: Persuasion"
+  },
+  {
+    "objectID": "resources/r_setup.html",
+    "href": "resources/r_setup.html",
+    "title": "Setting up R and RStudio",
+    "section": "",
+    "text": "Go to the CRAN website and click on the download link for your operating system (Windows, Mac, or Linux).\n\n\nMacWindows\n\n\nClick on the R-X.X.X-arm64.pkg or R-X.X.X-x86_64.pkg link to download the installer. The precise file name depends on the latest version and whether you have an Intel processor or a newer ARM processor such as the M1, i.e. R-4.3.2-arm64.pkg. Once the download is complete, open the file and follow the installation instructions.\n\n\n\n\n\n\nTip\n\n\n\nTo determine whether you have an Intel or ARM processor, click on the Apple logo in the top left corner of your screen, select “About This Mac”, and look for the line that indicates “Chip” or “Processor”. If the line says something like “Apple M1” or “Apple M1 Pro”, you have an ARM processor. If it says something like “Intel Core i5” or “Intel Core i7”, you have an Intel processor.\n\n\n\n\nClick on the link that says base. Then click on the “Download R-X.X.X for Windows” link to download the installer. Once the download is complete, open the file and follow the installation instructions.\n\n\n\n\nOnce you have installed R, go to the download page for RStudio Desktop and click on the button that says “Download RStudio Desktop”. Once the download is complete, open the file and follow the installation instructions.\n\n\n\nThere are a few packages that we will use throughout the course. You can install them by starting RStudio and running the following commands in the console (lower left panel by default):\n\npackages &lt;- c(\n        \"tidyverse\", \"learnr\", \"estimatr\",\n        \"randomizr\", \"srvyr\"\n)\ninstall.packages(packages, repos = \"http://cran.rstudio.com\")\n\nFor assignments, we’ll need to produce PDFs from R and that requires a LaTeX distribution. We recommend using tinytex to install a minimal LaTeX distribution if you haven’t already installed LaTex on your system. You can install it by running the following command in the console:\n\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex() # install TinyTeX"
+  },
+  {
+    "objectID": "resources/r_setup.html#installing-required-r-packages",
+    "href": "resources/r_setup.html#installing-required-r-packages",
+    "title": "Setting up R and RStudio",
+    "section": "",
+    "text": "There are a few packages that we will use throughout the course. You can install them by starting RStudio and running the following commands in the console (lower left panel by default):\n\npackages &lt;- c(\n        \"tidyverse\", \"learnr\", \"estimatr\",\n        \"randomizr\", \"srvyr\"\n)\ninstall.packages(packages, repos = \"http://cran.rstudio.com\")\n\nFor assignments, we’ll need to produce PDFs from R and that requires a LaTeX distribution. We recommend using tinytex to install a minimal LaTeX distribution if you haven’t already installed LaTex on your system. You can install it by running the following command in the console:\n\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex() # install TinyTeX"
+  },
+  {
+    "objectID": "materials/week_3.html",
+    "href": "materials/week_3.html",
+    "title": "Week 3: Intergroup Prejudice",
+    "section": "",
+    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
+  },
+  {
+    "objectID": "materials/week_3.html#readings",
+    "href": "materials/week_3.html#readings",
+    "title": "Week 3: Intergroup Prejudice",
+    "section": "",
+    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
+  },
+  {
+    "objectID": "materials/week_3.html#slides",
+    "href": "materials/week_3.html#slides",
+    "title": "Week 3: Intergroup Prejudice",
+    "section": "Slides",
+    "text": "Slides\n\nIntergroup Contact and Data Visualization"
+  },
+  {
+    "objectID": "materials/week_3.html#class-exercises",
+    "href": "materials/week_3.html#class-exercises",
+    "title": "Week 3: Intergroup Prejudice",
+    "section": "Class Exercises",
+    "text": "Class Exercises\n\nIntergroup Contact"
+  },
+  {
+    "objectID": "materials/week_3.html#assignments",
+    "href": "materials/week_3.html#assignments",
+    "title": "Week 3: Intergroup Prejudice",
+    "section": "Assignments",
+    "text": "Assignments\n\nProblem Set 1: qmd link\nTutorial 2"
+  },
+  {
+    "objectID": "materials/week_5.html",
+    "href": "materials/week_5.html",
+    "title": "Week 5: Persuasion and Measurement",
+    "section": "",
+    "text": "Broockman and Kalla (2016): link\nStantcheva (2023): link"
+  },
+  {
+    "objectID": "materials/week_5.html#readings",
+    "href": "materials/week_5.html#readings",
+    "title": "Week 5: Persuasion and Measurement",
+    "section": "",
+    "text": "Broockman and Kalla (2016): link\nStantcheva (2023): link"
+  },
+  {
+    "objectID": "materials/week_5.html#assignments",
+    "href": "materials/week_5.html#assignments",
+    "title": "Week 5: Persuasion and Measurement",
+    "section": "Assignments",
+    "text": "Assignments\n\nProblem Set 2: qmd link\nReading Quiz"
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Tutorial 1: Introduction to R and Data Visualization\nTutorial 2: Data Wrangling"
+  },
+  {
+    "objectID": "assignments.html#tutorials",
+    "href": "assignments.html#tutorials",
+    "title": "Assignments",
+    "section": "",
+    "text": "Tutorial 1: Introduction to R and Data Visualization\nTutorial 2: Data Wrangling"
+  },
+  {
+    "objectID": "assignments.html#problem-sets",
+    "href": "assignments.html#problem-sets",
+    "title": "Assignments",
+    "section": "Problem Sets",
+    "text": "Problem Sets\n\nProblem Set 1: qmd link\nProblem Set 2: qmd link"
+  },
+  {
+    "objectID": "materials/week_4.html",
+    "href": "materials/week_4.html",
+    "title": "Week 4: Partisanship and Ideology",
+    "section": "",
+    "text": "Barber and Pope (2019): Perusall link, direct link\n\nOptional Reading: Trump is a real world political science experiment\n\nGreen and Gerber, pgs 51-71: Perusall link"
+  },
+  {
+    "objectID": "materials/week_4.html#readings",
+    "href": "materials/week_4.html#readings",
+    "title": "Week 4: Partisanship and Ideology",
+    "section": "",
+    "text": "Barber and Pope (2019): Perusall link, direct link\n\nOptional Reading: Trump is a real world political science experiment\n\nGreen and Gerber, pgs 51-71: Perusall link"
+  },
+  {
+    "objectID": "materials/week_4.html#slides",
+    "href": "materials/week_4.html#slides",
+    "title": "Week 4: Partisanship and Ideology",
+    "section": "Slides",
+    "text": "Slides\n\nLecture 4 (2/27): Estimation of Causal Effects and Data Manipulation in R\nLecture 5 (2/29): Partisanship and Ideology"
+  },
+  {
+    "objectID": "materials/week_4.html#assignments",
+    "href": "materials/week_4.html#assignments",
+    "title": "Week 4: Partisanship and Ideology",
+    "section": "Assignments",
+    "text": "Assignments\n\nProblem Set 1: qmd link\nTutorial 2"
+  },
+  {
+    "objectID": "materials/week_2.html",
+    "href": "materials/week_2.html",
+    "title": "Week 2: Intergroup Prejudice",
+    "section": "",
+    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
+  },
+  {
+    "objectID": "materials/week_2.html#readings",
+    "href": "materials/week_2.html#readings",
+    "title": "Week 2: Intergroup Prejudice",
+    "section": "",
+    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
+  },
+  {
+    "objectID": "materials/week_2.html#assignments",
+    "href": "materials/week_2.html#assignments",
+    "title": "Week 2: Intergroup Prejudice",
+    "section": "Assignments",
+    "text": "Assignments\n\nReading Quiz 1\nTutorial 1\nProblem Set 1: qmd link"
+  },
+  {
+    "objectID": "materials/week_1.html",
+    "href": "materials/week_1.html",
+    "title": "Week 1: Course Introduction",
+    "section": "",
+    "text": "RDS Chapter 2\nGerber and Green, pgs. 1-30"
+  },
+  {
+    "objectID": "materials/week_1.html#readings",
+    "href": "materials/week_1.html#readings",
+    "title": "Week 1: Course Introduction",
+    "section": "",
+    "text": "RDS Chapter 2\nGerber and Green, pgs. 1-30"
+  },
+  {
+    "objectID": "materials/week_1.html#slides",
+    "href": "materials/week_1.html#slides",
+    "title": "Week 1: Course Introduction",
+    "section": "Slides",
+    "text": "Slides\n\n2/6: Course Introduction\n2/8: Casuality and Introduction to R"
+  },
+  {
+    "objectID": "materials/week_1.html#class-excercises",
+    "href": "materials/week_1.html#class-excercises",
+    "title": "Week 1: Course Introduction",
+    "section": "Class Excercises",
+    "text": "Class Excercises\n\n2/8: Facebook Study\n\nR Script\nQuarto File"
+  },
+  {
+    "objectID": "materials/week_1.html#resources",
+    "href": "materials/week_1.html#resources",
+    "title": "Week 1: Course Introduction",
+    "section": "Resources",
+    "text": "Resources\n\nInstalling R and Rstudio"
+  },
+  {
+    "objectID": "materials/week_1.html#assignments",
+    "href": "materials/week_1.html#assignments",
+    "title": "Week 1: Course Introduction",
+    "section": "Assignments",
+    "text": "Assignments\n\nTutorial 1"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data and Politics",
+    "section": "",
+    "text": "Welcome to the course website of 17.831 Data and Politics. This course is taught by F. Daniel Hidalgo at MIT in the Spring of 2024."
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "Data and Politics",
+    "section": "Instructor",
+    "text": "Instructor\n\n F. Daniel Hidalgo\n E53-402\n dhidalgo@mit.edu"
+  },
+  {
+    "objectID": "index.html#course-details",
+    "href": "index.html#course-details",
+    "title": "Data and Politics",
+    "section": "Course Details",
+    "text": "Course Details\n\n Tuesdays and Thursdays\n 9:30-11:00am\n 56-154"
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "Data and Politics",
+    "section": "Contact",
+    "text": "Contact\n\n Office Hours\n Piazza\n Canvas"
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "F. Daniel Hidalgo\n E53-402\n dhidalgo@mit.edu\n Office Hours\n\n\n\n\n Tuesdays and Thursdays\n 9:30-11:00am\n 56-154\n Piazza"
+  },
+  {
+    "objectID": "syllabus.html#course-objectives",
+    "href": "syllabus.html#course-objectives",
+    "title": "Syllabus",
+    "section": "Course Objectives",
+    "text": "Course Objectives\nMany of the most pressing social problems have political causes and consequences. Rather than just passively observing these problems, social scientists have developed a range of tools that involve interventions and data collection to understand and address these problems. This course will focus on two essential data-intensive tools for understanding social dynamics: experiments and surveys. Experiments allow us to understand the causal effects of policies and interventions, while surveys allow us to measure difficult-to-observe attitudes and behaviors in a population. This course will provide an introduction to the design and analysis of experiments and surveys through the lens of innovative research in political science and public policy. The course will focus on various substantive topics, including discriminatory attitudes, political participation, combatting voter fraud, and misinformation. Students will analyze actual data and design and field their survey experiment on a chosen topic.\nBy the end of this course, students will be able to:\n\nDescribe how experimental and survey methods can be used to understand pressing social problems.\nDesign surveys and experiments that are applicable to a variety of social settings.\nUse statistical principles to evaluate the quality of survey and experimental designs.\nApply statistical models to experimental and survey data.\nAnalyze data using modern statistical computing tools, in particular the statistical programming language R.\n\n\nExpectations\nIn this course, you will be expected to:\n\nComplete six problem sets.\nComplete regular reading quizzes.\nComplete eight weekly tutorials.\nParticipate in in-person and online class discussions.\nDesign and implement a survey experiment with a diverse sample.\n\n\n\nPrerequisites\nNo prerequisites will be assumed."
+  },
+  {
+    "objectID": "syllabus.html#course-structure",
+    "href": "syllabus.html#course-structure",
+    "title": "Syllabus",
+    "section": "Course Structure",
+    "text": "Course Structure\nThe basic cadence of the course will be as follows, though there may be small differences depending on the week:\n\nMonday: Complete reading, watch course lectures, and complete reading quiz.\nTuesday: Class meets.\nWednesday: Complete coding tutorial, submit assignments (if due)\nThursday: Class meets; assignments are posted\n\n\nClass Lectures\nClass lectures will be a mix of traditional lectures, in-class activities, and group discussions. In addition to in-class lectures, I may occasionally post a recorded lecture. During lecture, we will often be working with data and code, so please bring a computer to class, if possible.\n\n\nTutorials\nWe will assign short weekly coding tutorials that will assess your knowledge of the class materials and prepare you for the in-class activities. Tutorials will primarily be graded based on completion and not whether the answers are correct. Tutorials will generally be due on Wednesday by 11:59pm ET.\n\n\nProblem Sets\nCompetence at the design and analysis of experiments and surveys requires practice with real world datasets and the design of simulations. For the first 2/3 of the course, I will assign problem sets that will give you the opportunity to practice the methods you learn in the course. The problem sets will often involve the creation of a simulation and/or the analysis of data from an assigned reading. In the second half of the course, substantial parts of the problem set will be devoted to the design of the class project.\nI will assign six problem sets throughout the semester. They will be due on Thursdays by 11:59pm ET. I encourage students to work in groups, but each student must submit their own assignment.\n\n\n\n\n\n\nLowest Homework Grade is Dropped\n\n\n\nWhen calculating the overall homework grade, I will drop the lowest homework grade. This is to account for unexpected events that may prevent you from completing an assignment on time.\n\n\n\n\nOnline Forum\nWe will use Piazza for class discussions. If you are having trouble with a question on a problem set or on a reading, please post your question using Piazza. I strongly encourage students to assist in answering questions as they come up. Except under unusual circumstances, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours. The site is: https://piazza.com/mit/spring2024/17831/home\n\n\nGrading\nThe final grade in the course will be based on the following components:\n\n\n\nCategory\nPercent of Final Grade\n\n\n\n\nCoding Tutorials\n5%\n\n\nReading Quizzes\n5%\n\n\nProblem Sets\n50%\n\n\nClass Participation\n25%\n\n\nClass Project Writeup\n15%\n\n\n\nClass participation is based on participation in class discussions, presentations, and activities, as well as participation in Piazza discussions."
+  },
+  {
+    "objectID": "syllabus.html#class-project",
+    "href": "syllabus.html#class-project",
+    "title": "Syllabus",
+    "section": "Class Project",
+    "text": "Class Project\nFor the final project, we will collectively design and implement an experiment embedded in a short survey. In the second half of the semester, we will devote time each week to design the survey and experiment. The goal of this project is to give students experience crafting a research design and collecting real data on a question of interest. The data will be collected on US adults through a crowd-sourcing platform. While we will collectively design the survey and experiment, each student will be responsible for pre-registering their analysis, analyzing the data and writing up the results on their own.\nStudents in the class will:\n\nPropose a research question.\nDesign an intervention suitable for a survey experiment.\nWrite a questionnaire.\nDesign a sampling plan and analysis strategy sufficient for answering their research question.\nPre-register their study.\nAnalyze and write up the results of the study."
+  },
+  {
+    "objectID": "syllabus.html#course-policies",
+    "href": "syllabus.html#course-policies",
+    "title": "Syllabus",
+    "section": "Course Policies",
+    "text": "Course Policies\n\nLate Policy\nFor problem sets submitted late, we will deduct 10% of the grade for each day late. Problem sets will not be accepted more than three days after the due date. This penalty will be waived in the case of a documented medical or family emergency.\n\n\nOffice Hours and Getting Help\nI hold regular weekly office hours on Friday afternoons. Please sign up for in-person or zoom office hours at the following link: https://fantastical.app/dhidalgo/office-hours.\nIf you run into problems that you can’t solve on your own, please use the class website on Piazza to post questions. I strongly encourage students to assist in answering questions as they come up. Unless absolutely necessary, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours.\n\n\nAI Tools\nThe use of generative AI tools such as ChatGPT is allowed for your assignments in this class. However, a central goal of the class is to help you become independent and critical thinkers, so we discourage you from the extensive use of generative AI tools for writing code or answers to problem sets.\nIf you do use AI-generated content in your assignments, you must clearly indicate what work is yours and what part is AI-generated through proper attribution. We also ask you provide a short one-paragraph summary at the beginning of the assignment on how you used AI tools."
+  },
+  {
+    "objectID": "syllabus.html#course-materials",
+    "href": "syllabus.html#course-materials",
+    "title": "Syllabus",
+    "section": "Course Materials",
+    "text": "Course Materials\n\nReadings\nAlmost all readings for the course are available online and linked from the course website in the schedule page or in each week’s materials page page.\nThe one exception is that you should purchase the following book:\n\n\n\n\n\n\nRequired Purchase\n\n\n\nGerber, Alan S., and Donald P. Green. Field Experiments: Design, Analysis, and Interpretation. New York London: W. W. Norton & Company, 2012.\n\n\n\n\nComputing\nWe will use R for all of the data analysis in this course. R is a free, open-source statistical programming language that is widely used in the social sciences. We will use the RStudio integrated development environment (IDE) to write and execute R code. RStudio is also free and open-source.\nYou should install R on your own computer, but to forestall any installation problems, we will provide the option to use the Posit Cloud service for the first few weeks of the course. This service allows you to run R and RStudio in your web browser. This cloud service can be resource constrained, however, so it is strongly recommended that you install R and RStudio on your own computer as soon as possible."
+  },
+  {
+    "objectID": "syllabus.html#acknowledgements",
+    "href": "syllabus.html#acknowledgements",
+    "title": "Syllabus",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nPartly inspired by courses offered by Graeme Blair, Brendan Nyan, Matt Blackwell, and Andrew Heiss. Many thanks to them for sharing their materials and syllabi."
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#data-and-politics",
+    "href": "lectures/01-introduction/introduction.html#data-and-politics",
+    "title": "Data and Politics",
+    "section": "Data and Politics",
+    "text": "Data and Politics\nWelcome to 17.831!\n\nInstructor: F. Daniel Hidalgo\nSchedule: TR 9:30-11:00"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#what-is-this-course-about",
+    "href": "lectures/01-introduction/introduction.html#what-is-this-course-about",
+    "title": "Data and Politics",
+    "section": "What is this course about?",
+    "text": "What is this course about?\n\n\nThis course is about using data to answer social science questions.\nFocus on interventions to lead to change or to measure social facts.\n\n\n\n\nQuestion\nWhat interventions can solve pressing social and political problems?\n\n\n\nExamples\n\nReducing Intergroup prejudice\nIncreasing Political Participation\nMeasuring and Changing Discriminatory Attitudes\nFighting Electoral Fraud"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#example-can-conversations-change-attitudes",
+    "href": "lectures/01-introduction/introduction.html#example-can-conversations-change-attitudes",
+    "title": "Data and Politics",
+    "section": "Example: Can Conversations Change Attitudes?",
+    "text": "Example: Can Conversations Change Attitudes?\n\nCredit: New York Times"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#estimating-effects-of-canvassing",
+    "href": "lectures/01-introduction/introduction.html#estimating-effects-of-canvassing",
+    "title": "Data and Politics",
+    "section": "Estimating Effects of Canvassing",
+    "text": "Estimating Effects of Canvassing\n\nBroockman and Kalla (2016)"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#example-can-sustained-contact-reduce-prejudice",
+    "href": "lectures/01-introduction/introduction.html#example-can-sustained-contact-reduce-prejudice",
+    "title": "Data and Politics",
+    "section": "Example: Can Sustained Contact Reduce Prejudice?",
+    "text": "Example: Can Sustained Contact Reduce Prejudice?\n\nMousa (2020)"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#example-can-facebook-ads-help-combat-election-fraud",
+    "href": "lectures/01-introduction/introduction.html#example-can-facebook-ads-help-combat-election-fraud",
+    "title": "Data and Politics",
+    "section": "Example: Can Facebook Ads Help Combat Election Fraud?",
+    "text": "Example: Can Facebook Ads Help Combat Election Fraud?\n\nGarbiras-Díaz and Montenegro (2022)"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#how-do-we-measure-social-facts",
+    "href": "lectures/01-introduction/introduction.html#how-do-we-measure-social-facts",
+    "title": "Data and Politics",
+    "section": "How do we measure social facts?",
+    "text": "How do we measure social facts?\n\n\nQuestion\nHow do we measure attitudes and behaviors in the general population?\n\n\n\nExamples\n\nDiscriminatory Attitudes\nPartisan Animosity\nSupport for democratic institutions\nBeliefs in conspiracies"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#example-presidential-polling",
+    "href": "lectures/01-introduction/introduction.html#example-presidential-polling",
+    "title": "Data and Politics",
+    "section": "Example: Presidential Polling",
+    "text": "Example: Presidential Polling\n\n538"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#example-how-do-partisans-view-each-other",
+    "href": "lectures/01-introduction/introduction.html#example-how-do-partisans-view-each-other",
+    "title": "Data and Politics",
+    "section": "Example: How Do Partisans View Each Other?",
+    "text": "Example: How Do Partisans View Each Other?\n\nAhler and Sood (2018)"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#substantive-topics",
+    "href": "lectures/01-introduction/introduction.html#substantive-topics",
+    "title": "Data and Politics",
+    "section": "Substantive Topics",
+    "text": "Substantive Topics\n\n\nShow schedule\nAsk students about what they are interested in\n\n\n\n\nWeek 2: Combating Inter-Group Prejudice\nWeek 3: Increasing Political Participation\nWeek 4: The Role of Partisanship vs Ideology in Public Opinion\nWeek 5: Political Persuasion\nWeek 6: Combating Electoral Fraud\nWeek 7: Censorship in Authoritarian Regimes\nWeek 8: Fighting Misinformation\nWeek 9: Partisan Animosity and Polarization\nWeek 10: Polling and Election Forecasting"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#research-design",
+    "href": "lectures/01-introduction/introduction.html#research-design",
+    "title": "Data and Politics",
+    "section": "Research Design",
+    "text": "Research Design\nThis class is about research design, which is a blend of:\n\nTheory and substantive knowledge\nCraft\nStatistics\nComputation\n\n\nIn particular, we will focus on the design and analysis of randomized experiments and survey samples."
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#design-based-inference",
+    "href": "lectures/01-introduction/introduction.html#design-based-inference",
+    "title": "Data and Politics",
+    "section": "Design Based Inference",
+    "text": "Design Based Inference\nRandomized experiments and surveys are examples of design based inference.\n\nWe will learn to:\n\nRead and critique scientific papers that use these approaches\nUnderstand the statistical theory underpinning this mode of inference\nAnalyze experimental and survey data using modern statistical computing tools\nDesign and implement our own studies"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#experiments-and-surveys",
+    "href": "lectures/01-introduction/introduction.html#experiments-and-surveys",
+    "title": "Data and Politics",
+    "section": "Experiments and Surveys",
+    "text": "Experiments and Surveys\n\n\n\n\n\n\n\n\n\nExperiments\nSurveys\n\n\n\n\nTarget of Inference\nCounterfactuals\nOut of Sample Observations\n\n\nThreats to Internal Validity\nOmitted Variable Bias\nNon-Response\n\n\nSelection Mechanism\nRandom Assignment\nRandom Sampling\n\n\nThreats to External Validity\nLack of Realism\nMeasurement Error\n\n\nStatistical Analysis\nModeling\nWeighting"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#computation",
+    "href": "lectures/01-introduction/introduction.html#computation",
+    "title": "Data and Politics",
+    "section": "Computation:  + ",
+    "text": "Computation:  + \n\nWe will use the R statistical environment to analyze data.\n\nIt’s free.\nExcellent for data analysis and visualization.\nRich ecosystem of packages for social science and statistics.\nInfrastructure for inter-mingling code, data, and text.\n\nUsed extensively in Academia, media, and industry\nWe will use RStudio as our development environment."
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#should-i-take-this-course",
+    "href": "lectures/01-introduction/introduction.html#should-i-take-this-course",
+    "title": "Data and Politics",
+    "section": "Should I take this course?",
+    "text": "Should I take this course?\n\nPrerequisites: NONE\nInterest in using data to answer social science questions\nWilling to work consistently throughout semester and learn new tools\nMaterial useful to students interested in public policy, political science, economics, computational social science, etc"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#flow-of-the-course",
+    "href": "lectures/01-introduction/introduction.html#flow-of-the-course",
+    "title": "Data and Politics",
+    "section": "Flow of the Course",
+    "text": "Flow of the Course\n\n\nLectures\n\nClass sessions will be a mix of:\n\nLecture\nDiscussion\nLive coding\nClass activities\n\nBring laptop to class!\n\n\n\n\nHome\n\nRead assigned readings\nComplete:\n\nProblem Sets\nReading quizzes and coding tutorials\nFinal Project"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#assignments",
+    "href": "lectures/01-introduction/introduction.html#assignments",
+    "title": "Data and Politics",
+    "section": "Assignments",
+    "text": "Assignments\n\n\nProblem Sets\n\nFocused on data analysis and simulations\nRoughly every two weeks\nDrop lowest grade\n\n\n\nReading Quizzes and Coding Tutorials\n\nGenerally due weekly\n\nQuizzes due before Tuesday’s class\nCoding tutorials due before Thursday’s class\n\nGraded on completion\n\n\n\n\n\nClass Project\n\nWe will collectively design and implement an experiment embedded in a survey\nYou will:\n\nPropose ideas\nWrite a questionnaire\nWrite a pre-analysis plan\nAnalyze and write up the results\n\nMostly done in second half of semester"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#readings",
+    "href": "lectures/01-introduction/introduction.html#readings",
+    "title": "Data and Politics",
+    "section": "Readings",
+    "text": "Readings\n\n\n1 required book for purchase: \n\n\nAll other readings will be posted on Materials page of class website. Also see the schedule.\nWe will use Perusall to annotate and discuss readings.\n\nAsk questions so that classmates and I can help answer them.\nCounts for class participation"
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#grades-and-help",
+    "href": "lectures/01-introduction/introduction.html#grades-and-help",
+    "title": "Data and Politics",
+    "section": "Grades and Help",
+    "text": "Grades and Help\n\n\n\n\n\nCategory\n%\n\n\n\n\nCoding Tutorials\n5%\n\n\nReading Quizzes\n5%\n\n\nProblem Sets\n50%\n\n\nClass Participation\n25%\n\n\nClass Project Writeup\n15%\n\n\n\n\n\n\nAsk questions about readings on Perusall.\nAsk questions about coding or assignments on Piazza.\nOffice hours: Friday 12-2:30pm. Best if you sign up in advance."
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#what-you-should-do-today",
+    "href": "lectures/01-introduction/introduction.html#what-you-should-do-today",
+    "title": "Data and Politics",
+    "section": "What You Should Do Today",
+    "text": "What You Should Do Today\n\nGet R and RStudio setup on your computer. See instructions on Resources page.\n\nIf you have trouble with this, can also use Posit Cloud to run R and RStudio in your browser (details to follow)\n\nStart Tutorial 1 on basics of R and data visualization.\n\nCan be done on the web before installing R on your computer."
+  },
+  {
+    "objectID": "lectures/01-introduction/introduction.html#references",
+    "href": "lectures/01-introduction/introduction.html#references",
+    "title": "Data and Politics",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\n\n\nAhler, Douglas J., and Gaurav Sood. 2018. “The Parties in Our Heads: Misperceptions about Party Composition and Their Consequences.” The Journal of Politics 80 (3): 964–81. https://doi.org/10.1086/697253.\n\n\nBroockman, David, and Joshua Kalla. 2016. “Durably Reducing Transphobia: A Field Experiment on Door-to-Door Canvassing.” Science 352 (6282): 220–24. https://doi.org/10.1126/science.aad9713.\n\n\nGarbiras-Díaz, Natalia, and Mateo Montenegro. 2022. “All Eyes on Them: A Field Experiment on Citizen Oversight and Electoral Integrity.” American Economic Review 112 (8): 2631–68. https://doi.org/10.1257/aer.20210778.\n\n\nMousa, Salma. 2020. “Building Social Cohesion Between Christians and Muslims Through Soccer in Post-ISIS Iraq.” Science 369 (6505): 866–70. https://doi.org/10.1126/science.abb3153."
+  },
+  {
+    "objectID": "lectures/06-inference/inference.html#hypothesis-testing",
+    "href": "lectures/06-inference/inference.html#hypothesis-testing",
+    "title": "Inference in Experiments",
     "section": "Hypothesis Testing",
     "text": "Hypothesis Testing\n\n\n\nWe have discussed estimation of ATEs and how the difference-in-means is over repeated randomizations an unbiased estimator of the ATE.\nBut any particular estimate may be close or far from the true ATE.\nHow do we know if our finding is unlikely to have occurred by chance?\n\n\n\n\n\nH/T xkcd"
   },
   {
-    "objectID": "lectures/05-partisanship_inference/partisanship_inference.html#logic-of-hypothesis-testing",
-    "href": "lectures/05-partisanship_inference/partisanship_inference.html#logic-of-hypothesis-testing",
-    "title": "Partisanship and Ideologyand Inference in Experiments",
+    "objectID": "lectures/06-inference/inference.html#logic-of-hypothesis-testing",
+    "href": "lectures/06-inference/inference.html#logic-of-hypothesis-testing",
+    "title": "Inference in Experiments",
     "section": "Logic of Hypothesis Testing",
-    "text": "Logic of Hypothesis Testing\n\nWe start with an imagined world in which the treatment has a particular effect: the null hypothesis\nWe ask: under our maintained assumptions, how likely is it that we would observe the data we have if the null hypothesis were true?\n\nImportant: It is not the probability that any partifcular hypothesis is true, but the probability of observing the data we have if the null hypothesis were true.\n\nIf the probability is low, we reject the null hypothesis in favor of the alternative hypothesis. 😎\nIf the probability is high, we fail to reject the null hypothesis. 😢\n\nWe do not accept the null hypothesis, we just fail to reject it."
+    "text": "Logic of Hypothesis Testing\n\nWe start with an imagined world in which the treatment has a particular effect: the null hypothesis (\\(H_0\\))\nWe ask: under our maintained assumptions, how likely is it that we would observe the data we have if the null hypothesis were true?\n\nImportant: It is not the probability that any partifcular hypothesis is true, but the probability of observing the data we have if the null hypothesis were true.\n\nIf the probability is low, we reject the null hypothesis in favor of the alternative hypothesis (\\(H_1\\)). 😎\nIf the probability is high, we fail to reject the null hypothesis. 😢\n\nWe do not accept the null hypothesis, we just fail to reject it."
   },
   {
-    "objectID": "lectures/05-partisanship_inference/partisanship_inference.html#the-sharp-null",
-    "href": "lectures/05-partisanship_inference/partisanship_inference.html#the-sharp-null",
-    "title": "Partisanship and Ideologyand Inference in Experiments",
+    "objectID": "lectures/06-inference/inference.html#the-sharp-null",
+    "href": "lectures/06-inference/inference.html#the-sharp-null",
+    "title": "Inference in Experiments",
     "section": "The Sharp Null",
     "text": "The Sharp Null\nIn experiments, we might be interested in the sharp null hypothesis:\n\n\n\n\n\n\n\n\nSharp Null Hypotheis of No Effect\n\n\nThe treatment effect is 0 for all units: \\(Y_i(1)=Y_i(0)\\) for all \\(i\\).\n\n\n\n\nKey idea: in the world where the sharp null hypothesis is true, we observe all the potential outcomes!\n\n\nThe Real World\n\n\n\n\\(i\\)\n\\(D_i\\)\n\\(Y_i(0)\\)\n\\(Y_i(1)\\)\n\n\n\n\n1\n1\n?\n1\n\n\n2\n0\n-1\n?\n\n\n3\n1\n?\n0\n\n\n\n\nThe Sharp Null World\n\n\n\n\\(i\\)\n\\(D_i\\)\n\\(Y_i(0)\\)\n\\(Y_i(1)\\)\n\n\n\n\n1\n1\n1\n1\n\n\n2\n0\n-1\n-1\n\n\n3\n1\n0\n0"
   },
   {
-    "objectID": "lectures/05-partisanship_inference/partisanship_inference.html#sampling-distribution-under-the-sharp-null",
-    "href": "lectures/05-partisanship_inference/partisanship_inference.html#sampling-distribution-under-the-sharp-null",
-    "title": "Partisanship and Ideologyand Inference in Experiments",
+    "objectID": "lectures/06-inference/inference.html#sampling-distribution-under-the-sharp-null",
+    "href": "lectures/06-inference/inference.html#sampling-distribution-under-the-sharp-null",
+    "title": "Inference in Experiments",
     "section": "Sampling Distribution Under the Sharp Null",
-    "text": "Sampling Distribution Under the Sharp Null\n\nTo conduct a hypothesis test, we need to know the distribution of our estimator (the difference-in-means) under the sharp null hypothesis.\nWe can do this by:\n\nCalculate the actual difference-in-means in our sample.\nPermute the treatment assignment the same way you originally assigned treatment and calculate the difference-in-means.\nRepeat step 2 many times.\nCompare the actual difference-in-means to the distribution of differences-in-means under the sharp null.\nThe p-value is the proportion of permuted differences-in-means that are as extreme or more extreme than the actual difference-in-means."
+    "text": "Sampling Distribution Under the Sharp Null\n\nTo conduct a hypothesis test, we need to know the distribution of our estimator (the difference-in-means) under the sharp null hypothesis.\nWe can do this by:\n\nCalculate the actual test statistic (i.e. difference-in-means) in our sample.\nPermute the treatment assignment the same way you originally assigned treatment and calculate the test statistic.\nRepeat step 2 many times.\nCompare the actual test-statistic to the distribution of differences-in-means under the sharp null.\n\n\n\n\n\n\n\n\n\n\nPermutation Test p-value\n\n\nThe p-value is the proportion of test-statistics from sampling distribution under the null that are as extreme or more extreme than the actual test-statistic."
+  },
+  {
+    "objectID": "lectures/06-inference/inference.html#barber-and-pope-data",
+    "href": "lectures/06-inference/inference.html#barber-and-pope-data",
+    "title": "Inference in Experiments",
+    "section": "Barber and Pope Data",
+    "text": "Barber and Pope Data\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "lectures/06-inference/inference.html#sample",
+    "href": "lectures/06-inference/inference.html#sample",
+    "title": "Inference in Experiments",
+    "section": "sample",
+    "text": "sample\nTo sample from a vector, we can use the sample function, where size is the number of samples, and replace is whether we want to sample with replacement.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nTo permute an entire vector, you can use sample where size is the length of the treatment vector.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "lectures/06-inference/inference.html#test-statistic",
+    "href": "lectures/06-inference/inference.html#test-statistic",
+    "title": "Inference in Experiments",
+    "section": "Test Statistic",
+    "text": "Test Statistic\nTo create the sampling distribution under the sharp null, we need to permute and then calculate the difference-in-means.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "lectures/06-inference/inference.html#create-a-function",
+    "href": "lectures/06-inference/inference.html#create-a-function",
+    "title": "Inference in Experiments",
+    "section": "Create a function",
+    "text": "Create a function\n\n\n\nWe can create a function to permute and calculate the difference-in-means.\nIn general, if we need to do something more than once, we should create a function.\nThis will make our code more readable and easier to debug.\n\n\n\nfunc_name &lt;- function(arg1, arg2, ...) {\n        # Do something\n        return(something)\n}\n\n\nLet’s wrap the code we just wrote into a function.\nWe use pull to extract the value from the tibble.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "lectures/06-inference/inference.html#iterate",
+    "href": "lectures/06-inference/inference.html#iterate",
+    "title": "Inference in Experiments",
+    "section": "Iterate",
+    "text": "Iterate\nWe can now use the function to iterate over many permutations.\nA useful function for this is the replicate function, which repeats a function a number of times.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWe now have a distribution of differences-in-means under the sharp null hypothesis."
+  },
+  {
+    "objectID": "lectures/06-inference/inference.html#visualize-the-distribution",
+    "href": "lectures/06-inference/inference.html#visualize-the-distribution",
+    "title": "Inference in Experiments",
+    "section": "Visualize the Distribution",
+    "text": "Visualize the Distribution\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "lectures/06-inference/inference.html#compare-to-the-actual-test-statistic",
+    "href": "lectures/06-inference/inference.html#compare-to-the-actual-test-statistic",
+    "title": "Inference in Experiments",
+    "section": "Compare to the Actual Test Statistic",
+    "text": "Compare to the Actual Test Statistic\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "lectures/06-inference/inference.html#calculate-the-p-value",
+    "href": "lectures/06-inference/inference.html#calculate-the-p-value",
+    "title": "Inference in Experiments",
+    "section": "Calculate the p-value",
+    "text": "Calculate the p-value\nCalculate the proportion of the sampling distribution that is as extreme or more extreme than the actual test statistic.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nIn this case, the p-value is small as there are few values in the sampling distribution that are as extreme or more extreme than the actual test statistic."
+  },
+  {
+    "objectID": "lectures/06-inference/inference.html#rejecting-the-null",
+    "href": "lectures/06-inference/inference.html#rejecting-the-null",
+    "title": "Inference in Experiments",
+    "section": "Rejecting the Null",
+    "text": "Rejecting the Null\n\nTests usually end with a decision to reject the null or not.\nChoose a threshold below which we reject the null.\n\nTest level : the threshold for a test\nDecision rule: if the p-value is less than , reject the null.\nOtherwise: fail to reject the null.\n\nCommon thresholds:\n\n\\(p\\geq .1\\) (not statistically significant)\n\\(p &lt; .05\\) (statistically significant)\n\\(p &lt; .01\\) (highly statistically significant)"
+  },
+  {
+    "objectID": "lectures/06-inference/inference.html#testing-errors",
+    "href": "lectures/06-inference/inference.html#testing-errors",
+    "title": "Inference in Experiments",
+    "section": "Testing errors",
+    "text": "Testing errors\n\nA \\(p\\)-value of .05 says that data as extreme or more extreme than the actual test statistic would occur 5% of the time if the null hypothesis were true.\nTest errors:\n\n\n\n\n\n\n\\(H_0\\) True\n\\(H_0\\) False\n\n\n\n\nRetain \\(H_0\\)\n😀\nType II Error: 😞\n\n\nReject \\(H_0\\)\nType I Error: 😱\n🥳\n\n\n\n\n\n\nType 1 error is usually considered worse than Type II error.\n\n“Convicting” an innocent null hypothesis\n\nType 2 error is less serious\n\n“Failing to convict” a guilty null hypothesis"
+  },
+  {
+    "objectID": "lectures/06-inference/inference.html#more-on-iteration-1",
+    "href": "lectures/06-inference/inference.html#more-on-iteration-1",
+    "title": "Inference in Experiments",
+    "section": "More on Iteration",
+    "text": "More on Iteration\n\nWe used the replicate function to iterate over the permutations.\nA useful package for iteration is the purrr package (part of the tidyverse).\nThe map function is a generalization of replicate that can be used to iterate over many things.\n\nAlso has built in progress bars\nMore flexible than replicate"
+  },
+  {
+    "objectID": "lectures/06-inference/inference.html#lists",
+    "href": "lectures/06-inference/inference.html#lists",
+    "title": "Inference in Experiments",
+    "section": "Lists",
+    "text": "Lists\n\nLists are a very flexible data structure in R.\n\nThey can hold any type of data, including other lists.\nCan access elements by position:\n\nlist[1] returns the first element of the list (which is a list)\nlist[[1]] returns the content of first element of the list (not the list itself)\nlist[[1]][[1]] returns the first element of the first element of the list.\n\n\n\n\n\n\n\nIndexing Lists"
+  },
+  {
+    "objectID": "lectures/06-inference/inference.html#checking-covariate-balance-with-map",
+    "href": "lectures/06-inference/inference.html#checking-covariate-balance-with-map",
+    "title": "Inference in Experiments",
+    "section": "Checking Covariate Balance with map",
+    "text": "Checking Covariate Balance with map\nNow let’s do a version of the permutation test using map.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "lectures/06-inference/inference.html#covariate-balance",
+    "href": "lectures/06-inference/inference.html#covariate-balance",
+    "title": "Inference in Experiments",
+    "section": "Covariate Balance",
+    "text": "Covariate Balance\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "lectures/06-inference/inference.html#plot",
+    "href": "lectures/06-inference/inference.html#plot",
+    "title": "Inference in Experiments",
+    "section": "Plot",
+    "text": "Plot\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "lectures/04-estimation_dplyr/estimation_dplyr.html#potential-outcomes",
@@ -348,1000 +1447,6 @@
     "title": "Estimation of Causal Effectsand Data Manipulation in R",
     "section": "mutate and group_by",
     "text": "mutate and group_by\nmutate() and group_by() can be used together to create new variables that are calculated within groups\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#data-and-politics",
-    "href": "lectures/01-introduction/introduction.html#data-and-politics",
-    "title": "Data and Politics",
-    "section": "Data and Politics",
-    "text": "Data and Politics\nWelcome to 17.831!\n\nInstructor: F. Daniel Hidalgo\nSchedule: TR 9:30-11:00"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#what-is-this-course-about",
-    "href": "lectures/01-introduction/introduction.html#what-is-this-course-about",
-    "title": "Data and Politics",
-    "section": "What is this course about?",
-    "text": "What is this course about?\n\n\nThis course is about using data to answer social science questions.\nFocus on interventions to lead to change or to measure social facts.\n\n\n\n\nQuestion\nWhat interventions can solve pressing social and political problems?\n\n\n\nExamples\n\nReducing Intergroup prejudice\nIncreasing Political Participation\nMeasuring and Changing Discriminatory Attitudes\nFighting Electoral Fraud"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#example-can-conversations-change-attitudes",
-    "href": "lectures/01-introduction/introduction.html#example-can-conversations-change-attitudes",
-    "title": "Data and Politics",
-    "section": "Example: Can Conversations Change Attitudes?",
-    "text": "Example: Can Conversations Change Attitudes?\n\nCredit: New York Times"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#estimating-effects-of-canvassing",
-    "href": "lectures/01-introduction/introduction.html#estimating-effects-of-canvassing",
-    "title": "Data and Politics",
-    "section": "Estimating Effects of Canvassing",
-    "text": "Estimating Effects of Canvassing\n\nBroockman and Kalla (2016)"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#example-can-sustained-contact-reduce-prejudice",
-    "href": "lectures/01-introduction/introduction.html#example-can-sustained-contact-reduce-prejudice",
-    "title": "Data and Politics",
-    "section": "Example: Can Sustained Contact Reduce Prejudice?",
-    "text": "Example: Can Sustained Contact Reduce Prejudice?\n\nMousa (2020)"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#example-can-facebook-ads-help-combat-election-fraud",
-    "href": "lectures/01-introduction/introduction.html#example-can-facebook-ads-help-combat-election-fraud",
-    "title": "Data and Politics",
-    "section": "Example: Can Facebook Ads Help Combat Election Fraud?",
-    "text": "Example: Can Facebook Ads Help Combat Election Fraud?\n\nGarbiras-Díaz and Montenegro (2022)"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#how-do-we-measure-social-facts",
-    "href": "lectures/01-introduction/introduction.html#how-do-we-measure-social-facts",
-    "title": "Data and Politics",
-    "section": "How do we measure social facts?",
-    "text": "How do we measure social facts?\n\n\nQuestion\nHow do we measure attitudes and behaviors in the general population?\n\n\n\nExamples\n\nDiscriminatory Attitudes\nPartisan Animosity\nSupport for democratic institutions\nBeliefs in conspiracies"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#example-presidential-polling",
-    "href": "lectures/01-introduction/introduction.html#example-presidential-polling",
-    "title": "Data and Politics",
-    "section": "Example: Presidential Polling",
-    "text": "Example: Presidential Polling\n\n538"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#example-how-do-partisans-view-each-other",
-    "href": "lectures/01-introduction/introduction.html#example-how-do-partisans-view-each-other",
-    "title": "Data and Politics",
-    "section": "Example: How Do Partisans View Each Other?",
-    "text": "Example: How Do Partisans View Each Other?\n\nAhler and Sood (2018)"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#substantive-topics",
-    "href": "lectures/01-introduction/introduction.html#substantive-topics",
-    "title": "Data and Politics",
-    "section": "Substantive Topics",
-    "text": "Substantive Topics\n\n\nShow schedule\nAsk students about what they are interested in\n\n\n\n\nWeek 2: Combating Inter-Group Prejudice\nWeek 3: Increasing Political Participation\nWeek 4: The Role of Partisanship vs Ideology in Public Opinion\nWeek 5: Political Persuasion\nWeek 6: Combating Electoral Fraud\nWeek 7: Censorship in Authoritarian Regimes\nWeek 8: Fighting Misinformation\nWeek 9: Partisan Animosity and Polarization\nWeek 10: Polling and Election Forecasting"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#research-design",
-    "href": "lectures/01-introduction/introduction.html#research-design",
-    "title": "Data and Politics",
-    "section": "Research Design",
-    "text": "Research Design\nThis class is about research design, which is a blend of:\n\nTheory and substantive knowledge\nCraft\nStatistics\nComputation\n\n\nIn particular, we will focus on the design and analysis of randomized experiments and survey samples."
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#design-based-inference",
-    "href": "lectures/01-introduction/introduction.html#design-based-inference",
-    "title": "Data and Politics",
-    "section": "Design Based Inference",
-    "text": "Design Based Inference\nRandomized experiments and surveys are examples of design based inference.\n\nWe will learn to:\n\nRead and critique scientific papers that use these approaches\nUnderstand the statistical theory underpinning this mode of inference\nAnalyze experimental and survey data using modern statistical computing tools\nDesign and implement our own studies"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#experiments-and-surveys",
-    "href": "lectures/01-introduction/introduction.html#experiments-and-surveys",
-    "title": "Data and Politics",
-    "section": "Experiments and Surveys",
-    "text": "Experiments and Surveys\n\n\n\n\n\n\n\n\n\nExperiments\nSurveys\n\n\n\n\nTarget of Inference\nCounterfactuals\nOut of Sample Observations\n\n\nThreats to Internal Validity\nOmitted Variable Bias\nNon-Response\n\n\nSelection Mechanism\nRandom Assignment\nRandom Sampling\n\n\nThreats to External Validity\nLack of Realism\nMeasurement Error\n\n\nStatistical Analysis\nModeling\nWeighting"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#computation",
-    "href": "lectures/01-introduction/introduction.html#computation",
-    "title": "Data and Politics",
-    "section": "Computation:  + ",
-    "text": "Computation:  + \n\nWe will use the R statistical environment to analyze data.\n\nIt’s free.\nExcellent for data analysis and visualization.\nRich ecosystem of packages for social science and statistics.\nInfrastructure for inter-mingling code, data, and text.\n\nUsed extensively in Academia, media, and industry\nWe will use RStudio as our development environment."
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#should-i-take-this-course",
-    "href": "lectures/01-introduction/introduction.html#should-i-take-this-course",
-    "title": "Data and Politics",
-    "section": "Should I take this course?",
-    "text": "Should I take this course?\n\nPrerequisites: NONE\nInterest in using data to answer social science questions\nWilling to work consistently throughout semester and learn new tools\nMaterial useful to students interested in public policy, political science, economics, computational social science, etc"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#flow-of-the-course",
-    "href": "lectures/01-introduction/introduction.html#flow-of-the-course",
-    "title": "Data and Politics",
-    "section": "Flow of the Course",
-    "text": "Flow of the Course\n\n\nLectures\n\nClass sessions will be a mix of:\n\nLecture\nDiscussion\nLive coding\nClass activities\n\nBring laptop to class!\n\n\n\n\nHome\n\nRead assigned readings\nComplete:\n\nProblem Sets\nReading quizzes and coding tutorials\nFinal Project"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#assignments",
-    "href": "lectures/01-introduction/introduction.html#assignments",
-    "title": "Data and Politics",
-    "section": "Assignments",
-    "text": "Assignments\n\n\nProblem Sets\n\nFocused on data analysis and simulations\nRoughly every two weeks\nDrop lowest grade\n\n\n\nReading Quizzes and Coding Tutorials\n\nGenerally due weekly\n\nQuizzes due before Tuesday’s class\nCoding tutorials due before Thursday’s class\n\nGraded on completion\n\n\n\n\n\nClass Project\n\nWe will collectively design and implement an experiment embedded in a survey\nYou will:\n\nPropose ideas\nWrite a questionnaire\nWrite a pre-analysis plan\nAnalyze and write up the results\n\nMostly done in second half of semester"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#readings",
-    "href": "lectures/01-introduction/introduction.html#readings",
-    "title": "Data and Politics",
-    "section": "Readings",
-    "text": "Readings\n\n\n1 required book for purchase: \n\n\nAll other readings will be posted on Materials page of class website. Also see the schedule.\nWe will use Perusall to annotate and discuss readings.\n\nAsk questions so that classmates and I can help answer them.\nCounts for class participation"
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#grades-and-help",
-    "href": "lectures/01-introduction/introduction.html#grades-and-help",
-    "title": "Data and Politics",
-    "section": "Grades and Help",
-    "text": "Grades and Help\n\n\n\n\n\nCategory\n%\n\n\n\n\nCoding Tutorials\n5%\n\n\nReading Quizzes\n5%\n\n\nProblem Sets\n50%\n\n\nClass Participation\n25%\n\n\nClass Project Writeup\n15%\n\n\n\n\n\n\nAsk questions about readings on Perusall.\nAsk questions about coding or assignments on Piazza.\nOffice hours: Friday 12-2:30pm. Best if you sign up in advance."
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#what-you-should-do-today",
-    "href": "lectures/01-introduction/introduction.html#what-you-should-do-today",
-    "title": "Data and Politics",
-    "section": "What You Should Do Today",
-    "text": "What You Should Do Today\n\nGet R and RStudio setup on your computer. See instructions on Resources page.\n\nIf you have trouble with this, can also use Posit Cloud to run R and RStudio in your browser (details to follow)\n\nStart Tutorial 1 on basics of R and data visualization.\n\nCan be done on the web before installing R on your computer."
-  },
-  {
-    "objectID": "lectures/01-introduction/introduction.html#references",
-    "href": "lectures/01-introduction/introduction.html#references",
-    "title": "Data and Politics",
-    "section": "References",
-    "text": "References\n\n\n\n\n\n\n\n\nAhler, Douglas J., and Gaurav Sood. 2018. “The Parties in Our Heads: Misperceptions about Party Composition and Their Consequences.” The Journal of Politics 80 (3): 964–81. https://doi.org/10.1086/697253.\n\n\nBroockman, David, and Joshua Kalla. 2016. “Durably Reducing Transphobia: A Field Experiment on Door-to-Door Canvassing.” Science 352 (6282): 220–24. https://doi.org/10.1126/science.aad9713.\n\n\nGarbiras-Díaz, Natalia, and Mateo Montenegro. 2022. “All Eyes on Them: A Field Experiment on Citizen Oversight and Electoral Integrity.” American Economic Review 112 (8): 2631–68. https://doi.org/10.1257/aer.20210778.\n\n\nMousa, Salma. 2020. “Building Social Cohesion Between Christians and Muslims Through Soccer in Post-ISIS Iraq.” Science 369 (6505): 866–70. https://doi.org/10.1126/science.abb3153."
-  },
-  {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "F. Daniel Hidalgo\n E53-402\n dhidalgo@mit.edu\n Office Hours\n\n\n\n\n Tuesdays and Thursdays\n 9:30-11:00am\n 56-154\n Piazza"
-  },
-  {
-    "objectID": "syllabus.html#course-objectives",
-    "href": "syllabus.html#course-objectives",
-    "title": "Syllabus",
-    "section": "Course Objectives",
-    "text": "Course Objectives\nMany of the most pressing social problems have political causes and consequences. Rather than just passively observing these problems, social scientists have developed a range of tools that involve interventions and data collection to understand and address these problems. This course will focus on two essential data-intensive tools for understanding social dynamics: experiments and surveys. Experiments allow us to understand the causal effects of policies and interventions, while surveys allow us to measure difficult-to-observe attitudes and behaviors in a population. This course will provide an introduction to the design and analysis of experiments and surveys through the lens of innovative research in political science and public policy. The course will focus on various substantive topics, including discriminatory attitudes, political participation, combatting voter fraud, and misinformation. Students will analyze actual data and design and field their survey experiment on a chosen topic.\nBy the end of this course, students will be able to:\n\nDescribe how experimental and survey methods can be used to understand pressing social problems.\nDesign surveys and experiments that are applicable to a variety of social settings.\nUse statistical principles to evaluate the quality of survey and experimental designs.\nApply statistical models to experimental and survey data.\nAnalyze data using modern statistical computing tools, in particular the statistical programming language R.\n\n\nExpectations\nIn this course, you will be expected to:\n\nComplete six problem sets.\nComplete regular reading quizzes.\nComplete eight weekly tutorials.\nParticipate in in-person and online class discussions.\nDesign and implement a survey experiment with a diverse sample.\n\n\n\nPrerequisites\nNo prerequisites will be assumed."
-  },
-  {
-    "objectID": "syllabus.html#course-structure",
-    "href": "syllabus.html#course-structure",
-    "title": "Syllabus",
-    "section": "Course Structure",
-    "text": "Course Structure\nThe basic cadence of the course will be as follows, though there may be small differences depending on the week:\n\nMonday: Complete reading, watch course lectures, and complete reading quiz.\nTuesday: Class meets.\nWednesday: Complete coding tutorial, submit assignments (if due)\nThursday: Class meets; assignments are posted\n\n\nClass Lectures\nClass lectures will be a mix of traditional lectures, in-class activities, and group discussions. In addition to in-class lectures, I may occasionally post a recorded lecture. During lecture, we will often be working with data and code, so please bring a computer to class, if possible.\n\n\nTutorials\nWe will assign short weekly coding tutorials that will assess your knowledge of the class materials and prepare you for the in-class activities. Tutorials will primarily be graded based on completion and not whether the answers are correct. Tutorials will generally be due on Wednesday by 11:59pm ET.\n\n\nProblem Sets\nCompetence at the design and analysis of experiments and surveys requires practice with real world datasets and the design of simulations. For the first 2/3 of the course, I will assign problem sets that will give you the opportunity to practice the methods you learn in the course. The problem sets will often involve the creation of a simulation and/or the analysis of data from an assigned reading. In the second half of the course, substantial parts of the problem set will be devoted to the design of the class project.\nI will assign six problem sets throughout the semester. They will be due on Thursdays by 11:59pm ET. I encourage students to work in groups, but each student must submit their own assignment.\n\n\n\n\n\n\nLowest Homework Grade is Dropped\n\n\n\nWhen calculating the overall homework grade, I will drop the lowest homework grade. This is to account for unexpected events that may prevent you from completing an assignment on time.\n\n\n\n\nOnline Forum\nWe will use Piazza for class discussions. If you are having trouble with a question on a problem set or on a reading, please post your question using Piazza. I strongly encourage students to assist in answering questions as they come up. Except under unusual circumstances, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours. The site is: https://piazza.com/mit/spring2024/17831/home\n\n\nGrading\nThe final grade in the course will be based on the following components:\n\n\n\nCategory\nPercent of Final Grade\n\n\n\n\nCoding Tutorials\n5%\n\n\nReading Quizzes\n5%\n\n\nProblem Sets\n50%\n\n\nClass Participation\n25%\n\n\nClass Project Writeup\n15%\n\n\n\nClass participation is based on participation in class discussions, presentations, and activities, as well as participation in Piazza discussions."
-  },
-  {
-    "objectID": "syllabus.html#class-project",
-    "href": "syllabus.html#class-project",
-    "title": "Syllabus",
-    "section": "Class Project",
-    "text": "Class Project\nFor the final project, we will collectively design and implement an experiment embedded in a short survey. In the second half of the semester, we will devote time each week to design the survey and experiment. The goal of this project is to give students experience crafting a research design and collecting real data on a question of interest. The data will be collected on US adults through a crowd-sourcing platform. While we will collectively design the survey and experiment, each student will be responsible for pre-registering their analysis, analyzing the data and writing up the results on their own.\nStudents in the class will:\n\nPropose a research question.\nDesign an intervention suitable for a survey experiment.\nWrite a questionnaire.\nDesign a sampling plan and analysis strategy sufficient for answering their research question.\nPre-register their study.\nAnalyze and write up the results of the study."
-  },
-  {
-    "objectID": "syllabus.html#course-policies",
-    "href": "syllabus.html#course-policies",
-    "title": "Syllabus",
-    "section": "Course Policies",
-    "text": "Course Policies\n\nLate Policy\nFor problem sets submitted late, we will deduct 10% of the grade for each day late. Problem sets will not be accepted more than three days after the due date. This penalty will be waived in the case of a documented medical or family emergency.\n\n\nOffice Hours and Getting Help\nI hold regular weekly office hours on Friday afternoons. Please sign up for in-person or zoom office hours at the following link: https://fantastical.app/dhidalgo/office-hours.\nIf you run into problems that you can’t solve on your own, please use the class website on Piazza to post questions. I strongly encourage students to assist in answering questions as they come up. Unless absolutely necessary, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours.\n\n\nAI Tools\nThe use of generative AI tools such as ChatGPT is allowed for your assignments in this class. However, a central goal of the class is to help you become independent and critical thinkers, so we discourage you from the extensive use of generative AI tools for writing code or answers to problem sets.\nIf you do use AI-generated content in your assignments, you must clearly indicate what work is yours and what part is AI-generated through proper attribution. We also ask you provide a short one-paragraph summary at the beginning of the assignment on how you used AI tools."
-  },
-  {
-    "objectID": "syllabus.html#course-materials",
-    "href": "syllabus.html#course-materials",
-    "title": "Syllabus",
-    "section": "Course Materials",
-    "text": "Course Materials\n\nReadings\nAlmost all readings for the course are available online and linked from the course website in the schedule page or in each week’s materials page page.\nThe one exception is that you should purchase the following book:\n\n\n\n\n\n\nRequired Purchase\n\n\n\nGerber, Alan S., and Donald P. Green. Field Experiments: Design, Analysis, and Interpretation. New York London: W. W. Norton & Company, 2012.\n\n\n\n\nComputing\nWe will use R for all of the data analysis in this course. R is a free, open-source statistical programming language that is widely used in the social sciences. We will use the RStudio integrated development environment (IDE) to write and execute R code. RStudio is also free and open-source.\nYou should install R on your own computer, but to forestall any installation problems, we will provide the option to use the Posit Cloud service for the first few weeks of the course. This service allows you to run R and RStudio in your web browser. This cloud service can be resource constrained, however, so it is strongly recommended that you install R and RStudio on your own computer as soon as possible."
-  },
-  {
-    "objectID": "syllabus.html#acknowledgements",
-    "href": "syllabus.html#acknowledgements",
-    "title": "Syllabus",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nPartly inspired by courses offered by Graeme Blair, Brendan Nyan, Matt Blackwell, and Andrew Heiss. Many thanks to them for sharing their materials and syllabi."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Data and Politics",
-    "section": "",
-    "text": "Welcome to the course website of 17.831 Data and Politics. This course is taught by F. Daniel Hidalgo at MIT in the Spring of 2024."
-  },
-  {
-    "objectID": "index.html#instructor",
-    "href": "index.html#instructor",
-    "title": "Data and Politics",
-    "section": "Instructor",
-    "text": "Instructor\n\n F. Daniel Hidalgo\n E53-402\n dhidalgo@mit.edu"
-  },
-  {
-    "objectID": "index.html#course-details",
-    "href": "index.html#course-details",
-    "title": "Data and Politics",
-    "section": "Course Details",
-    "text": "Course Details\n\n Tuesdays and Thursdays\n 9:30-11:00am\n 56-154"
-  },
-  {
-    "objectID": "index.html#contact",
-    "href": "index.html#contact",
-    "title": "Data and Politics",
-    "section": "Contact",
-    "text": "Contact\n\n Office Hours\n Piazza\n Canvas"
-  },
-  {
-    "objectID": "materials/week_1.html",
-    "href": "materials/week_1.html",
-    "title": "Week 1: Course Introduction",
-    "section": "",
-    "text": "RDS Chapter 2\nGerber and Green, pgs. 1-30"
-  },
-  {
-    "objectID": "materials/week_1.html#readings",
-    "href": "materials/week_1.html#readings",
-    "title": "Week 1: Course Introduction",
-    "section": "",
-    "text": "RDS Chapter 2\nGerber and Green, pgs. 1-30"
-  },
-  {
-    "objectID": "materials/week_1.html#slides",
-    "href": "materials/week_1.html#slides",
-    "title": "Week 1: Course Introduction",
-    "section": "Slides",
-    "text": "Slides\n\n2/6: Course Introduction\n2/8: Casuality and Introduction to R"
-  },
-  {
-    "objectID": "materials/week_1.html#class-excercises",
-    "href": "materials/week_1.html#class-excercises",
-    "title": "Week 1: Course Introduction",
-    "section": "Class Excercises",
-    "text": "Class Excercises\n\n2/8: Facebook Study\n\nR Script\nQuarto File"
-  },
-  {
-    "objectID": "materials/week_1.html#resources",
-    "href": "materials/week_1.html#resources",
-    "title": "Week 1: Course Introduction",
-    "section": "Resources",
-    "text": "Resources\n\nInstalling R and Rstudio"
-  },
-  {
-    "objectID": "materials/week_1.html#assignments",
-    "href": "materials/week_1.html#assignments",
-    "title": "Week 1: Course Introduction",
-    "section": "Assignments",
-    "text": "Assignments\n\nTutorial 1"
-  },
-  {
-    "objectID": "materials/week_2.html",
-    "href": "materials/week_2.html",
-    "title": "Week 2: Intergroup Prejudice",
-    "section": "",
-    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
-  },
-  {
-    "objectID": "materials/week_2.html#readings",
-    "href": "materials/week_2.html#readings",
-    "title": "Week 2: Intergroup Prejudice",
-    "section": "",
-    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
-  },
-  {
-    "objectID": "materials/week_2.html#assignments",
-    "href": "materials/week_2.html#assignments",
-    "title": "Week 2: Intergroup Prejudice",
-    "section": "Assignments",
-    "text": "Assignments\n\nReading Quiz 1\nTutorial 1\nProblem Set 1: qmd link"
-  },
-  {
-    "objectID": "materials/week_4.html",
-    "href": "materials/week_4.html",
-    "title": "Week 4: Partisanship and Ideology",
-    "section": "",
-    "text": "Barber and Pope (2019): Perusall link, direct link\n\nOptional Reading: Trump is a real world political science experiment\n\nGreen and Gerber, pgs 51-71: Perusall link"
-  },
-  {
-    "objectID": "materials/week_4.html#readings",
-    "href": "materials/week_4.html#readings",
-    "title": "Week 4: Partisanship and Ideology",
-    "section": "",
-    "text": "Barber and Pope (2019): Perusall link, direct link\n\nOptional Reading: Trump is a real world political science experiment\n\nGreen and Gerber, pgs 51-71: Perusall link"
-  },
-  {
-    "objectID": "materials/week_4.html#slides",
-    "href": "materials/week_4.html#slides",
-    "title": "Week 4: Partisanship and Ideology",
-    "section": "Slides",
-    "text": "Slides\n\nLecture 4 (2/27): Estimation of Causal Effects and Data Manipulation in R\nLecture 5 (2/29): Partisanship and Ideology and Inference in Experiments"
-  },
-  {
-    "objectID": "materials/week_4.html#assignments",
-    "href": "materials/week_4.html#assignments",
-    "title": "Week 4: Partisanship and Ideology",
-    "section": "Assignments",
-    "text": "Assignments\n\nProblem Set 1: qmd link\nTutorial 2"
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "Tutorial 1: Introduction to R and Data Visualization\nTutorial 2: Data Wrangling"
-  },
-  {
-    "objectID": "assignments.html#tutorials",
-    "href": "assignments.html#tutorials",
-    "title": "Assignments",
-    "section": "",
-    "text": "Tutorial 1: Introduction to R and Data Visualization\nTutorial 2: Data Wrangling"
-  },
-  {
-    "objectID": "assignments.html#problem-sets",
-    "href": "assignments.html#problem-sets",
-    "title": "Assignments",
-    "section": "Problem Sets",
-    "text": "Problem Sets\n\nProblem Set 1: qmd link\nProblem Set 2: qmd link"
-  },
-  {
-    "objectID": "materials/week_5.html",
-    "href": "materials/week_5.html",
-    "title": "Week 5: Persuasion and Measurement",
-    "section": "",
-    "text": "Broockman and Kalla (2016): link\nStantcheva (2023): link"
-  },
-  {
-    "objectID": "materials/week_5.html#readings",
-    "href": "materials/week_5.html#readings",
-    "title": "Week 5: Persuasion and Measurement",
-    "section": "",
-    "text": "Broockman and Kalla (2016): link\nStantcheva (2023): link"
-  },
-  {
-    "objectID": "materials/week_5.html#assignments",
-    "href": "materials/week_5.html#assignments",
-    "title": "Week 5: Persuasion and Measurement",
-    "section": "Assignments",
-    "text": "Assignments\n\nProblem Set 2: qmd link\nReading Quiz"
-  },
-  {
-    "objectID": "materials/week_3.html",
-    "href": "materials/week_3.html",
-    "title": "Week 3: Intergroup Prejudice",
-    "section": "",
-    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
-  },
-  {
-    "objectID": "materials/week_3.html#readings",
-    "href": "materials/week_3.html#readings",
-    "title": "Week 3: Intergroup Prejudice",
-    "section": "",
-    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
-  },
-  {
-    "objectID": "materials/week_3.html#slides",
-    "href": "materials/week_3.html#slides",
-    "title": "Week 3: Intergroup Prejudice",
-    "section": "Slides",
-    "text": "Slides\n\nIntergroup Contact and Data Visualization"
-  },
-  {
-    "objectID": "materials/week_3.html#class-exercises",
-    "href": "materials/week_3.html#class-exercises",
-    "title": "Week 3: Intergroup Prejudice",
-    "section": "Class Exercises",
-    "text": "Class Exercises\n\nIntergroup Contact"
-  },
-  {
-    "objectID": "materials/week_3.html#assignments",
-    "href": "materials/week_3.html#assignments",
-    "title": "Week 3: Intergroup Prejudice",
-    "section": "Assignments",
-    "text": "Assignments\n\nProblem Set 1: qmd link\nTutorial 2"
-  },
-  {
-    "objectID": "resources/r_setup.html",
-    "href": "resources/r_setup.html",
-    "title": "Setting up R and RStudio",
-    "section": "",
-    "text": "Go to the CRAN website and click on the download link for your operating system (Windows, Mac, or Linux).\n\n\nMacWindows\n\n\nClick on the R-X.X.X-arm64.pkg or R-X.X.X-x86_64.pkg link to download the installer. The precise file name depends on the latest version and whether you have an Intel processor or a newer ARM processor such as the M1, i.e. R-4.3.2-arm64.pkg. Once the download is complete, open the file and follow the installation instructions.\n\n\n\n\n\n\nTip\n\n\n\nTo determine whether you have an Intel or ARM processor, click on the Apple logo in the top left corner of your screen, select “About This Mac”, and look for the line that indicates “Chip” or “Processor”. If the line says something like “Apple M1” or “Apple M1 Pro”, you have an ARM processor. If it says something like “Intel Core i5” or “Intel Core i7”, you have an Intel processor.\n\n\n\n\nClick on the link that says base. Then click on the “Download R-X.X.X for Windows” link to download the installer. Once the download is complete, open the file and follow the installation instructions.\n\n\n\n\nOnce you have installed R, go to the download page for RStudio Desktop and click on the button that says “Download RStudio Desktop”. Once the download is complete, open the file and follow the installation instructions.\n\n\n\nThere are a few packages that we will use throughout the course. You can install them by starting RStudio and running the following commands in the console (lower left panel by default):\n\npackages &lt;- c(\n        \"tidyverse\", \"learnr\", \"estimatr\",\n        \"randomizr\", \"srvyr\"\n)\ninstall.packages(packages, repos = \"http://cran.rstudio.com\")\n\nFor assignments, we’ll need to produce PDFs from R and that requires a LaTeX distribution. We recommend using tinytex to install a minimal LaTeX distribution if you haven’t already installed LaTex on your system. You can install it by running the following command in the console:\n\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex() # install TinyTeX"
-  },
-  {
-    "objectID": "resources/r_setup.html#installing-required-r-packages",
-    "href": "resources/r_setup.html#installing-required-r-packages",
-    "title": "Setting up R and RStudio",
-    "section": "",
-    "text": "There are a few packages that we will use throughout the course. You can install them by starting RStudio and running the following commands in the console (lower left panel by default):\n\npackages &lt;- c(\n        \"tidyverse\", \"learnr\", \"estimatr\",\n        \"randomizr\", \"srvyr\"\n)\ninstall.packages(packages, repos = \"http://cran.rstudio.com\")\n\nFor assignments, we’ll need to produce PDFs from R and that requires a LaTeX distribution. We recommend using tinytex to install a minimal LaTeX distribution if you haven’t already installed LaTex on your system. You can install it by running the following command in the console:\n\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex() # install TinyTeX"
-  },
-  {
-    "objectID": "materials.html",
-    "href": "materials.html",
-    "title": "Materials",
-    "section": "",
-    "text": "Week 1: Course Introduction\nWeek 2: Intergroup Prejudice\nWeek 3: Intergroup Prejudice\nWeek 4: Partisanship vs Ideology\nWeek 5: Persuasion"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#example-slide",
-    "href": "lectures/00-template/00-template.html#example-slide",
-    "title": "Quarto reveal.js clean",
-    "section": "Example slide",
-    "text": "Example slide\nThis is a subtitle\nBefore we dive a bit deeper, here is a simple example of the clean theme in action.\n\nNo pictures or anything fancy. Just text for the moment.\n\nNext, we’ll take a brief tour of some theme components.\n\nWe’ll use the same basic structure as the original LaTeX slides.\nNote that the full suite of Reveal.js features are available for this Quarto implementation, even if we don’t cover everything here."
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#before-you-proceed",
-    "href": "lectures/00-template/00-template.html#before-you-proceed",
-    "title": "Quarto reveal.js clean",
-    "section": "Before you proceed…",
-    "text": "Before you proceed…\nRequirements for the coding examples in this demo\n\n\n\n\n\n\nR libraries\n\n\nWhile the clean theme is language agnostic, we will use several R coding examples in this demo to highlight some advanced theme features.\nYou will need the following libraries if you’d like to render the template “as-is”:\ninstall.packages(c(\"modelsummary\", \"gt\", \"fixest\", \"pdftools\", \"tinytex\", \"threejs\"))\n\n\n\n\n\n\n\n\n\nTinyTex\n\n\nWhile reveal.js presentations are HTML format, we will show an example of how to embed LaTeX tables as images. This requires a working Tex distribution, of which TinyTex provides by far the easiest and lightest integration with Quarto. More details here.\nquarto install tinytex"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#components-1",
-    "href": "lectures/00-template/00-template.html#components-1",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nOrdered and Unordered Lists\nHere we have an unordered list.\n\nfirst item\n\nsub-item\n\nsecond item\n\nAnd next we have an ordered one.\n\nfirst item\n\nsub-item\n\nsecond item"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#components-2",
-    "href": "lectures/00-template/00-template.html#components-2",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nAlerts & Cross-refs\nTo emphasize specific words or text, you can:\n\nUse the default .alert class, e.g. important note.\nUse the .fg class for custom colour, e.g. important note.\nUse the .bg class for custom background, e.g. important note.\n\nTo cross-reference, you have several options, for example:\n\nBeamer-like .button class provided by this theme, e.g. Appendix\nQuarto’s native cross-ref syntax, e.g., “See Section 4.3.”"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#components-3",
-    "href": "lectures/00-template/00-template.html#components-3",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nCitations\nCitations follow the standard Quarto format and be sourced from BibLaTex, BibTeX, or CLS files. For example:\n\nTopic 1: Spatial Frictions (Fajgelbaum et al. 2018; Hsieh and Moretti 2019; Moretti 2011)\nTopic 2: Blah (Suárez Serrato and Zidar 2016)"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#components-4",
-    "href": "lectures/00-template/00-template.html#components-4",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nBlocks\nQuarto provides dedicated environments for theorems, lemmas, and so forth.\nBut in presentation format, it’s arguably more effective just to use a Callout Block.\n\n\n\n\n\n\nRegression Specification\n\n\nThe main specification is as follows:\n\\[\ny_{it} = X_{it} \\beta + \\mu_i + \\varepsilon_{it}\n\\]"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#components-5",
-    "href": "lectures/00-template/00-template.html#components-5",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nMulticolumn I: Text only\n\n\nColumn 1\nHere is a long sentence that will wrap onto the next line as it hits the column width, and continue this way until it stops.\n\nColumn 2\nSome other text in another column.\nA second paragraph.\n\n\nMulticolumn support is very flexible and we can continue with a single full span column in the same slide."
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#components-6",
-    "href": "lectures/00-template/00-template.html#components-6",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nMulticolumn II: Text and figures\n\n\n\n\n\nA point about the figure that is potentially important.\nAnother point about the figure that is also potentially important.\n\n\n\nNote that sub- and multi-panel figures are also natively supported by Quarto. See here."
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#components-7",
-    "href": "lectures/00-template/00-template.html#components-7",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nMulticolumn III: Code and output\n\n\npalette(\"Classic Tableau\")\n\npar(\n        family = \"HersheySans\",\n        las = 1, pch = 19, cex = 1.5\n)\n\npairs(\n        iris[, 1:4],\n        col = iris$Species\n)\n\n\n\n\n\n\n\n\nFigure 1: Pairwise scatterplot"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#tables-1",
-    "href": "lectures/00-template/00-template.html#tables-1",
-    "title": "Quarto reveal.js clean",
-    "section": "Tables",
-    "text": "Tables\nRegression example\nQuarto offers excellent table support, with further customization via user libraries. Let’s illustrate with a regression example:\n\nlibrary(fixest)\n\nmods &lt;- feols(\n        rating ~ complaints + privileges + learning + csw0(raises + critical) + advance,\n        data = attitude\n)\n\ndict &lt;- c(\n        \"rating\" = \"Overall Rating\",\n        \"complaints\" = \"Handling of Complaints\",\n        \"privileges\" = \"No Special Priviledges\",\n        \"learning\" = \"Opportunity to Learn\",\n        \"raises\" = \"Performance-Based Raises\",\n        \"critical\" = \"Too Critical\",\n        \"advance\" = \"Advancement\"\n)"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#regression-table",
-    "href": "lectures/00-template/00-template.html#regression-table",
-    "title": "Quarto reveal.js clean",
-    "section": "Regression table",
-    "text": "Regression table\nmodelsummary\nIf you use modelsummary with this Quarto theme, we advise setting the gt backend for a cleaner aesthetic. More details here.\n\nlibrary(modelsummary)\noptions(modelsummary_factory_default = \"gt\")\n\nmodelsummary(\n        setNames(mods, c(\"(1)\", \"(2)\")),\n        coef_map = dict, stars = TRUE,\n        gof_omit = \"Adj|IC|F|Log|RMSE\"\n) |&gt;\n        gt::tab_spanner(\n                label = \"Dependent variable: Overall Rating\",\n                columns = 2:3\n        )"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#regression-table-output",
-    "href": "lectures/00-template/00-template.html#regression-table-output",
-    "title": "Quarto reveal.js clean",
-    "section": "Regression table",
-    "text": "Regression table\n\n\n\n\n\n\n\n\n\nDependent variable: Overall Rating\n\n\n(1)\n(2)\n\n\n\n\nHandling of Complaints\n0.653***\n0.613***\n\n\n\n(0.131)\n(0.161)\n\n\nNo Special Priviledges\n-0.077\n-0.073\n\n\n\n(0.131)\n(0.136)\n\n\nOpportunity to Learn\n0.324+\n0.320+\n\n\n\n(0.157)\n(0.169)\n\n\nPerformance-Based Raises\n\n0.082\n\n\n\n\n(0.221)\n\n\nToo Critical\n\n0.038\n\n\n\n\n(0.147)\n\n\nAdvancement\n-0.172\n-0.217\n\n\n\n(0.149)\n(0.178)\n\n\nNum.Obs.\n30\n30\n\n\nR2\n0.729\n0.733\n\n\nStd.Errors\nIID\nIID\n\n\n\n+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#regression-table-1",
-    "href": "lectures/00-template/00-template.html#regression-table-1",
-    "title": "Quarto reveal.js clean",
-    "section": "Regression table",
-    "text": "Regression table\netable\nfixest’s powerful native tabling functions were designed for LaTeX output. But we can use the markdown = TRUE option to make them work with this theme too. (Details here.) Quick notes:\n\nInstall the tinytex & pdftools packages first.\nSet the R chunk option output: asis.\n\n```{{r}}\n#| output: asis\n\nsetFixest_etable(markdown = TRUE, drop = \"Constant\")\nsetFixest_dict(dict)\n\netable(mods, highlight = .(\"se\" = \"complaints\"))\n```"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#regression-table-2",
-    "href": "lectures/00-template/00-template.html#regression-table-2",
-    "title": "Quarto reveal.js clean",
-    "section": "Regression table",
-    "text": "Regression table\netable (cont.)"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#figure",
-    "href": "lectures/00-template/00-template.html#figure",
-    "title": "Quarto reveal.js clean",
-    "section": "Figure",
-    "text": "Figure"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#figure-1",
-    "href": "lectures/00-template/00-template.html#figure-1",
-    "title": "Quarto reveal.js clean",
-    "section": "Figure",
-    "text": "Figure\nFull-size Figures\nYou can use the {.background-image} container environment to completely fill the slide background with an image.\nIdeally, your figure will be the same aspect ratio as the screen that you’re presenting on.\n\nThis can be a bit tricky because of the dynamic nature of reveal.js / HTML. But it’s probably something close to 16:9.\nAspect ratio can also matter for a regular full-frame images (previous slide)."
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#interactive-plots",
-    "href": "lectures/00-template/00-template.html#interactive-plots",
-    "title": "Quarto reveal.js clean",
-    "section": "Interactive plots",
-    "text": "Interactive plots\n\n\n\n\n\n\nNote: Simple flight data example using threejs. There are many interactive plotting options beyond this. (More details.)"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#summary-1",
-    "href": "lectures/00-template/00-template.html#summary-1",
-    "title": "Quarto reveal.js clean",
-    "section": "Summary",
-    "text": "Summary\nA minimal and elegant presentation theme\nThe Quarto reveal.js clean theme aims to be a minimal and elegant presention theme.\nWe have highlighted some theme-specific components. But all of the regular reveal.js functionality is supported (chalkboard, etc.)\nInstall the theme:\nquarto install extension grantmcdermott/quarto-revealjs-clean\nUse these demo slides as a template:\nquarto use template grantmcdermott/quarto-revealjs-clean-demo"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#references",
-    "href": "lectures/00-template/00-template.html#references",
-    "title": "Quarto reveal.js clean",
-    "section": "References",
-    "text": "References\n\n\nFajgelbaum, Pablo D, Eduardo Morales, Juan Carlos Suarez Serrato, and Owen Zidar. 2018. “State Taxes and Spatial Misallocation,” 90.\n\n\nHsieh, Chang-Tai, and Enrico Moretti. 2019. “Housing Constraints and Spatial Misallocation.” American Economic Journal: Macroeconomics 11 (2): 39.\n\n\nMoretti, Enrico. 2011. “Local Labor Markets.” In Handbook of Labor Economics. Vol. 4. Elsevier.\n\n\nSuárez Serrato, Juan Carlos, and Owen Zidar. 2016. “Who Benefits from State Corporate Tax Cuts? A Local Labor Markets Approach with Heterogeneous Firms.” American Economic Review 106 (9)."
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#sec-appendix",
-    "href": "lectures/00-template/00-template.html#sec-appendix",
-    "title": "Quarto reveal.js clean",
-    "section": "Appendix",
-    "text": "Appendix\n\n\n\n\nTable 1: Summary of the base R attitude dataset\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnique (#)\nMissing (%)\nMean\nSD\nMin\nMedian\nMax\n\n\n\n\n\nrating\n22\n0\n64.6\n12.2\n40.0\n65.5\n85.0\n\n\n\n   \n\n\n\ncomplaints\n23\n0\n66.6\n13.3\n37.0\n65.0\n90.0\n\n\n\n   \n\n\n\nprivileges\n24\n0\n53.1\n12.2\n30.0\n51.5\n83.0\n\n\n\n   \n\n\n\nlearning\n23\n0\n56.4\n11.7\n34.0\n56.5\n75.0\n\n\n\n   \n\n\n\nraises\n21\n0\n64.6\n10.4\n43.0\n63.5\n88.0\n\n\n\n   \n\n\n\ncritical\n21\n0\n74.8\n9.9\n49.0\n77.5\n92.0\n\n\n\n   \n\n\n\nadvance\n20\n0\n42.9\n10.3\n25.0\n41.0\n72.0\n\n\n\n   \n\n\n\n\n\n\n\n\n\n\n\n\nBack to main"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#section",
-    "href": "lectures/02-causality/causality.html#section",
-    "title": "Causality and Introduction to R",
-    "section": "",
-    "text": "The Road not Taken by Robert Frost\nTwo roads diverged in a yellow wood, And sorry I could not travel both And be one traveler, long I stood And looked down one as far as I could To where it bent in the undergrowth;"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#what-is-a-causal-effect",
-    "href": "lectures/02-causality/causality.html#what-is-a-causal-effect",
-    "title": "Causality and Introduction to R",
-    "section": "What is a Causal Effect?",
-    "text": "What is a Causal Effect?\n\nStudents with diverse friend groups express less discriminatory attitudes and are supportive of policies that promote diversity.\n\nWould these students be supportive of these policies if they did not have diverse friend groups?\n\n\n\n\nHeavy social media users are less happy on average than those who use social media less.\n\nIs this because social media use causes unhappiness, or are unhappy people more likely to use social media?\n\n\n\n\n\n\n\n\n\n\nFundamental Problem of Causal Inference\n\n\nWe never observe counterfactuals, they must be inferred"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#the-effect-of-social-media",
-    "href": "lectures/02-causality/causality.html#the-effect-of-social-media",
-    "title": "Causality and Introduction to R",
-    "section": "The Effect of Social Media",
-    "text": "The Effect of Social Media\n\n\n\n\n\nMuch concern about the effect of social media on:\n\nMental health\nPolitical polarization\nInteractions with friends and families\n\n\n\n\n\nImagine two respondents:\n\n\n\nRespondent\nSocial Media Use\nHappiness\n\n\n\n\n1\nHigh\nLow\n\n\n2\nLow\nHigh\n\n\n\n\n\nDid social media use cause the difference in happiness?"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#some-notation",
-    "href": "lectures/02-causality/causality.html#some-notation",
-    "title": "Causality and Introduction to R",
-    "section": "Some notation",
-    "text": "Some notation\nThe causal or treatment variable is:\n\\[\nT_i= \\begin{cases} 1 & \\text { if respondent } i \\text { used social media } \\\\ 0 & \\text { if respondent } i \\text { did not use social media }\\end{cases}\n\\]\nThe observed outcome variable is:\n\\[\nY_i= \\begin{cases} 1 & \\text { if respondent } i \\text { is happy } \\\\ 0 & \\text { if respondent } i \\text { is unhappy }\\end{cases}\n\\]\n\nSo now, are data becomes:\n\n\n\nRespondent\n\\(T_i\\)\n\\(Y_i\\)\n\n\n\n\n1\n1\n0\n\n\n2\n0\n1"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#causal-effects-counterfactuals",
-    "href": "lectures/02-causality/causality.html#causal-effects-counterfactuals",
-    "title": "Causality and Introduction to R",
-    "section": "Causal Effects & Counterfactuals",
-    "text": "Causal Effects & Counterfactuals\nHow do we translate “what if” questions into a mathematical language?\n\n\n\nTwo potential outcomes:\n\n\\(Y_i(1)\\): the outcome for respondent \\(i\\) if they used social media\n\\(Y_i(0)\\): the outcome for respondent \\(i\\) if they did not use social media\n\n\n\n\n\n\n\nCausal effect for person \\(i\\): \\(Y_i(1) - Y_i(0)\\)\n\n\\(Y_i(1) - Y_i(0) = 0\\) \\(\\rightarrow\\) no effect\n\\(Y_i(1) - Y_i(0) = 1\\) \\(\\rightarrow\\) Social media causes happiness\n\\(Y_i(1) - Y_i(0) = -1\\) \\(\\rightarrow\\) Social media causes unhappiness"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#potential-outcomes",
-    "href": "lectures/02-causality/causality.html#potential-outcomes",
-    "title": "Causality and Introduction to R",
-    "section": "Potential Outcomes",
-    "text": "Potential Outcomes\n\n\n\nRespondent\n\\(T_i\\)\n\\(Y_i\\)\n\\(Y_i(0)\\)\n\\(Y_i(1)\\)\n\n\n\n\n1\n1\n0\n?\n0\n\n\n2\n0\n1\n1\n?\n\n\n\nFundamental Problem of Causal Inference\n\nWe only observe one of the potential outcomes\nObserve \\(Y_i(1)\\) if \\(T_i=1\\) and \\(Y_i(0)\\) if \\(T_i=0\\)"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#average-treatment-effects",
-    "href": "lectures/02-causality/causality.html#average-treatment-effects",
-    "title": "Causality and Introduction to R",
-    "section": "Average Treatment Effects",
-    "text": "Average Treatment Effects\nBecause we cannot observe individual causal effects, we often focus on the Average Treatment Effect (ATE):\n\\[ \\text{ATE} = \\frac{1}{N} \\sum_{i=1}^N (Y_i(1) - Y_i(0)) \\]\n\nThe ATE compares the average outcome when everyone is treated to the average outcome when no one is treated.\n\n\nCan we observe the ATE?"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#comparing-groups",
-    "href": "lectures/02-causality/causality.html#comparing-groups",
-    "title": "Causality and Introduction to R",
-    "section": "Comparing Groups",
-    "text": "Comparing Groups\nImagine the following dataset:\n\n\n\nRespondent\n\\(T_i\\)\n\\(Y_i\\)\n\\(Y_i(0)\\)\n\\(Y_i(1)\\)\n\n\n\n\n1\n1\n0\n?\n0\n\n\n2\n0\n1\n1\n?\n\n\n3\n1\n0\n?\n0\n\n\n4\n0\n1\n1\n?\n\n\n\n\nWe might estimate the ATE from this data by comparing the average observed outcome for those who used social media to those who did not:\n\\[ \\textrm{Difference in Means} =  \\frac{\\sum_{i=1}^N Y_i \\cdot T_i}{ \\sum_{i=1}^N T_i} - \\frac{\\sum_{i=1}^N Y_i \\cdot (1-T_i)}{ \\sum_{i=1}^N 1-T_i} \\]\nIn our case, the estimated ATE would be: -1"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#counfounding",
-    "href": "lectures/02-causality/causality.html#counfounding",
-    "title": "Causality and Introduction to R",
-    "section": "Counfounding",
-    "text": "Counfounding\nNow imagine we could observe the potential outcomes for each respondent:\n\n\n\n\n\n\n\n\n\n\n\n\\(i\\)\n\\(T_i\\)\n\\(Y_i\\)\n\\(Y_i(0)\\)\n\\(Y_i(1)\\)\n\\(Y_i(1) - Y_i(0)\\)\n\n\n\n\n1\n1\n0\n0\n0\n0\n\n\n2\n0\n1\n1\n1\n0\n\n\n3\n1\n0\n0\n0\n0\n\n\n4\n0\n1\n1\n1\n0\n\n\n\n\nEven though our estimated ATE is -1, the true ATE is 0. Why?\n\n\nThere is an association between the treatment variable and potential outcomes, but it is not causal.\nIn our example, social media users are less happy, but this is not because of social media use \\(\\rightarrow\\) the comparison across groups is confounded."
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#randomization",
-    "href": "lectures/02-causality/causality.html#randomization",
-    "title": "Causality and Introduction to R",
-    "section": "Randomization",
-    "text": "Randomization\nWe will discuss in more detail later, but key idea is that random assignment of a treatment breaks the association between treatment and potential outcomes.\nThis allows for unconfounded comparisons across groups."
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#facebook-cessation-experiment",
-    "href": "lectures/02-causality/causality.html#facebook-cessation-experiment",
-    "title": "Causality and Introduction to R",
-    "section": "Facebook Cessation Experiment ",
-    "text": "Facebook Cessation Experiment \nAllcott et al. (2020) presents a randomized experiment where half of around 2,800 Facebook users were paid about $100 to deactivate their accounts for a month.\nWhat do they find?\n\nFacebook cessation:\n\n\nFreed up on average of 60 minutes per day\nLed to spending less time online and more time with friends and family\nResulted in 15% decrease in news consumption; also decreased knowledge of politics\nResulted in less extreme political opinions\nCaused small improvements in subjective wellbeing"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#r-and-rstudio",
-    "href": "lectures/02-causality/causality.html#r-and-rstudio",
-    "title": "Causality and Introduction to R",
-    "section": "R and RStudio",
-    "text": "R and RStudio\n\n\n\n\n\n\n\n\nR is an open-source statistical programming language\nR is also an environment for statistical computing and graphics\nIt’s easily extensible with packages\n\n\n\n\nRStudio is a convenient interface for R called an IDE (integrated development environment), e.g. “I write R code in the RStudio IDE”\nRStudio is not a requirement for programming with R, but it’s very commonly used by R programmers and data scientists"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#r-vs.-rstudio",
-    "href": "lectures/02-causality/causality.html#r-vs.-rstudio",
-    "title": "Causality and Introduction to R",
-    "section": "R vs. RStudio",
-    "text": "R vs. RStudio\n\n\n\n\n\n\n\nSource: Modern Dive."
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#r-packages",
-    "href": "lectures/02-causality/causality.html#r-packages",
-    "title": "Causality and Introduction to R",
-    "section": "R packages",
-    "text": "R packages\n\n\nPackages: Fundamental units of reproducible R code, including reusable R functions, the documentation that describes how to use them, and sample data.\nAs of 15 January 2023, there are 20,252 R packages available on CRAN (the Comprehensive R Archive Network).\nWe’re going to work with a small subset of these."
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#tour-recap-r-rstudio",
-    "href": "lectures/02-causality/causality.html#tour-recap-r-rstudio",
-    "title": "Causality and Introduction to R",
-    "section": "Tour recap: R + RStudio",
-    "text": "Tour recap: R + RStudio"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#a-short-list-for-now-of-r-essentials",
-    "href": "lectures/02-causality/causality.html#a-short-list-for-now-of-r-essentials",
-    "title": "Causality and Introduction to R",
-    "section": "A short list (for now) of R essentials",
-    "text": "A short list (for now) of R essentials\n\nFunctions are (most often) verbs, followed by what they will be applied to in parentheses:\n\n\ndo_this(to_this)\ndo_that(to_this, to_that, with_those)\n\n\n\nPackages are installed with the install.packages() function and loaded with the library function, once per session:\n\n\ninstall.packages(\"package_name\")\nlibrary(package_name)"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#r-essentials-continued",
-    "href": "lectures/02-causality/causality.html#r-essentials-continued",
-    "title": "Causality and Introduction to R",
-    "section": "R essentials (continued)",
-    "text": "R essentials (continued)\n\nColumns (variables) in data frames are accessed with $:\n\n\ndataframe$var_name\n\n\n\nObject documentation can be accessed with ?\n\n\n?mean"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#tidyverse",
-    "href": "lectures/02-causality/causality.html#tidyverse",
-    "title": "Causality and Introduction to R",
-    "section": "tidyverse",
-    "text": "tidyverse\n\n\n\n\ntidyverse.org\n\nThe tidyverse is an opinionated collection of R packages designed for data science\nAll packages share an underlying philosophy and a common grammar"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#quarto-1",
-    "href": "lectures/02-causality/causality.html#quarto-1",
-    "title": "Causality and Introduction to R",
-    "section": "Quarto",
-    "text": "Quarto\n\n\nFully reproducible reports – each time you render the analysis is ran from the beginning\nCode goes in chunks narrative goes outside of chunks\nA visual editor for a familiar / Google docs-like editing experience"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#tour-recap-quarto",
-    "href": "lectures/02-causality/causality.html#tour-recap-quarto",
-    "title": "Causality and Introduction to R",
-    "section": "Tour recap: Quarto",
-    "text": "Tour recap: Quarto"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#environments",
-    "href": "lectures/02-causality/causality.html#environments",
-    "title": "Causality and Introduction to R",
-    "section": "Environments",
-    "text": "Environments\n\n\n\n\n\n\nImportant\n\n\nThe environment of your Quarto document is separate from the Console!\n\n\n\nRemember this, and expect it to bite you a few times as you’re learning to work with Quarto!"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#environments-1",
-    "href": "lectures/02-causality/causality.html#environments-1",
-    "title": "Causality and Introduction to R",
-    "section": "Environments",
-    "text": "Environments\n\n\nFirst, run the following in the console:\n\nx &lt;- 2\nx * 3\n\n\n\nAll looks good?\n\n\nThen, add the following in an R chunk in your Quarto document\n\nx * 3\n\n\n\nWhat happens? Why the error?"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#how-will-we-use-quarto",
-    "href": "lectures/02-causality/causality.html#how-will-we-use-quarto",
-    "title": "Causality and Introduction to R",
-    "section": "How will we use Quarto?",
-    "text": "How will we use Quarto?\n\nEvery class activity, problem set, project, etc. is an Quarto document\nYou’ll always have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#awknowledgements",
-    "href": "lectures/02-causality/causality.html#awknowledgements",
-    "title": "Causality and Introduction to R",
-    "section": "Awknowledgements",
-    "text": "Awknowledgements\n\nThis lecture draws partly from:\n\nGOV50 taught by Matt Blackwell at Harvard University\nSTA 199 taught by Mine Çetinkaya-Rundel at Duke University."
-  },
-  {
-    "objectID": "lectures/02-causality/causality.html#references",
-    "href": "lectures/02-causality/causality.html#references",
-    "title": "Causality and Introduction to R",
-    "section": "References",
-    "text": "References\n\n\n\n\n\n\n\n\nAllcott, Hunt, Luca Braghieri, Sarah Eichmeyer, and Matthew Gentzkow. 2020. “The Welfare Effects of Social Media.” American Economic Review 110 (3): 629–76. https://doi.org/10.1257/aer.20190658."
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#what-works-to-reduce-prejudice",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#what-works-to-reduce-prejudice",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "What works to reduce prejudice?",
-    "text": "What works to reduce prejudice?\n\nInter-group animus or prejudice can be enduring and pervasive\n\nEthnic\nSexual identity\nAge\nPartisanship\n\n\n\n\nHow can we reduce prejudice?\n\nMedia campaigns?\nSensitivity trainings?\nMulticultural education?\nInter-group contact\n\n\n\n\nMany possible interventions, but most have poor evidence of effectiveness."
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#what-types-of-interventions-are-studied",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#what-types-of-interventions-are-studied",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "What Types of Interventions are Studied?",
-    "text": "What Types of Interventions are Studied?\n\n\n\n\n\n\n\n\n\n(paluck2021?)"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#inter-group-contact",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#inter-group-contact",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Inter-group Contact",
-    "text": "Inter-group Contact\n\n\n Segregation in the Boston Area (Source: NY Times)\n\nContact Theory (Allport 1954):\n\nPositive contact between members of different groups can reduce prejudice\nConditions:\n\nEqual status\nCommon goals\nIntergroup cooperation\nSupport of authorities, law, or custom"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#research-design",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#research-design",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Research Design",
-    "text": "Research Design\n\n\nMost common study ask if attitudes or behavior (less common) is correlated with contact\n\nSome include demographic or other controls\nConsistent evidence for contact theory\n\n\n\n\n\n\nSecond most common study uses “laboratory” experiments\n\nControlled (i.e. scripted) settings and random assignment\nIntergroup contact is brief\nMeasurement occurs shortly after contact\nExample: Pagtolun-an and Clair (1986) had a gay man answer questions about homosexuality for 90 minutes and then post-tested students"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#field-experiments",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#field-experiments",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Field Experiments",
-    "text": "Field Experiments\n\n\n\n\n\nField experiments:\n\nRandom assignment to treatment and control\nReal-world (less controlled) settings\nShort and Long-term follow-up"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mousa-2020",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mousa-2020",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Mousa (2020)",
-    "text": "Mousa (2020)\n\n\n\n\n\n\nAftermath of genocide\nNaturalistic study\nMeasuring behavior and attitudes\nRandom assignment to treatment and control\n\nEnsures potential outcomes are independent of treatment assignment\nBackground characteristics (covariates) are balanced across treatment and control"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mousa-2020-1",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mousa-2020-1",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Mousa (2020)",
-    "text": "Mousa (2020)\n\n\n\n459 players, 42 Christian soccer teams\nOn the field outcomes:\n\nSign up for mixed team\nVote for Muslim for Sportsmanship prize\nTrain with Muslims\n\nOff the field outcomes:\n\nAttend mixed event\nPatronize Muslim events\nDonate to neutral NGO\n\n\n\n\nAttitudinal indexes:\n\nNational unity\nMuslim blame\nMuslim neighbor"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#ggplot2-in-tidyverse",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#ggplot2-in-tidyverse",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "ggplot2 \\(\\in\\) tidyverse",
-    "text": "ggplot2 \\(\\in\\) tidyverse\n\n\n\n\n\nggplot2 is tidyverse’s data visualization package\nStructure of the code for plots can be summarized as\n\nggplot(data = [dataset], \n       mapping = aes(x = [x-variable], \n                     y = [y-variable])) +\n   geom_xxx() +\n   other options"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#midwest-data",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#midwest-data",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Midwest data",
-    "text": "Midwest data\n\nlibrary(ggplot2)\nmidwest\n\n# A tibble: 437 × 28\n     PID county  state  area poptotal popdensity popwhite popblack popamerindian\n   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;\n 1   561 ADAMS   IL    0.052    66090      1271.    63917     1702            98\n 2   562 ALEXAN… IL    0.014    10626       759      7054     3496            19\n 3   563 BOND    IL    0.022    14991       681.    14477      429            35\n 4   564 BOONE   IL    0.017    30806      1812.    29344      127            46\n 5   565 BROWN   IL    0.018     5836       324.     5264      547            14\n 6   566 BUREAU  IL    0.05     35688       714.    35157       50            65\n 7   567 CALHOUN IL    0.017     5322       313.     5298        1             8\n 8   568 CARROLL IL    0.027    16805       622.    16519      111            30\n 9   569 CASS    IL    0.024    13437       560.    13384       16             8\n10   570 CHAMPA… IL    0.058   173025      2983.   146506    16559           331\n# ℹ 427 more rows\n# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,\n#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,\n#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,\n#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,\n#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,\n#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;\n\n\n\n\nThis section draws heavily on slides prepared by Matt Blackwell."
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#building-up-a-graph-in-pieces",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#building-up-a-graph-in-pieces",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Building up a graph in pieces",
-    "text": "Building up a graph in pieces\nCreate ggplot object and direct it to the correct data:\n\np &lt;- ggplot(data = midwest)\n\nMapping: tell ggplot what visual aesthetics correspond to which variables\n\np &lt;- ggplot(data = midwest,\n            mapping = aes(x = popdensity,\n                          y = percbelowpoverty))\n\nOther aesthetic mappings: color, shape, size, etc."
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#adding-a-geom-layer",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#adding-a-geom-layer",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Adding a geom layer",
-    "text": "Adding a geom layer\n\nggplot(data = midwest, \n      mapping = aes(x = popdensity, y = percbelowpoverty)) + \n  geom_point()"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#adding-a-geom-layer-output",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#adding-a-geom-layer-output",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Adding a geom layer",
-    "text": "Adding a geom layer"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#trying-a-new-geom",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#trying-a-new-geom",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Trying a new geom",
-    "text": "Trying a new geom\n\nggplot(data = midwest, \n      mapping = aes(x = popdensity, y = percbelowpoverty)) + \n  geom_smooth()"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#trying-a-new-geom-output",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#trying-a-new-geom-output",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Trying a new geom",
-    "text": "Trying a new geom"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#layering-geoms-is-additive",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#layering-geoms-is-additive",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Layering geoms is additive",
-    "text": "Layering geoms is additive\n\nggplot(data = midwest, \n      mapping = aes(x = popdensity, y = percbelowpoverty)) + \n  geom_point() + \n  geom_smooth() +\n  scale_x_log10()"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#layering-geoms-is-additive-output",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#layering-geoms-is-additive-output",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Layering geoms is additive",
-    "text": "Layering geoms is additive"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#geoms-are-functions",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#geoms-are-functions",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Geoms are functions",
-    "text": "Geoms are functions\n\nggplot(data = midwest, \n      mapping = aes(x = popdensity, y = percbelowpoverty)) + \n  geom_point() + \n  geom_smooth(method = \"lm\", se = FALSE) +\n  scale_x_log10()"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#geoms-are-functions-output",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#geoms-are-functions-output",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Geoms are functions",
-    "text": "Geoms are functions"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#adding-informative-labels",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#adding-informative-labels",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Adding Informative Labels",
-    "text": "Adding Informative Labels\n\np2 &lt;- ggplot(data = midwest, \n      mapping = aes(x = popdensity, y = percbelowpoverty)) + \n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  scale_x_log10() +\n  labs(\n    x = \"Population Density\",\n    y = \"Percent of County Below Poverty Line\", \n    title = \"Poverty and Population Density\",\n    subtitle = \"Among US Midwestern Counties\", \n    caption = \"US Census, 2000\"\n  )\np2"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#adding-informative-labels-output",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#adding-informative-labels-output",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Adding Informative Labels",
-    "text": "Adding Informative Labels"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-vs-setting-aesthetics",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-vs-setting-aesthetics",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Mapping vs setting aesthetics",
-    "text": "Mapping vs setting aesthetics\n\nggplot(data = midwest, \n      mapping = aes(x = popdensity, y = percbelowpoverty,\n                    color = \"purple\")) + \n  geom_point() + \n  geom_smooth(method = \"lm\", se = FALSE) +\n  scale_x_log10()"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-vs-setting-aesthetics-output",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-vs-setting-aesthetics-output",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Mapping vs setting aesthetics",
-    "text": "Mapping vs setting aesthetics"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-always-refers-to-variables",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-always-refers-to-variables",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Mapping always refers to variables",
-    "text": "Mapping always refers to variables\nIf passed a value other than a variable name, ggplot will implicitly create a variable with that value (in this case “purple” that is constant)\n\nggplot(data = midwest, \n      mapping = aes(x = popdensity, y = percbelowpoverty,\n                    color = \"purple\")) + \n  geom_point() + \n  geom_smooth() +\n  scale_x_log10()\n\n\nSet the color outside the mapping = aes() format.\n\nggplot(data = midwest, \n      mapping = aes(x = popdensity, y = percbelowpoverty)) + \n  geom_point(color = \"purple\") + \n  geom_smooth() +\n  scale_x_log10()"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-always-refers-to-variables-output",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-always-refers-to-variables-output",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Mapping always refers to variables",
-    "text": "Mapping always refers to variables"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-more-aesthetics",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-more-aesthetics",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Mapping more aesthetics",
-    "text": "Mapping more aesthetics\n\nggplot(data = midwest, \n      mapping = aes(x = popdensity, \n                    y = percbelowpoverty,\n                    color = state, \n                    fill= state)) + \n  geom_point() + \n  geom_smooth() +\n  scale_x_log10()"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-more-aesthetics-output",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mapping-more-aesthetics-output",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Mapping more aesthetics",
-    "text": "Mapping more aesthetics"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mappings-can-be-done-on-a-per-geom-basis",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mappings-can-be-done-on-a-per-geom-basis",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Mappings can be done on a per geom basis",
-    "text": "Mappings can be done on a per geom basis\n\nggplot(data = midwest, \n      mapping = aes(x = popdensity, \n                    y = percbelowpoverty)) + \n  geom_point(mapping = aes(color = state)) + \n  geom_smooth(color = \"black\") +\n  scale_x_log10()"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#mappings-can-be-done-on-a-per-geom-basis-output",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#mappings-can-be-done-on-a-per-geom-basis-output",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Mappings can be done on a per geom basis",
-    "text": "Mappings can be done on a per geom basis"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#histograms",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#histograms",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Histograms",
-    "text": "Histograms\nHistograms show where there are more or fewer observations of a numeric variable.\n\nggplot(data = midwest,\n       mapping = aes(x = percbelowpoverty)) +\n  geom_histogram()\n\n\nSplit up range of variable into bins, count how many are in each bin.\ny aesthetic calculated automatically."
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#histograms-output",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#histograms-output",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Histograms",
-    "text": "Histograms"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#creating-small-multiples-with-facets",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#creating-small-multiples-with-facets",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Creating small multiples with facets",
-    "text": "Creating small multiples with facets\nSmall multiples: a series of similar graphs with the same scale/axes to help with comparing different partitions of a dataset.\n\nggplot(data = midwest,\n       mapping = aes(x = percbelowpoverty)) +\n  geom_histogram() +\n  facet_wrap(~ state)\n\n\nWe’ll see more of the ~ variable syntax (called a formula)."
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#creating-small-multiples-with-facets-output",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#creating-small-multiples-with-facets-output",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Creating small multiples with facets",
-    "text": "Creating small multiples with facets"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#density-as-alternative-to-histograms",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#density-as-alternative-to-histograms",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Density as alternative to histograms",
-    "text": "Density as alternative to histograms\nA kernel density plot is a smoothed version of a histogram and slightly easier to overlay.\n\nggplot(data = midwest,\n       mapping = aes(x = percbelowpoverty,\n                     fill = state, color = state)) +\n  geom_density(alpha = .3)"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#density-as-alternative-to-histograms-output",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#density-as-alternative-to-histograms-output",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Density as alternative to histograms",
-    "text": "Density as alternative to histograms"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#boxplots",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#boxplots",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Boxplots",
-    "text": "Boxplots\nBoxplots are another way to compare distributions across discrete groups.\n\nggplot(data = midwest,\n       mapping = aes(x = state,\n                     y = percbelowpoverty)) +\n  geom_boxplot()"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#boxplots-output",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#boxplots-output",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Boxplots",
-    "text": "Boxplots"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#boxplots-in-r",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#boxplots-in-r",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "Boxplots in R",
-    "text": "Boxplots in R\n\n\n“Box” represents middle 50% of the data.\n\n25% of the data is below the bottom of the box, 25% is above\nHeight of the box is the interquartile range (IQR)\n\nHorizontal line in the box is the median\n\n50% of the data is below the median, 50% is above\n\n“Whiskers” represent either:\n\n1.5 \\(\\times\\) IQR or max/min of the data, whichever is smaller\nPoints beyond the whiskers are considered outliers"
-  },
-  {
-    "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#references",
-    "href": "lectures/03-contact_dataviz/contact_dataviz.html#references",
-    "title": "Contact Theory and Data Visualization in R",
-    "section": "References",
-    "text": "References"
   },
   {
     "objectID": "resources.html",

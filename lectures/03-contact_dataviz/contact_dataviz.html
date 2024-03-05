@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.4.550">
 
   <meta name="author" content="F. Daniel Hidalgo">
-  <meta name="dcterms.date" content="2024-02-26">
+  <meta name="dcterms.date" content="2024-03-04">
   <title>Data and Politics - Contact Theory and Data Visualization in R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -95,7 +95,27 @@
     code span.va { color: #111111; } /* Variable */
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -409,7 +429,7 @@ F. Daniel Hidalgo
     </div>
 </div>
 
-  <p class="date">February 26, 2024</p>
+  <p class="date">March 4, 2024</p>
 </section>
 <section>
 <section id="contact-theory" class="title-slide slide level1 center">
@@ -453,7 +473,7 @@ F. Daniel Hidalgo
 </div>
 
 <aside><div>
-<p><span class="citation" data-cites="paluck2021">(<a href="" role="doc-biblioref" onclick="return false;"><strong>paluck2021?</strong></a>)</span></p>
+<p><span class="citation" data-cites="paluckPrejudiceReductionProgress2021">Paluck et al. (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span></p>
 </div></aside></section>
 <section id="inter-group-contact" class="slide level2">
 <h2>Inter-group Contact</h2>
@@ -651,7 +671,7 @@ F. Daniel Hidalgo
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="contact_dataviz_files/figure-revealjs/unnamed-chunk-4-1.png" width="576"></p>
+<p><img data-src="contact_dataviz_files/figure-html/unnamed-chunk-4-1.png" width="576"></p>
 </figure>
 </div>
 </div>
@@ -665,95 +685,110 @@ F. Daniel Hidalgo
 
 </section>
 <section id="trying-a-new-geom-output" class="slide level2 output-location-slide"><h2>Trying a new geom</h2><div class="cell output-location-slide">
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="contact_dataviz_files/figure-revealjs/unnamed-chunk-5-1.png" width="576"></p>
+<p><img data-src="contact_dataviz_files/figure-html/unnamed-chunk-5-1.png" width="576"></p>
 </figure>
 </div>
 </div>
 </div></section><section id="layering-geoms-is-additive" class="slide level2">
 <h2>Layering geoms is additive</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest, </span>
-<span id="cb8-2"><a></a>      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> popdensity, <span class="at">y =</span> percbelowpoverty)) <span class="sc">+</span> </span>
-<span id="cb8-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb8-4"><a></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
-<span id="cb8-5"><a></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest, </span>
+<span id="cb9-2"><a></a>      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> popdensity, <span class="at">y =</span> percbelowpoverty)) <span class="sc">+</span> </span>
+<span id="cb9-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb9-4"><a></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
+<span id="cb9-5"><a></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
 <section id="layering-geoms-is-additive-output" class="slide level2 output-location-slide"><h2>Layering geoms is additive</h2><div class="cell output-location-slide">
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="contact_dataviz_files/figure-revealjs/unnamed-chunk-6-1.png" width="576"></p>
+<p><img data-src="contact_dataviz_files/figure-html/unnamed-chunk-6-1.png" width="576"></p>
 </figure>
 </div>
 </div>
 </div></section><section id="geoms-are-functions" class="slide level2">
 <h2>Geoms are functions</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest, </span>
-<span id="cb9-2"><a></a>      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> popdensity, <span class="at">y =</span> percbelowpoverty)) <span class="sc">+</span> </span>
-<span id="cb9-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb9-4"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb9-5"><a></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest, </span>
+<span id="cb11-2"><a></a>      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> popdensity, <span class="at">y =</span> percbelowpoverty)) <span class="sc">+</span> </span>
+<span id="cb11-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb11-4"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb11-5"><a></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
 <section id="geoms-are-functions-output" class="slide level2 output-location-slide"><h2>Geoms are functions</h2><div class="cell output-location-slide">
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="contact_dataviz_files/figure-revealjs/unnamed-chunk-7-1.png" width="576"></p>
+<p><img data-src="contact_dataviz_files/figure-html/unnamed-chunk-7-1.png" width="576"></p>
 </figure>
 </div>
 </div>
 </div></section><section id="adding-informative-labels" class="slide level2">
 <h2>Adding Informative Labels</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> midwest, </span>
-<span id="cb10-2"><a></a>      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> popdensity, <span class="at">y =</span> percbelowpoverty)) <span class="sc">+</span> </span>
-<span id="cb10-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb10-4"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb10-5"><a></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb10-6"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb10-7"><a></a>    <span class="at">x =</span> <span class="st">"Population Density"</span>,</span>
-<span id="cb10-8"><a></a>    <span class="at">y =</span> <span class="st">"Percent of County Below Poverty Line"</span>, </span>
-<span id="cb10-9"><a></a>    <span class="at">title =</span> <span class="st">"Poverty and Population Density"</span>,</span>
-<span id="cb10-10"><a></a>    <span class="at">subtitle =</span> <span class="st">"Among US Midwestern Counties"</span>, </span>
-<span id="cb10-11"><a></a>    <span class="at">caption =</span> <span class="st">"US Census, 2000"</span></span>
-<span id="cb10-12"><a></a>  )</span>
-<span id="cb10-13"><a></a>p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> midwest, </span>
+<span id="cb13-2"><a></a>      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> popdensity, <span class="at">y =</span> percbelowpoverty)) <span class="sc">+</span> </span>
+<span id="cb13-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb13-4"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb13-5"><a></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb13-6"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb13-7"><a></a>    <span class="at">x =</span> <span class="st">"Population Density"</span>,</span>
+<span id="cb13-8"><a></a>    <span class="at">y =</span> <span class="st">"Percent of County Below Poverty Line"</span>, </span>
+<span id="cb13-9"><a></a>    <span class="at">title =</span> <span class="st">"Poverty and Population Density"</span>,</span>
+<span id="cb13-10"><a></a>    <span class="at">subtitle =</span> <span class="st">"Among US Midwestern Counties"</span>, </span>
+<span id="cb13-11"><a></a>    <span class="at">caption =</span> <span class="st">"US Census, 2000"</span></span>
+<span id="cb13-12"><a></a>  )</span>
+<span id="cb13-13"><a></a>p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
 <section id="adding-informative-labels-output" class="slide level2 output-location-slide"><h2>Adding Informative Labels</h2><div class="cell output-location-slide">
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="contact_dataviz_files/figure-revealjs/unnamed-chunk-8-1.png" width="576"></p>
+<p><img data-src="contact_dataviz_files/figure-html/unnamed-chunk-8-1.png" width="576"></p>
 </figure>
 </div>
 </div>
 </div></section><section id="mapping-vs-setting-aesthetics" class="slide level2">
 <h2>Mapping vs setting aesthetics</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest, </span>
-<span id="cb11-2"><a></a>      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> popdensity, <span class="at">y =</span> percbelowpoverty,</span>
-<span id="cb11-3"><a></a>                    <span class="at">color =</span> <span class="st">"purple"</span>)) <span class="sc">+</span> </span>
-<span id="cb11-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb11-5"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb11-6"><a></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest, </span>
+<span id="cb15-2"><a></a>      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> popdensity, <span class="at">y =</span> percbelowpoverty,</span>
+<span id="cb15-3"><a></a>                    <span class="at">color =</span> <span class="st">"purple"</span>)) <span class="sc">+</span> </span>
+<span id="cb15-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb15-5"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb15-6"><a></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
 <section id="mapping-vs-setting-aesthetics-output" class="slide level2 output-location-slide"><h2>Mapping vs setting aesthetics</h2><div class="cell output-location-slide">
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="contact_dataviz_files/figure-revealjs/unnamed-chunk-9-1.png" width="576"></p>
+<p><img data-src="contact_dataviz_files/figure-html/unnamed-chunk-9-1.png" width="576"></p>
 </figure>
 </div>
 </div>
@@ -761,71 +796,80 @@ F. Daniel Hidalgo
 <h2>Mapping always refers to variables</h2>
 <p>If passed a value other than a variable name, ggplot will implicitly create a variable with that value (in this case “purple” that is constant)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest, </span>
-<span id="cb12-2"><a></a>      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> popdensity, <span class="at">y =</span> percbelowpoverty,</span>
-<span id="cb12-3"><a></a>                    <span class="at">color =</span> <span class="st">"purple"</span>)) <span class="sc">+</span> </span>
-<span id="cb12-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb12-5"><a></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
-<span id="cb12-6"><a></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest, </span>
+<span id="cb17-2"><a></a>      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> popdensity, <span class="at">y =</span> percbelowpoverty,</span>
+<span id="cb17-3"><a></a>                    <span class="at">color =</span> <span class="st">"purple"</span>)) <span class="sc">+</span> </span>
+<span id="cb17-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb17-5"><a></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
+<span id="cb17-6"><a></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>Set the color outside the <code>mapping = aes()</code> format.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest, </span>
-<span id="cb13-2"><a></a>      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> popdensity, <span class="at">y =</span> percbelowpoverty)) <span class="sc">+</span> </span>
-<span id="cb13-3"><a></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"purple"</span>) <span class="sc">+</span> </span>
-<span id="cb13-4"><a></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
-<span id="cb13-5"><a></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest, </span>
+<span id="cb18-2"><a></a>      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> popdensity, <span class="at">y =</span> percbelowpoverty)) <span class="sc">+</span> </span>
+<span id="cb18-3"><a></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"purple"</span>) <span class="sc">+</span> </span>
+<span id="cb18-4"><a></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
+<span id="cb18-5"><a></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </div>
 </section>
 <section id="mapping-always-refers-to-variables-output" class="slide level2 output-location-slide"><h2>Mapping always refers to variables</h2><div class="cell output-location-slide">
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="contact_dataviz_files/figure-revealjs/unnamed-chunk-11-1.png" width="576"></p>
+<p><img data-src="contact_dataviz_files/figure-html/unnamed-chunk-11-1.png" width="576"></p>
 </figure>
 </div>
 </div>
 </div></section><section id="mapping-more-aesthetics" class="slide level2">
 <h2>Mapping more aesthetics</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest, </span>
-<span id="cb14-2"><a></a>      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> popdensity, </span>
-<span id="cb14-3"><a></a>                    <span class="at">y =</span> percbelowpoverty,</span>
-<span id="cb14-4"><a></a>                    <span class="at">color =</span> state, </span>
-<span id="cb14-5"><a></a>                    <span class="at">fill=</span> state)) <span class="sc">+</span> </span>
-<span id="cb14-6"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb14-7"><a></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
-<span id="cb14-8"><a></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest, </span>
+<span id="cb20-2"><a></a>      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> popdensity, </span>
+<span id="cb20-3"><a></a>                    <span class="at">y =</span> percbelowpoverty,</span>
+<span id="cb20-4"><a></a>                    <span class="at">color =</span> state, </span>
+<span id="cb20-5"><a></a>                    <span class="at">fill=</span> state)) <span class="sc">+</span> </span>
+<span id="cb20-6"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb20-7"><a></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
+<span id="cb20-8"><a></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
 <section id="mapping-more-aesthetics-output" class="slide level2 output-location-slide"><h2>Mapping more aesthetics</h2><div class="cell output-location-slide">
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="contact_dataviz_files/figure-revealjs/unnamed-chunk-12-1.png" width="576"></p>
+<p><img data-src="contact_dataviz_files/figure-html/unnamed-chunk-12-1.png" width="576"></p>
 </figure>
 </div>
 </div>
 </div></section><section id="mappings-can-be-done-on-a-per-geom-basis" class="slide level2">
 <h2>Mappings can be done on a per geom basis</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest, </span>
-<span id="cb15-2"><a></a>      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> popdensity, </span>
-<span id="cb15-3"><a></a>                    <span class="at">y =</span> percbelowpoverty)) <span class="sc">+</span> </span>
-<span id="cb15-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> state)) <span class="sc">+</span> </span>
-<span id="cb15-5"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb15-6"><a></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest, </span>
+<span id="cb22-2"><a></a>      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> popdensity, </span>
+<span id="cb22-3"><a></a>                    <span class="at">y =</span> percbelowpoverty)) <span class="sc">+</span> </span>
+<span id="cb22-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> state)) <span class="sc">+</span> </span>
+<span id="cb22-5"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb22-6"><a></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section><section id="mappings-can-be-done-on-a-per-geom-basis-output" class="slide level2 output-location-slide"><h2>Mappings can be done on a per geom basis</h2><div class="cell output-location-slide">
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="contact_dataviz_files/figure-revealjs/unnamed-chunk-13-1.png" width="576"></p>
+<p><img data-src="contact_dataviz_files/figure-html/unnamed-chunk-13-1.png" width="576"></p>
 </figure>
 </div>
 </div>
@@ -839,19 +883,22 @@ F. Daniel Hidalgo
 <h2>Histograms</h2>
 <p><strong>Histograms</strong> show where there are more or fewer observations of a numeric variable.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest,</span>
-<span id="cb16-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> percbelowpoverty)) <span class="sc">+</span></span>
-<span id="cb16-3"><a></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest,</span>
+<span id="cb24-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> percbelowpoverty)) <span class="sc">+</span></span>
+<span id="cb24-3"><a></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <p>Split up range of variable into bins, count how many are in each bin.</p>
 <p>y aesthetic calculated automatically.</p>
 </section>
 <section id="histograms-output" class="slide level2 output-location-slide"><h2>Histograms</h2><div class="cell output-location-slide">
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="contact_dataviz_files/figure-revealjs/unnamed-chunk-14-1.png" width="576"></p>
+<p><img data-src="contact_dataviz_files/figure-html/unnamed-chunk-14-1.png" width="576"></p>
 </figure>
 </div>
 </div>
@@ -859,19 +906,22 @@ F. Daniel Hidalgo
 <h2>Creating small multiples with facets</h2>
 <p><strong>Small multiples</strong>: a series of similar graphs with the same scale/axes to help with comparing different partitions of a dataset.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest,</span>
-<span id="cb17-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> percbelowpoverty)) <span class="sc">+</span></span>
-<span id="cb17-3"><a></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
-<span id="cb17-4"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> state)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest,</span>
+<span id="cb26-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> percbelowpoverty)) <span class="sc">+</span></span>
+<span id="cb26-3"><a></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb26-4"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> state)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <p>We’ll see more of the <code>~</code> variable syntax (called a formula).</p>
 </section>
 <section id="creating-small-multiples-with-facets-output" class="slide level2 output-location-slide"><h2>Creating small multiples with facets</h2><div class="cell output-location-slide">
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="contact_dataviz_files/figure-revealjs/unnamed-chunk-15-1.png" width="576"></p>
+<p><img data-src="contact_dataviz_files/figure-html/unnamed-chunk-15-1.png" width="576"></p>
 </figure>
 </div>
 </div>
@@ -879,10 +929,10 @@ F. Daniel Hidalgo
 <h2>Density as alternative to histograms</h2>
 <p>A kernel density plot is a smoothed version of a histogram and slightly easier to overlay.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest,</span>
-<span id="cb18-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> percbelowpoverty,</span>
-<span id="cb18-3"><a></a>                     <span class="at">fill =</span> state, <span class="at">color =</span> state)) <span class="sc">+</span></span>
-<span id="cb18-4"><a></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest,</span>
+<span id="cb28-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> percbelowpoverty,</span>
+<span id="cb28-3"><a></a>                     <span class="at">fill =</span> state, <span class="at">color =</span> state)) <span class="sc">+</span></span>
+<span id="cb28-4"><a></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
@@ -890,7 +940,7 @@ F. Daniel Hidalgo
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="contact_dataviz_files/figure-revealjs/unnamed-chunk-16-1.png" width="576"></p>
+<p><img data-src="contact_dataviz_files/figure-html/unnamed-chunk-16-1.png" width="576"></p>
 </figure>
 </div>
 </div>
@@ -898,10 +948,10 @@ F. Daniel Hidalgo
 <h2>Boxplots</h2>
 <p>Boxplots are another way to compare distributions across discrete groups.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest,</span>
-<span id="cb19-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> state,</span>
-<span id="cb19-3"><a></a>                     <span class="at">y =</span> percbelowpoverty)) <span class="sc">+</span></span>
-<span id="cb19-4"><a></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest,</span>
+<span id="cb29-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> state,</span>
+<span id="cb29-3"><a></a>                     <span class="at">y =</span> percbelowpoverty)) <span class="sc">+</span></span>
+<span id="cb29-4"><a></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
@@ -909,7 +959,7 @@ F. Daniel Hidalgo
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="contact_dataviz_files/figure-revealjs/unnamed-chunk-17-1.png" width="576"></p>
+<p><img data-src="contact_dataviz_files/figure-html/unnamed-chunk-17-1.png" width="576"></p>
 </figure>
 </div>
 </div>
@@ -934,12 +984,17 @@ F. Daniel Hidalgo
 </ul>
 </div>
 </section>
-<section id="references" class="slide level2">
+<section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-paluckPrejudiceReductionProgress2021" class="csl-entry" role="listitem">
+Paluck, Elizabeth Levy, Roni Porat, Chelsey S. Clark, and Donald P. Green. 2021. <span>“Prejudice <span>Reduction</span>: <span>Progress</span> and <span>Challenges</span>.”</span> <em>Annual Review of Psychology</em> 72 (1): 533–60. <a href="https://doi.org/10.1146/annurev-psych-071620-030619">https://doi.org/10.1146/annurev-psych-071620-030619</a>.
 </div>
 </div>
 </section></section>
@@ -1153,44 +1208,6 @@ F. Daniel Hidalgo
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
