@@ -294,7 +294,7 @@ p_value <- mean(perms >= diff)
 p_value
 ```
 
-In this case, the p-value is 0 as there are no values in the sampling distribution that are as extreme or more extreme than the actual test statistic.
+In this case, the p-value is small as there are few values in the sampling distribution that are as extreme or more extreme than the actual test statistic.
 
 ## Rejecting the Null
 
@@ -392,12 +392,18 @@ est
 ## p-value
 mean(abs(perm_df$permuted_diff) >= abs(est))
 
-ggplot(perm_df, aes(x = permuted_diff)) +
+covar_plot <- ggplot(perm_df, aes(x = permuted_diff)) +
         geom_histogram(fill = "lightblue", color = "black", bins = 30) +
         geom_vline(xintercept = est, color = "red", linewidth = 1) +
         labs(title = "Covariate Balance",
              x = "Difference-in-Means",
              y = "Frequency") +
         theme_minimal()
+
 ```
 
+## Plot
+
+```{webr-r}
+covar_plot
+```
