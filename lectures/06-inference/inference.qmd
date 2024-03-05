@@ -122,15 +122,14 @@ The treatment effect is 0 for all units: $Y_i(1)=Y_i(0)$ for all $i$.
 
 # Download a dataset
 download.file(
-        "https://www.dropbox.com/scl/fi/qf65skwb9p9eq26cq1ejw/pope_barber.csv?rlkey=48i5am5r19oqjvvf80ighserh&dl=1",
-        destfile = "pope_barber.csv"
+        "https://github.com/fdhidalgo/data_politics-24/raw/main/lectures/06-inference/pope_barber.csv.gz",
+        destfile = "pope_barber.csv.gz"
 )
 
-pb_data <- read_csv("pope_barber.csv")
+pb_data <- read_csv("pope_barber.csv.gz")
 ```
 
-```{web-r}
+```{webr-r}
 pb_data
-
 ```
 
