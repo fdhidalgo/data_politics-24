@@ -52,15 +52,15 @@ theme_set(theme_ipsum())
 
 ## Logic of Hypothesis Testing
 
--   We start with an imagined world in which the treatment has a particular effect: [the **null hypothesis**]{.alert}
+-   We start with an *imagined* world in which the treatment has a particular effect: [the **null hypothesis** ($H_0$)]{.alert}
 
 -   We ask: under our maintained assumptions, how likely is it that we would observe the data we have if the null hypothesis were true?
 
     -   *Important*: It is not the probability that any partifcular hypothesis is true, but the probability of observing the data we have if the null hypothesis were true.
 
--   If the probability is low, we [**reject**]{.alert} the null hypothesis in favor of the alternative hypothesis. 😎
+-   If the probability is low, we [**reject**]{.alert} the null hypothesis in favor of the [**alternative hypothesis** ($H_1$)]{.alert}. 😎
 
--   If the probability is high, we [**fail to reject**]{.alaert} the null hypothesis. 😢
+-   If the probability is high, we [**fail to reject**]{.alert} the null hypothesis. 😢
 
     -   We do not accept the null hypothesis, we just fail to reject it.
 
@@ -102,8 +102,35 @@ The treatment effect is 0 for all units: $Y_i(1)=Y_i(0)$ for all $i$.
 
 -   To conduct a hypothesis test, we need to know the distribution of our estimator (the difference-in-means) under the sharp null hypothesis.
 -   We can do this by:
-    1.  Calculate the actual difference-in-means in our sample.
-    2.  Permute the treatment assignment the same way you originally assigned treatment and calculate the difference-in-means.
+    1.  Calculate the actual test statistic (i.e. difference-in-means) in our sample.
+    2.  Permute the treatment assignment the *same* way you originally assigned treatment and calculate the test statistic.
     3.  Repeat step 2 many times.
-    4.  Compare the actual difference-in-means to the distribution of differences-in-means under the sharp null.
-    5.  The p-value is the proportion of permuted differences-in-means that are as extreme or more extreme than the actual difference-in-means.
+    4.  Compare the actual test-statistic to the distribution of differences-in-means under the sharp null.
+
+. . .
+
+::: {.callout-note title="Permutation Test *p*-value"}
+   The p-value is the proportion of test-statistics from sampling distribution under the null that are as extreme or more extreme than the actual test-statistic.
+:::
+   
+
+## Barber and Pope Data 
+
+
+```{webr-r}
+#| context: setup
+
+# Download a dataset
+download.file(
+        "https://www.dropbox.com/scl/fi/qf65skwb9p9eq26cq1ejw/pope_barber.csv?rlkey=48i5am5r19oqjvvf80ighserh&dl=1",
+        destfile = "pope_barber.csv"
+)
+
+pb_data <- read_csv("pope_barber.csv")
+```
+
+```{web-r}
+pb_data
+
+```
+
