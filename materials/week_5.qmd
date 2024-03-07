@@ -11,6 +11,7 @@ title: "Week 5: Persuasion and Measurement"
 ## Slides
 
 - Lecture 6 (3/5): [Inference](/lectures/06-inference/inference.qmd)
+- Lecture 7 (3/7): [Measurement](/lectures/07-survey-measurement/survey_measurement.qmd)
 
 ## Assignments
 

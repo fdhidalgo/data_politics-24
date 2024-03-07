@@ -1,0 +1,233 @@
+---
+title: "Survey Measurement"
+subtitle: "Lecture 7"
+date: last-modified
+author: 
+  - name: F. Daniel Hidalgo
+    email: dhidalgo@mit.edu
+    affiliations: MIT
+format: 
+  clean-revealjs:
+    incremental: true
+engine: knitr
+webr:
+  packages: ['tidyverse'] # Install R packages on document open
+  show-startup-message: false
+filters: 
+  - timer
+  - webr
+bibliography: ../data_politics_2024.bib
+editor:
+  render-on-save: true
+---
+
+```{r}
+#| label: echo
+#| echo: false
+#| warning: false
+
+library(tidyverse)
+library(hrbrthemes)
+library(gganimate)
+theme_set(theme_ipsum())
+```
+
+# Broockman and Kalla (2016)
+
+## Overview of Experimental Design {.center}
+
+::: columns
+::: {.column .nonincremental width="40%"}
+-   Examines the effect of "deep canvassing" on attitudes
+
+    -   Focused on open-ended conversations
+    -   Perspective taking
+
+-   Panel design
+
+-   Outcome: survey measures of attitudes
+:::
+
+::: {.column width="60%"}
+![](./images/bk_overview.png)
+:::
+:::
+
+## Deep Canvassing
+
+{{< video https://youtu.be/2663J2d3VY4?si=sL_8Oi2Ahw3FXNdC width="100%" height="85%" >}}
+
+##  {background-image="images/bk_index_results.png"}
+
+## Results on Support for Law
+
+![](./images/bk_law_results.png)
+
+## Outcome Measures
+
+Primary outcome: a *battery* of survey measures designed to measure transgender stigma:
+
+> Miami-Dade county recently passed a law that prohibits discrimination in housing, employment and public accommodations based on gender identity and expression, a category that includes transgender men and women. Do you favor or oppose this new law?
+
+. . .
+
+> Some people say it’s important to protect transgender people from discrimination in housing and employment. Other people have concerns about society becoming too accepting of transgender people, and do not want transgender people included in our non-discrimination law. What do you think? Do you agree or disagree that Miami law should protect transgender people from discrimination?
+
+## Feeling Thermometer {.center}
+
+> Using a scale from zero to 100, please tell us your personal feelings toward each of the following groups. As you do this task, think of an imaginary thermometer. The warmer or more favorable you feel toward the group, the higher the number you should give it. The colder or less favorable you feel, the lower the number. If you feel neither warm nor cold toward the group, rate it 50.
+
+## More Outcome Measures
+
+> A man who identifies as a woman is psychologically abnormal
+
+. . .
+
+> It is morally wrong for a man to present himself as a woman in public
+
+. . .
+
+> Saying you are a gender that is different than the one you were born with is morally wrong
+
+. . .
+
+> I would support a friend choosing to have a sex change
+
+## Respondent Knowledge
+
+> As we registered in a preanalysis plan before conducting the 6-week survey, we suspected that many placebo group subjects did not know what the term “transgender” meant (potentially being more familiar with other, derogatory terms for this group), making them unable to connect any antitransgender attitudes with this question about the law.
+
+. . .
+
+> We therefore included a definition of the term “transgender” in the survey questions about the law, starting with the 6-week survey, clearly defining the term and highlighting transgender people’s inclusion in the law.
+
+## Opposition Video
+
+{{< video https://www.youtube.com/watch?v=o8yoAaVgJVo width="100%" height="85%" >}}
+
+## Combining Measures
+
+-   Broockman and Kalla combine these measures into indices.
+
+-   Why combine multiple measures instead of looking at individual measures?
+
+    -   Reduces measurement error
+    -   Reduces sampling error
+    -   Reduces the number of tests we need to run
+
+-   Use dimension reduction techniques to combine measures into indices.
+
+-   Why not combine?
+
+    -   Different items may be measuring different concepts
+    -   Estimates less interpretable
+
+# Social Desirability Bias
+
+## Measurement Error {.center}
+
+-   Measurement error can be due to many types of biases:
+
+    -   Social desirability bias
+    -   Experimental demand effects
+    -   Moderacy, extreme response, and response order biases
+
+-   Important to consider these biases when designing and analyzing surveys
+
+-   Need to pretest survey questions and carefully analyze response patterns
+
+## Social Desirability Bias
+
+::: columns
+::: {.column width="50%"}
+![](images/inter-racial-marriage.png)
+:::
+
+::: {.column width="50%"}
+-   We are often interested in sensitive topics, such as racial attitudes, sexual behavior, or political preferences
+
+-   Respondents may answer questions in a way to avoid embarrassment or to appear more favorable to the interviewer
+
+-   Structural features of surveys can reduce social desirability bias
+
+    -   Anonymity
+    -   Self-administered surveys
+:::
+:::
+
+## Less Explicit Measures: Racial Resentment
+
+Do you agree strongly, somewhat, neither agree, nor disagree, somewhat disagree, or strongly disagree with the following statement?
+
+- Irish, Italians, Jewish and many other minorities overcame prejudice and worked their way up. Blacks should do the same without any special favors.
+- Generations of slavery and discrimination have created conditions that make it difficult for Blacks to work their way out of the lower class.
+- Over the past few years, Blacks have gotten less than they deserve
+- It’s really a matter of some people not trying hard enough; if Blacks would only try harder, they could be just as well off as whites.
+
+
+
+## Racial Resentment Scale
+
+![](images/racial_resentment.png)
+
+
+## Implicit Association Test
+
+![](images/iat_correlation.png)
+
+IAT [Link](https://implicit.harvard.edu/implicit/takeatest.html)
+
+
+## Behavioral Measures
+
+Ultimatum Game:
+
+![](images/ultimatum_game.png)
+
+
+## Using Randomization
+
+> On your screen, you will see a virtual dice. Click on it to roll the dice. If the number on the dice is 1, 2, 3, or 4, please respond whether Statement A is true or false for you. Otherwise, please respond whether Statement B is true or false for you. Only you can see the number on the dice.
+
+. . .
+
+> A I have used an illegal drug in the past month.
+>
+> B I have not used an illegal drug in the past month.
+>
+> TRUE or FALSE
+
+## Using Randomized Devices to Induce Anonymity
+
+-   Randomized response techniques can be used to reduce social desirability bias
+
+-   Respondents are asked to answer a question based on a random device
+
+-   The random device is used to determine whether the respondent answers the question truthfully or not
+
+-   The researcher can then estimate the true proportion of respondents who answer "yes" to a sensitive question
+
+-   Can reduce social desirability bias, but can be difficult to implement and introduces random noise (reducing precision)
+
+
+## Example: Abortion Referendum in MS
+
+![](images/direct_ms.png)
+
+## List Experiment in MS
+
+Here is a list of four things that some people have done and some people have not. Please listen to them and then tell me HOW MANY of them you have done in the past two years. **Do not tell me which you have and have not done. Just tell me how many**:
+
+– Discussed politics with family or friends;
+
+– Cast a ballot for Governor Phil Bryant;
+
+– Paid dues to a union;
+
+– Given money to a Tea Party candidate or organization.
+
+– *Voted ‘YES’ on the ‘Personhood’ Initiative on the November 2011 Mississippi*
+
+## Comparison of Direct and Indirect Estimates
+
+![](images/direct_vs_indirect.png)

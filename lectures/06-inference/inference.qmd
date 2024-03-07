@@ -1,6 +1,6 @@
 ---
 title: "Inference in Experiments"
-subtitle: "Lecture 5"
+subtitle: "Lecture 6"
 date: last-modified
 author: 
   - name: F. Daniel Hidalgo
