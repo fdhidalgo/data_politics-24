@@ -11,3 +11,5 @@ title: "Materials"
 **Week 4**: [Partisanship vs Ideology](materials/week_4.qmd)
 
 **Week 5**: [Persuasion](materials/week_5.qmd)
+
+**Week 6**: [Combatting Electoral Fraud](materials/week_6.qmd)
