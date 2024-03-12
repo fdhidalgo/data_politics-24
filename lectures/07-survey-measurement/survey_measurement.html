@@ -13,7 +13,7 @@
   <meta name="generator" content="quarto-1.4.551">
 
   <meta name="author" content="F. Daniel Hidalgo">
-  <meta name="dcterms.date" content="2024-03-07">
+  <meta name="dcterms.date" content="2024-03-12">
   <title>Data and Politics - Survey Measurement</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -346,7 +346,7 @@ F. Daniel Hidalgo
     </div>
 </div>
 
-  <p class="date">March 7, 2024</p>
+  <p class="date">March 12, 2024</p>
 </section>
 <section>
 <section id="broockman-and-kalla-2016" class="title-slide slide level1 center">
@@ -527,15 +527,21 @@ F. Daniel Hidalgo
 </blockquote>
 </div>
 </section>
-<section id="using-randomized-devices-to-induce-anonymity" class="slide level2">
-<h2>Using Randomized Devices to Induce Anonymity</h2>
-<ul>
-<li class="fragment"><p>Randomized response techniques can be used to reduce social desirability bias</p></li>
-<li class="fragment"><p>Respondents are asked to answer a question based on a random device</p></li>
-<li class="fragment"><p>The random device is used to determine whether the respondent answers the question truthfully or not</p></li>
-<li class="fragment"><p>The researcher can then estimate the true proportion of respondents who answer “yes” to a sensitive question</p></li>
-<li class="fragment"><p>Can reduce social desirability bias, but can be difficult to implement and introduces random noise (reducing precision)</p></li>
-</ul>
+<section id="estimation-in-randomized-response" class="slide level2">
+<h2>Estimation in Randomized Response</h2>
+<p>Let <span class="math inline">\(Z_i\)</span> be the latent (i.e.&nbsp;true) binary response to the sensitive question and <span class="math inline">\(p\)</span> be the probability that the respondent is supposed to tell the truth.</p>
+<div class="fragment">
+<p>We can write:</p>
+<p><span class="math display">\[ \Pr(Y_i = 1) = p \Pr(Z_i=1) + (1-p) \Pr(Z_i=0) \]</span></p>
+</div>
+<div class="fragment">
+<p>Solving for <span class="math inline">\(\Pr(Z_i=1)\)</span> we get:</p>
+<p><span class="math display">\[ \Pr(Z_i=1) = \frac{1}{2p-1} \{ \Pr(Y_i=1) + p -1\} \]</span></p>
+<p>As long as <span class="math inline">\(p \neq 1/2\)</span>, we can estimate <span class="math inline">\(\Pr(Z_i=1)\)</span> using the observed proportion of “yes” responses in the randomized response survey.</p>
+</div>
+<div class="fragment">
+<p>Cost is <span class="alert">less precision</span> than direct questioning.</p>
+</div>
 </section>
 <section id="example-abortion-referendum-in-ms" class="slide level2">
 <h2>Example: Abortion Referendum in MS</h2>
@@ -544,11 +550,22 @@ F. Daniel Hidalgo
 <section id="list-experiment-in-ms" class="slide level2">
 <h2>List Experiment in MS</h2>
 <p>Here is a list of four things that some people have done and some people have not. Please listen to them and then tell me HOW MANY of them you have done in the past two years. <strong>Do not tell me which you have and have not done. Just tell me how many</strong>:</p>
+<div class="fragment">
 <p>– Discussed politics with family or friends;</p>
 <p>– Cast a ballot for Governor Phil Bryant;</p>
 <p>– Paid dues to a union;</p>
 <p>– Given money to a Tea Party candidate or organization.</p>
 <p>– <em>Voted ‘YES’ on the ‘Personhood’ Initiative on the November 2011 Mississippi</em></p>
+</div>
+</section>
+<section id="estimation-in-list-experiments" class="slide level2">
+<h2>Estimation in List Experiments</h2>
+<p>Let <span class="math inline">\(Y_i(0) = \sum_{j=1}^J Z_{ij}\)</span> and <span class="math inline">\(Y_i(1) =  \sum_{j=1}^{J+1} Z_{ij}\)</span> be the number of items in the list that the respondent say they have done in the control and treatment groups, respectively.</p>
+<p>Assuming random assignment and respondents answer truthfully, then we can estimate proportion of respondents who have done the sensitive activity as:</p>
+<div class="fragment">
+<p><span class="math display">\[\textrm{ATE} = \frac{1}{N_1} \sum_{i=1}^{N_1} Y_i(1) - \frac{1}{N_0} \sum_{i=1}^{N_0} Y_i(0)\]</span></p>
+<p>(this is the simple difference-in-means estimator)</p>
+</div>
 </section>
 <section id="comparison-of-direct-and-indirect-estimates" class="slide level2">
 <h2>Comparison of Direct and Indirect Estimates</h2>
