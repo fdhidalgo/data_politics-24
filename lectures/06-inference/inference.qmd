@@ -110,12 +110,10 @@ The treatment effect is 0 for all units: $Y_i(1)=Y_i(0)$ for all $i$.
 . . .
 
 ::: {.callout-note title="Permutation Test *p*-value"}
-   The p-value is the proportion of test-statistics from sampling distribution under the null that are as extreme or more extreme than the actual test-statistic.
+The p-value is the proportion of test-statistics from sampling distribution under the null that are as extreme or more extreme than the actual test-statistic.
 :::
-   
 
-## Barber and Pope Data 
-
+## Barber and Pope Data
 
 ```{webr-r}
 #| context: setup
@@ -139,7 +137,7 @@ estim_data <- pb_data |>
         filter(republican == 1 & (libtrump == 1 | self == 1))
 ```
 
-##  `sample`
+## `sample`
 
 To sample from a vector, we can use the `sample` function, where `size` is the number of samples, and `replace` is whether we want to sample with replacement.
 
@@ -152,7 +150,7 @@ sample(estim_data$libtrump,
 
 . . .
 
-To permute an entire vector, you can use `sample`  where `size` is the length of the treatment vector.
+To permute an entire vector, you can use `sample` where `size` is the length of the treatment vector.
 
 ```{webr-r}
 permuted <- sample(estim_data$libtrump,
@@ -182,28 +180,24 @@ estim_data |>
 
 ::: columns
 ::: {.column width="50%"}
-- We can create a function to permute and calculate the difference-in-means.
+-   We can create a function to permute and calculate the difference-in-means.
 
-- In general, if we need to do something more than once, we should create a **function**.
+-   In general, if we need to do something more than once, we should create a **function**.
 
-- This will make our code more readable and easier to debug.
+-   This will make our code more readable and easier to debug.
 
-::: {.fragment}
-
-```r
+::: fragment
+``` r
 
 func_name <- function(arg1, arg2, ...) {
         # Do something
         return(something)
 }
-
 ```
 :::
-
 :::
 
 ::: {.column .fragment width="50%"}
-
 Let's wrap the code we just wrote into a function.
 
 We use `pull` to extract the value from the tibble.
@@ -220,13 +214,12 @@ permute_diff <- function(data) {
 
 permute_diff(estim_data)
 ```
-
 :::
 :::
 
-## Iterate 
+## Iterate
 
-We can now use the function to iterate over many permutations. 
+We can now use the function to iterate over many permutations.
 
 A useful function for this is the `replicate` function, which repeats a function a number of times.
 
@@ -262,12 +255,10 @@ samp_dist <- ggplot() +
 ```
 :::
 
-::: {.column  width="50%"}
-
+::: {.column width="50%"}
 ```{webr-r}
 samp_dist
 ```
-
 :::
 :::
 
@@ -282,12 +273,9 @@ diff
 samp_dist +  geom_vline(xintercept = diff, color = "red", linewidth = 1)
 ```
 
-
-
 ## Calculate the *p*-value
 
 Calculate the proportion of the sampling distribution that is as extreme or more extreme than the actual test statistic.
-
 
 ```{webr-r}
 p_value <- mean(perms >= diff)
@@ -298,68 +286,69 @@ In this case, the p-value is small as there are few values in the sampling distr
 
 ## Rejecting the Null
 
-- Tests usually end with a decision to reject the null or not.
+-   Tests usually end with a decision to reject the null or not.
 
-- Choose a threshold below which we reject the null.
-  - [**Test level** \alpha]{.alert}: the threshold for a test
-  - Decision rule: if the p-value is less than \alpha, reject the null.
-  - Otherwise: fail to reject the null.
+-   Choose a threshold below which we reject the null.
 
-- Common thresholds:
-  - $p\geq .1$ (not statistically significant)
-  - $p < .05$ (statistically significant)
-  - $p < .01$ (highly statistically significant)
+    -   [**Test level** \alpha]{.alert}: the threshold for a test
+    -   Decision rule: if the p-value is less than \alpha, reject the null.
+    -   Otherwise: fail to reject the null.
+
+-   Common thresholds:
+
+    -   $p\geq .1$ (not statistically significant)
+    -   $p < .05$ (statistically significant)
+    -   $p < .01$ (highly statistically significant)
 
 ## Testing errors
 
-- A $p$-value of .05 says that data as extreme or more extreme than the actual test statistic would occur 5% of the time if the null hypothesis were true.
+-   A $p$-value of .05 says that data as extreme or more extreme than the actual test statistic would occur 5% of the time if the null hypothesis were true.
 
-- Test errors: 
+-   Test errors:
 
-::: {.fragment}
-
-|   | $H_0$ True  | $H_0$ False |
-|---|---|---|
-|  Retain $H_0$| 😀  | Type II Error: 😞 |
-|  Reject $H_0$| Type I Error: 😱  | 🥳 |
-
+::: fragment
+|              | $H_0$ True       | $H_0$ False       |
+|--------------|------------------|-------------------|
+| Retain $H_0$ | 😀               | Type II Error: 😞 |
+| Reject $H_0$ | Type I Error: 😱 | 🥳                |
 :::
+
 . . .
 
-- Type 1 error is usually considered worse than Type II error.
-  - "Convicting" an innocent null hypothesis
-- Type 2 error is less serious 
-  - "Failing to convict" a guilty null hypothesis
+-   Type 1 error is usually considered worse than Type II error.
+    -   "Convicting" an innocent null hypothesis
+-   Type 2 error is less serious
+    -   "Failing to convict" a guilty null hypothesis
 
 # More on Iteration
 
 ## More on Iteration {.center}
 
-- We used the `replicate` function to iterate over the permutations.
+-   We used the `replicate` function to iterate over the permutations.
 
-- A useful package for iteration is the `purrr` package (part of the `tidyverse`).
+-   A useful package for iteration is the `purrr` package (part of the `tidyverse`).
 
-- The `map` function is a generalization of `replicate` that can be used to iterate over many things.
-  - Also has built in progress bars
-  - More flexible than `replicate`
+-   The `map` function is a generalization of `replicate` that can be used to iterate over many things.
+
+    -   Also has built in progress bars
+    -   More flexible than `replicate`
 
 ## Lists
-- Lists are a very flexible data structure in R.
-  - They can hold any type of data, including other lists.
-  - Can access elements by position:
-    - `list[1]` returns the first element of the list (which is a list)
-    - `list[[1]]` returns the content of first element of the list (not the list itself)
-    - `list[[1]][[1]]` returns the first element of the first element of the list.
 
-::: {.fragment}
+-   Lists are a very flexible data structure in R.
+    -   They can hold any type of data, including other lists.
+    -   Can access elements by position:
+        -   `list[1]` returns the first element of the list (which is a list)
+        -   `list[[1]]` returns the content of first element of the list (not the list itself)
+        -   `list[[1]][[1]]` returns the first element of the first element of the list.
 
-![Indexing Lists](images/lists.png){width=60%}
-
+::: fragment
+![Indexing Lists](images/lists.png){width="60%"}
 :::
 
 ## Checking Covariate Balance with `map`
 
-Now let's do a version of the permutation test using `map`. 
+Now let's do a version of the permutation test using `map`.
 
 ```{webr-r}
 permute_covar <- function(data) {

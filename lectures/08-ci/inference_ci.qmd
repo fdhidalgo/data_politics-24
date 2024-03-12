@@ -1,0 +1,442 @@
+---
+title: "More on Inference in Experiments"
+subtitle: "Lecture 8"
+date: last-modified
+author: 
+  - name: F. Daniel Hidalgo
+    email: dhidalgo@mit.edu
+    affiliations: MIT
+format: 
+  clean-revealjs:
+    incremental: true
+engine: knitr
+webr:
+  packages: ['tidyverse'] # Install R packages on document open
+  show-startup-message: false
+filters: 
+  - timer
+  - webr
+bibliography: ../data_politics_2024.bib
+editor:
+  render-on-save: true
+---
+
+```{r}
+#| label: echo
+#| echo: false
+#| warning: false
+
+library(tidyverse)
+library(hrbrthemes)
+library(gganimate)
+theme_set(theme_ipsum())
+```
+
+```{webr-r}
+#| context: setup
+
+# Download a dataset
+download.file(
+        url = "https://raw.githubusercontent.com/fdhidalgo/data_politics-24/main/lectures/08-ci/race_list.csv",
+        destfile = "race.csv"
+)
+
+race <- read.csv("race.csv") |>
+        as_tibble() |>
+        na.omit()
+```
+
+# The Bootstrap
+
+## Where are we? 
+
+- In experiments, the population is the full set of [potential]{.alert} or counterfactual outcomes. 
+
+- The sample are the outcomes we actually observe after treatment assignment. 
+
+- Random assignment introduces variation in the sample, but the population is fixed.
+
+- The variation is called sampling variation and creates a [sampling distribution]{.alert}.
+
+
+## Inference
+
+::: {.callout-important title="Hypothesis Testing"}
+Under our maintained assumptions, how likely is it that we would observe the data we have if the (sharp) null hypothesis were true?
+:::
+
+- *Hypothesis testing* is a useful beginning point for inference, but sometimes we want to characterize other aspects of the sampling distribution. 
+
+- We will use a tool called the [**bootstrap**]{.alert} to do this.
+
+##  The Bootstrap
+
+![[Source](https://online.stat.psu.edu/stat555/node/119/)](images/bootstrap.png)
+
+**Sample** from the sample *with replacement* many times to estimate the sampling distribution. 
+
+## Survey
+
+1991 Survey:
+
+> Now I’m going to read you three things that sometimes make people
+    angry or upset. After I read all three, just tell me HOW MANY of
+    them upset you. (I don’t want to know which ones, just how many.)
+
+. . .
+
+> (1) the federal government increasing the tax on gasoline
+> (2) professional athletes getting million-dollar-plus salaries
+> (3) large corporations polluting the environment
+
+. . .
+
+> (4) a black family moving next door to you
+
+> How many, if any, of these things upset you?
+
+## Data
+
+```{r}
+#| label: data
+#| echo: true
+
+race <- read_csv("race_list.csv")
+
+race |> 
+  slice_sample(prop = 1, replace = TRUE)
+
+```
+
+
+## Many Boostrap Samples
+
+```{webr-r}
+#| label: bootstrap_samples
+#| echo: true
+
+bs_samples <- map(1:1000, ~ slice_sample(race, prop = 1, replace = TRUE))
+
+class(bs_samples)
+
+length(bs_samples)
+
+class(bs_samples[[1]])
+
+glimpse(bs_samples[[1]])
+
+```
+## Bootstrap Estimates
+
+```{webr-r}
+#| label: bootstrap_estimates
+#| echo: true
+
+bs_ests <-  map(bs_samples, 
+                ~ summarise(.x, mean_college = mean(college))) |>
+  bind_rows()
+
+bs_ests
+
+
+```
+
+## Visualizing the Bootstrap Distribution
+```{r}
+#| label: bootstrap_plot_code
+#| echo: false
+
+bs_samples <- map(1:1000, ~ slice_sample(race, prop = 1, replace = TRUE))
+
+
+bs_ests <-  map(bs_samples, ~ summarise(.x, mean_college = mean(college))) |>
+  bind_rows()
+
+```
+
+
+
+```{r}
+#| label: bootstrap_plot
+#| echo: true
+#| output-location: column
+
+bs_ests |> 
+  ggplot(aes(x = mean_college)) +
+  geom_histogram(bins = 30, 
+                 fill = "lightblue", color = "black") +
+  labs(title = "Bootstrap Distribution of Estimates", 
+       x = "Mean College", 
+       y = "Frequency") 
+
+
+```
+
+## Boostrap Distribution
+
+![](images/bootstrap_blackwell.png)
+
+- Bootstrap distribution **approximates** the sampling distribution of the estimator.
+
+- Both should have a similar shape and spread if sampling from the distribution ≈ bootstrap resampling.
+
+- Approximation gets better as sample gets bigger. 
+
+
+# Confidence Intervals
+
+## What is a confidence interval?
+
+::: columns
+::: {.column width="50%"}
+![](images/bullseye.png)
+**Point Estimate**: best single guess about the population parameter. Unlikely to be exactly correct.
+:::
+
+::: {.column .fragment width="50%"}
+
+![](images/ring.png)
+**Confidence Intervals**: a range of plausible values of the population parameter.
+:::
+:::
+
+## Confidence Intervals
+
+![](images/ring.png){height=200px}
+
+- Each sample gives a different CI or toss of the ring
+
+- Some samples will contain the target (the CI will contain the truth), other times it won't. 
+  - Unlike the picture, we don't know where the target is, so we don't know if our CI contains the truth! 
+  
+- **Confidence level**: the percentage of time the CI will contain the truth.
+  - We get to choose this level, but typical values are 90%, 95%, 99%.
+  
+  
+## Confidence Intervals as Occasional Liars
+
+- The **confidence level** of a CI tells us how often it will contain the truth.
+
+- A 95% CI will:
+  - Contain the truth 95% of the time (contain the true parameter or estimand 95% of the time).
+  - Lie to you 5% of the time (not contain the true parameter or estimand 5% of the time).
+
+. . . 
+
+::: {.callout-caution}
+Can you tell if your particular CI is telling the truth?
+
+:::
+
+## Confidence Interval Simulation
+
+```{=html}
+<iframe width="1000" height="600" src="https://rpsychologist.com/d3/ci/" title="CI Simulation"></iframe>
+```
+
+## Percentile Method
+
+- The **percentile method** is a simple way to construct a CI from the bootstrap distribution.
+
+- The 95% CI is the interval between the 2.5th and 97.5th percentiles of the bootstrap distribution.
+
+. . .
+
+```{webr-r}
+
+perc_ci95 <- quantile(bs_ests$mean_college, c(0.025, 0.975))
+perc_ci95
+
+```
+
+## Visualizing the Confidence Interval
+
+```{r}
+#| label: ci_plot_code
+#| echo: false
+
+perc_ci95 <- quantile(bs_ests$mean_college, c(0.025, 0.975))
+
+```
+
+```{r}
+#| label: ci_plot
+#| echo: true
+#| output-location: column
+#| fig.height: 10
+
+bs_ests |> 
+  ggplot(aes(x = mean_college)) +
+  geom_histogram(bins = 30, 
+                 fill = "lightblue", color = "black") +
+  geom_vline(xintercept = perc_ci95, color = "red", size = 1) +
+  labs(title = "Bootstrap Distribution of Estimates", 
+       x = "Mean College", 
+       y = "Frequency")
+
+```
+
+## 99% Confidence Interval
+
+What happens if we want the CI to be right more often? Will the width of a 99% confidence interval be wider or narrower?
+
+. . . 
+
+```{r}
+#| label: ci_plot_code_99
+#| echo: true
+
+perc_ci99 <- quantile(bs_ests$mean_college, c(0.005, 0.995))
+
+perc_ci99
+
+```
+
+## Visualizing the 99% Confidence Interval
+
+```{r}
+#| label: ci_plot_99
+#| echo: true
+#| output-location: column
+#| fig.height: 10
+
+bs_ests |> 
+  ggplot(aes(x = mean_college)) +
+  geom_histogram(bins = 30, 
+                 fill = "lightblue", color = "black") +
+    geom_vline(xintercept = perc_ci95, color = "red", size = 1) +
+  geom_vline(xintercept = perc_ci99, color = "blue", size = 1) +
+  labs(title = "Bootstrap Distribution of Estimates", 
+       x = "Mean College", 
+       y = "Frequency")
+
+```
+
+
+## 1991 List Experiment
+
+```{r}
+#| label: list_experiments_estimate
+#| echo: true
+
+list_est <- race |>
+  summarise(list_est = mean(y[treat == 1]) - mean(y[treat == 0]),
+            list_est_south = mean(y[treat == 1 & south == 1]) -
+              mean(y[treat == 0 & south == 1]), 
+            list_est_old = mean(y[treat == 1 & age > median(age)]) - 
+              mean(y[treat == 0 & age > median(age)]))
+
+list_est
+
+```
+
+## List Experiments Bootstrap
+
+```{r}
+#| label: list_experiments_bs
+#| echo: false
+
+list_est_bs <- bs_samples |>
+  map(~ summarise(.x, list_est = mean(y[treat == 1]) - mean(y[treat == 0]),
+                  list_est_south = mean(y[treat == 1 & south == 1]) -
+                   mean(y[treat == 0 & south == 1]), 
+                 list_est_old = mean(y[treat == 1 & age > median(age)]) - 
+                   mean(y[treat == 0 & age > median(age)]))) |>
+  bind_rows()
+
+```
+
+
+```{webr-r}
+
+#Use map to iterate over bootstrap samples
+
+list_est_bs <- bs_samples |>
+  map(~ summarise(.x, list_est = mean(y[treat == 1]) - mean(y[treat == 0]),
+                  list_est_south = mean(y[treat == 1 & south == 1]) -
+                   mean(y[treat == 0 & south == 1]), 
+                 list_est_old = mean(y[treat == 1 & age > median(age)]) - 
+                   mean(y[treat == 0 & age > median(age)]))) |>
+  bind_rows()
+
+list_est_bs
+
+```
+
+## List Experiments BS Sampling Distributions
+
+```{r}
+#| label: list_experiments_bs_plot
+#| echo: true
+#| output-location: column
+#| fig.height: 10
+
+##Density Plot
+list_est_bs |> 
+  pivot_longer(cols = starts_with("list_est"),
+               names_to = "experiment") |> 
+  ggplot(aes(x = value, 
+             fill = experiment)) +
+  geom_density(alpha = 0.5) +
+  labs(title = "Bootstrap Sampling Distributions", 
+       x = "Difference in Means", 
+       y = "Density") + 
+  theme(legend.position = "bottom")
+
+```
+
+## List Experiments Confidence Intervals
+
+```{r}
+#| label: list_experiments_ci
+#| echo: false
+
+list_ests_ci <- list_est_bs |> 
+  pivot_longer(cols = starts_with("list_est"),
+               names_to = "sample") |> 
+  group_by(sample) |> 
+  summarise(ci_low = quantile(value, 0.025),
+            ci_high = quantile(value, 0.975))
+
+list_ests_ci$est <- c(list_est$list_est, 
+                      list_est$list_est_old,
+                      list_est$list_est_south)
+
+```
+
+
+```{webr-r}
+list_ests_ci <- list_est_bs |> 
+  pivot_longer(cols = starts_with("list_est"),
+               names_to = "sample") |> 
+  group_by(sample) |> 
+  summarise(ci_low = quantile(value, 0.025),
+            ci_high = quantile(value, 0.975))
+
+list_ests_ci$est <- c(list_est$list_est, 
+                      list_est$list_est_old,
+                      list_est$list_est_south)
+list_ests_ci
+```
+
+## Visualize List Experiments Confidence Intervals
+
+```{r}
+#| label: list_experiments_ci_plot
+#| echo: true
+#| output-location: column
+#| fig.height: 10
+
+list_ests_ci |> 
+  ggplot(aes(x = sample, y = est)) +
+  geom_point(size = 4) +
+  geom_errorbar(aes(ymin = ci_low, 
+                    ymax = ci_high), 
+                width = 0.2) +
+  labs(title = "List Experiments Confidence Intervals", 
+       x = "Sample", 
+       y = "Difference in Means") +
+  geom_hline(yintercept = 0, linetype = "dashed")
+
+```
+

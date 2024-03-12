@@ -159,17 +159,14 @@ Primary outcome: a *battery* of survey measures designed to measure transgender 
 
 Do you agree strongly, somewhat, neither agree, nor disagree, somewhat disagree, or strongly disagree with the following statement?
 
-- Irish, Italians, Jewish and many other minorities overcame prejudice and worked their way up. Blacks should do the same without any special favors.
-- Generations of slavery and discrimination have created conditions that make it difficult for Blacks to work their way out of the lower class.
-- Over the past few years, Blacks have gotten less than they deserve
-- It’s really a matter of some people not trying hard enough; if Blacks would only try harder, they could be just as well off as whites.
-
-
+-   Irish, Italians, Jewish and many other minorities overcame prejudice and worked their way up. Blacks should do the same without any special favors.
+-   Generations of slavery and discrimination have created conditions that make it difficult for Blacks to work their way out of the lower class.
+-   Over the past few years, Blacks have gotten less than they deserve
+-   It’s really a matter of some people not trying hard enough; if Blacks would only try harder, they could be just as well off as whites.
 
 ## Racial Resentment Scale
 
 ![](images/racial_resentment.png)
-
 
 ## Implicit Association Test
 
@@ -177,13 +174,11 @@ Do you agree strongly, somewhat, neither agree, nor disagree, somewhat disagree,
 
 IAT [Link](https://implicit.harvard.edu/implicit/takeatest.html)
 
-
 ## Behavioral Measures
 
 Ultimatum Game:
 
 ![](images/ultimatum_game.png)
-
 
 ## Using Randomization
 
@@ -197,18 +192,27 @@ Ultimatum Game:
 >
 > TRUE or FALSE
 
-## Using Randomized Devices to Induce Anonymity
+## Estimation in Randomized Response
 
--   Randomized response techniques can be used to reduce social desirability bias
+Let $Z_i$ be the latent (i.e. true) binary response to the sensitive question and $p$ be the probability that the respondent is supposed to tell the truth.
 
--   Respondents are asked to answer a question based on a random device
+. . .
 
--   The random device is used to determine whether the respondent answers the question truthfully or not
+We can write:
 
--   The researcher can then estimate the true proportion of respondents who answer "yes" to a sensitive question
+$$ \Pr(Y_i = 1) = p \Pr(Z_i=1) + (1-p) \Pr(Z_i=0) $$
 
--   Can reduce social desirability bias, but can be difficult to implement and introduces random noise (reducing precision)
+. . .
 
+Solving for $\Pr(Z_i=1)$ we get:
+
+$$ \Pr(Z_i=1) = \frac{1}{2p-1} \{ \Pr(Y_i=1) + p -1\} $$
+
+As long as $p \neq 1/2$, we can estimate $\Pr(Z_i=1)$ using the observed proportion of "yes" responses in the randomized response survey.
+
+. . .
+
+Cost is [less precision]{.alert} than direct questioning.
 
 ## Example: Abortion Referendum in MS
 
@@ -217,6 +221,8 @@ Ultimatum Game:
 ## List Experiment in MS
 
 Here is a list of four things that some people have done and some people have not. Please listen to them and then tell me HOW MANY of them you have done in the past two years. **Do not tell me which you have and have not done. Just tell me how many**:
+
+. . .
 
 – Discussed politics with family or friends;
 
@@ -227,6 +233,18 @@ Here is a list of four things that some people have done and some people have no
 – Given money to a Tea Party candidate or organization.
 
 – *Voted ‘YES’ on the ‘Personhood’ Initiative on the November 2011 Mississippi*
+
+## Estimation in List Experiments
+
+Let $Y_i(0) = \sum_{j=1}^J Z_{ij}$ and $Y_i(1) =  \sum_{j=1}^{J+1} Z_{ij}$ be the number of items in the list that the respondent say they have done in the control and treatment groups, respectively.
+
+Assuming random assignment and respondents answer truthfully, then we can estimate proportion of respondents who have done the sensitive activity as:
+
+. . .
+
+$$\textrm{ATE} = \frac{1}{N_1} \sum_{i=1}^{N_1} Y_i(1) - \frac{1}{N_0} \sum_{i=1}^{N_0} Y_i(0)$$
+
+(this is the simple difference-in-means estimator)
 
 ## Comparison of Direct and Indirect Estimates
 
