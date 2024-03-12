@@ -219,7 +219,7 @@ bs_ests |>
 
 - A 95% CI will:
   - Contain the truth 95% of the time (contain the true parameter or estimand 95% of the time).
-  - Lie to you 5% of the time (not contain the true parameter or estimand 5% of the time).
+  - Lie to you 5% of the time (not contain the true parameter or estimand 5% of the time). See [link](https://rpsychologist.com/d3/ci/)
 
 . . . 
 
@@ -228,11 +228,6 @@ Can you tell if your particular CI is telling the truth?
 
 :::
 
-## Confidence Interval Simulation
-
-```{=html}
-<iframe width="1000" height="600" src="https://rpsychologist.com/d3/ci/" title="CI Simulation"></iframe>
-```
 
 ## Percentile Method
 
