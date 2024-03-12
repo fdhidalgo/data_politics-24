@@ -554,7 +554,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"id":1,"options":{"results":"markup","dpi":72,"output":"true","warning":"true","message":"true","out-width":"700px","comment":"","classes":"","fig-width":7,"context":"setup","fig-cap":"","label":"unnamed-chunk-1","fig-height":5,"read-only":"false","out-height":"","autorun":"true"},"code":"\n# Download a dataset\ndownload.file(\n        url = \"https://raw.githubusercontent.com/fdhidalgo/data_politics-24/main/lectures/08-ci/race_list.csv\",\n        destfile = \"race.csv\"\n)\n\nrace <- read.csv(\"race.csv\") |>\n        as_tibble() |>\n        na.omit()"},{"id":2,"options":{"dpi":72,"out-width":"700px","echo":"true","fig-cap":"","read-only":"false","output":"true","message":"true","comment":"","autorun":"false","out-height":"","fig-height":5,"context":"interactive","label":"bootstrap_samples","classes":"","warning":"true","fig-width":7,"results":"markup"},"code":"\nbs_samples <- map(1:1000, ~ slice_sample(race, prop = 1, replace = TRUE))\n\nclass(bs_samples)\n\nlength(bs_samples)\n\nclass(bs_samples[[1]])\n\nglimpse(bs_samples[[1]])"},{"id":3,"options":{"dpi":72,"out-width":"700px","echo":"true","fig-cap":"","read-only":"false","output":"true","message":"true","comment":"","autorun":"false","out-height":"","fig-height":5,"context":"interactive","label":"bootstrap_estimates","classes":"","warning":"true","fig-width":7,"results":"markup"},"code":"\nbs_ests <-  map(bs_samples, \n                ~ summarise(.x, mean_college = mean(college))) |>\n  bind_rows()\n\nbs_ests\n"},{"id":4,"options":{"results":"markup","dpi":72,"output":"true","warning":"true","message":"true","out-width":"700px","comment":"","classes":"","fig-width":7,"context":"interactive","fig-cap":"","label":"unnamed-chunk-4","fig-height":5,"read-only":"false","out-height":"","autorun":"false"},"code":"\nperc_ci95 <- quantile(bs_ests$mean_college, c(0.025, 0.975))\nperc_ci95"},{"id":5,"options":{"results":"markup","dpi":72,"output":"true","warning":"true","message":"true","out-width":"700px","comment":"","classes":"","fig-width":7,"context":"interactive","fig-cap":"","label":"unnamed-chunk-5","fig-height":5,"read-only":"false","out-height":"","autorun":"false"},"code":"\n#Use map to iterate over bootstrap samples\n\nlist_est_bs <- bs_samples |>\n  map(~ summarise(.x, list_est = mean(y[treat == 1]) - mean(y[treat == 0]),\n                  list_est_south = mean(y[treat == 1 & south == 1]) -\n                   mean(y[treat == 0 & south == 1]), \n                 list_est_old = mean(y[treat == 1 & age > median(age)]) - \n                   mean(y[treat == 0 & age > median(age)]))) |>\n  bind_rows()\n\nlist_est_bs"},{"id":6,"options":{"results":"markup","dpi":72,"output":"true","warning":"true","message":"true","out-width":"700px","comment":"","classes":"","fig-width":7,"context":"interactive","fig-cap":"","label":"unnamed-chunk-6","fig-height":5,"read-only":"false","out-height":"","autorun":"false"},"code":"list_ests_ci <- list_est_bs |> \n  pivot_longer(cols = starts_with(\"list_est\"),\n               names_to = \"sample\") |> \n  group_by(sample) |> \n  summarise(ci_low = quantile(value, 0.025),\n            ci_high = quantile(value, 0.975))\n\nlist_ests_ci$est <- c(list_est$list_est, \n                      list_est$list_est_old,\n                      list_est$list_est_south)\nlist_ests_ci"}];
+  globalThis.qwebrCellDetails = [{"id":1,"code":"\n# Download a dataset\ndownload.file(\n        url = \"https://raw.githubusercontent.com/fdhidalgo/data_politics-24/main/lectures/08-ci/race_list.csv\",\n        destfile = \"race.csv\"\n)\n\nrace <- read.csv(\"race.csv\") |>\n        as_tibble() |>\n        na.omit()","options":{"warning":"true","out-height":"","context":"setup","fig-width":7,"results":"markup","fig-height":5,"fig-cap":"","comment":"","out-width":"700px","classes":"","read-only":"false","output":"true","dpi":72,"label":"unnamed-chunk-1","message":"true","autorun":"true"}},{"id":2,"code":"\nbs_samples <- map(1:1000, ~ slice_sample(race, prop = 1, replace = TRUE))\n\nclass(bs_samples)\n\nlength(bs_samples)\n\nclass(bs_samples[[1]])\n\nglimpse(bs_samples[[1]])","options":{"warning":"true","classes":"","fig-cap":"","output":"true","message":"true","echo":"true","results":"markup","fig-height":5,"fig-width":7,"out-width":"700px","comment":"","label":"bootstrap_samples","dpi":72,"out-height":"","read-only":"false","context":"interactive","autorun":"false"}},{"id":3,"code":"\nbs_ests <-  map(bs_samples, \n                ~ summarise(.x, mean_college = mean(college))) |>\n  bind_rows()\n\nbs_ests\n","options":{"warning":"true","classes":"","fig-cap":"","output":"true","message":"true","echo":"true","results":"markup","fig-height":5,"fig-width":7,"out-width":"700px","comment":"","label":"bootstrap_estimates","dpi":72,"out-height":"","read-only":"false","context":"interactive","autorun":"false"}},{"id":4,"code":"\nperc_ci95 <- quantile(bs_ests$mean_college, c(0.025, 0.975))\nperc_ci95","options":{"warning":"true","out-height":"","context":"interactive","fig-width":7,"results":"markup","fig-height":5,"fig-cap":"","comment":"","out-width":"700px","classes":"","read-only":"false","output":"true","dpi":72,"label":"unnamed-chunk-4","message":"true","autorun":"false"}},{"id":5,"code":"\n#Use map to iterate over bootstrap samples\n\nlist_est_bs <- bs_samples |>\n  map(~ summarise(.x, list_est = mean(y[treat == 1]) - mean(y[treat == 0]),\n                  list_est_south = mean(y[treat == 1 & south == 1]) -\n                   mean(y[treat == 0 & south == 1]), \n                 list_est_old = mean(y[treat == 1 & age > median(age)]) - \n                   mean(y[treat == 0 & age > median(age)]))) |>\n  bind_rows()\n\nlist_est_bs","options":{"warning":"true","out-height":"","context":"interactive","fig-width":7,"results":"markup","fig-height":5,"fig-cap":"","comment":"","out-width":"700px","classes":"","read-only":"false","output":"true","dpi":72,"label":"unnamed-chunk-5","message":"true","autorun":"false"}},{"id":6,"code":"list_ests_ci <- list_est_bs |> \n  pivot_longer(cols = starts_with(\"list_est\"),\n               names_to = \"sample\") |> \n  group_by(sample) |> \n  summarise(ci_low = quantile(value, 0.025),\n            ci_high = quantile(value, 0.975))\n\nlist_ests_ci$est <- c(list_est$list_est, \n                      list_est$list_est_old,\n                      list_est$list_est_south)\nlist_ests_ci","options":{"warning":"true","out-height":"","context":"interactive","fig-width":7,"results":"markup","fig-height":5,"fig-cap":"","comment":"","out-width":"700px","classes":"","read-only":"false","output":"true","dpi":72,"label":"unnamed-chunk-6","message":"true","autorun":"false"}}];
 
   </script>
   <script type="module">
@@ -1548,16 +1548,16 @@ F. Daniel Hidalgo
 <pre><code># A tibble: 1,213 × 7
        y treat   age south  male college state
    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;
- 1     3     1   7.1     0     0       0 OH   
- 2     1     0   4.2     0     0       1 OR   
- 3     2     0   2.9     1     1       1 TX   
- 4     3     0   8.8     0     0       0 MO   
- 5     1     1   3.1     1     0       1 TX   
- 6     3     0   4.4     1     0       1 FL   
- 7     2     1   4.5     1     1       1 TX   
- 8     3     0   5.5     0     0       0 OH   
- 9     2     1   6.8     0     1       1 NM   
-10     3     1   7.3     0     1       0 ND   
+ 1     3     1   3       0     0       0 NJ   
+ 2     2     0   4.2     1     0       1 TX   
+ 3     2     1   4.6     0     0       1 CA   
+ 4     4     1   4.7     0     1       0 NE   
+ 5     1     0   6       0     1       1 PA   
+ 6     0     0   6.4     1     1       0 FL   
+ 7     2     1   3.2     0     0       1 CO   
+ 8     3     0   3.7     0     1       1 KY   
+ 9     3     0   2.6     0     0       1 CA   
+10     3     1   3       0     0       0 OH   
 # ℹ 1,203 more rows</code></pre>
 </div>
 </div>
@@ -1640,7 +1640,7 @@ F. Daniel Hidalgo
 <li class="fragment"><p>A 95% CI will:</p>
 <ul>
 <li class="fragment">Contain the truth 95% of the time (contain the true parameter or estimand 95% of the time).</li>
-<li class="fragment">Lie to you 5% of the time (not contain the true parameter or estimand 5% of the time).</li>
+<li class="fragment">Lie to you 5% of the time (not contain the true parameter or estimand 5% of the time). See <a href="https://rpsychologist.com/d3/ci/">link</a></li>
 </ul></li>
 </ul>
 <div class="fragment">
@@ -1658,10 +1658,6 @@ F. Daniel Hidalgo
 </div>
 </div>
 </div>
-</section>
-<section id="confidence-interval-simulation" class="slide level2">
-<h2>Confidence Interval Simulation</h2>
-<iframe width="1000" height="600" src="https://rpsychologist.com/d3/ci/" title="CI Simulation"></iframe>
 </section>
 <section id="percentile-method" class="slide level2">
 <h2>Percentile Method</h2>
@@ -1707,7 +1703,7 @@ F. Daniel Hidalgo
 <span id="cb5-3"><a></a>perc_ci99</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     0.5%     99.5% 
-0.5441014 0.6158326 </code></pre>
+0.5482193 0.6166529 </code></pre>
 </div>
 </div>
 </div>

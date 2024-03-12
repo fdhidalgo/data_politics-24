@@ -522,7 +522,7 @@
     "href": "lectures/08-ci/inference_ci.html#data",
     "title": "More on Inference in Experiments",
     "section": "Data",
-    "text": "Data\n\nrace &lt;- read_csv(\"race_list.csv\")\n\nrace |&gt; \n  slice_sample(prop = 1, replace = TRUE)\n\n# A tibble: 1,213 × 7\n       y treat   age south  male college state\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;\n 1     3     1   7.1     0     0       0 OH   \n 2     1     0   4.2     0     0       1 OR   \n 3     2     0   2.9     1     1       1 TX   \n 4     3     0   8.8     0     0       0 MO   \n 5     1     1   3.1     1     0       1 TX   \n 6     3     0   4.4     1     0       1 FL   \n 7     2     1   4.5     1     1       1 TX   \n 8     3     0   5.5     0     0       0 OH   \n 9     2     1   6.8     0     1       1 NM   \n10     3     1   7.3     0     1       0 ND   \n# ℹ 1,203 more rows"
+    "text": "Data\n\nrace &lt;- read_csv(\"race_list.csv\")\n\nrace |&gt; \n  slice_sample(prop = 1, replace = TRUE)\n\n# A tibble: 1,213 × 7\n       y treat   age south  male college state\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;\n 1     3     1   3       0     0       0 NJ   \n 2     2     0   4.2     1     0       1 TX   \n 3     2     1   4.6     0     0       1 CA   \n 4     4     1   4.7     0     1       0 NE   \n 5     1     0   6       0     1       1 PA   \n 6     0     0   6.4     1     1       0 FL   \n 7     2     1   3.2     0     0       1 CO   \n 8     3     0   3.7     0     1       1 KY   \n 9     3     0   2.6     0     0       1 CA   \n10     3     1   3       0     0       0 OH   \n# ℹ 1,203 more rows"
   },
   {
     "objectID": "lectures/08-ci/inference_ci.html#many-boostrap-samples",
@@ -571,14 +571,7 @@
     "href": "lectures/08-ci/inference_ci.html#confidence-intervals-as-occasional-liars",
     "title": "More on Inference in Experiments",
     "section": "Confidence Intervals as Occasional Liars",
-    "text": "Confidence Intervals as Occasional Liars\n\nThe confidence level of a CI tells us how often it will contain the truth.\nA 95% CI will:\n\nContain the truth 95% of the time (contain the true parameter or estimand 95% of the time).\nLie to you 5% of the time (not contain the true parameter or estimand 5% of the time).\n\n\n\n\n\n\n\n\n\nCaution\n\n\nCan you tell if your particular CI is telling the truth?"
-  },
-  {
-    "objectID": "lectures/08-ci/inference_ci.html#confidence-interval-simulation",
-    "href": "lectures/08-ci/inference_ci.html#confidence-interval-simulation",
-    "title": "More on Inference in Experiments",
-    "section": "Confidence Interval Simulation",
-    "text": "Confidence Interval Simulation"
+    "text": "Confidence Intervals as Occasional Liars\n\nThe confidence level of a CI tells us how often it will contain the truth.\nA 95% CI will:\n\nContain the truth 95% of the time (contain the true parameter or estimand 95% of the time).\nLie to you 5% of the time (not contain the true parameter or estimand 5% of the time). See link\n\n\n\n\n\n\n\n\n\nCaution\n\n\nCan you tell if your particular CI is telling the truth?"
   },
   {
     "objectID": "lectures/08-ci/inference_ci.html#percentile-method",
@@ -599,7 +592,7 @@
     "href": "lectures/08-ci/inference_ci.html#confidence-interval",
     "title": "More on Inference in Experiments",
     "section": "99% Confidence Interval",
-    "text": "99% Confidence Interval\nWhat happens if we want the CI to be right more often? Will the width of a 99% confidence interval be wider or narrower?\n\n\nperc_ci99 &lt;- quantile(bs_ests$mean_college, c(0.005, 0.995))\n\nperc_ci99\n\n     0.5%     99.5% \n0.5441014 0.6158326"
+    "text": "99% Confidence Interval\nWhat happens if we want the CI to be right more often? Will the width of a 99% confidence interval be wider or narrower?\n\n\nperc_ci99 &lt;- quantile(bs_ests$mean_college, c(0.005, 0.995))\n\nperc_ci99\n\n     0.5%     99.5% \n0.5482193 0.6166529"
   },
   {
     "objectID": "lectures/08-ci/inference_ci.html#visualizing-the-99-confidence-interval",
@@ -1033,7 +1026,7 @@
     "href": "materials/week_6.html#slides",
     "title": "Week 5: Combatting Electoral Fraud",
     "section": "Slides",
-    "text": "Slides"
+    "text": "Slides\n\nLecture 7 (3/7): Measurement\nLecture 8 (3/12): More on Inference in Experiments"
   },
   {
     "objectID": "materials/week_6.html#assignments",
