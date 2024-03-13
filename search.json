@@ -11,7 +11,7 @@
     "href": "schedule.html#topics-overview",
     "title": "Schedule",
     "section": "Topics Overview",
-    "text": "Topics Overview\n\n\nTopics ScheduleWeekDateMethods TopicApplied TopicComputing Topic12/6IntroductionIntroduction to R2/8Logic of ExperimentsR Basics32/22Data VisualizationIntergroup Prejudiceggplot2 Basics42/27Estimation & Sampling DistributionsPartisanship vs IdeologyData Wrangling with dplyr2/29InferenceFunctions & Iteration53/5Measurement: Asking QuestionsChanging Political BeliefsData Types and Recoding Data3/7Measurement: Measurement Error63/12Experimental Design: StratificationCombatting Electoral Fraudrandomizr package3/14Experimental Design: Clustering73/19Statistical PowerAuthoritarian CensorshipSimulations3/21Choosing Experimental Designs84/2Linear Models and ExperimentsMisinformationLinear Modeling with lm4/4Covariate Adjustmentestimatr package94/9Public Opinion SurveysAffective Polarizationsurvyr package4/11Survey Methodology104/16Survey Non-ResponseNon-Response Bias in Recent Elections4/18Addressing Non-Response114/23Predictive ModelingPredicting Electoral Outcomes4/25Modeling and Surveys124/30Final Project5/2Final Project135/7Final Project5/9Final Project145/14Final Project"
+    "text": "Topics Overview\n\n\nTopics ScheduleWeekDateMethods TopicApplied TopicComputing Topic[1](materials/week_1.qmd)2/6IntroductionIntroduction to `R`2/8Logic of Experiments`R` Basics32/22Data VisualizationIntergroup Prejudice`ggplot2` Basics42/27Estimation & Sampling DistributionsPartisanship vs IdeologyData Wrangling with `dplyr`2/29InferenceFunctions & Iteration53/5Measurement: Asking QuestionsChanging Political BeliefsData Types and Recoding Data3/7Measurement: Measurement Error63/12Experimental Design: StratificationCombatting Electoral Fraud`randomizr` package3/14Experimental Design: Clustering73/19Statistical PowerAuthoritarian CensorshipSimulations3/21Choosing Experimental Designs84/2Linear Models and ExperimentsMisinformationLinear Modeling with `lm`4/4Covariate Adjustment`estimatr` package94/9Public Opinion SurveysAffective Polarization`survyr` package4/11Survey Methodology104/16Survey Non-ResponseNon-Response Bias in Recent Elections 4/18Addressing Non-Response114/23Predictive ModelingPredicting Electoral Outcomes4/25Modeling and Surveys124/30Final Project  5/2Final Project135/7Final Project5/9Final Project145/14Final Project"
   },
   {
     "objectID": "schedule.html#readings-schedule",
@@ -25,7 +25,7 @@
     "href": "schedule.html#assignments-schedule",
     "title": "Schedule",
     "section": "Assignments Schedule",
-    "text": "Assignments Schedule\n\n\nAssignments ScheduleWeekDue DateAssignment22/12Reading Quiz2/14Tutorial42/26Reading Quiz2/28Tutorial2/29Problem Set 153/4Reading Quiz3/6Tutorial3/8Problem Set 263/11Reading Quiz3/13Tutorial73/18Reading Quiz3/20Tutorial3/21Problem Set 384/1Reading Quiz4/3Tutorial94/8Reading Quiz4/10Tutorial4/11Problem Set 4104/17Reading Quiz114/25Problem Set 5135/9Problem Set 6145/14Class Project Writeup"
+    "text": "Assignments Schedule\n\n\nAssignments ScheduleWeekDue DateAssignment22/12Reading Quiz2/14Tutorial42/26Reading Quiz2/28Tutorial2/29*Problem Set 1*53/4Reading Quiz3/8*Problem Set 2*73/18Reading Quiz3/20Tutorial3/21*Problem Set 3*84/1Reading Quiz4/3Tutorial94/8Reading Quiz4/10Tutorial4/11*Problem Set 4*104/17Reading Quiz114/25*Problem Set 5*135/9*Problem Set 6*145/14*Class Project Writeup*"
   },
   {
     "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#what-works-to-reduce-prejudice",
