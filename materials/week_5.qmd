@@ -6,12 +6,11 @@ title: "Week 5: Persuasion and Measurement"
 
 -   Broockman and Kalla (2016): [link](https://www.science.org/doi/10.1126/science.aad9713)
 -   Stantcheva (2023): [link](https://doi.org/10.1146/annurev-economics-091622-010157)
-  
 
 ## Slides
 
-- Lecture 6 (3/5): [Inference](/lectures/06-inference/inference.qmd)
-- Lecture 7 (3/7): [Measurement](/lectures/07-survey-measurement/survey_measurement.qmd)
+-   Lecture 6 (3/5): [Inference](/lectures/06-inference/inference.qmd)
+-   Lecture 7 (3/7): [Measurement](/lectures/07-survey-measurement/survey_measurement.qmd)
 
 ## Assignments
 
