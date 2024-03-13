@@ -25,8 +25,8 @@ Readings, lecture slides, and related materials will be posted on each week's pa
 
 schedule_data <- tribble(
         ~Week, ~Date, ~methods, ~applied, ~comp,
-        "[1](materials/week_1.qmd)", "2/6", "Introduction", "", "Introduction to `R`",
-        "[1](materials/week_1.qmd)", "2/8", "Logic of Experiments", "", "`R` Basics",
+        "1", "2/6", "Introduction", "", "Introduction to `R`",
+        "1", "2/8", "Logic of Experiments", "", "`R` Basics",
         #      "2", "2/13", "Data Visualization", "Intergroup Prejudice", "`ggplot2` Basics",
         #      "2", "2/15", "Estimation", "Intergroup Prejudice", "Data Wrangling with `dplyr`",
         "3", "2/22", "Data Visualization", "Intergroup Prejudice", "`ggplot2` Basics",
