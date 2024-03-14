@@ -1,0 +1,204 @@
+---
+title: "Electoral Malfeasance"
+subtitle: "Lecture 9"
+date: last-modified
+author: 
+  - name: F. Daniel Hidalgo
+    email: dhidalgo@mit.edu
+    affiliations: MIT
+format: 
+  clean-revealjs:
+    incremental: true
+engine: knitr
+webr:
+  packages: ['tidyverse'] # Install R packages on document open
+  show-startup-message: false
+filters: 
+  - timer
+  - webr
+bibliography: ../data_politics_2024.bib
+editor:
+  render-on-save: true
+---
+
+```{r}
+#| label: echo
+#| echo: false
+#| warning: false
+
+library(tidyverse)
+library(hrbrthemes)
+library(gganimate)
+theme_set(theme_ipsum())
+```
+
+# Electoral Malfeasance
+
+## 1948 Texan Democratic Primary
+
+:::: columns
+
+::: {.column width="50%"}
+![](images/lbj.jpeg)
+:::
+
+::: {.column width="50%" }
+
+- Lyndon B. Johnson (LBJ) vs. Coke Stevenson
+
+- On election day, Stevenson was ahead
+
+- Six days later, LBJ was ahead
+
+- LBJ won by 87 votes
+
+- Last 202 votes counted (*Box 13*) in Precinct 13 of Jim Wells County:
+  - 200 votes for LBJ
+  - 2 votes for Stevenson
+  
+- Voter Register: last 200 voters in Alphabetical Order 
+:::
+
+::::
+
+## Box 13
+
+![](images/box13.jpg)
+
+
+## George Parr
+
+:::: columns
+
+::: {.column width="50%"}
+![](images/parr.jpg)
+
+- Boss of the Parr Machine (*El Patrón*)
+- Ordered addition of 200 votes
+
+:::
+
+::: {.column width="50%" .fragment }
+
+
+Election judge:
+
+
+>  We had the law to ourselves there. It was a lawless son-of-a-bitch. We had iron control. If a man was opposed to us, we’d put him out of business. Parr was the godfather. He had life or death control... We could tell any election judge: ‘Give us 80 per cent of the vote, the other guy 20 per cent.’ We had it made in every election 
+
+:::
+
+::::
+
+## Clientelism
+
+```{mermaid}
+
+graph TD
+  Patron --> Broker1[Broker]
+  Patron -->  Broker2[Broker]
+  Broker1 -->  Client1[Client]
+  Broker1 -->  Client2[Client]
+  Broker1 --> Client4[Client]
+  Broker2 -->  Client3[Client]
+  Broker2 -->  Client5[Client]
+
+
+```
+
+## Clientelism vs Redistribution
+
+![](images/hicken.png)
+
+## List Experiment in Colombia
+
+> I will read a list of five (5) things people have in mind when deciding who to vote for. I want you to tell me how many of these five things you have taken into account when voting for a candidate. Do not tell me WHICH, ONLY HOW MANY.” Then they are handed a card with the following options
+
+1. The information about the candidate on the radio or television,
+2. What you read about his or her government plan,
+3. **The benefits, gifts, or jobs the candidate offered you in exchange for your vote**
+4. The conversations you had with your friends about the candidate,
+5. The candidate’s party.
+
+## List Experiment Results
+
+| Response value | Control group Frequency | Control group Proportion (%) | Treatment group Frequency | Treatment group Proportion (%) |
+|----------------|-------------------------|------------------------------|---------------------------|--------------------------------|
+| 0              | 168                     | 6.6                          | 129                       | 4.5                            |
+| 1              | 1,185                   | 46.2                         | 1,221                     | 42.8                           |
+| 2              | 874                     | 34.1                         | 980                       | 34.3                           |
+| 3              | 212                     | 8.3                          | 343                       | 12.0                           |
+| 4              | 125                     | 4.9                          | 139                       | 4.9                            |
+| 5              |                       |                           | 44                        | 1.5                            |
+| **Average**    | **1.59**                |                              | **1.75**                  |                                |
+
+
+# Garbiras-Diáz and Montenegro (2022)
+
+## Irregularities
+
+![](images/gm_types.png)
+
+## Facebook Ads
+
+![](images/gm_fb.png){width="35%"}
+
+. . .
+
+![](images/gm_timeline.png)
+
+## Experimental Design
+
+![](images/gm_design.png)
+
+## Factorial Design
+
+- Example of a **factorial** design
+
+- Two factors (treatments):
+  - Type of ad
+  - Letter or no letter
+  
+. . . 
+
+| | Letter | No Letter |
+|---|---|---|
+| Information | Letter & Information | No Letter & Information |
+| Call-to-Action | Letter & Call-to-Action | No Letter & Call-to-Action |
+|Info & Call-to-Action | Letter & Info & Call-to-Action | No Letter & Info & Call-to-Action |
+
+## Stratification
+
+> To increase the balance on potential confounders across treatment conditions, we conducted a stratified randomization. We defined strata by the intersection of bins partitioning the sample in three ways: (i) by the fiftieth and eighty-fifth percentiles of the population over the age of 18, (ii) by the twentieth and eightieth percentiles of voter turnout in the first round of presidential elections in 2018, and (iii) by whether the municipalities filed reports through the MOE’s website around the congressional elections of 2018 above or below the median
+
+## Clustering
+
+- Level of randomization: municipalities
+- Dependent variables: 
+  - Reports of irregularities (698 municipalities)
+  - Deviations from Benford's Law (698 municipalities)
+  - Candidates' vote share (**2,989** candidates)
+
+- What is the sample size? 
+
+## Effect on Reports
+
+![](images/gm_effect_reports.png)
+
+## Effect on Irregularities
+![](images/gm_effect_media.png)
+
+
+## Effects on Candidates' Vote Share
+
+![](images/gm_effect_cand.png)
+
+
+## Cost Effectiveness
+
+- Total FB campaign: $10,870
+- Total cost of $15 per municipality
+- Reduced vote share of "corrupt" candidates by 2.5 percentage points
+- Average votes in each municipality is 13,352
+- Number of votes changed on average: (13,352 x 2.5% ) $\approx$ 330 
+- Every $1  spent reduced about 21 votes for "corrupt" candidates

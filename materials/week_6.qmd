@@ -11,6 +11,7 @@ title: "Week 5: Combatting Electoral Fraud"
 
 - Lecture 7 (3/7): [Measurement](/lectures/07-survey-measurement/survey_measurement.qmd)
 - Lecture 8 (3/12): [More on Inference in Experiments](/lectures/08-ci/inference_ci.qmd)
+- Lecture 9 (3/14): [Electoral Malfeasance](/lectures/09-fraud/fraud.qmd)
 
 ## Assignments
 
