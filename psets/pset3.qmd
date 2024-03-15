@@ -1,0 +1,256 @@
+---
+title: "Problem Set 3"
+author: "Your Name"
+format: html
+toc: true
+---
+
+------------------------------------------------------------------------
+
+```{r}
+#| echo: FALSE
+#| warning: FALSE
+#| eval: false
+
+library(tidyverse)
+
+```
+
+## Instructions
+
+Please submit this assignment on Gradescope by March 21. The qmd file can be submitted at the following link: <https://www.dropbox.com/request/RUZLaoI90Au4X1PgZoke>
+
+You will need to submit the following two files:
+
+1.  An .qmd file (or “Quarto file” when spoken) that is a plain-text file that contains the text of your write-up and the code used to do all of the calculations for the assignment. You can write directly into this file in RStudio.
+2.  An output .pdf file that contains the compiled version of the qmd file. You can create this file by clicking the “Render” button in RStudio.
+
+## Importing the data
+
+```{r}
+#| label: import_data
+#| warnings: FALSE
+#| messages: FALSE
+#| eval: false
+
+# List Experiment Data
+list_df <- read_csv("https://www.dropbox.com/scl/fi/4cvtv58iat4cxqhbzqer0/list_df.csv?rlkey=rlog3wltunaymbe64xry55w6t&dl=1", show_col_types = FALSE)
+
+# Attitude Change Data
+attitude_df <- read_csv("https://www.dropbox.com/scl/fi/6zvwstark6auyfhufpceu/attitude_df.csv?rlkey=hlre5njsc5jhifbgi2bpxlipj&dl=1", show_col_types = FALSE)
+
+
+
+```
+
+## Problem 1
+
+In this first problem, we will analyze data from the following paper:
+
+> Aronow, Peter M. et al. “COMBINING LIST EXPERIMENTAND DIRECT QUESTION ESTIMATES OF SENSITIVE BEHAVIOR PREVALENCE” *Journal of Survey Statistics and Methodology*(2015): 43-66. [https://doi:10.1093/jssam/smu023](https://doi:10.1093/jssam/smu023){.url}.
+
+Aronow et al. (2015) explore the use of list experiments to estimate the prevalence of sensitive behaviors and compare those estimates to direct questions. In the paper, they compare estimates using these two measurement strategies for a variety of topics. We will look at the following two topics:
+
+-   Opposition to Muslim public school teachers
+-   Whether someone watches CNN
+
+The `list_df` data includes the following variables:
+
+-   `muslim_list_treat` and `cnn_list_treat`: treatment indicators for the two experiments
+-   `muslim_list_N` and `cnn_list_N`: the number of items in the list counted by respondent
+-   `muslims_direct` and `cnn_direct`: direct question responses where `1` = yes and `0` = no.
+
+### Problem 1(a)
+
+Explain the intuition behind the list experiment design and how it can be used to estimate the prevalence of sensitive attitudes. What are the pros and cons of this approach? Think about the two issues we are focusing on here, why might the researchers have chosen to use a list experiment?
+
+### Problem 1(b)
+
+Using `list_df`, calculate the direct and indirect attitude estimates for each of the two behaviors. Additionally, calculate 95% confidence intervals for each of the estimates using a bootstrap. Plot your results.
+
+::: callout-tip
+At the start of your code chunk, please include `set.seed(1234)`. This allows for the results that rely on random sampling (i.e.a bootstrap) to be reproducible.
+:::
+
+```{r}
+
+# Your code here
+```
+
+### Problem 1(c)
+
+Now interpret the results from your plot:
+
+-   How do the estimates from the list experiment compare to the direct question estimates? What do you think might explain the differences between the two estimates?
+-   What about the uncertainty estimates? Interpret the confidence intervals and compare them between estimates.
+
+### Problem 1(d)
+
+What might these results tell us about the trade-offs between the two measurement strategies? Think about both the point estimates and the uncertainty estimates.
+
+## Problem 2
+
+In this second problem, we will analyze data from another paper:
+
+> Graham, Mathew H. and Alexander Coppock. “ASKING ABOUT ATTITUDE CHANGE” *Public Opinion Quarterly*(2021): 28-53. [https://doi:10.1093/poq/nfab009](https://doi:10.1093/poq/nfab009){.url}.
+
+Graham and Coppock (2021) critique a widely used method for measuring attitude change in surveys. Social scientists or survey researchers are often interested in how new information may or may not change attitudes. One way to test this involves using what Graham and Coppock call a *change format* question. These questions often take the following structure:
+
+::: callout
+**Example 1:** President Obama issued an executive order banning the CIA and other government organizations from torturing detainees.
+
+How does this change your support for banning the CIA and other government organizations from torturing detainees? *Less supportive, no difference, more supportive*
+:::
+
+::: callout
+**Example 2:** President Trump issues an executive order that reduced restrictions on coal ash disposal. 
+
+How does this change your support for strict regulations on the disposal of coal ash, the pollutant left over after power plants burn coal?
+*Less supportive, no difference, more supportive*
+:::
+
+This strategy essentially asks respondents to evaluate the causal effect of new information on their attitudes. Graham and Coppock argue that this strategy produces inflated estimates of attitude change. As an alternative, they propose a *counterfactual format*. This proposed question format has the following structure:
+
+::: callout
+**Part 1:** President Obama issued an executive order banning the CIA and other government organizations from torturing detainees.
+
+Do you support or oppose banning the CIA and other government organizations from torturing detainees? *Oppose, Support*
+
+**Part 2:** Imagine that you did not know that President Obama issued an executive order banning the CIA and other government organizations from torturing detainees.
+
+How could you have answered the question: Do you support or oppose banning the CIA and other government organizations from torturing detainees? *Oppose, support*
+:::
+
+This alternative method involves two steps: first respondents are reminded of the new information and asked to report their attitude as in the standard survey question. Second, respondents are then asked to imagine how they would have responded had they not known the new information.
+
+### Problem 2(a)
+
+Critically evaluate these two question formats. What are some possible issues with the *change* question? How does the *counterfactual* format improve on these issues? Are there any downsides or remaining problems with the *counterfactual* format?
+
+### Problem 2(b)
+
+For this question we will use the `attitude_df` data frame. This data includes the following variables:
+
+-   `Party`: Respondent party identification
+-   `Format` : The question format used to measure attitude change (`Change` or `Counterfactual`)
+-   `treat`: Treatment indicator for the `Counterfactual` format
+-   `YC`: Combined outcome variable for both question formats
+-   `Y`: Outcome variable for the first stage of the `Counterfactual` format
+-   `tau_i_tilde`: Individual level treatment effect of the `Counterfactual` format
+
+We are going to compare the effectiveness of the two question formats in measuring attitude change. To do this, we will be using one of the experiments conducted by Graham and Coppock focused on the confirmation hearings of Supreme Court Justice Brett Kavanaugh. Respondents were told whether or not their Senator opposed Kavanaugh and then asked how that information changes the likelihood of supporting the Senator. To start, plot the distribution of responses in both the `Change` and the `Counterfactual` formats by Party ID. Figure 5 in the paper can be a useful guide for this plot.
+
+```{r}
+# Your code here
+```
+
+### Problem 2(c)
+
+Now we are going to take advantage of how the *counterfactual* format is designed to compare differences in the estimates of attitude change by Party ID. Subjects shown the counterfactual format are randomly assigned to a treatment and control group. Here is the question wording for each group:
+
+::: callout  
+
+**Control** 
+
+Senator [full name], a [Democrat / Republican] from [respondent's state], [is running for/ will be up for] re-election in [2018 / 2020/ 2022].
+
+Will you support [last name] or [her / his] [Republican / Democratic] opponent?
+
+*Definitely oppose [last name], Probably oppose, Lean toward opposing, Lean toward supporting, Probably support, Definitely support [last name]*
+
+*(New Page)* ------
+
+[Last name] voted against Brett Kavanaugh's nomination to the Supreme Court. Before the vote, three women accused Kavanaugh of sexual assault. 
+
+If you had known this information, how would you have answered the question:
+
+Will you support [last name] or [her / his] [Democratic / Republican] opponent?
+
+*Definitely oppose [last name], Probably oppose, Lean toward opposing, Lean toward supporting, Probably support, Definitely support [last name]*
+:::
+
+::: callout  
+
+**Treatment**
+
+Senator [full name], a [Democrat / Republican] from [respondent's state], [is running for/ will be up for] re-election in [2018 / 2020/ 2022].
+
+[Last name] voted against Brett Kavanaugh's nomination to the Supreme Court. Before the vote, three women accused Kavanaugh of sexual assault.
+
+Will you support [last name] or [her / his] [Democratic / Republican] opponent?
+
+*Definitely oppose [last name], Probably oppose, Lean toward opposing, Lean toward supporting, Probably support, Definitely support [last name]*
+
+*(New Page)* ------
+
+Imagine you did not know that [last name] voted [for / against] Kavanaugh's confirmation to the Supreme Court after allegation of sexual assault. 
+
+How would you have answered the question: 
+
+Will you support [last name] or [her / his] [Democratic / Republican] opponent?
+
+*Definitely oppose [last name], Probably oppose, Lean toward opposing, Lean toward supporting, Probably support, Definitely support [last name]*
+:::
+
+Here is a diagram of the research design:
+
+::: callout
+```{mermaid}
+flowchart TD
+  A[Start Survey] --> B[Control]
+  B --> C[Do you support a challenger to your Senator?] 
+  C --> D[Information about Kavanaugh vote]
+  D --> E[How would you have answered this question <br/> if you had know this information?]
+  
+  A --> F[Treatment]
+  F --> G[Information about Kavanaugh vote]
+  G --> H[Do you support a challenger to your Senator?] 
+  H --> I[Imagine you did not know that information, how <br/> would you have answered the question?]
+```
+:::
+
+In the control condition, respondents are first asked to report whether they support a challenger to their Senator ($Y_i(0)$). Next, they are presented information about how their Senator opposed Kavanaugh as well as about the allegations against Kavanaugh. They were then asked how they would have answered the initial question if they had known this information ($\tilde{Y_i(1)}$). We call this outcome $\tilde{Y_i(1)}$ because we are asking respondents to guess at their own potential outcome under treatment. Remember, we can never truly observe both potential outcomes. This design provides a best guess. 
+
+In the treatment condition, respondents are presented the information about the Kavanuagh vote and are asked whether they support a challenger to their Senator ($Y_i(1)$). Next, respondents are asked to imagine they had not known about their Senators opposition and the allegations and asked how they would have answered the initial question ($\tilde{Y_i(0)}$). Again, this is $\tilde{Y_i(0)}$ because we are asking respondents to guess at their own potential outcome under control.
+
+Assuming respondent's guesses about their counterfactual attitudes are correct, then $\tilde{Y_i(1)} = Y_i(1)$ and $\tilde{Y_i(0)} = Y_i(0)$. Denoting $D$ as the treatment indicator, we can calculate individual level treatment effects:
+
+$$(\tilde{\tau_i}|D=0) = E[\tilde{Y_i(1)} - Y_i(0)] $$ $$(\tilde{\tau_i}|D=1) = E[Y_i(1) - \tilde{Y_i(0)}]$$
+
+We can then use these individual level treatment effects to calculate the average treatment effect:
+
+$$ATE_{CF} = \frac{\sum^N_i\tilde{\tau_i}}{N}$$
+
+To start, use `attitude_df` to calculate the difference in means for the **first stage** of the `Counterfactual` format for each party. This calculation ignores the additional information from the counterfactual guesses. In other words, here you are calculating the average difference in in support for a Senate challenger based on whether they saw information on support for Kavanaugh. To calculate this, use the variable `Y` in the data frame. Report the point estimates with 95% confidence intervals calculated using a bootstrap. 
+
+```{r}
+# Your code here
+```
+
+Now calculate the average treatment effect for each party using `tau_i_tilde` as the outcome variable. This calculation takes into account the full experimental design and counterfactual guesses. Report the point estimates with a 95% confidence intervals calculated using a bootstrap. 
+
+```{r}
+# Your code here
+```
+
+Next, calculate the difference between these two estimates. In other words, you are calculating the difference between the first-stage difference-in-means and the counterfactual average treatment effect. Report the point estimate and a 95% confidence interval calculated using a bootstrap. 
+
+```{r}
+# Your code here
+```
+
+### Problem 2(d)
+
+Plot all three point estimates with 95% confidence intervals in a single plot. Interpret the results of your plot. Be sure to interpret both the point estimates and confidence intervals. Are the two estimates different? What does the difference between the estimates tell us? What do the results say about the validity of the two different question formats? Are you persuaded by Graham and Coppock's proposed question format?
+
+```{r}
+# Your code here
+```
+
+## Problem 3
+
+Propose a research question that would benefit from the use of one of the measurement strategies we learned in class. This can range from the racial resentment scale to a list experiment or an IAT. Explain why the measurement strategy is appropriate and preferable to alternatives. How does it connect to the concept you are interested in measuring? What are some possible trade-offs of using when this measurement strategy?
+
+## Problem 4 (Ungraded)
+
+We are almost halfway through the semester! That means we need to start thinking about the final class project. To start brainstorming ideas, please provide two topics that you would be interesting in studying that can be studied in the context of a survey of Americans.
