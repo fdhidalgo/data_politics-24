@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.551">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Your Name">
+
+<title>Data and Politics - Problem Set 3</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Data and Politics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">17.831</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../materials.html"> 
+<span class="menu-text">Materials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../assignments.html"> 
+<span class="menu-text">Assignments</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../resources.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#importing-the-data" id="toc-importing-the-data" class="nav-link" data-scroll-target="#importing-the-data">Importing the data</a></li>
+  <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1">Problem 1</a>
+  <ul class="collapse">
+  <li><a href="#problem-1a" id="toc-problem-1a" class="nav-link" data-scroll-target="#problem-1a">Problem 1(a)</a></li>
+  <li><a href="#problem-1b" id="toc-problem-1b" class="nav-link" data-scroll-target="#problem-1b">Problem 1(b)</a></li>
+  <li><a href="#problem-1c" id="toc-problem-1c" class="nav-link" data-scroll-target="#problem-1c">Problem 1(c)</a></li>
+  <li><a href="#problem-1d" id="toc-problem-1d" class="nav-link" data-scroll-target="#problem-1d">Problem 1(d)</a></li>
+  </ul></li>
+  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2">Problem 2</a>
+  <ul class="collapse">
+  <li><a href="#problem-2a" id="toc-problem-2a" class="nav-link" data-scroll-target="#problem-2a">Problem 2(a)</a></li>
+  <li><a href="#problem-2b" id="toc-problem-2b" class="nav-link" data-scroll-target="#problem-2b">Problem 2(b)</a></li>
+  <li><a href="#problem-2c" id="toc-problem-2c" class="nav-link" data-scroll-target="#problem-2c">Problem 2(c)</a></li>
+  <li><a href="#problem-2d" id="toc-problem-2d" class="nav-link" data-scroll-target="#problem-2d">Problem 2(d)</a></li>
+  </ul></li>
+  <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3">Problem 3</a></li>
+  <li><a href="#problem-4-ungraded" id="toc-problem-4-ungraded" class="nav-link" data-scroll-target="#problem-4-ungraded">Problem 4 (Ungraded)</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Problem Set 3</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Your Name </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<hr>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<p>Please submit this assignment on Gradescope by March 21. The qmd file can be submitted at the following link: <a href="https://www.dropbox.com/request/RUZLaoI90Au4X1PgZoke" class="uri">https://www.dropbox.com/request/RUZLaoI90Au4X1PgZoke</a></p>
+<p>You will need to submit the following two files:</p>
+<ol type="1">
+<li>An .qmd file (or “Quarto file” when spoken) that is a plain-text file that contains the text of your write-up and the code used to do all of the calculations for the assignment. You can write directly into this file in RStudio.</li>
+<li>An output .pdf file that contains the compiled version of the qmd file. You can create this file by clicking the “Render” button in RStudio.</li>
+</ol>
+</section>
+<section id="importing-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="importing-the-data">Importing the data</h2>
+<div class="cell" data-warnings="false" data-messages="false">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List Experiment Data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>list_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://www.dropbox.com/scl/fi/4cvtv58iat4cxqhbzqer0/list_df.csv?rlkey=rlog3wltunaymbe64xry55w6t&amp;dl=1"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Attitude Change Data</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>attitude_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://www.dropbox.com/scl/fi/6zvwstark6auyfhufpceu/attitude_df.csv?rlkey=hlre5njsc5jhifbgi2bpxlipj&amp;dl=1"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="problem-1" class="level2">
+<h2 class="anchored" data-anchor-id="problem-1">Problem 1</h2>
+<p>In this first problem, we will analyze data from the following paper:</p>
+<blockquote class="blockquote">
+<p>Aronow, Peter M. et al.&nbsp;“COMBINING LIST EXPERIMENTAND DIRECT QUESTION ESTIMATES OF SENSITIVE BEHAVIOR PREVALENCE” <em>Journal of Survey Statistics and Methodology</em>(2015): 43-66. <a href="https://doi:10.1093/jssam/smu023" class="url">https://doi:10.1093/jssam/smu023</a>.</p>
+</blockquote>
+<p>Aronow et al.&nbsp;(2015) explore the use of list experiments to estimate the prevalence of sensitive behaviors and compare those estimates to direct questions. In the paper, they compare estimates using these two measurement strategies for a variety of topics. We will look at the following two topics:</p>
+<ul>
+<li>Opposition to Muslim public school teachers</li>
+<li>Whether someone watches CNN</li>
+</ul>
+<p>The <code>list_df</code> data includes the following variables:</p>
+<ul>
+<li><code>muslim_list_treat</code> and <code>cnn_list_treat</code>: treatment indicators for the two experiments</li>
+<li><code>muslim_list_N</code> and <code>cnn_list_N</code>: the number of items in the list counted by respondent</li>
+<li><code>muslims_direct</code> and <code>cnn_direct</code>: direct question responses where <code>1</code> = yes and <code>0</code> = no.</li>
+</ul>
+<section id="problem-1a" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1a">Problem 1(a)</h3>
+<p>Explain the intuition behind the list experiment design and how it can be used to estimate the prevalence of sensitive attitudes. What are the pros and cons of this approach? Think about the two issues we are focusing on here, why might the researchers have chosen to use a list experiment?</p>
+</section>
+<section id="problem-1b" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1b">Problem 1(b)</h3>
+<p>Using <code>list_df</code>, calculate the direct and indirect attitude estimates for each of the two behaviors. Additionally, calculate 95% confidence intervals for each of the estimates using a bootstrap. Plot your results.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>At the start of your code chunk, please include <code>set.seed(1234)</code>. This allows for the results that rely on random sampling (i.e.a bootstrap) to be reproducible.</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="problem-1c" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1c">Problem 1(c)</h3>
+<p>Now interpret the results from your plot:</p>
+<ul>
+<li>How do the estimates from the list experiment compare to the direct question estimates? What do you think might explain the differences between the two estimates?</li>
+<li>What about the uncertainty estimates? Interpret the confidence intervals and compare them between estimates.</li>
+</ul>
+</section>
+<section id="problem-1d" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1d">Problem 1(d)</h3>
+<p>What might these results tell us about the trade-offs between the two measurement strategies? Think about both the point estimates and the uncertainty estimates.</p>
+</section>
+</section>
+<section id="problem-2" class="level2">
+<h2 class="anchored" data-anchor-id="problem-2">Problem 2</h2>
+<p>In this second problem, we will analyze data from another paper:</p>
+<blockquote class="blockquote">
+<p>Graham, Mathew H. and Alexander Coppock. “ASKING ABOUT ATTITUDE CHANGE” <em>Public Opinion Quarterly</em>(2021): 28-53. <a href="https://doi:10.1093/poq/nfab009" class="url">https://doi:10.1093/poq/nfab009</a>.</p>
+</blockquote>
+<p>Graham and Coppock (2021) critique a widely used method for measuring attitude change in surveys. Social scientists or survey researchers are often interested in how new information may or may not change attitudes. One way to test this involves using what Graham and Coppock call a <em>change format</em> question. These questions often take the following structure:</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Example 1:</strong> President Obama issued an executive order banning the CIA and other government organizations from torturing detainees.</p>
+<p>How does this change your support for banning the CIA and other government organizations from torturing detainees? <em>Less supportive, no difference, more supportive</em></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Example 2:</strong> President Trump issues an executive order that reduced restrictions on coal ash disposal.</p>
+<p>How does this change your support for strict regulations on the disposal of coal ash, the pollutant left over after power plants burn coal? <em>Less supportive, no difference, more supportive</em></p>
+</div>
+</div>
+</div>
+<p>This strategy essentially asks respondents to evaluate the causal effect of new information on their attitudes. Graham and Coppock argue that this strategy produces inflated estimates of attitude change. As an alternative, they propose a <em>counterfactual format</em>. This proposed question format has the following structure:</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Part 1:</strong> President Obama issued an executive order banning the CIA and other government organizations from torturing detainees.</p>
+<p>Do you support or oppose banning the CIA and other government organizations from torturing detainees? <em>Oppose, Support</em></p>
+<p><strong>Part 2:</strong> Imagine that you did not know that President Obama issued an executive order banning the CIA and other government organizations from torturing detainees.</p>
+<p>How could you have answered the question: Do you support or oppose banning the CIA and other government organizations from torturing detainees? <em>Oppose, support</em></p>
+</div>
+</div>
+</div>
+<p>This alternative method involves two steps: first respondents are reminded of the new information and asked to report their attitude as in the standard survey question. Second, respondents are then asked to imagine how they would have responded had they not known the new information.</p>
+<section id="problem-2a" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2a">Problem 2(a)</h3>
+<p>Critically evaluate these two question formats. What are some possible issues with the <em>change</em> question? How does the <em>counterfactual</em> format improve on these issues? Are there any downsides or remaining problems with the <em>counterfactual</em> format?</p>
+</section>
+<section id="problem-2b" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2b">Problem 2(b)</h3>
+<p>For this question we will use the <code>attitude_df</code> data frame. This data includes the following variables:</p>
+<ul>
+<li><code>Party</code>: Respondent party identification</li>
+<li><code>Format</code> : The question format used to measure attitude change (<code>Change</code> or <code>Counterfactual</code>)</li>
+<li><code>treat</code>: Treatment indicator for the <code>Counterfactual</code> format</li>
+<li><code>YC</code>: Combined outcome variable for both question formats</li>
+<li><code>Y</code>: Outcome variable for the first stage of the <code>Counterfactual</code> format</li>
+<li><code>tau_i_tilde</code>: Individual level treatment effect of the <code>Counterfactual</code> format</li>
+</ul>
+<p>We are going to compare the effectiveness of the two question formats in measuring attitude change. To do this, we will be using one of the experiments conducted by Graham and Coppock focused on the confirmation hearings of Supreme Court Justice Brett Kavanaugh. Respondents were told whether or not their Senator opposed Kavanaugh and then asked how that information changes the likelihood of supporting the Senator. To start, plot the distribution of responses in both the <code>Change</code> and the <code>Counterfactual</code> formats by Party ID. Figure 5 in the paper can be a useful guide for this plot.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="problem-2c" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2c">Problem 2(c)</h3>
+<p>Now we are going to take advantage of how the <em>counterfactual</em> format is designed to compare differences in the estimates of attitude change by Party ID. Subjects shown the counterfactual format are randomly assigned to a treatment and control group. Here is the question wording for each group:</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Control</strong></p>
+<p>Senator [full name], a [Democrat / Republican] from [respondent’s state], [is running for/ will be up for] re-election in [2018 / 2020/ 2022].</p>
+<p>Will you support [last name] or [her / his] [Republican / Democratic] opponent?</p>
+<p><em>Definitely oppose [last name], Probably oppose, Lean toward opposing, Lean toward supporting, Probably support, Definitely support [last name]</em></p>
+<p><em>(New Page)</em> ——</p>
+<p>[Last name] voted against Brett Kavanaugh’s nomination to the Supreme Court. Before the vote, three women accused Kavanaugh of sexual assault.</p>
+<p>If you had known this information, how would you have answered the question:</p>
+<p>Will you support [last name] or [her / his] [Democratic / Republican] opponent?</p>
+<p><em>Definitely oppose [last name], Probably oppose, Lean toward opposing, Lean toward supporting, Probably support, Definitely support [last name]</em></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Treatment</strong></p>
+<p>Senator [full name], a [Democrat / Republican] from [respondent’s state], [is running for/ will be up for] re-election in [2018 / 2020/ 2022].</p>
+<p>[Last name] voted against Brett Kavanaugh’s nomination to the Supreme Court. Before the vote, three women accused Kavanaugh of sexual assault.</p>
+<p>Will you support [last name] or [her / his] [Democratic / Republican] opponent?</p>
+<p><em>Definitely oppose [last name], Probably oppose, Lean toward opposing, Lean toward supporting, Probably support, Definitely support [last name]</em></p>
+<p><em>(New Page)</em> ——</p>
+<p>Imagine you did not know that [last name] voted [for / against] Kavanaugh’s confirmation to the Supreme Court after allegation of sexual assault.</p>
+<p>How would you have answered the question:</p>
+<p>Will you support [last name] or [her / his] [Democratic / Republican] opponent?</p>
+<p><em>Definitely oppose [last name], Probably oppose, Lean toward opposing, Lean toward supporting, Probably support, Definitely support [last name]</em></p>
+</div>
+</div>
+</div>
+<p>Here is a diagram of the research design:</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+  A[Start Survey] --&gt; B[Control]
+  B --&gt; C[Do you support a challenger to your Senator?] 
+  C --&gt; D[Information about Kavanaugh vote]
+  D --&gt; E[How would you have answered this question &lt;br/&gt; if you had know this information?]
+  
+  A --&gt; F[Treatment]
+  F --&gt; G[Information about Kavanaugh vote]
+  G --&gt; H[Do you support a challenger to your Senator?] 
+  H --&gt; I[Imagine you did not know that information, how &lt;br/&gt; would you have answered the question?]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>In the control condition, respondents are first asked to report whether they support a challenger to their Senator (<span class="math inline">\(Y_i(0)\)</span>). Next, they are presented information about how their Senator opposed Kavanaugh as well as about the allegations against Kavanaugh. They were then asked how they would have answered the initial question if they had known this information (<span class="math inline">\(\tilde{Y_i(1)}\)</span>). We call this outcome <span class="math inline">\(\tilde{Y_i(1)}\)</span> because we are asking respondents to guess at their own potential outcome under treatment. Remember, we can never truly observe both potential outcomes. This design provides a best guess.</p>
+<p>In the treatment condition, respondents are presented the information about the Kavanuagh vote and are asked whether they support a challenger to their Senator (<span class="math inline">\(Y_i(1)\)</span>). Next, respondents are asked to imagine they had not known about their Senators opposition and the allegations and asked how they would have answered the initial question (<span class="math inline">\(\tilde{Y_i(0)}\)</span>). Again, this is <span class="math inline">\(\tilde{Y_i(0)}\)</span> because we are asking respondents to guess at their own potential outcome under control.</p>
+<p>Assuming respondent’s guesses about their counterfactual attitudes are correct, then <span class="math inline">\(\tilde{Y_i(1)} = Y_i(1)\)</span> and <span class="math inline">\(\tilde{Y_i(0)} = Y_i(0)\)</span>. Denoting <span class="math inline">\(D\)</span> as the treatment indicator, we can calculate individual level treatment effects:</p>
+<p><span class="math display">\[(\tilde{\tau_i}|D=0) = E[\tilde{Y_i(1)} - Y_i(0)] \]</span> <span class="math display">\[(\tilde{\tau_i}|D=1) = E[Y_i(1) - \tilde{Y_i(0)}]\]</span></p>
+<p>We can then use these individual level treatment effects to calculate the average treatment effect:</p>
+<p><span class="math display">\[ATE_{CF} = \frac{\sum^N_i\tilde{\tau_i}}{N}\]</span></p>
+<p>To start, use <code>attitude_df</code> to calculate the difference in means for the <strong>first stage</strong> of the <code>Counterfactual</code> format for each party. This calculation ignores the additional information from the counterfactual guesses. In other words, here you are calculating the average difference in in support for a Senate challenger based on whether they saw information on support for Kavanaugh. To calculate this, use the variable <code>Y</code> in the data frame. Report the point estimates with 95% confidence intervals calculated using a bootstrap.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now calculate the average treatment effect for each party using <code>tau_i_tilde</code> as the outcome variable. This calculation takes into account the full experimental design and counterfactual guesses. Report the point estimates with a 95% confidence intervals calculated using a bootstrap.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next, calculate the difference between these two estimates. In other words, you are calculating the difference between the first-stage difference-in-means and the counterfactual average treatment effect. Report the point estimate and a 95% confidence interval calculated using a bootstrap.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="problem-2d" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2d">Problem 2(d)</h3>
+<p>Plot all three point estimates with 95% confidence intervals in a single plot. Interpret the results of your plot. Be sure to interpret both the point estimates and confidence intervals. Are the two estimates different? What does the difference between the estimates tell us? What do the results say about the validity of the two different question formats? Are you persuaded by Graham and Coppock’s proposed question format?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="problem-3" class="level2">
+<h2 class="anchored" data-anchor-id="problem-3">Problem 3</h2>
+<p>Propose a research question that would benefit from the use of one of the measurement strategies we learned in class. This can range from the racial resentment scale to a list experiment or an IAT. Explain why the measurement strategy is appropriate and preferable to alternatives. How does it connect to the concept you are interested in measuring? What are some possible trade-offs of using when this measurement strategy?</p>
+</section>
+<section id="problem-4-ungraded" class="level2">
+<h2 class="anchored" data-anchor-id="problem-4-ungraded">Problem 4 (Ungraded)</h2>
+<p>We are almost halfway through the semester! That means we need to start thinking about the final class project. To start brainstorming ideas, please provide two topics that you would be interesting in studying that can be studied in the context of a survey of Americans.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/fdhidalgo\.github\.io\/data_politics-24\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
