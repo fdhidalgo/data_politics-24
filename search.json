@@ -1061,14 +1061,14 @@
     "href": "assignments.html",
     "title": "Assignments",
     "section": "",
-    "text": "Tutorial 1: Introduction to R and Data Visualization\nTutorial 2: Data Wrangling"
+    "text": "Tutorial 1: Introduction to R and Data Visualization\nTutorial 2: Data Wrangling\nTutorial 3: Pivoting and Logical Functions"
   },
   {
     "objectID": "assignments.html#tutorials",
     "href": "assignments.html#tutorials",
     "title": "Assignments",
     "section": "",
-    "text": "Tutorial 1: Introduction to R and Data Visualization\nTutorial 2: Data Wrangling"
+    "text": "Tutorial 1: Introduction to R and Data Visualization\nTutorial 2: Data Wrangling\nTutorial 3: Pivoting and Logical Functions"
   },
   {
     "objectID": "assignments.html#problem-sets",
@@ -1173,7 +1173,7 @@
     "href": "materials/week_6.html#assignments",
     "title": "Week 5: Combatting Electoral Fraud",
     "section": "Assignments",
-    "text": "Assignments\n\nReading Quiz\nProblem Set 3: qmd link, html version"
+    "text": "Assignments\n\nReading Quiz\nProblem Set 3: qmd link, html version\nTutorial 3: Pivoting and Logical Functions"
   },
   {
     "objectID": "materials/week_3.html",
