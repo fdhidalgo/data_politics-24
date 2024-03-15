@@ -6,6 +6,7 @@ title: "Assignments"
 
 -   [Tutorial 1: Introduction to `R` and Data Visualization](https://dhidalgo.shinyapps.io/Tutorial-1/)
 -   [Tutorial 2: Data Wrangling](https://dhidalgo.shinyapps.io/Tutorial-2/)
+-   [Tutorial 3: Pivoting and Logical Functions](https://dhidalgo.shinyapps.io/03-pivoting_logical)
 
 ## Problem Sets
 
