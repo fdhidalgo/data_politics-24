@@ -13,3 +13,5 @@ title: "Materials"
 **Week 5**: [Persuasion](materials/week_5.qmd)
 
 **Week 6**: [Combatting Electoral Fraud](materials/week_6.qmd)
+
+**Week 7**: [Censorship](materials/week_7.qmd)
