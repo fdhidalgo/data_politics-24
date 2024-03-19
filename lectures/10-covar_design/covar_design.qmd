@@ -1,0 +1,545 @@
+---
+title: "Using Covariates in Experimental Design"
+subtitle: "Lecture 10"
+date: last-modified
+author: 
+  - name: F. Daniel Hidalgo
+    email: dhidalgo@mit.edu
+    affiliations: MIT
+format: 
+  clean-revealjs:
+    incremental: true
+engine: knitr
+execute: 
+  cache: true
+webr:
+  packages: ['tidyverse'] # Install R packages on document open
+  show-startup-message: false
+filters: 
+  - timer
+  - webr
+bibliography: ../data_politics_2024.bib
+editor:
+  render-on-save: true
+---
+
+```{r}
+#| label: setup
+#| echo: false
+#| warning: false
+#| cache: false
+
+library(tidyverse)
+library(hrbrthemes)
+library(gganimate)
+theme_set(theme_ipsum())
+```
+
+```{r}
+#| label: import_data
+#| echo: false
+#| warning: false
+
+col_data <- haven::read_dta("main_data_municipal_level.dta") |>
+  select(T_FB_both, pop2018_18older, part_c2018, 
+         reports_any_MOE_c2018, reportMOE_any, strata ) |>
+  rename(treatment = T_FB_both, 
+         pop = pop2018_18older, 
+         turnout_pre = part_c2018, 
+         reports_pre = reports_any_MOE_c2018, 
+         reports = reportMOE_any) |>
+  filter(!is.na(treatment)) |>
+  mutate(log_pop = log(pop), 
+         strata = as_factor(strata))
+
+#summary(lm(reportMOE_any ~ T_FB_both + reports_any_MOE_c2018, data = col_data))
+#summary(lm(reportMOE_any ~ T_FB_both + log(pop2018_18older) , data = col_data))
+#summary(lm(reportMOE_any ~ T_FB_both + part_c2018 , data = col_data))
+#summary(lm(reportMOE_any ~ T_FB_both + reports_any_MOE_c2018 +  pop2018_18older + part_c2018, data = col_data))
+
+```
+
+# Covariates in Experimental Design
+
+## Randomization and Covariates
+
+::: columns
+::: {.column width="50%"}
+![](images/blocks_unlucky.png){width="100%"}
+:::
+
+::: {.column width="50%"}
+-   As discussed, while randomization gives us the right answer on average, we can still get unlucky.
+
+-   We detect bad luck typically by examining balance on pre-treatment covariates.
+
+-   For covariates that are [predictive]{.smallcaps} of the outcome, imbalance suggests we may be far off from the ATE.
+
+-   Rather than just hope for good luck, why not [**design**]{.smallcaps} for good luck?
+:::
+:::
+
+## Gabiras-Diáz and Montenegro
+
+> To increase the balance on potential confounders across treatment conditions, we conducted a stratified randomization. We defined strata by the intersection of bins partitioning the sample in three ways: **(i) by the fiftieth and eighty-fifth percentiles of the population over the age of 18, (ii) by the twentieth and eightieth percentiles of voter turnout in the first round of presidential elections in 2018, and (iii) by whether the municipalities filed reports through the MOE’s website around the congressional elections of 2018 above or below the median**
+
+Stratify by:
+
+1.  Population size
+2.  Voter turnout
+3.  Reports in 2018
+
+## Population and Reports
+
+```{r}
+#| label: pop_outcome
+#| echo: true
+#| output-location: column
+#| fig.height: 10
+
+ggplot(col_data, aes(x = pop, y = reports)) +
+  geom_point(size = .5) +
+  geom_smooth(se = FALSE) +
+  labs(title = "Population and Reports",
+       x = "Population",
+       y = "Reports")
+
+```
+
+## Voter Turnout and Reports
+
+```{r}
+#| label: turnout_outcome
+#| echo: true
+#| output-location: column
+#| fig.height: 10
+
+ggplot(col_data, aes(x = turnout_pre, y = reports)) +
+  geom_point(size = .5) +
+  geom_smooth(se = FALSE) +
+  labs(title = "Voter Turnout and Reports",
+       x = "Voter Turnout",
+       y = "Reports")
+
+
+```
+
+## Baseline and Endline Reports
+
+```{r}
+#| label: baseline_outcome
+#| echo: true
+#| output-location: column
+#| fig.height: 10
+
+ggplot(col_data, aes(x = reports_pre, y = reports)) +
+  geom_point(size = .5) +
+  geom_smooth(method = "lm", 
+              se = FALSE) +
+  labs(title = "Baseline Reports and Reports",
+       x = "Baseline Reports",
+       y = "Reports")
+
+
+```
+
+## Permute Treatment and Estimate
+
+```{r}
+#| label: permute_function
+#| echo: true
+
+ra_permute <- function(data) {
+  N <- nrow(data)
+  m <- sum(data$treatment)
+  data$treatment <- complete_ra(N = N, m = m) # <1>
+  outcome_est <- difference_in_means(reports ~ treatment, data = data) # <2>
+  covar_est <- difference_in_means(log_pop ~ treatment, data = data) # <3>
+  tidied_outcome <- tidy(outcome_est) # <4>
+  tidied_covar <- tidy(covar_est) # <4>
+  
+  bind_rows(tidied_outcome, tidied_covar) # <5>
+} 
+```
+
+1.  Permute treatment variable
+2.  Estimate treatment effect
+3.  Estimate covariate imbalance
+4.  Tidy the output. The `tidy` function is used to convert the output of the `difference_in_means` function into a data frame.
+5.  Combine the output into a single data frame.
+
+## Permute Treatment and Estimate
+
+```{r}
+#| label: permute_function_output
+#| echo: true
+
+ra_permute(col_data)
+
+```
+
+. . .
+
+```{r}
+#| label: permute_data
+#| echo: true
+
+permute_data <- map(1:1000, ~ ra_permute(col_data)) |>
+  bind_rows()
+## Add iteration number using rep function
+permute_data$iteration <- rep(1:1000, each = 2)
+
+head(permute_data)
+
+```
+
+## Imbalance vs Treatment Effect
+
+To visualize we need to use `pivot_wider` to reshape the data.
+
+`pivot_wider()` takes data from a single column and moves it into multiple columns based on a grouping variable (in this case, `iteration`).
+
+```{r}
+#| label: visualize_permute
+#| echo: true
+
+##Use pivot_wider to reshape the data
+pivoted <- permute_data |>
+  pivot_wider(id_cols = iteration, 
+              names_from = outcome, values_from = estimate)
+head(pivoted)
+```
+
+## Imbalance vs Treatment Effect
+
+```{r}
+#| label: visualize_permute_plot
+#| echo: true
+#| output-location: column
+#| fig.height: 10
+
+ggplot(pivoted, 
+       aes(x = log_pop, y = reports)) +
+  geom_point(size = .5) +
+  geom_smooth(se = FALSE) +
+  xlab("Imbalance in Log Population") +
+  ylab("Estimated Treatment Effect") +
+  geom_hline(yintercept = 0, 
+             linetype = "dashed") +
+  ggtitle("Imbalance vs Treatment Effect") 
+
+```
+
+# `estimatr` and `randomizr` packages
+
+## `estimatr` Package
+
+Up until now, we have been calculating the difference in means between the treatment and control groups, but more complex designs require more complex estimators.
+
+The `estimatr` package provides a number of functions to estimate treatment effects in experimental studies.
+
+```{r}
+#| label: estimatr
+#| echo: true
+library(estimatr)
+estimate <- difference_in_means( # <1>
+                          formula = reports ~ treatment, # <2>
+                           data = col_data)
+```
+
+1.  The `difference_in_means` function is used to estimate the average treatment effect in a variety of experimental designs.
+2.  Use formula syntax to specify the outcome variable and the treatment variable: `outcome ~ treatment`.
+
+## `difference-in-means` output
+
+```{r}
+#| label: estimatr_output
+#| echo: true
+estimate
+```
+
+Output from the `difference_in_means` function:
+
+-   `Estimate` is the estimate of the ATE
+-   `Std. Error` is the standard error of the estimate (standard deviation of the sampling distribution)
+-   `Pr(>|t|)` is the p-value for the hypothesis test that the ATE is equal to zero
+-   `CI Lower` and `CI Upper` are the lower and upper bounds of the 95% confidence interval for the ATE
+
+## `randomizr` Package
+
+We have been using `sample` to randomly assign treatment, but the `randomizr` package provides more complex randomization procedures.
+
+```{r}
+#| label: randomizr
+#| echo: true
+
+library(randomizr)
+
+n_treatment <- 159
+n_muni <- 698
+
+assignment <- complete_ra(N = n_muni, # <1>
+                          m = n_treatment)
+```
+
+1.  The `complete_ra` function is used to randomly assign treatment to a specified number of units (`n_treatment`). Produces a vector of 1s and 0s, where 1 indicates treatment and 0 indicates control.
+
+. . .
+
+```{r}
+#| label: randomizr_output
+#| echo: true
+
+table(assignment)
+```
+
+# Blocking
+
+## Blocking
+
+::: columns
+::: {.column width="50%"}
+![](images/blocks.png){width="100%"}
+:::
+
+::: {.column width="50%"}
+-   Rather than hoping for a balanced sample, we can ensure balance by **blocking** on important covariates.
+
+-   Basic idea:
+
+    -   Gather covariates predictive of the outcome
+    -   Group units into strata based on these covariates
+    -   Randomly assign treatment within each stratum
+
+-   If we block, we must change how we estimate the treatment effect.\
+:::
+:::
+
+## Blocking in R
+
+```{r}
+#| label: blocking_col_data
+#| echo: true
+
+## Create equal sized strata based on log population
+col_data$block <- cut_number(col_data$log_pop, 10) # <1>
+
+treat_prob <- n_treatment / n_muni # <2>
+
+block_assignment <- block_ra(blocks = col_data$block, # <3>
+                             prob = treat_prob) 
+
+```
+
+1.  Use the `cut_number` function to create 10 equally sized strata based on the `log_pop` variable.
+2.  Calculate the probability of treatment within each stratum.
+3.  Use the `block_ra` function to randomly assign treatment within each stratum.
+
+. . .
+
+```{r}
+#| label: blocking_output
+#| echo: true
+
+table(block_assignment, col_data$block)
+
+```
+
+## Blocking and Analysis
+
+Key principle in analysis of experimental design:
+
+::: callout-important
+**Analyze as ye randomize**
+:::
+
+. . .
+
+When estimating treatment effects and uncertainty (e.g. p-values, confidence intervals), we must account for the randomization procedure used to assign treatment.
+
+. . .
+
+Each block can be considered a separate experiment, so for block $j$ with $N_J$ units, we can estimate the treatment effects in each block separately, and then average the estimates across blocks:
+
+$$\widehat{\textrm{ATE}} = \sum_{j=1}^J \frac{N_j}{N} \widehat{\textrm{ATE}_j}$$
+
+## Estimating Treatment Effects with Blocking
+
+```{r}
+#| label: blocking_estimatr
+#| echo: true
+
+block_estimate <- difference_in_means(
+  formula = reports ~ treatment,
+  blocks = block, # <1> 
+  data = col_data)
+```
+
+1.  Use the `blocks` argument to specify the blocking variable.
+
+. . .
+
+```{r}
+#| label: blocking_estimat_output
+#| echo: true
+
+estimate
+block_estimate
+```
+
+## Permutation Testing with Blocking
+
+```{r}
+#| label: blocking_permute
+#| echo: true
+
+block_permute <- function(data) { # <1>
+  N <- nrow(data)
+  m <- sum(data$treatment)
+  data$treatment <- block_ra(blocks = data$block, # <2>
+                             prob = m/N) 
+  
+  outcome_est <- difference_in_means(reports ~ treatment,
+                                     block = block, # <3>
+                                     data = data) 
+  tidied_outcome <- tidy(outcome_est) 
+  tidied_outcome
+}
+
+permuted_block <- map(1:1000, ~ block_permute(col_data)) |> # <4>
+  bind_rows()
+
+```
+
+1.  Define a function `block_permute` that takes a dataset.
+2.  Use the `block_ra` function to randomly assign treatment **within each block**.
+3.  Estimate treatment effect accounting for blocking.
+4.  Use the `map` to generate the sampling distribution of the treatment effect (under the sharp null)
+
+## Sampling Distribution
+
+```{r}
+#| label: blocking_permute_plot
+#| echo: true
+#| output-location: column
+#| fig.height: 10
+
+perms <- bind_rows(tibble(Randomization = "Blocked", 
+       Estimate = permuted_block$estimate), 
+  tibble(Randomization = "Simple", 
+         Estimate = pivoted$reports)) 
+
+ggplot(perms, aes(x = Estimate, 
+                  color = Randomization)) +
+  geom_density(size = 3) +
+  labs(title = "Sampling Distribution of ATE",
+       subtitle = "Blocked vs Simple Randomization",
+       x = "Estimate",
+       y = "Density") +
+  geom_vline(xintercept = tidy(block_estimate)$estimate, 
+             linetype = "dashed", 
+             linewidth = 2,
+             color = "red")
+
+
+```
+
+## Inference
+
+```{r}
+#| label: blocking_permute_pvalue
+#| echo: true
+
+## Calculate p-value
+## Blocked
+ mean(permuted_block$estimate > tidy(block_estimate)$estimate)
+
+## Simple
+ mean(pivoted$reports > tidy(estimate)$estimate)
+```
+
+Blocking:
+
+-   Ensures balance on important covariates
+-   Made our inferences more precise
+-   Changed how we estimate treatment effects and calculate p-values
+
+# Cluster Sampling
+
+## Cluster Randomization
+
+-   Sometimes the unit of randomization is not the same as the unit of analysis
+-   In Gabiras-Diáz and Montenegro, the unit of randomization is the municipality, but they also examine candidate-level outcomes.
+-   Following the principle of **analyze as ye randomize**, we need to account for the clustering of the treatment assignment when estimating treatment effects and uncertainty.
+
+## Cambridge
+
+![](images/cambridge_ward_precincts.png)
+
+Imagine you are sampling 100 Cambridge voters and asking them about their turnout in the most recent local election. You have two options:
+
+1.  You can randomly sample 100 voters using simple random sampling.
+2.  You can first randomly sample 2 precincts and then interview 50 voters in each sampled precinct.
+
+
+## Voter File
+
+```{r}
+#| label: cambridge_voter_file
+#| echo: true
+
+cambr_voter <- read_csv("cambridge_voter_history16_18.zip", 
+                        show_col_types = FALSE)
+filter(cambr_voter, last_name == "HIDALGO" & middle_name == "DANIEL") |>
+  glimpse()
+
+```
+
+## Turnout Heterogeneity
+
+```{r}
+#| label: cambridge_turnout
+#| echo: true
+#| output-location: slide
+
+cambr_voter$prec_code <- paste(cambr_voter$ward_number, 
+                               cambr_voter$precinct_number)
+
+cambr_voter |>
+  group_by(prec_code) |>
+  summarize(turnout = mean(turnout_110717, na.rm = TRUE)) |>
+## Order precinct by turnout
+  mutate(prec_code = fct_reorder(prec_code, turnout)) |>
+  ggplot(aes(x = prec_code, y = turnout)) +
+  geom_col() +
+  labs(title = "Turnout by Precinct",
+       x = "Precinct",
+       y = "Turnout Rate") +
+# Rotate x-axis labels
+theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+
+```
+## Two Sampling Distributions
+
+![](images/cambridge_cluster_sampdist.png)
+
+## Accounting for Clustered Sampling
+
+For estimation and inference, we need to account for the clustering of the treatment assignment. Otherwise, inferences can be very misleading!
+
+. . .
+
+Easiest and most direct way is to:
+
+  - Collapse the data to the cluster level by taking cluster-level averages 
+  - Estimate  treatment effect and conduct inference using the cluster-level data using our usual methods. 
+
+. . .
+
+Less direct way: 
+
+ - When using permutation inference or the bootstrap, **resample at the cluster level**.
+  - This will account for the clustering of the treatment assignment.
+
