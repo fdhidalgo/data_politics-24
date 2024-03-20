@@ -22,7 +22,7 @@ editor:
 ---
 
 ```{r}
-#| label: echo
+#| label: setup
 #| echo: false
 #| warning: false
 
