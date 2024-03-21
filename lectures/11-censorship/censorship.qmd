@@ -1,0 +1,211 @@
+---
+title: "Censorship in Authoritarian Regimes"
+subtitle: "Lecture 11"
+date: last-modified
+author: 
+  - name: F. Daniel Hidalgo
+    email: dhidalgo@mit.edu
+    affiliations: MIT
+format: 
+  clean-revealjs:
+    incremental: true
+engine: knitr
+execute: 
+  cache: true
+webr:
+  packages: ['tidyverse'] # Install R packages on document open
+  show-startup-message: false
+filters: 
+  - timer
+  - webr
+bibliography: ../data_politics_2024.bib
+editor:
+  render-on-save: true
+---
+
+```{r}
+#| label: setup
+#| echo: false
+#| warning: false
+#| cache: false
+
+library(tidyverse)
+library(hrbrthemes)
+library(gganimate)
+theme_set(theme_ipsum())
+```
+
+# Censorship in Authoritarian Regimes
+
+## Censorship and Authoritarian Control
+
+- What is the goal of censorship? 
+  - Stop criticism
+  - Stop collective action
+  - Change public opinion 
+  
+- Many predicted that internet would make censorship impossible. 
+  - But it has not. 
+  - Why not?
+
+# King, Pan, and Roberts (2014)
+
+## Censorship Patterns
+
+::: columns
+::: {.column width="50%"}
+![](images/kpr_aiweiwei.png)
+:::
+
+::: {.column .fragment width="50%"}
+![](images/kpr_onechild.png)
+:::
+:::
+
+## Censorship of Positive Comments
+
+![](images/kpr_lottery.png)
+
+
+## Chinese Censorship Decision Tree
+
+![](images/kpr_tree.png)
+
+## Experimental Design
+:::: columns
+
+::: {.column width="50%"}
+![](images/chinese_social_media.png)
+
+
+:::
+
+::: {.column width="50%"}
+
+- Top 100 social media sites in China
+  - 2 accounts on each site
+- Write 1,200 unique social media posts
+  - Collective action vs not Collective action
+  - Pro vs anti-government
+- Measure censorship
+
+:::
+
+::::
+
+## Collective Action Events
+
+
+1. Tibetan Self-immolation: 
+  
+  - Pro-government posts attribute the tragedy of her death on the Dalai Lama who is instigating these tragedies. 
+  - Anti-government posts attribube her death to government policies.
+
+2. Protest in Panxu village over illegal land seizure: 
+  
+  - Pro-government posts say that this sort of protest and violence is wrong and that the villagers are greedy and want money. 
+  - Anti-government posts say the local officials are unfair to the villagers.
+  
+## Other Events
+
+1. Corruption Policy: new policy that bribes over 10,000 Chinese yuan will be subject to criminal investigation and penalties
+
+  - Pro-government posts support this policy because it will reduce corruption
+  - Anti-government posts believe this policy is punishing those who give bribes but the real fault lies with officials who accept bribes and not those who are forced by the system to give bribes in order to get things done.
+
+2. Rental tax:  several cities in China are piloting taxes for renting housing
+
+  - Pro-government posts support the rental tax because it is income that should be taxed, just as income from salaries and wages are taxed.
+  - Anti-government posts criticize the tax saying it will increase already high rental taxes as landlords will push the tax onto renters.
+  
+  
+## Randomization
+
+Blocked on combination of 3 variables:
+
+- Keywords
+- Individual writer 
+- Length
+
+. . .
+
+Randomized:
+
+- Collective Action vs Not
+- Pro-government vs anti-government
+
+
+
+
+## Criticism of Government and Censorship
+
+![](images/kpr_crticism_effect.png)
+
+## Collective Action and Censorship
+
+
+![](images/kpr_collective_effect.png)
+
+# Other Experiments
+
+## Chen, Pan, and Xu (2015)
+
+**Question**: What makes officials in an authoritarian regime more responsive?
+
+
+Randomize appeals for help getting access to welfare program on county government help forums
+
+Control group: 
+
+> My wife and I have lost our jobs, and we have been unable to find work for a long time. Our economic situation is very difficult, and we cannot make ends meet. We have to support my elderly mother who is ill and for whom we have to buy medicine. We also have our son who is in school and has school fees and living fees that are difficult to bear. I have tried to apply
+for Dibao through my residential committee, but they say I am not eligible.
+
+
+## Chen, Pan, and Xu (2015)
+
+
+[Treatment Conditions]{.smallcaps}:
+
+- **Collective Action**: "People around me are in a similar situation, they face difficulties, and they also can’t get Dibao. If you can’t help, we’ll try to figure out what we can do together about this situation."
+
+- **Tattling**:  "If this problem cannot be addressed, I’ll have to report it to upper-level government officials."
+
+- **Loyalty**: "I’m a long-standing CCP member, I’ve always followed the leadership of the Party."
+
+## Chen et al Results
+
+![](images/cpx_results.png)
+
+## Chen and Yang (2019)
+
+**Questions**:
+
+1. What is the effect of censorship on knowledge and political attitudes? 
+2. Is their demand for uncensored content? 
+
+. . . 
+
+[**Experimental Design**]{.smallcaps}:
+
+- Sample: 1800 Beijing university students
+- Randomize 
+  - free VPN access
+  - Encouragement and incentives to visit foreign news websites
+- Measure: 
+  - website visits, continued use of VPN after incentive ends
+  - knowledge and attitudes
+  
+## Experimental Design
+
+![](images/cy_diagram.png)
+
+## Usage of NY Times (Chinese Version)
+
+![](images/cy_effects.png)
+
+## Demand for Uncensored Content
+
+![](images/cy_demand.png)
+
+## Effects on Attitudes
+![](images/cy_attitudes.png)

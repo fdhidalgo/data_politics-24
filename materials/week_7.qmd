@@ -11,7 +11,8 @@ title: "Week 7"
 ## Slides
 
 -   Lecture 9 (3/14): [Electoral Malfeasance](/lectures/09-fraud/fraud.qmd)
-- Lectur 10 (3/19): [Covariates in Experimental Design](/lectures/10-covar_design/covar_design.qmd)
+- Lecture 10 (3/19): [Covariates in Experimental Design](/lectures/10-covar_design/covar_design.qmd)
+- Lecture 11 (3/21): [Authoritarian Politics](/lectures/11-censorship/censorship.qmd)
 
 ## Assignments
 
