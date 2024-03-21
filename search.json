@@ -994,517 +994,6 @@
     "text": "References\n\n\n\n\n\n\n\n\nAllcott, Hunt, Luca Braghieri, Sarah Eichmeyer, and Matthew Gentzkow. 2020. “The Welfare Effects of Social Media.” American Economic Review 110 (3): 629–76. https://doi.org/10.1257/aer.20190658."
   },
   {
-    "objectID": "lectures/00-template/00-template.html#example-slide",
-    "href": "lectures/00-template/00-template.html#example-slide",
-    "title": "Quarto reveal.js clean",
-    "section": "Example slide",
-    "text": "Example slide\nThis is a subtitle\nBefore we dive a bit deeper, here is a simple example of the clean theme in action.\n\nNo pictures or anything fancy. Just text for the moment.\n\nNext, we’ll take a brief tour of some theme components.\n\nWe’ll use the same basic structure as the original LaTeX slides.\nNote that the full suite of Reveal.js features are available for this Quarto implementation, even if we don’t cover everything here."
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#before-you-proceed",
-    "href": "lectures/00-template/00-template.html#before-you-proceed",
-    "title": "Quarto reveal.js clean",
-    "section": "Before you proceed…",
-    "text": "Before you proceed…\nRequirements for the coding examples in this demo\n\n\n\n\n\n\nR libraries\n\n\nWhile the clean theme is language agnostic, we will use several R coding examples in this demo to highlight some advanced theme features.\nYou will need the following libraries if you’d like to render the template “as-is”:\ninstall.packages(c(\"modelsummary\", \"gt\", \"fixest\", \"pdftools\", \"tinytex\", \"threejs\"))\n\n\n\n\n\n\n\n\n\nTinyTex\n\n\nWhile reveal.js presentations are HTML format, we will show an example of how to embed LaTeX tables as images. This requires a working Tex distribution, of which TinyTex provides by far the easiest and lightest integration with Quarto. More details here.\nquarto install tinytex"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#components-1",
-    "href": "lectures/00-template/00-template.html#components-1",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nOrdered and Unordered Lists\nHere we have an unordered list.\n\nfirst item\n\nsub-item\n\nsecond item\n\nAnd next we have an ordered one.\n\nfirst item\n\nsub-item\n\nsecond item"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#components-2",
-    "href": "lectures/00-template/00-template.html#components-2",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nAlerts & Cross-refs\nTo emphasize specific words or text, you can:\n\nUse the default .alert class, e.g. important note.\nUse the .fg class for custom colour, e.g. important note.\nUse the .bg class for custom background, e.g. important note.\n\nTo cross-reference, you have several options, for example:\n\nBeamer-like .button class provided by this theme, e.g. Appendix\nQuarto’s native cross-ref syntax, e.g., “See Section 4.3.”"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#components-3",
-    "href": "lectures/00-template/00-template.html#components-3",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nCitations\nCitations follow the standard Quarto format and be sourced from BibLaTex, BibTeX, or CLS files. For example:\n\nTopic 1: Spatial Frictions (Fajgelbaum et al. 2018; Hsieh and Moretti 2019; Moretti 2011)\nTopic 2: Blah (Suárez Serrato and Zidar 2016)"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#components-4",
-    "href": "lectures/00-template/00-template.html#components-4",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nBlocks\nQuarto provides dedicated environments for theorems, lemmas, and so forth.\nBut in presentation format, it’s arguably more effective just to use a Callout Block.\n\n\n\n\n\n\nRegression Specification\n\n\nThe main specification is as follows:\n\\[\ny_{it} = X_{it} \\beta + \\mu_i + \\varepsilon_{it}\n\\]"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#components-5",
-    "href": "lectures/00-template/00-template.html#components-5",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nMulticolumn I: Text only\n\n\nColumn 1\nHere is a long sentence that will wrap onto the next line as it hits the column width, and continue this way until it stops.\n\nColumn 2\nSome other text in another column.\nA second paragraph.\n\n\nMulticolumn support is very flexible and we can continue with a single full span column in the same slide."
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#components-6",
-    "href": "lectures/00-template/00-template.html#components-6",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nMulticolumn II: Text and figures\n\n\n\n\n\nA point about the figure that is potentially important.\nAnother point about the figure that is also potentially important.\n\n\n\nNote that sub- and multi-panel figures are also natively supported by Quarto. See here."
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#components-7",
-    "href": "lectures/00-template/00-template.html#components-7",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nMulticolumn III: Code and output\n\n\npalette(\"Classic Tableau\")\n\npar(\n        family = \"HersheySans\",\n        las = 1, pch = 19, cex = 1.5\n)\n\npairs(\n        iris[, 1:4],\n        col = iris$Species\n)\n\n\n\n\n\n\n\n\nFigure 1: Pairwise scatterplot"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#tables-1",
-    "href": "lectures/00-template/00-template.html#tables-1",
-    "title": "Quarto reveal.js clean",
-    "section": "Tables",
-    "text": "Tables\nRegression example\nQuarto offers excellent table support, with further customization via user libraries. Let’s illustrate with a regression example:\n\nlibrary(fixest)\n\nmods &lt;- feols(\n        rating ~ complaints + privileges + learning + csw0(raises + critical) + advance,\n        data = attitude\n)\n\ndict &lt;- c(\n        \"rating\" = \"Overall Rating\",\n        \"complaints\" = \"Handling of Complaints\",\n        \"privileges\" = \"No Special Priviledges\",\n        \"learning\" = \"Opportunity to Learn\",\n        \"raises\" = \"Performance-Based Raises\",\n        \"critical\" = \"Too Critical\",\n        \"advance\" = \"Advancement\"\n)"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#regression-table",
-    "href": "lectures/00-template/00-template.html#regression-table",
-    "title": "Quarto reveal.js clean",
-    "section": "Regression table",
-    "text": "Regression table\nmodelsummary\nIf you use modelsummary with this Quarto theme, we advise setting the gt backend for a cleaner aesthetic. More details here.\n\nlibrary(modelsummary)\noptions(modelsummary_factory_default = \"gt\")\n\nmodelsummary(\n        setNames(mods, c(\"(1)\", \"(2)\")),\n        coef_map = dict, stars = TRUE,\n        gof_omit = \"Adj|IC|F|Log|RMSE\"\n) |&gt;\n        gt::tab_spanner(\n                label = \"Dependent variable: Overall Rating\",\n                columns = 2:3\n        )"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#regression-table-output",
-    "href": "lectures/00-template/00-template.html#regression-table-output",
-    "title": "Quarto reveal.js clean",
-    "section": "Regression table",
-    "text": "Regression table\n\n\n\n\n\n\n\n\n\nDependent variable: Overall Rating\n\n\n(1)\n(2)\n\n\n\n\nHandling of Complaints\n0.653***\n0.613***\n\n\n\n(0.131)\n(0.161)\n\n\nNo Special Priviledges\n-0.077\n-0.073\n\n\n\n(0.131)\n(0.136)\n\n\nOpportunity to Learn\n0.324+\n0.320+\n\n\n\n(0.157)\n(0.169)\n\n\nPerformance-Based Raises\n\n0.082\n\n\n\n\n(0.221)\n\n\nToo Critical\n\n0.038\n\n\n\n\n(0.147)\n\n\nAdvancement\n-0.172\n-0.217\n\n\n\n(0.149)\n(0.178)\n\n\nNum.Obs.\n30\n30\n\n\nR2\n0.729\n0.733\n\n\nStd.Errors\nIID\nIID\n\n\n\n+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#regression-table-1",
-    "href": "lectures/00-template/00-template.html#regression-table-1",
-    "title": "Quarto reveal.js clean",
-    "section": "Regression table",
-    "text": "Regression table\netable\nfixest’s powerful native tabling functions were designed for LaTeX output. But we can use the markdown = TRUE option to make them work with this theme too. (Details here.) Quick notes:\n\nInstall the tinytex & pdftools packages first.\nSet the R chunk option output: asis.\n\n```{{r}}\n#| output: asis\n\nsetFixest_etable(markdown = TRUE, drop = \"Constant\")\nsetFixest_dict(dict)\n\netable(mods, highlight = .(\"se\" = \"complaints\"))\n```"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#regression-table-2",
-    "href": "lectures/00-template/00-template.html#regression-table-2",
-    "title": "Quarto reveal.js clean",
-    "section": "Regression table",
-    "text": "Regression table\netable (cont.)"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#figure",
-    "href": "lectures/00-template/00-template.html#figure",
-    "title": "Quarto reveal.js clean",
-    "section": "Figure",
-    "text": "Figure"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#figure-1",
-    "href": "lectures/00-template/00-template.html#figure-1",
-    "title": "Quarto reveal.js clean",
-    "section": "Figure",
-    "text": "Figure\nFull-size Figures\nYou can use the {.background-image} container environment to completely fill the slide background with an image.\nIdeally, your figure will be the same aspect ratio as the screen that you’re presenting on.\n\nThis can be a bit tricky because of the dynamic nature of reveal.js / HTML. But it’s probably something close to 16:9.\nAspect ratio can also matter for a regular full-frame images (previous slide)."
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#interactive-plots",
-    "href": "lectures/00-template/00-template.html#interactive-plots",
-    "title": "Quarto reveal.js clean",
-    "section": "Interactive plots",
-    "text": "Interactive plots\n\n\n\n\n\n\nNote: Simple flight data example using threejs. There are many interactive plotting options beyond this. (More details.)"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#summary-1",
-    "href": "lectures/00-template/00-template.html#summary-1",
-    "title": "Quarto reveal.js clean",
-    "section": "Summary",
-    "text": "Summary\nA minimal and elegant presentation theme\nThe Quarto reveal.js clean theme aims to be a minimal and elegant presention theme.\nWe have highlighted some theme-specific components. But all of the regular reveal.js functionality is supported (chalkboard, etc.)\nInstall the theme:\nquarto install extension grantmcdermott/quarto-revealjs-clean\nUse these demo slides as a template:\nquarto use template grantmcdermott/quarto-revealjs-clean-demo"
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#references",
-    "href": "lectures/00-template/00-template.html#references",
-    "title": "Quarto reveal.js clean",
-    "section": "References",
-    "text": "References\n\n\nFajgelbaum, Pablo D, Eduardo Morales, Juan Carlos Suarez Serrato, and Owen Zidar. 2018. “State Taxes and Spatial Misallocation,” 90.\n\n\nHsieh, Chang-Tai, and Enrico Moretti. 2019. “Housing Constraints and Spatial Misallocation.” American Economic Journal: Macroeconomics 11 (2): 39.\n\n\nMoretti, Enrico. 2011. “Local Labor Markets.” In Handbook of Labor Economics. Vol. 4. Elsevier.\n\n\nSuárez Serrato, Juan Carlos, and Owen Zidar. 2016. “Who Benefits from State Corporate Tax Cuts? A Local Labor Markets Approach with Heterogeneous Firms.” American Economic Review 106 (9)."
-  },
-  {
-    "objectID": "lectures/00-template/00-template.html#sec-appendix",
-    "href": "lectures/00-template/00-template.html#sec-appendix",
-    "title": "Quarto reveal.js clean",
-    "section": "Appendix",
-    "text": "Appendix\n\n\n\n\nTable 1: Summary of the base R attitude dataset\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnique (#)\nMissing (%)\nMean\nSD\nMin\nMedian\nMax\n\n\n\n\n\nrating\n22\n0\n64.6\n12.2\n40.0\n65.5\n85.0\n\n\n\n   \n\n\n\ncomplaints\n23\n0\n66.6\n13.3\n37.0\n65.0\n90.0\n\n\n\n   \n\n\n\nprivileges\n24\n0\n53.1\n12.2\n30.0\n51.5\n83.0\n\n\n\n   \n\n\n\nlearning\n23\n0\n56.4\n11.7\n34.0\n56.5\n75.0\n\n\n\n   \n\n\n\nraises\n21\n0\n64.6\n10.4\n43.0\n63.5\n88.0\n\n\n\n   \n\n\n\ncritical\n21\n0\n74.8\n9.9\n49.0\n77.5\n92.0\n\n\n\n   \n\n\n\nadvance\n20\n0\n42.9\n10.3\n25.0\n41.0\n72.0\n\n\n\n   \n\n\n\n\n\n\n\n\n\n\n\n\nBack to main"
-  },
-  {
-    "objectID": "materials.html",
-    "href": "materials.html",
-    "title": "Materials",
-    "section": "",
-    "text": "Week 1: Course Introduction\nWeek 2: Intergroup Prejudice\nWeek 3: Intergroup Prejudice\nWeek 4: Partisanship vs Ideology\nWeek 5: Persuasion\nWeek 6: Combatting Electoral Fraud\nWeek 7: Censorship"
-  },
-  {
-    "objectID": "resources/r_setup.html",
-    "href": "resources/r_setup.html",
-    "title": "Setting up R and RStudio",
-    "section": "",
-    "text": "Go to the CRAN website and click on the download link for your operating system (Windows, Mac, or Linux).\n\n\nMacWindows\n\n\nClick on the R-X.X.X-arm64.pkg or R-X.X.X-x86_64.pkg link to download the installer. The precise file name depends on the latest version and whether you have an Intel processor or a newer ARM processor such as the M1, i.e. R-4.3.2-arm64.pkg. Once the download is complete, open the file and follow the installation instructions.\n\n\n\n\n\n\nTip\n\n\n\nTo determine whether you have an Intel or ARM processor, click on the Apple logo in the top left corner of your screen, select “About This Mac”, and look for the line that indicates “Chip” or “Processor”. If the line says something like “Apple M1” or “Apple M1 Pro”, you have an ARM processor. If it says something like “Intel Core i5” or “Intel Core i7”, you have an Intel processor.\n\n\n\n\nClick on the link that says base. Then click on the “Download R-X.X.X for Windows” link to download the installer. Once the download is complete, open the file and follow the installation instructions.\n\n\n\n\nOnce you have installed R, go to the download page for RStudio Desktop and click on the button that says “Download RStudio Desktop”. Once the download is complete, open the file and follow the installation instructions.\n\n\n\nThere are a few packages that we will use throughout the course. You can install them by starting RStudio and running the following commands in the console (lower left panel by default):\n\npackages &lt;- c(\n        \"tidyverse\", \"learnr\", \"estimatr\",\n        \"randomizr\", \"srvyr\"\n)\ninstall.packages(packages, repos = \"http://cran.rstudio.com\")\n\nFor assignments, we’ll need to produce PDFs from R and that requires a LaTeX distribution. We recommend using tinytex to install a minimal LaTeX distribution if you haven’t already installed LaTex on your system. You can install it by running the following command in the console:\n\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex() # install TinyTeX"
-  },
-  {
-    "objectID": "resources/r_setup.html#installing-required-r-packages",
-    "href": "resources/r_setup.html#installing-required-r-packages",
-    "title": "Setting up R and RStudio",
-    "section": "",
-    "text": "There are a few packages that we will use throughout the course. You can install them by starting RStudio and running the following commands in the console (lower left panel by default):\n\npackages &lt;- c(\n        \"tidyverse\", \"learnr\", \"estimatr\",\n        \"randomizr\", \"srvyr\"\n)\ninstall.packages(packages, repos = \"http://cran.rstudio.com\")\n\nFor assignments, we’ll need to produce PDFs from R and that requires a LaTeX distribution. We recommend using tinytex to install a minimal LaTeX distribution if you haven’t already installed LaTex on your system. You can install it by running the following command in the console:\n\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex() # install TinyTeX"
-  },
-  {
-    "objectID": "materials/week_3.html",
-    "href": "materials/week_3.html",
-    "title": "Week 3: Intergroup Prejudice",
-    "section": "",
-    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
-  },
-  {
-    "objectID": "materials/week_3.html#readings",
-    "href": "materials/week_3.html#readings",
-    "title": "Week 3: Intergroup Prejudice",
-    "section": "",
-    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
-  },
-  {
-    "objectID": "materials/week_3.html#slides",
-    "href": "materials/week_3.html#slides",
-    "title": "Week 3: Intergroup Prejudice",
-    "section": "Slides",
-    "text": "Slides\n\nIntergroup Contact and Data Visualization"
-  },
-  {
-    "objectID": "materials/week_3.html#class-exercises",
-    "href": "materials/week_3.html#class-exercises",
-    "title": "Week 3: Intergroup Prejudice",
-    "section": "Class Exercises",
-    "text": "Class Exercises\n\nIntergroup Contact"
-  },
-  {
-    "objectID": "materials/week_3.html#assignments",
-    "href": "materials/week_3.html#assignments",
-    "title": "Week 3: Intergroup Prejudice",
-    "section": "Assignments",
-    "text": "Assignments\n\nProblem Set 1: qmd link\nTutorial 2"
-  },
-  {
-    "objectID": "materials/week_6.html",
-    "href": "materials/week_6.html",
-    "title": "Week 6: Combatting Electoral Fraud",
-    "section": "",
-    "text": "Garbiras-Díaz and Montenegro (2016): link\nGerber and Green (2012), pgs 71-80"
-  },
-  {
-    "objectID": "materials/week_6.html#readings",
-    "href": "materials/week_6.html#readings",
-    "title": "Week 6: Combatting Electoral Fraud",
-    "section": "",
-    "text": "Garbiras-Díaz and Montenegro (2016): link\nGerber and Green (2012), pgs 71-80"
-  },
-  {
-    "objectID": "materials/week_6.html#slides",
-    "href": "materials/week_6.html#slides",
-    "title": "Week 6: Combatting Electoral Fraud",
-    "section": "Slides",
-    "text": "Slides\n\nLecture 7 (3/7): Measurement\nLecture 8 (3/12): More on Inference in Experiments\nLecture 9 (3/14): Electoral Malfeasance"
-  },
-  {
-    "objectID": "materials/week_6.html#assignments",
-    "href": "materials/week_6.html#assignments",
-    "title": "Week 6: Combatting Electoral Fraud",
-    "section": "Assignments",
-    "text": "Assignments\n\nReading Quiz\nProblem Set 3: qmd link, html version\nTutorial 3: Pivoting and Logical Functions"
-  },
-  {
-    "objectID": "materials/week_5.html",
-    "href": "materials/week_5.html",
-    "title": "Week 5: Persuasion and Measurement",
-    "section": "",
-    "text": "Broockman and Kalla (2016): link\nStantcheva (2023): link"
-  },
-  {
-    "objectID": "materials/week_5.html#readings",
-    "href": "materials/week_5.html#readings",
-    "title": "Week 5: Persuasion and Measurement",
-    "section": "",
-    "text": "Broockman and Kalla (2016): link\nStantcheva (2023): link"
-  },
-  {
-    "objectID": "materials/week_5.html#slides",
-    "href": "materials/week_5.html#slides",
-    "title": "Week 5: Persuasion and Measurement",
-    "section": "Slides",
-    "text": "Slides\n\nLecture 6 (3/5): Inference\nLecture 7 (3/7): Measurement"
-  },
-  {
-    "objectID": "materials/week_5.html#assignments",
-    "href": "materials/week_5.html#assignments",
-    "title": "Week 5: Persuasion and Measurement",
-    "section": "Assignments",
-    "text": "Assignments\n\nProblem Set 2: qmd link\nReading Quiz"
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "Tutorial 1: Introduction to R and Data Visualization\nTutorial 2: Data Wrangling\nTutorial 3: Pivoting and Logical Functions"
-  },
-  {
-    "objectID": "assignments.html#tutorials",
-    "href": "assignments.html#tutorials",
-    "title": "Assignments",
-    "section": "",
-    "text": "Tutorial 1: Introduction to R and Data Visualization\nTutorial 2: Data Wrangling\nTutorial 3: Pivoting and Logical Functions"
-  },
-  {
-    "objectID": "assignments.html#problem-sets",
-    "href": "assignments.html#problem-sets",
-    "title": "Assignments",
-    "section": "Problem Sets",
-    "text": "Problem Sets\n\nProblem Set 1: qmd link\nProblem Set 2: qmd link\nProblem Set 3: qmd link, html version"
-  },
-  {
-    "objectID": "psets/pset3.html#instructions",
-    "href": "psets/pset3.html#instructions",
-    "title": "Problem Set 3",
-    "section": "Instructions",
-    "text": "Instructions\nPlease submit this assignment on Gradescope by March 21. The qmd file can be submitted at the following link: https://www.dropbox.com/request/RUZLaoI90Au4X1PgZoke\nYou will need to submit the following two files:\n\nAn .qmd file (or “Quarto file” when spoken) that is a plain-text file that contains the text of your write-up and the code used to do all of the calculations for the assignment. You can write directly into this file in RStudio.\nAn output .pdf file that contains the compiled version of the qmd file. You can create this file by clicking the “Render” button in RStudio."
-  },
-  {
-    "objectID": "psets/pset3.html#importing-the-data",
-    "href": "psets/pset3.html#importing-the-data",
-    "title": "Problem Set 3",
-    "section": "Importing the data",
-    "text": "Importing the data\n\n# List Experiment Data\nlist_df &lt;- read_csv(\"https://www.dropbox.com/scl/fi/4cvtv58iat4cxqhbzqer0/list_df.csv?rlkey=rlog3wltunaymbe64xry55w6t&dl=1\", show_col_types = FALSE)\n\n# Attitude Change Data\nattitude_df &lt;- read_csv(\"https://www.dropbox.com/scl/fi/6zvwstark6auyfhufpceu/attitude_df.csv?rlkey=hlre5njsc5jhifbgi2bpxlipj&dl=1\", show_col_types = FALSE)"
-  },
-  {
-    "objectID": "psets/pset3.html#problem-1",
-    "href": "psets/pset3.html#problem-1",
-    "title": "Problem Set 3",
-    "section": "Problem 1",
-    "text": "Problem 1\nIn this first problem, we will analyze data from the following paper:\n\nAronow, Peter M. et al. “COMBINING LIST EXPERIMENTAND DIRECT QUESTION ESTIMATES OF SENSITIVE BEHAVIOR PREVALENCE” Journal of Survey Statistics and Methodology(2015): 43-66. https://doi:10.1093/jssam/smu023.\n\nAronow et al. (2015) explore the use of list experiments to estimate the prevalence of sensitive behaviors and compare those estimates to direct questions. In the paper, they compare estimates using these two measurement strategies for a variety of topics. We will look at the following two topics:\n\nOpposition to Muslim public school teachers\nWhether someone watches CNN\n\nThe list_df data includes the following variables:\n\nmuslim_list_treat and cnn_list_treat: treatment indicators for the two experiments\nmuslim_list_N and cnn_list_N: the number of items in the list counted by respondent\nmuslims_direct and cnn_direct: direct question responses where 1 = yes and 0 = no.\n\n\nProblem 1(a)\nExplain the intuition behind the list experiment design and how it can be used to estimate the prevalence of sensitive attitudes. What are the pros and cons of this approach? Think about the two issues we are focusing on here, why might the researchers have chosen to use a list experiment?\n\n\nProblem 1(b)\nUsing list_df, calculate the direct and indirect attitude estimates for each of the two behaviors. Additionally, calculate 95% confidence intervals for each of the estimates using a bootstrap. Plot your results.\n\n\n\n\n\n\nTip\n\n\n\nAt the start of your code chunk, please include set.seed(1234). This allows for the results that rely on random sampling (i.e.a bootstrap) to be reproducible.\n\n\n\n# Your code here\n\n\n\nProblem 1(c)\nNow interpret the results from your plot:\n\nHow do the estimates from the list experiment compare to the direct question estimates? What do you think might explain the differences between the two estimates?\nWhat about the uncertainty estimates? Interpret the confidence intervals and compare them between estimates.\n\n\n\nProblem 1(d)\nWhat might these results tell us about the trade-offs between the two measurement strategies? Think about both the point estimates and the uncertainty estimates."
-  },
-  {
-    "objectID": "psets/pset3.html#problem-2",
-    "href": "psets/pset3.html#problem-2",
-    "title": "Problem Set 3",
-    "section": "Problem 2",
-    "text": "Problem 2\nIn this second problem, we will analyze data from another paper:\n\nGraham, Mathew H. and Alexander Coppock. “ASKING ABOUT ATTITUDE CHANGE” Public Opinion Quarterly(2021): 28-53. https://doi:10.1093/poq/nfab009.\n\nGraham and Coppock (2021) critique a widely used method for measuring attitude change in surveys. Social scientists or survey researchers are often interested in how new information may or may not change attitudes. One way to test this involves using what Graham and Coppock call a change format question. These questions often take the following structure:\n\n\n\n\n\n\nExample 1: President Obama issued an executive order banning the CIA and other government organizations from torturing detainees.\nHow does this change your support for banning the CIA and other government organizations from torturing detainees? Less supportive, no difference, more supportive\n\n\n\n\n\n\n\n\n\nExample 2: President Trump issues an executive order that reduced restrictions on coal ash disposal.\nHow does this change your support for strict regulations on the disposal of coal ash, the pollutant left over after power plants burn coal? Less supportive, no difference, more supportive\n\n\n\nThis strategy essentially asks respondents to evaluate the causal effect of new information on their attitudes. Graham and Coppock argue that this strategy produces inflated estimates of attitude change. As an alternative, they propose a counterfactual format. This proposed question format has the following structure:\n\n\n\n\n\n\nPart 1: President Obama issued an executive order banning the CIA and other government organizations from torturing detainees.\nDo you support or oppose banning the CIA and other government organizations from torturing detainees? Oppose, Support\nPart 2: Imagine that you did not know that President Obama issued an executive order banning the CIA and other government organizations from torturing detainees.\nHow could you have answered the question: Do you support or oppose banning the CIA and other government organizations from torturing detainees? Oppose, support\n\n\n\nThis alternative method involves two steps: first respondents are reminded of the new information and asked to report their attitude as in the standard survey question. Second, respondents are then asked to imagine how they would have responded had they not known the new information.\n\nProblem 2(a)\nCritically evaluate these two question formats. What are some possible issues with the change question? How does the counterfactual format improve on these issues? Are there any downsides or remaining problems with the counterfactual format?\n\n\nProblem 2(b)\nFor this question we will use the attitude_df data frame. This data includes the following variables:\n\nParty: Respondent party identification\nFormat : The question format used to measure attitude change (Change or Counterfactual)\ntreat: Treatment indicator for the Counterfactual format\nYC: Combined outcome variable for both question formats\nY: Outcome variable for the first stage of the Counterfactual format\ntau_i_tilde: Individual level treatment effect of the Counterfactual format\n\nWe are going to compare the effectiveness of the two question formats in measuring attitude change. To do this, we will be using one of the experiments conducted by Graham and Coppock focused on the confirmation hearings of Supreme Court Justice Brett Kavanaugh. Respondents were told whether or not their Senator opposed Kavanaugh and then asked how that information changes the likelihood of supporting the Senator. To start, plot the distribution of responses in both the Change and the Counterfactual formats by Party ID. Figure 5 in the paper can be a useful guide for this plot.\n\n# Your code here\n\n\n\nProblem 2(c)\nNow we are going to take advantage of how the counterfactual format is designed to compare differences in the estimates of attitude change by Party ID. Subjects shown the counterfactual format are randomly assigned to a treatment and control group. Here is the question wording for each group:\n\n\n\n\n\n\nControl\nSenator [full name], a [Democrat / Republican] from [respondent’s state], [is running for/ will be up for] re-election in [2018 / 2020/ 2022].\nWill you support [last name] or [her / his] [Republican / Democratic] opponent?\nDefinitely oppose [last name], Probably oppose, Lean toward opposing, Lean toward supporting, Probably support, Definitely support [last name]\n(New Page) ——\n[Last name] voted against Brett Kavanaugh’s nomination to the Supreme Court. Before the vote, three women accused Kavanaugh of sexual assault.\nIf you had known this information, how would you have answered the question:\nWill you support [last name] or [her / his] [Democratic / Republican] opponent?\nDefinitely oppose [last name], Probably oppose, Lean toward opposing, Lean toward supporting, Probably support, Definitely support [last name]\n\n\n\n\n\n\n\n\n\nTreatment\nSenator [full name], a [Democrat / Republican] from [respondent’s state], [is running for/ will be up for] re-election in [2018 / 2020/ 2022].\n[Last name] voted against Brett Kavanaugh’s nomination to the Supreme Court. Before the vote, three women accused Kavanaugh of sexual assault.\nWill you support [last name] or [her / his] [Democratic / Republican] opponent?\nDefinitely oppose [last name], Probably oppose, Lean toward opposing, Lean toward supporting, Probably support, Definitely support [last name]\n(New Page) ——\nImagine you did not know that [last name] voted [for / against] Kavanaugh’s confirmation to the Supreme Court after allegation of sexual assault.\nHow would you have answered the question:\nWill you support [last name] or [her / his] [Democratic / Republican] opponent?\nDefinitely oppose [last name], Probably oppose, Lean toward opposing, Lean toward supporting, Probably support, Definitely support [last name]\n\n\n\nHere is a diagram of the research design:\n\n\n\n\n\n\n\n\n\n\n\nflowchart TD\n  A[Start Survey] --&gt; B[Control]\n  B --&gt; C[Do you support a challenger to your Senator?] \n  C --&gt; D[Information about Kavanaugh vote]\n  D --&gt; E[How would you have answered this question &lt;br/&gt; if you had know this information?]\n  \n  A --&gt; F[Treatment]\n  F --&gt; G[Information about Kavanaugh vote]\n  G --&gt; H[Do you support a challenger to your Senator?] \n  H --&gt; I[Imagine you did not know that information, how &lt;br/&gt; would you have answered the question?]\n\n\n\n\n\n\n\n\n\nIn the control condition, respondents are first asked to report whether they support a challenger to their Senator (\\(Y_i(0)\\)). Next, they are presented information about how their Senator opposed Kavanaugh as well as about the allegations against Kavanaugh. They were then asked how they would have answered the initial question if they had known this information (\\(\\tilde{Y_i(1)}\\)). We call this outcome \\(\\tilde{Y_i(1)}\\) because we are asking respondents to guess at their own potential outcome under treatment. Remember, we can never truly observe both potential outcomes. This design provides a best guess.\nIn the treatment condition, respondents are presented the information about the Kavanuagh vote and are asked whether they support a challenger to their Senator (\\(Y_i(1)\\)). Next, respondents are asked to imagine they had not known about their Senators opposition and the allegations and asked how they would have answered the initial question (\\(\\tilde{Y_i(0)}\\)). Again, this is \\(\\tilde{Y_i(0)}\\) because we are asking respondents to guess at their own potential outcome under control.\nAssuming respondent’s guesses about their counterfactual attitudes are correct, then \\(\\tilde{Y_i(1)} = Y_i(1)\\) and \\(\\tilde{Y_i(0)} = Y_i(0)\\). Denoting \\(D\\) as the treatment indicator, we can calculate individual level treatment effects:\n\\[(\\tilde{\\tau_i}|D=0) = E[\\tilde{Y_i(1)} - Y_i(0)] \\] \\[(\\tilde{\\tau_i}|D=1) = E[Y_i(1) - \\tilde{Y_i(0)}]\\]\nWe can then use these individual level treatment effects to calculate the average treatment effect:\n\\[ATE_{CF} = \\frac{\\sum^N_i\\tilde{\\tau_i}}{N}\\]\nTo start, use attitude_df to calculate the difference in means for the first stage of the Counterfactual format for each party. This calculation ignores the additional information from the counterfactual guesses. In other words, here you are calculating the average difference in in support for a Senate challenger based on whether they saw information on support for Kavanaugh. To calculate this, use the variable Y in the data frame. Report the point estimates with 95% confidence intervals calculated using a bootstrap.\n\n# Your code here\n\nNow calculate the average treatment effect for each party using tau_i_tilde as the outcome variable. This calculation takes into account the full experimental design and counterfactual guesses. Report the point estimates with a 95% confidence intervals calculated using a bootstrap.\n\n# Your code here\n\nNext, calculate the difference between these two estimates. In other words, you are calculating the difference between the first-stage difference-in-means and the counterfactual average treatment effect. Report the point estimate and a 95% confidence interval calculated using a bootstrap.\n\n# Your code here\n\n\n\nProblem 2(d)\nPlot all three point estimates with 95% confidence intervals in a single plot. Interpret the results of your plot. Be sure to interpret both the point estimates and confidence intervals. Are the two estimates different? What does the difference between the estimates tell us? What do the results say about the validity of the two different question formats? Are you persuaded by Graham and Coppock’s proposed question format?\n\n# Your code here"
-  },
-  {
-    "objectID": "psets/pset3.html#problem-3",
-    "href": "psets/pset3.html#problem-3",
-    "title": "Problem Set 3",
-    "section": "Problem 3",
-    "text": "Problem 3\nPropose a research question that would benefit from the use of one of the measurement strategies we learned in class. This can range from the racial resentment scale to a list experiment or an IAT. Explain why the measurement strategy is appropriate and preferable to alternatives. How does it connect to the concept you are interested in measuring? What are some possible trade-offs of using when this measurement strategy?"
-  },
-  {
-    "objectID": "psets/pset3.html#problem-4-ungraded",
-    "href": "psets/pset3.html#problem-4-ungraded",
-    "title": "Problem Set 3",
-    "section": "Problem 4 (Ungraded)",
-    "text": "Problem 4 (Ungraded)\nWe are almost halfway through the semester! That means we need to start thinking about the final class project. To start brainstorming ideas, please provide two topics that you would be interesting in studying that can be studied in the context of a survey of Americans."
-  },
-  {
-    "objectID": "materials/week_4.html",
-    "href": "materials/week_4.html",
-    "title": "Week 4: Partisanship and Ideology",
-    "section": "",
-    "text": "Barber and Pope (2019): Perusall link, direct link\n\nOptional Reading: Trump is a real world political science experiment\n\nGreen and Gerber, pgs 51-71: Perusall link"
-  },
-  {
-    "objectID": "materials/week_4.html#readings",
-    "href": "materials/week_4.html#readings",
-    "title": "Week 4: Partisanship and Ideology",
-    "section": "",
-    "text": "Barber and Pope (2019): Perusall link, direct link\n\nOptional Reading: Trump is a real world political science experiment\n\nGreen and Gerber, pgs 51-71: Perusall link"
-  },
-  {
-    "objectID": "materials/week_4.html#slides",
-    "href": "materials/week_4.html#slides",
-    "title": "Week 4: Partisanship and Ideology",
-    "section": "Slides",
-    "text": "Slides\n\nLecture 4 (2/27): Estimation of Causal Effects and Data Manipulation in R\nLecture 5 (2/29): Partisanship and Ideology"
-  },
-  {
-    "objectID": "materials/week_4.html#assignments",
-    "href": "materials/week_4.html#assignments",
-    "title": "Week 4: Partisanship and Ideology",
-    "section": "Assignments",
-    "text": "Assignments\n\nProblem Set 1: qmd link\nTutorial 2"
-  },
-  {
-    "objectID": "materials/week_7.html",
-    "href": "materials/week_7.html",
-    "title": "Week 7",
-    "section": "",
-    "text": "Garbiras-Díaz and Montenegro (2016): link\nKing, Pan, and Roberts (2014): link\nGreen and Gerber, pgs 80-85"
-  },
-  {
-    "objectID": "materials/week_7.html#readings",
-    "href": "materials/week_7.html#readings",
-    "title": "Week 7",
-    "section": "",
-    "text": "Garbiras-Díaz and Montenegro (2016): link\nKing, Pan, and Roberts (2014): link\nGreen and Gerber, pgs 80-85"
-  },
-  {
-    "objectID": "materials/week_7.html#slides",
-    "href": "materials/week_7.html#slides",
-    "title": "Week 7",
-    "section": "Slides",
-    "text": "Slides\n\nLecture 9 (3/14): Electoral Malfeasance\nLectur 10 (3/19): Covariates in Experimental Design"
-  },
-  {
-    "objectID": "materials/week_7.html#assignments",
-    "href": "materials/week_7.html#assignments",
-    "title": "Week 7",
-    "section": "Assignments",
-    "text": "Assignments\n\nReading Quiz\nProblem Set 3: qmd link, html version\nTutorial 3: Pivoting and Logical Functions"
-  },
-  {
-    "objectID": "materials/week_2.html",
-    "href": "materials/week_2.html",
-    "title": "Week 2: Intergroup Prejudice",
-    "section": "",
-    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
-  },
-  {
-    "objectID": "materials/week_2.html#readings",
-    "href": "materials/week_2.html#readings",
-    "title": "Week 2: Intergroup Prejudice",
-    "section": "",
-    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
-  },
-  {
-    "objectID": "materials/week_2.html#assignments",
-    "href": "materials/week_2.html#assignments",
-    "title": "Week 2: Intergroup Prejudice",
-    "section": "Assignments",
-    "text": "Assignments\n\nReading Quiz 1\nTutorial 1\nProblem Set 1: qmd link"
-  },
-  {
-    "objectID": "materials/week_1.html",
-    "href": "materials/week_1.html",
-    "title": "Week 1: Course Introduction",
-    "section": "",
-    "text": "RDS Chapter 2\nGerber and Green, pgs. 1-30"
-  },
-  {
-    "objectID": "materials/week_1.html#readings",
-    "href": "materials/week_1.html#readings",
-    "title": "Week 1: Course Introduction",
-    "section": "",
-    "text": "RDS Chapter 2\nGerber and Green, pgs. 1-30"
-  },
-  {
-    "objectID": "materials/week_1.html#slides",
-    "href": "materials/week_1.html#slides",
-    "title": "Week 1: Course Introduction",
-    "section": "Slides",
-    "text": "Slides\n\n2/6: Course Introduction\n2/8: Casuality and Introduction to R"
-  },
-  {
-    "objectID": "materials/week_1.html#class-excercises",
-    "href": "materials/week_1.html#class-excercises",
-    "title": "Week 1: Course Introduction",
-    "section": "Class Excercises",
-    "text": "Class Excercises\n\n2/8: Facebook Study\n\nR Script\nQuarto File"
-  },
-  {
-    "objectID": "materials/week_1.html#resources",
-    "href": "materials/week_1.html#resources",
-    "title": "Week 1: Course Introduction",
-    "section": "Resources",
-    "text": "Resources\n\nInstalling R and Rstudio"
-  },
-  {
-    "objectID": "materials/week_1.html#assignments",
-    "href": "materials/week_1.html#assignments",
-    "title": "Week 1: Course Introduction",
-    "section": "Assignments",
-    "text": "Assignments\n\nTutorial 1"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Data and Politics",
-    "section": "",
-    "text": "Welcome to the course website of 17.831 Data and Politics. This course is taught by F. Daniel Hidalgo at MIT in the Spring of 2024."
-  },
-  {
-    "objectID": "index.html#instructor",
-    "href": "index.html#instructor",
-    "title": "Data and Politics",
-    "section": "Instructor",
-    "text": "Instructor\n\n F. Daniel Hidalgo\n E53-402\n dhidalgo@mit.edu"
-  },
-  {
-    "objectID": "index.html#course-details",
-    "href": "index.html#course-details",
-    "title": "Data and Politics",
-    "section": "Course Details",
-    "text": "Course Details\n\n Tuesdays and Thursdays\n 9:30-11:00am\n 56-154"
-  },
-  {
-    "objectID": "index.html#contact",
-    "href": "index.html#contact",
-    "title": "Data and Politics",
-    "section": "Contact",
-    "text": "Contact\n\n Office Hours\n Piazza\n Canvas"
-  },
-  {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "F. Daniel Hidalgo\n E53-402\n dhidalgo@mit.edu\n Office Hours\n\n\n\n\n Tuesdays and Thursdays\n 9:30-11:00am\n 56-154\n Piazza"
-  },
-  {
-    "objectID": "syllabus.html#course-objectives",
-    "href": "syllabus.html#course-objectives",
-    "title": "Syllabus",
-    "section": "Course Objectives",
-    "text": "Course Objectives\nMany of the most pressing social problems have political causes and consequences. Rather than just passively observing these problems, social scientists have developed a range of tools that involve interventions and data collection to understand and address these problems. This course will focus on two essential data-intensive tools for understanding social dynamics: experiments and surveys. Experiments allow us to understand the causal effects of policies and interventions, while surveys allow us to measure difficult-to-observe attitudes and behaviors in a population. This course will provide an introduction to the design and analysis of experiments and surveys through the lens of innovative research in political science and public policy. The course will focus on various substantive topics, including discriminatory attitudes, political participation, combatting voter fraud, and misinformation. Students will analyze actual data and design and field their survey experiment on a chosen topic.\nBy the end of this course, students will be able to:\n\nDescribe how experimental and survey methods can be used to understand pressing social problems.\nDesign surveys and experiments that are applicable to a variety of social settings.\nUse statistical principles to evaluate the quality of survey and experimental designs.\nApply statistical models to experimental and survey data.\nAnalyze data using modern statistical computing tools, in particular the statistical programming language R.\n\n\nExpectations\nIn this course, you will be expected to:\n\nComplete six problem sets.\nComplete regular reading quizzes.\nComplete eight weekly tutorials.\nParticipate in in-person and online class discussions.\nDesign and implement a survey experiment with a diverse sample.\n\n\n\nPrerequisites\nNo prerequisites will be assumed."
-  },
-  {
-    "objectID": "syllabus.html#course-structure",
-    "href": "syllabus.html#course-structure",
-    "title": "Syllabus",
-    "section": "Course Structure",
-    "text": "Course Structure\nThe basic cadence of the course will be as follows, though there may be small differences depending on the week:\n\nMonday: Complete reading, watch course lectures, and complete reading quiz.\nTuesday: Class meets.\nWednesday: Complete coding tutorial, submit assignments (if due)\nThursday: Class meets; assignments are posted\n\n\nClass Lectures\nClass lectures will be a mix of traditional lectures, in-class activities, and group discussions. In addition to in-class lectures, I may occasionally post a recorded lecture. During lecture, we will often be working with data and code, so please bring a computer to class, if possible.\n\n\nTutorials\nWe will assign short weekly coding tutorials that will assess your knowledge of the class materials and prepare you for the in-class activities. Tutorials will primarily be graded based on completion and not whether the answers are correct. Tutorials will generally be due on Wednesday by 11:59pm ET.\n\n\nProblem Sets\nCompetence at the design and analysis of experiments and surveys requires practice with real world datasets and the design of simulations. For the first 2/3 of the course, I will assign problem sets that will give you the opportunity to practice the methods you learn in the course. The problem sets will often involve the creation of a simulation and/or the analysis of data from an assigned reading. In the second half of the course, substantial parts of the problem set will be devoted to the design of the class project.\nI will assign six problem sets throughout the semester. They will be due on Thursdays by 11:59pm ET. I encourage students to work in groups, but each student must submit their own assignment.\n\n\n\n\n\n\nLowest Homework Grade is Dropped\n\n\n\nWhen calculating the overall homework grade, I will drop the lowest homework grade. This is to account for unexpected events that may prevent you from completing an assignment on time.\n\n\n\n\nOnline Forum\nWe will use Piazza for class discussions. If you are having trouble with a question on a problem set or on a reading, please post your question using Piazza. I strongly encourage students to assist in answering questions as they come up. Except under unusual circumstances, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours. The site is: https://piazza.com/mit/spring2024/17831/home\n\n\nGrading\nThe final grade in the course will be based on the following components:\n\n\n\nCategory\nPercent of Final Grade\n\n\n\n\nCoding Tutorials\n5%\n\n\nReading Quizzes\n5%\n\n\nProblem Sets\n50%\n\n\nClass Participation\n25%\n\n\nClass Project Writeup\n15%\n\n\n\nClass participation is based on participation in class discussions, presentations, and activities, as well as participation in Piazza discussions."
-  },
-  {
-    "objectID": "syllabus.html#class-project",
-    "href": "syllabus.html#class-project",
-    "title": "Syllabus",
-    "section": "Class Project",
-    "text": "Class Project\nFor the final project, we will collectively design and implement an experiment embedded in a short survey. In the second half of the semester, we will devote time each week to design the survey and experiment. The goal of this project is to give students experience crafting a research design and collecting real data on a question of interest. The data will be collected on US adults through a crowd-sourcing platform. While we will collectively design the survey and experiment, each student will be responsible for pre-registering their analysis, analyzing the data and writing up the results on their own.\nStudents in the class will:\n\nPropose a research question.\nDesign an intervention suitable for a survey experiment.\nWrite a questionnaire.\nDesign a sampling plan and analysis strategy sufficient for answering their research question.\nPre-register their study.\nAnalyze and write up the results of the study."
-  },
-  {
-    "objectID": "syllabus.html#course-policies",
-    "href": "syllabus.html#course-policies",
-    "title": "Syllabus",
-    "section": "Course Policies",
-    "text": "Course Policies\n\nLate Policy\nFor problem sets submitted late, we will deduct 10% of the grade for each day late. Problem sets will not be accepted more than three days after the due date. This penalty will be waived in the case of a documented medical or family emergency.\n\n\nOffice Hours and Getting Help\nI hold regular weekly office hours on Friday afternoons. Please sign up for in-person or zoom office hours at the following link: https://fantastical.app/dhidalgo/office-hours.\nIf you run into problems that you can’t solve on your own, please use the class website on Piazza to post questions. I strongly encourage students to assist in answering questions as they come up. Unless absolutely necessary, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours.\n\n\nAI Tools\nThe use of generative AI tools such as ChatGPT is allowed for your assignments in this class. However, a central goal of the class is to help you become independent and critical thinkers, so we discourage you from the extensive use of generative AI tools for writing code or answers to problem sets.\nIf you do use AI-generated content in your assignments, you must clearly indicate what work is yours and what part is AI-generated through proper attribution. We also ask you provide a short one-paragraph summary at the beginning of the assignment on how you used AI tools."
-  },
-  {
-    "objectID": "syllabus.html#course-materials",
-    "href": "syllabus.html#course-materials",
-    "title": "Syllabus",
-    "section": "Course Materials",
-    "text": "Course Materials\n\nReadings\nAlmost all readings for the course are available online and linked from the course website in the schedule page or in each week’s materials page page.\nThe one exception is that you should purchase the following book:\n\n\n\n\n\n\nRequired Purchase\n\n\n\nGerber, Alan S., and Donald P. Green. Field Experiments: Design, Analysis, and Interpretation. New York London: W. W. Norton & Company, 2012.\n\n\n\n\nComputing\nWe will use R for all of the data analysis in this course. R is a free, open-source statistical programming language that is widely used in the social sciences. We will use the RStudio integrated development environment (IDE) to write and execute R code. RStudio is also free and open-source.\nYou should install R on your own computer, but to forestall any installation problems, we will provide the option to use the Posit Cloud service for the first few weeks of the course. This service allows you to run R and RStudio in your web browser. This cloud service can be resource constrained, however, so it is strongly recommended that you install R and RStudio on your own computer as soon as possible."
-  },
-  {
-    "objectID": "syllabus.html#acknowledgements",
-    "href": "syllabus.html#acknowledgements",
-    "title": "Syllabus",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nPartly inspired by courses offered by Graeme Blair, Brendan Nyan, Matt Blackwell, and Andrew Heiss. Many thanks to them for sharing their materials and syllabi."
-  },
-  {
     "objectID": "lectures/01-introduction/introduction.html#data-and-politics",
     "href": "lectures/01-introduction/introduction.html#data-and-politics",
     "title": "Data and Politics",
@@ -1650,6 +1139,643 @@
     "title": "Data and Politics",
     "section": "References",
     "text": "References\n\n\n\n\n\n\n\n\nAhler, Douglas J., and Gaurav Sood. 2018. “The Parties in Our Heads: Misperceptions about Party Composition and Their Consequences.” The Journal of Politics 80 (3): 964–81. https://doi.org/10.1086/697253.\n\n\nBroockman, David, and Joshua Kalla. 2016. “Durably Reducing Transphobia: A Field Experiment on Door-to-Door Canvassing.” Science 352 (6282): 220–24. https://doi.org/10.1126/science.aad9713.\n\n\nGarbiras-Díaz, Natalia, and Mateo Montenegro. 2022. “All Eyes on Them: A Field Experiment on Citizen Oversight and Electoral Integrity.” American Economic Review 112 (8): 2631–68. https://doi.org/10.1257/aer.20210778.\n\n\nMousa, Salma. 2020. “Building Social Cohesion Between Christians and Muslims Through Soccer in Post-ISIS Iraq.” Science 369 (6505): 866–70. https://doi.org/10.1126/science.abb3153."
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "F. Daniel Hidalgo\n E53-402\n dhidalgo@mit.edu\n Office Hours\n\n\n\n\n Tuesdays and Thursdays\n 9:30-11:00am\n 56-154\n Piazza"
+  },
+  {
+    "objectID": "syllabus.html#course-objectives",
+    "href": "syllabus.html#course-objectives",
+    "title": "Syllabus",
+    "section": "Course Objectives",
+    "text": "Course Objectives\nMany of the most pressing social problems have political causes and consequences. Rather than just passively observing these problems, social scientists have developed a range of tools that involve interventions and data collection to understand and address these problems. This course will focus on two essential data-intensive tools for understanding social dynamics: experiments and surveys. Experiments allow us to understand the causal effects of policies and interventions, while surveys allow us to measure difficult-to-observe attitudes and behaviors in a population. This course will provide an introduction to the design and analysis of experiments and surveys through the lens of innovative research in political science and public policy. The course will focus on various substantive topics, including discriminatory attitudes, political participation, combatting voter fraud, and misinformation. Students will analyze actual data and design and field their survey experiment on a chosen topic.\nBy the end of this course, students will be able to:\n\nDescribe how experimental and survey methods can be used to understand pressing social problems.\nDesign surveys and experiments that are applicable to a variety of social settings.\nUse statistical principles to evaluate the quality of survey and experimental designs.\nApply statistical models to experimental and survey data.\nAnalyze data using modern statistical computing tools, in particular the statistical programming language R.\n\n\nExpectations\nIn this course, you will be expected to:\n\nComplete six problem sets.\nComplete regular reading quizzes.\nComplete eight weekly tutorials.\nParticipate in in-person and online class discussions.\nDesign and implement a survey experiment with a diverse sample.\n\n\n\nPrerequisites\nNo prerequisites will be assumed."
+  },
+  {
+    "objectID": "syllabus.html#course-structure",
+    "href": "syllabus.html#course-structure",
+    "title": "Syllabus",
+    "section": "Course Structure",
+    "text": "Course Structure\nThe basic cadence of the course will be as follows, though there may be small differences depending on the week:\n\nMonday: Complete reading, watch course lectures, and complete reading quiz.\nTuesday: Class meets.\nWednesday: Complete coding tutorial, submit assignments (if due)\nThursday: Class meets; assignments are posted\n\n\nClass Lectures\nClass lectures will be a mix of traditional lectures, in-class activities, and group discussions. In addition to in-class lectures, I may occasionally post a recorded lecture. During lecture, we will often be working with data and code, so please bring a computer to class, if possible.\n\n\nTutorials\nWe will assign short weekly coding tutorials that will assess your knowledge of the class materials and prepare you for the in-class activities. Tutorials will primarily be graded based on completion and not whether the answers are correct. Tutorials will generally be due on Wednesday by 11:59pm ET.\n\n\nProblem Sets\nCompetence at the design and analysis of experiments and surveys requires practice with real world datasets and the design of simulations. For the first 2/3 of the course, I will assign problem sets that will give you the opportunity to practice the methods you learn in the course. The problem sets will often involve the creation of a simulation and/or the analysis of data from an assigned reading. In the second half of the course, substantial parts of the problem set will be devoted to the design of the class project.\nI will assign six problem sets throughout the semester. They will be due on Thursdays by 11:59pm ET. I encourage students to work in groups, but each student must submit their own assignment.\n\n\n\n\n\n\nLowest Homework Grade is Dropped\n\n\n\nWhen calculating the overall homework grade, I will drop the lowest homework grade. This is to account for unexpected events that may prevent you from completing an assignment on time.\n\n\n\n\nOnline Forum\nWe will use Piazza for class discussions. If you are having trouble with a question on a problem set or on a reading, please post your question using Piazza. I strongly encourage students to assist in answering questions as they come up. Except under unusual circumstances, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours. The site is: https://piazza.com/mit/spring2024/17831/home\n\n\nGrading\nThe final grade in the course will be based on the following components:\n\n\n\nCategory\nPercent of Final Grade\n\n\n\n\nCoding Tutorials\n5%\n\n\nReading Quizzes\n5%\n\n\nProblem Sets\n50%\n\n\nClass Participation\n25%\n\n\nClass Project Writeup\n15%\n\n\n\nClass participation is based on participation in class discussions, presentations, and activities, as well as participation in Piazza discussions."
+  },
+  {
+    "objectID": "syllabus.html#class-project",
+    "href": "syllabus.html#class-project",
+    "title": "Syllabus",
+    "section": "Class Project",
+    "text": "Class Project\nFor the final project, we will collectively design and implement an experiment embedded in a short survey. In the second half of the semester, we will devote time each week to design the survey and experiment. The goal of this project is to give students experience crafting a research design and collecting real data on a question of interest. The data will be collected on US adults through a crowd-sourcing platform. While we will collectively design the survey and experiment, each student will be responsible for pre-registering their analysis, analyzing the data and writing up the results on their own.\nStudents in the class will:\n\nPropose a research question.\nDesign an intervention suitable for a survey experiment.\nWrite a questionnaire.\nDesign a sampling plan and analysis strategy sufficient for answering their research question.\nPre-register their study.\nAnalyze and write up the results of the study."
+  },
+  {
+    "objectID": "syllabus.html#course-policies",
+    "href": "syllabus.html#course-policies",
+    "title": "Syllabus",
+    "section": "Course Policies",
+    "text": "Course Policies\n\nLate Policy\nFor problem sets submitted late, we will deduct 10% of the grade for each day late. Problem sets will not be accepted more than three days after the due date. This penalty will be waived in the case of a documented medical or family emergency.\n\n\nOffice Hours and Getting Help\nI hold regular weekly office hours on Friday afternoons. Please sign up for in-person or zoom office hours at the following link: https://fantastical.app/dhidalgo/office-hours.\nIf you run into problems that you can’t solve on your own, please use the class website on Piazza to post questions. I strongly encourage students to assist in answering questions as they come up. Unless absolutely necessary, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours.\n\n\nAI Tools\nThe use of generative AI tools such as ChatGPT is allowed for your assignments in this class. However, a central goal of the class is to help you become independent and critical thinkers, so we discourage you from the extensive use of generative AI tools for writing code or answers to problem sets.\nIf you do use AI-generated content in your assignments, you must clearly indicate what work is yours and what part is AI-generated through proper attribution. We also ask you provide a short one-paragraph summary at the beginning of the assignment on how you used AI tools."
+  },
+  {
+    "objectID": "syllabus.html#course-materials",
+    "href": "syllabus.html#course-materials",
+    "title": "Syllabus",
+    "section": "Course Materials",
+    "text": "Course Materials\n\nReadings\nAlmost all readings for the course are available online and linked from the course website in the schedule page or in each week’s materials page page.\nThe one exception is that you should purchase the following book:\n\n\n\n\n\n\nRequired Purchase\n\n\n\nGerber, Alan S., and Donald P. Green. Field Experiments: Design, Analysis, and Interpretation. New York London: W. W. Norton & Company, 2012.\n\n\n\n\nComputing\nWe will use R for all of the data analysis in this course. R is a free, open-source statistical programming language that is widely used in the social sciences. We will use the RStudio integrated development environment (IDE) to write and execute R code. RStudio is also free and open-source.\nYou should install R on your own computer, but to forestall any installation problems, we will provide the option to use the Posit Cloud service for the first few weeks of the course. This service allows you to run R and RStudio in your web browser. This cloud service can be resource constrained, however, so it is strongly recommended that you install R and RStudio on your own computer as soon as possible."
+  },
+  {
+    "objectID": "syllabus.html#acknowledgements",
+    "href": "syllabus.html#acknowledgements",
+    "title": "Syllabus",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nPartly inspired by courses offered by Graeme Blair, Brendan Nyan, Matt Blackwell, and Andrew Heiss. Many thanks to them for sharing their materials and syllabi."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data and Politics",
+    "section": "",
+    "text": "Welcome to the course website of 17.831 Data and Politics. This course is taught by F. Daniel Hidalgo at MIT in the Spring of 2024."
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "Data and Politics",
+    "section": "Instructor",
+    "text": "Instructor\n\n F. Daniel Hidalgo\n E53-402\n dhidalgo@mit.edu"
+  },
+  {
+    "objectID": "index.html#course-details",
+    "href": "index.html#course-details",
+    "title": "Data and Politics",
+    "section": "Course Details",
+    "text": "Course Details\n\n Tuesdays and Thursdays\n 9:30-11:00am\n 56-154"
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "Data and Politics",
+    "section": "Contact",
+    "text": "Contact\n\n Office Hours\n Piazza\n Canvas"
+  },
+  {
+    "objectID": "materials/week_1.html",
+    "href": "materials/week_1.html",
+    "title": "Week 1: Course Introduction",
+    "section": "",
+    "text": "RDS Chapter 2\nGerber and Green, pgs. 1-30"
+  },
+  {
+    "objectID": "materials/week_1.html#readings",
+    "href": "materials/week_1.html#readings",
+    "title": "Week 1: Course Introduction",
+    "section": "",
+    "text": "RDS Chapter 2\nGerber and Green, pgs. 1-30"
+  },
+  {
+    "objectID": "materials/week_1.html#slides",
+    "href": "materials/week_1.html#slides",
+    "title": "Week 1: Course Introduction",
+    "section": "Slides",
+    "text": "Slides\n\n2/6: Course Introduction\n2/8: Casuality and Introduction to R"
+  },
+  {
+    "objectID": "materials/week_1.html#class-excercises",
+    "href": "materials/week_1.html#class-excercises",
+    "title": "Week 1: Course Introduction",
+    "section": "Class Excercises",
+    "text": "Class Excercises\n\n2/8: Facebook Study\n\nR Script\nQuarto File"
+  },
+  {
+    "objectID": "materials/week_1.html#resources",
+    "href": "materials/week_1.html#resources",
+    "title": "Week 1: Course Introduction",
+    "section": "Resources",
+    "text": "Resources\n\nInstalling R and Rstudio"
+  },
+  {
+    "objectID": "materials/week_1.html#assignments",
+    "href": "materials/week_1.html#assignments",
+    "title": "Week 1: Course Introduction",
+    "section": "Assignments",
+    "text": "Assignments\n\nTutorial 1"
+  },
+  {
+    "objectID": "materials/week_2.html",
+    "href": "materials/week_2.html",
+    "title": "Week 2: Intergroup Prejudice",
+    "section": "",
+    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
+  },
+  {
+    "objectID": "materials/week_2.html#readings",
+    "href": "materials/week_2.html#readings",
+    "title": "Week 2: Intergroup Prejudice",
+    "section": "",
+    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
+  },
+  {
+    "objectID": "materials/week_2.html#assignments",
+    "href": "materials/week_2.html#assignments",
+    "title": "Week 2: Intergroup Prejudice",
+    "section": "Assignments",
+    "text": "Assignments\n\nReading Quiz 1\nTutorial 1\nProblem Set 1: qmd link"
+  },
+  {
+    "objectID": "materials/week_7.html",
+    "href": "materials/week_7.html",
+    "title": "Week 7",
+    "section": "",
+    "text": "Garbiras-Díaz and Montenegro (2016): link\nKing, Pan, and Roberts (2014): link\nGreen and Gerber, pgs 80-85"
+  },
+  {
+    "objectID": "materials/week_7.html#readings",
+    "href": "materials/week_7.html#readings",
+    "title": "Week 7",
+    "section": "",
+    "text": "Garbiras-Díaz and Montenegro (2016): link\nKing, Pan, and Roberts (2014): link\nGreen and Gerber, pgs 80-85"
+  },
+  {
+    "objectID": "materials/week_7.html#slides",
+    "href": "materials/week_7.html#slides",
+    "title": "Week 7",
+    "section": "Slides",
+    "text": "Slides\n\nLecture 9 (3/14): Electoral Malfeasance\nLecture 10 (3/19): Covariates in Experimental Design\nLecture 11 (3/21): Authoritarian Politics"
+  },
+  {
+    "objectID": "materials/week_7.html#assignments",
+    "href": "materials/week_7.html#assignments",
+    "title": "Week 7",
+    "section": "Assignments",
+    "text": "Assignments\n\nReading Quiz\nProblem Set 3: qmd link, html version\nTutorial 3: Pivoting and Logical Functions"
+  },
+  {
+    "objectID": "materials/week_4.html",
+    "href": "materials/week_4.html",
+    "title": "Week 4: Partisanship and Ideology",
+    "section": "",
+    "text": "Barber and Pope (2019): Perusall link, direct link\n\nOptional Reading: Trump is a real world political science experiment\n\nGreen and Gerber, pgs 51-71: Perusall link"
+  },
+  {
+    "objectID": "materials/week_4.html#readings",
+    "href": "materials/week_4.html#readings",
+    "title": "Week 4: Partisanship and Ideology",
+    "section": "",
+    "text": "Barber and Pope (2019): Perusall link, direct link\n\nOptional Reading: Trump is a real world political science experiment\n\nGreen and Gerber, pgs 51-71: Perusall link"
+  },
+  {
+    "objectID": "materials/week_4.html#slides",
+    "href": "materials/week_4.html#slides",
+    "title": "Week 4: Partisanship and Ideology",
+    "section": "Slides",
+    "text": "Slides\n\nLecture 4 (2/27): Estimation of Causal Effects and Data Manipulation in R\nLecture 5 (2/29): Partisanship and Ideology"
+  },
+  {
+    "objectID": "materials/week_4.html#assignments",
+    "href": "materials/week_4.html#assignments",
+    "title": "Week 4: Partisanship and Ideology",
+    "section": "Assignments",
+    "text": "Assignments\n\nProblem Set 1: qmd link\nTutorial 2"
+  },
+  {
+    "objectID": "psets/pset3.html#instructions",
+    "href": "psets/pset3.html#instructions",
+    "title": "Problem Set 3",
+    "section": "Instructions",
+    "text": "Instructions\nPlease submit this assignment on Gradescope by March 21. The qmd file can be submitted at the following link: https://www.dropbox.com/request/RUZLaoI90Au4X1PgZoke\nYou will need to submit the following two files:\n\nAn .qmd file (or “Quarto file” when spoken) that is a plain-text file that contains the text of your write-up and the code used to do all of the calculations for the assignment. You can write directly into this file in RStudio.\nAn output .pdf file that contains the compiled version of the qmd file. You can create this file by clicking the “Render” button in RStudio."
+  },
+  {
+    "objectID": "psets/pset3.html#importing-the-data",
+    "href": "psets/pset3.html#importing-the-data",
+    "title": "Problem Set 3",
+    "section": "Importing the data",
+    "text": "Importing the data\n\n# List Experiment Data\nlist_df &lt;- read_csv(\"https://www.dropbox.com/scl/fi/4cvtv58iat4cxqhbzqer0/list_df.csv?rlkey=rlog3wltunaymbe64xry55w6t&dl=1\", show_col_types = FALSE)\n\n# Attitude Change Data\nattitude_df &lt;- read_csv(\"https://www.dropbox.com/scl/fi/6zvwstark6auyfhufpceu/attitude_df.csv?rlkey=hlre5njsc5jhifbgi2bpxlipj&dl=1\", show_col_types = FALSE)"
+  },
+  {
+    "objectID": "psets/pset3.html#problem-1",
+    "href": "psets/pset3.html#problem-1",
+    "title": "Problem Set 3",
+    "section": "Problem 1",
+    "text": "Problem 1\nIn this first problem, we will analyze data from the following paper:\n\nAronow, Peter M. et al. “COMBINING LIST EXPERIMENTAND DIRECT QUESTION ESTIMATES OF SENSITIVE BEHAVIOR PREVALENCE” Journal of Survey Statistics and Methodology(2015): 43-66. https://doi:10.1093/jssam/smu023.\n\nAronow et al. (2015) explore the use of list experiments to estimate the prevalence of sensitive behaviors and compare those estimates to direct questions. In the paper, they compare estimates using these two measurement strategies for a variety of topics. We will look at the following two topics:\n\nOpposition to Muslim public school teachers\nWhether someone watches CNN\n\nThe list_df data includes the following variables:\n\nmuslim_list_treat and cnn_list_treat: treatment indicators for the two experiments\nmuslim_list_N and cnn_list_N: the number of items in the list counted by respondent\nmuslims_direct and cnn_direct: direct question responses where 1 = yes and 0 = no.\n\n\nProblem 1(a)\nExplain the intuition behind the list experiment design and how it can be used to estimate the prevalence of sensitive attitudes. What are the pros and cons of this approach? Think about the two issues we are focusing on here, why might the researchers have chosen to use a list experiment?\n\n\nProblem 1(b)\nUsing list_df, calculate the direct and indirect attitude estimates for each of the two behaviors. Additionally, calculate 95% confidence intervals for each of the estimates using a bootstrap. Plot your results.\n\n\n\n\n\n\nTip\n\n\n\nAt the start of your code chunk, please include set.seed(1234). This allows for the results that rely on random sampling (i.e.a bootstrap) to be reproducible.\n\n\n\n# Your code here\n\n\n\nProblem 1(c)\nNow interpret the results from your plot:\n\nHow do the estimates from the list experiment compare to the direct question estimates? What do you think might explain the differences between the two estimates?\nWhat about the uncertainty estimates? Interpret the confidence intervals and compare them between estimates.\n\n\n\nProblem 1(d)\nWhat might these results tell us about the trade-offs between the two measurement strategies? Think about both the point estimates and the uncertainty estimates."
+  },
+  {
+    "objectID": "psets/pset3.html#problem-2",
+    "href": "psets/pset3.html#problem-2",
+    "title": "Problem Set 3",
+    "section": "Problem 2",
+    "text": "Problem 2\nIn this second problem, we will analyze data from another paper:\n\nGraham, Mathew H. and Alexander Coppock. “ASKING ABOUT ATTITUDE CHANGE” Public Opinion Quarterly(2021): 28-53. https://doi:10.1093/poq/nfab009.\n\nGraham and Coppock (2021) critique a widely used method for measuring attitude change in surveys. Social scientists or survey researchers are often interested in how new information may or may not change attitudes. One way to test this involves using what Graham and Coppock call a change format question. These questions often take the following structure:\n\n\n\n\n\n\nExample 1: President Obama issued an executive order banning the CIA and other government organizations from torturing detainees.\nHow does this change your support for banning the CIA and other government organizations from torturing detainees? Less supportive, no difference, more supportive\n\n\n\n\n\n\n\n\n\nExample 2: President Trump issues an executive order that reduced restrictions on coal ash disposal.\nHow does this change your support for strict regulations on the disposal of coal ash, the pollutant left over after power plants burn coal? Less supportive, no difference, more supportive\n\n\n\nThis strategy essentially asks respondents to evaluate the causal effect of new information on their attitudes. Graham and Coppock argue that this strategy produces inflated estimates of attitude change. As an alternative, they propose a counterfactual format. This proposed question format has the following structure:\n\n\n\n\n\n\nPart 1: President Obama issued an executive order banning the CIA and other government organizations from torturing detainees.\nDo you support or oppose banning the CIA and other government organizations from torturing detainees? Oppose, Support\nPart 2: Imagine that you did not know that President Obama issued an executive order banning the CIA and other government organizations from torturing detainees.\nHow could you have answered the question: Do you support or oppose banning the CIA and other government organizations from torturing detainees? Oppose, support\n\n\n\nThis alternative method involves two steps: first respondents are reminded of the new information and asked to report their attitude as in the standard survey question. Second, respondents are then asked to imagine how they would have responded had they not known the new information.\n\nProblem 2(a)\nCritically evaluate these two question formats. What are some possible issues with the change question? How does the counterfactual format improve on these issues? Are there any downsides or remaining problems with the counterfactual format?\n\n\nProblem 2(b)\nFor this question we will use the attitude_df data frame. This data includes the following variables:\n\nParty: Respondent party identification\nFormat : The question format used to measure attitude change (Change or Counterfactual)\ntreat: Treatment indicator for the Counterfactual format\nYC: Combined outcome variable for both question formats\nY: Outcome variable for the first stage of the Counterfactual format\ntau_i_tilde: Individual level treatment effect of the Counterfactual format\n\nWe are going to compare the effectiveness of the two question formats in measuring attitude change. To do this, we will be using one of the experiments conducted by Graham and Coppock focused on the confirmation hearings of Supreme Court Justice Brett Kavanaugh. Respondents were told whether or not their Senator opposed Kavanaugh and then asked how that information changes the likelihood of supporting the Senator. To start, plot the distribution of responses in both the Change and the Counterfactual formats by Party ID. Figure 5 in the paper can be a useful guide for this plot.\n\n# Your code here\n\n\n\nProblem 2(c)\nNow we are going to take advantage of how the counterfactual format is designed to compare differences in the estimates of attitude change by Party ID. Subjects shown the counterfactual format are randomly assigned to a treatment and control group. Here is the question wording for each group:\n\n\n\n\n\n\nControl\nSenator [full name], a [Democrat / Republican] from [respondent’s state], [is running for/ will be up for] re-election in [2018 / 2020/ 2022].\nWill you support [last name] or [her / his] [Republican / Democratic] opponent?\nDefinitely oppose [last name], Probably oppose, Lean toward opposing, Lean toward supporting, Probably support, Definitely support [last name]\n(New Page) ——\n[Last name] voted against Brett Kavanaugh’s nomination to the Supreme Court. Before the vote, three women accused Kavanaugh of sexual assault.\nIf you had known this information, how would you have answered the question:\nWill you support [last name] or [her / his] [Democratic / Republican] opponent?\nDefinitely oppose [last name], Probably oppose, Lean toward opposing, Lean toward supporting, Probably support, Definitely support [last name]\n\n\n\n\n\n\n\n\n\nTreatment\nSenator [full name], a [Democrat / Republican] from [respondent’s state], [is running for/ will be up for] re-election in [2018 / 2020/ 2022].\n[Last name] voted against Brett Kavanaugh’s nomination to the Supreme Court. Before the vote, three women accused Kavanaugh of sexual assault.\nWill you support [last name] or [her / his] [Democratic / Republican] opponent?\nDefinitely oppose [last name], Probably oppose, Lean toward opposing, Lean toward supporting, Probably support, Definitely support [last name]\n(New Page) ——\nImagine you did not know that [last name] voted [for / against] Kavanaugh’s confirmation to the Supreme Court after allegation of sexual assault.\nHow would you have answered the question:\nWill you support [last name] or [her / his] [Democratic / Republican] opponent?\nDefinitely oppose [last name], Probably oppose, Lean toward opposing, Lean toward supporting, Probably support, Definitely support [last name]\n\n\n\nHere is a diagram of the research design:\n\n\n\n\n\n\n\n\n\n\n\nflowchart TD\n  A[Start Survey] --&gt; B[Control]\n  B --&gt; C[Do you support a challenger to your Senator?] \n  C --&gt; D[Information about Kavanaugh vote]\n  D --&gt; E[How would you have answered this question &lt;br/&gt; if you had know this information?]\n  \n  A --&gt; F[Treatment]\n  F --&gt; G[Information about Kavanaugh vote]\n  G --&gt; H[Do you support a challenger to your Senator?] \n  H --&gt; I[Imagine you did not know that information, how &lt;br/&gt; would you have answered the question?]\n\n\n\n\n\n\n\n\n\nIn the control condition, respondents are first asked to report whether they support a challenger to their Senator (\\(Y_i(0)\\)). Next, they are presented information about how their Senator opposed Kavanaugh as well as about the allegations against Kavanaugh. They were then asked how they would have answered the initial question if they had known this information (\\(\\tilde{Y_i(1)}\\)). We call this outcome \\(\\tilde{Y_i(1)}\\) because we are asking respondents to guess at their own potential outcome under treatment. Remember, we can never truly observe both potential outcomes. This design provides a best guess.\nIn the treatment condition, respondents are presented the information about the Kavanuagh vote and are asked whether they support a challenger to their Senator (\\(Y_i(1)\\)). Next, respondents are asked to imagine they had not known about their Senators opposition and the allegations and asked how they would have answered the initial question (\\(\\tilde{Y_i(0)}\\)). Again, this is \\(\\tilde{Y_i(0)}\\) because we are asking respondents to guess at their own potential outcome under control.\nAssuming respondent’s guesses about their counterfactual attitudes are correct, then \\(\\tilde{Y_i(1)} = Y_i(1)\\) and \\(\\tilde{Y_i(0)} = Y_i(0)\\). Denoting \\(D\\) as the treatment indicator, we can calculate individual level treatment effects:\n\\[(\\tilde{\\tau_i}|D=0) = E[\\tilde{Y_i(1)} - Y_i(0)] \\] \\[(\\tilde{\\tau_i}|D=1) = E[Y_i(1) - \\tilde{Y_i(0)}]\\]\nWe can then use these individual level treatment effects to calculate the average treatment effect:\n\\[ATE_{CF} = \\frac{\\sum^N_i\\tilde{\\tau_i}}{N}\\]\nTo start, use attitude_df to calculate the difference in means for the first stage of the Counterfactual format for each party. This calculation ignores the additional information from the counterfactual guesses. In other words, here you are calculating the average difference in in support for a Senate challenger based on whether they saw information on support for Kavanaugh. To calculate this, use the variable Y in the data frame. Report the point estimates with 95% confidence intervals calculated using a bootstrap.\n\n# Your code here\n\nNow calculate the average treatment effect for each party using tau_i_tilde as the outcome variable. This calculation takes into account the full experimental design and counterfactual guesses. Report the point estimates with a 95% confidence intervals calculated using a bootstrap.\n\n# Your code here\n\nNext, calculate the difference between these two estimates. In other words, you are calculating the difference between the first-stage difference-in-means and the counterfactual average treatment effect. Report the point estimate and a 95% confidence interval calculated using a bootstrap.\n\n# Your code here\n\n\n\nProblem 2(d)\nPlot all three point estimates with 95% confidence intervals in a single plot. Interpret the results of your plot. Be sure to interpret both the point estimates and confidence intervals. Are the two estimates different? What does the difference between the estimates tell us? What do the results say about the validity of the two different question formats? Are you persuaded by Graham and Coppock’s proposed question format?\n\n# Your code here"
+  },
+  {
+    "objectID": "psets/pset3.html#problem-3",
+    "href": "psets/pset3.html#problem-3",
+    "title": "Problem Set 3",
+    "section": "Problem 3",
+    "text": "Problem 3\nPropose a research question that would benefit from the use of one of the measurement strategies we learned in class. This can range from the racial resentment scale to a list experiment or an IAT. Explain why the measurement strategy is appropriate and preferable to alternatives. How does it connect to the concept you are interested in measuring? What are some possible trade-offs of using when this measurement strategy?"
+  },
+  {
+    "objectID": "psets/pset3.html#problem-4-ungraded",
+    "href": "psets/pset3.html#problem-4-ungraded",
+    "title": "Problem Set 3",
+    "section": "Problem 4 (Ungraded)",
+    "text": "Problem 4 (Ungraded)\nWe are almost halfway through the semester! That means we need to start thinking about the final class project. To start brainstorming ideas, please provide two topics that you would be interesting in studying that can be studied in the context of a survey of Americans."
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Tutorial 1: Introduction to R and Data Visualization\nTutorial 2: Data Wrangling\nTutorial 3: Pivoting and Logical Functions"
+  },
+  {
+    "objectID": "assignments.html#tutorials",
+    "href": "assignments.html#tutorials",
+    "title": "Assignments",
+    "section": "",
+    "text": "Tutorial 1: Introduction to R and Data Visualization\nTutorial 2: Data Wrangling\nTutorial 3: Pivoting and Logical Functions"
+  },
+  {
+    "objectID": "assignments.html#problem-sets",
+    "href": "assignments.html#problem-sets",
+    "title": "Assignments",
+    "section": "Problem Sets",
+    "text": "Problem Sets\n\nProblem Set 1: qmd link\nProblem Set 2: qmd link\nProblem Set 3: qmd link, html version"
+  },
+  {
+    "objectID": "materials/week_5.html",
+    "href": "materials/week_5.html",
+    "title": "Week 5: Persuasion and Measurement",
+    "section": "",
+    "text": "Broockman and Kalla (2016): link\nStantcheva (2023): link"
+  },
+  {
+    "objectID": "materials/week_5.html#readings",
+    "href": "materials/week_5.html#readings",
+    "title": "Week 5: Persuasion and Measurement",
+    "section": "",
+    "text": "Broockman and Kalla (2016): link\nStantcheva (2023): link"
+  },
+  {
+    "objectID": "materials/week_5.html#slides",
+    "href": "materials/week_5.html#slides",
+    "title": "Week 5: Persuasion and Measurement",
+    "section": "Slides",
+    "text": "Slides\n\nLecture 6 (3/5): Inference\nLecture 7 (3/7): Measurement"
+  },
+  {
+    "objectID": "materials/week_5.html#assignments",
+    "href": "materials/week_5.html#assignments",
+    "title": "Week 5: Persuasion and Measurement",
+    "section": "Assignments",
+    "text": "Assignments\n\nProblem Set 2: qmd link\nReading Quiz"
+  },
+  {
+    "objectID": "materials/week_6.html",
+    "href": "materials/week_6.html",
+    "title": "Week 6: Combatting Electoral Fraud",
+    "section": "",
+    "text": "Garbiras-Díaz and Montenegro (2016): link\nGerber and Green (2012), pgs 71-80"
+  },
+  {
+    "objectID": "materials/week_6.html#readings",
+    "href": "materials/week_6.html#readings",
+    "title": "Week 6: Combatting Electoral Fraud",
+    "section": "",
+    "text": "Garbiras-Díaz and Montenegro (2016): link\nGerber and Green (2012), pgs 71-80"
+  },
+  {
+    "objectID": "materials/week_6.html#slides",
+    "href": "materials/week_6.html#slides",
+    "title": "Week 6: Combatting Electoral Fraud",
+    "section": "Slides",
+    "text": "Slides\n\nLecture 7 (3/7): Measurement\nLecture 8 (3/12): More on Inference in Experiments\nLecture 9 (3/14): Electoral Malfeasance"
+  },
+  {
+    "objectID": "materials/week_6.html#assignments",
+    "href": "materials/week_6.html#assignments",
+    "title": "Week 6: Combatting Electoral Fraud",
+    "section": "Assignments",
+    "text": "Assignments\n\nReading Quiz\nProblem Set 3: qmd link, html version\nTutorial 3: Pivoting and Logical Functions"
+  },
+  {
+    "objectID": "materials/week_3.html",
+    "href": "materials/week_3.html",
+    "title": "Week 3: Intergroup Prejudice",
+    "section": "",
+    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
+  },
+  {
+    "objectID": "materials/week_3.html#readings",
+    "href": "materials/week_3.html#readings",
+    "title": "Week 3: Intergroup Prejudice",
+    "section": "",
+    "text": "Mousa (2020): Perusall link, direct link\n\nOptional: Scope Conditions Podcast Episode - The Promise and Limits of Intergroup Contact, with Salma Mousa, link\n\nGreen and Gerber (2012), pgs. 30-45: Perusall link\nRDS: Chapter 1, Chapter 3"
+  },
+  {
+    "objectID": "materials/week_3.html#slides",
+    "href": "materials/week_3.html#slides",
+    "title": "Week 3: Intergroup Prejudice",
+    "section": "Slides",
+    "text": "Slides\n\nIntergroup Contact and Data Visualization"
+  },
+  {
+    "objectID": "materials/week_3.html#class-exercises",
+    "href": "materials/week_3.html#class-exercises",
+    "title": "Week 3: Intergroup Prejudice",
+    "section": "Class Exercises",
+    "text": "Class Exercises\n\nIntergroup Contact"
+  },
+  {
+    "objectID": "materials/week_3.html#assignments",
+    "href": "materials/week_3.html#assignments",
+    "title": "Week 3: Intergroup Prejudice",
+    "section": "Assignments",
+    "text": "Assignments\n\nProblem Set 1: qmd link\nTutorial 2"
+  },
+  {
+    "objectID": "resources/r_setup.html",
+    "href": "resources/r_setup.html",
+    "title": "Setting up R and RStudio",
+    "section": "",
+    "text": "Go to the CRAN website and click on the download link for your operating system (Windows, Mac, or Linux).\n\n\nMacWindows\n\n\nClick on the R-X.X.X-arm64.pkg or R-X.X.X-x86_64.pkg link to download the installer. The precise file name depends on the latest version and whether you have an Intel processor or a newer ARM processor such as the M1, i.e. R-4.3.2-arm64.pkg. Once the download is complete, open the file and follow the installation instructions.\n\n\n\n\n\n\nTip\n\n\n\nTo determine whether you have an Intel or ARM processor, click on the Apple logo in the top left corner of your screen, select “About This Mac”, and look for the line that indicates “Chip” or “Processor”. If the line says something like “Apple M1” or “Apple M1 Pro”, you have an ARM processor. If it says something like “Intel Core i5” or “Intel Core i7”, you have an Intel processor.\n\n\n\n\nClick on the link that says base. Then click on the “Download R-X.X.X for Windows” link to download the installer. Once the download is complete, open the file and follow the installation instructions.\n\n\n\n\nOnce you have installed R, go to the download page for RStudio Desktop and click on the button that says “Download RStudio Desktop”. Once the download is complete, open the file and follow the installation instructions.\n\n\n\nThere are a few packages that we will use throughout the course. You can install them by starting RStudio and running the following commands in the console (lower left panel by default):\n\npackages &lt;- c(\n        \"tidyverse\", \"learnr\", \"estimatr\",\n        \"randomizr\", \"srvyr\"\n)\ninstall.packages(packages, repos = \"http://cran.rstudio.com\")\n\nFor assignments, we’ll need to produce PDFs from R and that requires a LaTeX distribution. We recommend using tinytex to install a minimal LaTeX distribution if you haven’t already installed LaTex on your system. You can install it by running the following command in the console:\n\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex() # install TinyTeX"
+  },
+  {
+    "objectID": "resources/r_setup.html#installing-required-r-packages",
+    "href": "resources/r_setup.html#installing-required-r-packages",
+    "title": "Setting up R and RStudio",
+    "section": "",
+    "text": "There are a few packages that we will use throughout the course. You can install them by starting RStudio and running the following commands in the console (lower left panel by default):\n\npackages &lt;- c(\n        \"tidyverse\", \"learnr\", \"estimatr\",\n        \"randomizr\", \"srvyr\"\n)\ninstall.packages(packages, repos = \"http://cran.rstudio.com\")\n\nFor assignments, we’ll need to produce PDFs from R and that requires a LaTeX distribution. We recommend using tinytex to install a minimal LaTeX distribution if you haven’t already installed LaTex on your system. You can install it by running the following command in the console:\n\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex() # install TinyTeX"
+  },
+  {
+    "objectID": "materials.html",
+    "href": "materials.html",
+    "title": "Materials",
+    "section": "",
+    "text": "Week 1: Course Introduction\nWeek 2: Intergroup Prejudice\nWeek 3: Intergroup Prejudice\nWeek 4: Partisanship vs Ideology\nWeek 5: Persuasion\nWeek 6: Combatting Electoral Fraud\nWeek 7: Censorship"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#example-slide",
+    "href": "lectures/00-template/00-template.html#example-slide",
+    "title": "Quarto reveal.js clean",
+    "section": "Example slide",
+    "text": "Example slide\nThis is a subtitle\nBefore we dive a bit deeper, here is a simple example of the clean theme in action.\n\nNo pictures or anything fancy. Just text for the moment.\n\nNext, we’ll take a brief tour of some theme components.\n\nWe’ll use the same basic structure as the original LaTeX slides.\nNote that the full suite of Reveal.js features are available for this Quarto implementation, even if we don’t cover everything here."
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#before-you-proceed",
+    "href": "lectures/00-template/00-template.html#before-you-proceed",
+    "title": "Quarto reveal.js clean",
+    "section": "Before you proceed…",
+    "text": "Before you proceed…\nRequirements for the coding examples in this demo\n\n\n\n\n\n\nR libraries\n\n\nWhile the clean theme is language agnostic, we will use several R coding examples in this demo to highlight some advanced theme features.\nYou will need the following libraries if you’d like to render the template “as-is”:\ninstall.packages(c(\"modelsummary\", \"gt\", \"fixest\", \"pdftools\", \"tinytex\", \"threejs\"))\n\n\n\n\n\n\n\n\n\nTinyTex\n\n\nWhile reveal.js presentations are HTML format, we will show an example of how to embed LaTeX tables as images. This requires a working Tex distribution, of which TinyTex provides by far the easiest and lightest integration with Quarto. More details here.\nquarto install tinytex"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#components-1",
+    "href": "lectures/00-template/00-template.html#components-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nOrdered and Unordered Lists\nHere we have an unordered list.\n\nfirst item\n\nsub-item\n\nsecond item\n\nAnd next we have an ordered one.\n\nfirst item\n\nsub-item\n\nsecond item"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#components-2",
+    "href": "lectures/00-template/00-template.html#components-2",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nAlerts & Cross-refs\nTo emphasize specific words or text, you can:\n\nUse the default .alert class, e.g. important note.\nUse the .fg class for custom colour, e.g. important note.\nUse the .bg class for custom background, e.g. important note.\n\nTo cross-reference, you have several options, for example:\n\nBeamer-like .button class provided by this theme, e.g. Appendix\nQuarto’s native cross-ref syntax, e.g., “See Section 4.3.”"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#components-3",
+    "href": "lectures/00-template/00-template.html#components-3",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nCitations\nCitations follow the standard Quarto format and be sourced from BibLaTex, BibTeX, or CLS files. For example:\n\nTopic 1: Spatial Frictions (Fajgelbaum et al. 2018; Hsieh and Moretti 2019; Moretti 2011)\nTopic 2: Blah (Suárez Serrato and Zidar 2016)"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#components-4",
+    "href": "lectures/00-template/00-template.html#components-4",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nBlocks\nQuarto provides dedicated environments for theorems, lemmas, and so forth.\nBut in presentation format, it’s arguably more effective just to use a Callout Block.\n\n\n\n\n\n\nRegression Specification\n\n\nThe main specification is as follows:\n\\[\ny_{it} = X_{it} \\beta + \\mu_i + \\varepsilon_{it}\n\\]"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#components-5",
+    "href": "lectures/00-template/00-template.html#components-5",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nMulticolumn I: Text only\n\n\nColumn 1\nHere is a long sentence that will wrap onto the next line as it hits the column width, and continue this way until it stops.\n\nColumn 2\nSome other text in another column.\nA second paragraph.\n\n\nMulticolumn support is very flexible and we can continue with a single full span column in the same slide."
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#components-6",
+    "href": "lectures/00-template/00-template.html#components-6",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nMulticolumn II: Text and figures\n\n\n\n\n\nA point about the figure that is potentially important.\nAnother point about the figure that is also potentially important.\n\n\n\nNote that sub- and multi-panel figures are also natively supported by Quarto. See here."
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#components-7",
+    "href": "lectures/00-template/00-template.html#components-7",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nMulticolumn III: Code and output\n\n\npalette(\"Classic Tableau\")\n\npar(\n        family = \"HersheySans\",\n        las = 1, pch = 19, cex = 1.5\n)\n\npairs(\n        iris[, 1:4],\n        col = iris$Species\n)\n\n\n\n\n\n\n\n\nFigure 1: Pairwise scatterplot"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#tables-1",
+    "href": "lectures/00-template/00-template.html#tables-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Tables",
+    "text": "Tables\nRegression example\nQuarto offers excellent table support, with further customization via user libraries. Let’s illustrate with a regression example:\n\nlibrary(fixest)\n\nmods &lt;- feols(\n        rating ~ complaints + privileges + learning + csw0(raises + critical) + advance,\n        data = attitude\n)\n\ndict &lt;- c(\n        \"rating\" = \"Overall Rating\",\n        \"complaints\" = \"Handling of Complaints\",\n        \"privileges\" = \"No Special Priviledges\",\n        \"learning\" = \"Opportunity to Learn\",\n        \"raises\" = \"Performance-Based Raises\",\n        \"critical\" = \"Too Critical\",\n        \"advance\" = \"Advancement\"\n)"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#regression-table",
+    "href": "lectures/00-template/00-template.html#regression-table",
+    "title": "Quarto reveal.js clean",
+    "section": "Regression table",
+    "text": "Regression table\nmodelsummary\nIf you use modelsummary with this Quarto theme, we advise setting the gt backend for a cleaner aesthetic. More details here.\n\nlibrary(modelsummary)\noptions(modelsummary_factory_default = \"gt\")\n\nmodelsummary(\n        setNames(mods, c(\"(1)\", \"(2)\")),\n        coef_map = dict, stars = TRUE,\n        gof_omit = \"Adj|IC|F|Log|RMSE\"\n) |&gt;\n        gt::tab_spanner(\n                label = \"Dependent variable: Overall Rating\",\n                columns = 2:3\n        )"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#regression-table-output",
+    "href": "lectures/00-template/00-template.html#regression-table-output",
+    "title": "Quarto reveal.js clean",
+    "section": "Regression table",
+    "text": "Regression table\n\n\n\n\n\n\n\n\n\nDependent variable: Overall Rating\n\n\n(1)\n(2)\n\n\n\n\nHandling of Complaints\n0.653***\n0.613***\n\n\n\n(0.131)\n(0.161)\n\n\nNo Special Priviledges\n-0.077\n-0.073\n\n\n\n(0.131)\n(0.136)\n\n\nOpportunity to Learn\n0.324+\n0.320+\n\n\n\n(0.157)\n(0.169)\n\n\nPerformance-Based Raises\n\n0.082\n\n\n\n\n(0.221)\n\n\nToo Critical\n\n0.038\n\n\n\n\n(0.147)\n\n\nAdvancement\n-0.172\n-0.217\n\n\n\n(0.149)\n(0.178)\n\n\nNum.Obs.\n30\n30\n\n\nR2\n0.729\n0.733\n\n\nStd.Errors\nIID\nIID\n\n\n\n+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#regression-table-1",
+    "href": "lectures/00-template/00-template.html#regression-table-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Regression table",
+    "text": "Regression table\netable\nfixest’s powerful native tabling functions were designed for LaTeX output. But we can use the markdown = TRUE option to make them work with this theme too. (Details here.) Quick notes:\n\nInstall the tinytex & pdftools packages first.\nSet the R chunk option output: asis.\n\n```{{r}}\n#| output: asis\n\nsetFixest_etable(markdown = TRUE, drop = \"Constant\")\nsetFixest_dict(dict)\n\netable(mods, highlight = .(\"se\" = \"complaints\"))\n```"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#regression-table-2",
+    "href": "lectures/00-template/00-template.html#regression-table-2",
+    "title": "Quarto reveal.js clean",
+    "section": "Regression table",
+    "text": "Regression table\netable (cont.)"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#figure",
+    "href": "lectures/00-template/00-template.html#figure",
+    "title": "Quarto reveal.js clean",
+    "section": "Figure",
+    "text": "Figure"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#figure-1",
+    "href": "lectures/00-template/00-template.html#figure-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Figure",
+    "text": "Figure\nFull-size Figures\nYou can use the {.background-image} container environment to completely fill the slide background with an image.\nIdeally, your figure will be the same aspect ratio as the screen that you’re presenting on.\n\nThis can be a bit tricky because of the dynamic nature of reveal.js / HTML. But it’s probably something close to 16:9.\nAspect ratio can also matter for a regular full-frame images (previous slide)."
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#interactive-plots",
+    "href": "lectures/00-template/00-template.html#interactive-plots",
+    "title": "Quarto reveal.js clean",
+    "section": "Interactive plots",
+    "text": "Interactive plots\n\n\n\n\n\n\nNote: Simple flight data example using threejs. There are many interactive plotting options beyond this. (More details.)"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#summary-1",
+    "href": "lectures/00-template/00-template.html#summary-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Summary",
+    "text": "Summary\nA minimal and elegant presentation theme\nThe Quarto reveal.js clean theme aims to be a minimal and elegant presention theme.\nWe have highlighted some theme-specific components. But all of the regular reveal.js functionality is supported (chalkboard, etc.)\nInstall the theme:\nquarto install extension grantmcdermott/quarto-revealjs-clean\nUse these demo slides as a template:\nquarto use template grantmcdermott/quarto-revealjs-clean-demo"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#references",
+    "href": "lectures/00-template/00-template.html#references",
+    "title": "Quarto reveal.js clean",
+    "section": "References",
+    "text": "References\n\n\nFajgelbaum, Pablo D, Eduardo Morales, Juan Carlos Suarez Serrato, and Owen Zidar. 2018. “State Taxes and Spatial Misallocation,” 90.\n\n\nHsieh, Chang-Tai, and Enrico Moretti. 2019. “Housing Constraints and Spatial Misallocation.” American Economic Journal: Macroeconomics 11 (2): 39.\n\n\nMoretti, Enrico. 2011. “Local Labor Markets.” In Handbook of Labor Economics. Vol. 4. Elsevier.\n\n\nSuárez Serrato, Juan Carlos, and Owen Zidar. 2016. “Who Benefits from State Corporate Tax Cuts? A Local Labor Markets Approach with Heterogeneous Firms.” American Economic Review 106 (9)."
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#sec-appendix",
+    "href": "lectures/00-template/00-template.html#sec-appendix",
+    "title": "Quarto reveal.js clean",
+    "section": "Appendix",
+    "text": "Appendix\n\n\n\n\nTable 1: Summary of the base R attitude dataset\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnique (#)\nMissing (%)\nMean\nSD\nMin\nMedian\nMax\n\n\n\n\n\nrating\n22\n0\n64.6\n12.2\n40.0\n65.5\n85.0\n\n\n\n   \n\n\n\ncomplaints\n23\n0\n66.6\n13.3\n37.0\n65.0\n90.0\n\n\n\n   \n\n\n\nprivileges\n24\n0\n53.1\n12.2\n30.0\n51.5\n83.0\n\n\n\n   \n\n\n\nlearning\n23\n0\n56.4\n11.7\n34.0\n56.5\n75.0\n\n\n\n   \n\n\n\nraises\n21\n0\n64.6\n10.4\n43.0\n63.5\n88.0\n\n\n\n   \n\n\n\ncritical\n21\n0\n74.8\n9.9\n49.0\n77.5\n92.0\n\n\n\n   \n\n\n\nadvance\n20\n0\n42.9\n10.3\n25.0\n41.0\n72.0\n\n\n\n   \n\n\n\n\n\n\n\n\n\n\n\n\nBack to main"
+  },
+  {
+    "objectID": "lectures/11-censorship/censorship.html#censorship-and-authoritarian-control",
+    "href": "lectures/11-censorship/censorship.html#censorship-and-authoritarian-control",
+    "title": "Censorship in Authoritarian Regimes",
+    "section": "Censorship and Authoritarian Control",
+    "text": "Censorship and Authoritarian Control\n\nWhat is the goal of censorship?\n\nStop criticism\nStop collective action\nChange public opinion\n\nMany predicted that internet would make censorship impossible.\n\nBut it has not.\nWhy not?"
+  },
+  {
+    "objectID": "lectures/11-censorship/censorship.html#censorship-patterns",
+    "href": "lectures/11-censorship/censorship.html#censorship-patterns",
+    "title": "Censorship in Authoritarian Regimes",
+    "section": "Censorship Patterns",
+    "text": "Censorship Patterns"
+  },
+  {
+    "objectID": "lectures/11-censorship/censorship.html#censorship-of-positive-comments",
+    "href": "lectures/11-censorship/censorship.html#censorship-of-positive-comments",
+    "title": "Censorship in Authoritarian Regimes",
+    "section": "Censorship of Positive Comments",
+    "text": "Censorship of Positive Comments"
+  },
+  {
+    "objectID": "lectures/11-censorship/censorship.html#chinese-censorship-decision-tree",
+    "href": "lectures/11-censorship/censorship.html#chinese-censorship-decision-tree",
+    "title": "Censorship in Authoritarian Regimes",
+    "section": "Chinese Censorship Decision Tree",
+    "text": "Chinese Censorship Decision Tree"
+  },
+  {
+    "objectID": "lectures/11-censorship/censorship.html#experimental-design",
+    "href": "lectures/11-censorship/censorship.html#experimental-design",
+    "title": "Censorship in Authoritarian Regimes",
+    "section": "Experimental Design",
+    "text": "Experimental Design\n\n\n\n\n\nTop 100 social media sites in China\n\n2 accounts on each site\n\nWrite 1,200 unique social media posts\n\nCollective action vs not Collective action\nPro vs anti-government\n\nMeasure censorship"
+  },
+  {
+    "objectID": "lectures/11-censorship/censorship.html#collective-action-events",
+    "href": "lectures/11-censorship/censorship.html#collective-action-events",
+    "title": "Censorship in Authoritarian Regimes",
+    "section": "Collective Action Events",
+    "text": "Collective Action Events\n\nTibetan Self-immolation:\n\n\nPro-government posts attribute the tragedy of her death on the Dalai Lama who is instigating these tragedies.\nAnti-government posts attribube her death to government policies.\n\n\nProtest in Panxu village over illegal land seizure:\n\n\nPro-government posts say that this sort of protest and violence is wrong and that the villagers are greedy and want money.\nAnti-government posts say the local officials are unfair to the villagers."
+  },
+  {
+    "objectID": "lectures/11-censorship/censorship.html#other-events",
+    "href": "lectures/11-censorship/censorship.html#other-events",
+    "title": "Censorship in Authoritarian Regimes",
+    "section": "Other Events",
+    "text": "Other Events\n\nCorruption Policy: new policy that bribes over 10,000 Chinese yuan will be subject to criminal investigation and penalties\n\n\nPro-government posts support this policy because it will reduce corruption\nAnti-government posts believe this policy is punishing those who give bribes but the real fault lies with officials who accept bribes and not those who are forced by the system to give bribes in order to get things done.\n\n\nRental tax: several cities in China are piloting taxes for renting housing\n\n\nPro-government posts support the rental tax because it is income that should be taxed, just as income from salaries and wages are taxed.\nAnti-government posts criticize the tax saying it will increase already high rental taxes as landlords will push the tax onto renters."
+  },
+  {
+    "objectID": "lectures/11-censorship/censorship.html#randomization",
+    "href": "lectures/11-censorship/censorship.html#randomization",
+    "title": "Censorship in Authoritarian Regimes",
+    "section": "Randomization",
+    "text": "Randomization\nBlocked on combination of 3 variables:\n\nKeywords\nIndividual writer\nLength\n\n\nRandomized:\n\nCollective Action vs Not\nPro-government vs anti-government"
+  },
+  {
+    "objectID": "lectures/11-censorship/censorship.html#criticism-of-government-and-censorship",
+    "href": "lectures/11-censorship/censorship.html#criticism-of-government-and-censorship",
+    "title": "Censorship in Authoritarian Regimes",
+    "section": "Criticism of Government and Censorship",
+    "text": "Criticism of Government and Censorship"
+  },
+  {
+    "objectID": "lectures/11-censorship/censorship.html#collective-action-and-censorship",
+    "href": "lectures/11-censorship/censorship.html#collective-action-and-censorship",
+    "title": "Censorship in Authoritarian Regimes",
+    "section": "Collective Action and Censorship",
+    "text": "Collective Action and Censorship"
+  },
+  {
+    "objectID": "lectures/11-censorship/censorship.html#chen-pan-and-xu-2015",
+    "href": "lectures/11-censorship/censorship.html#chen-pan-and-xu-2015",
+    "title": "Censorship in Authoritarian Regimes",
+    "section": "Chen, Pan, and Xu (2015)",
+    "text": "Chen, Pan, and Xu (2015)\nQuestion: What makes officials in an authoritarian regime more responsive?\nRandomize appeals for help getting access to welfare program on county government help forums\nControl group:\n\nMy wife and I have lost our jobs, and we have been unable to find work for a long time. Our economic situation is very difficult, and we cannot make ends meet. We have to support my elderly mother who is ill and for whom we have to buy medicine. We also have our son who is in school and has school fees and living fees that are difficult to bear. I have tried to apply for Dibao through my residential committee, but they say I am not eligible."
+  },
+  {
+    "objectID": "lectures/11-censorship/censorship.html#chen-pan-and-xu-2015-1",
+    "href": "lectures/11-censorship/censorship.html#chen-pan-and-xu-2015-1",
+    "title": "Censorship in Authoritarian Regimes",
+    "section": "Chen, Pan, and Xu (2015)",
+    "text": "Chen, Pan, and Xu (2015)\nTreatment Conditions:\n\nCollective Action: “People around me are in a similar situation, they face difficulties, and they also can’t get Dibao. If you can’t help, we’ll try to figure out what we can do together about this situation.”\nTattling: “If this problem cannot be addressed, I’ll have to report it to upper-level government officials.”\nLoyalty: “I’m a long-standing CCP member, I’ve always followed the leadership of the Party.”"
+  },
+  {
+    "objectID": "lectures/11-censorship/censorship.html#chen-et-al-results",
+    "href": "lectures/11-censorship/censorship.html#chen-et-al-results",
+    "title": "Censorship in Authoritarian Regimes",
+    "section": "Chen et al Results",
+    "text": "Chen et al Results"
+  },
+  {
+    "objectID": "lectures/11-censorship/censorship.html#chen-and-yang-2019",
+    "href": "lectures/11-censorship/censorship.html#chen-and-yang-2019",
+    "title": "Censorship in Authoritarian Regimes",
+    "section": "Chen and Yang (2019)",
+    "text": "Chen and Yang (2019)\nQuestions:\n\nWhat is the effect of censorship on knowledge and political attitudes?\nIs their demand for uncensored content?\n\n\nExperimental Design:\n\nSample: 1800 Beijing university students\nRandomize\n\nfree VPN access\nEncouragement and incentives to visit foreign news websites\n\nMeasure:\n\nwebsite visits, continued use of VPN after incentive ends\nknowledge and attitudes"
+  },
+  {
+    "objectID": "lectures/11-censorship/censorship.html#experimental-design-1",
+    "href": "lectures/11-censorship/censorship.html#experimental-design-1",
+    "title": "Censorship in Authoritarian Regimes",
+    "section": "Experimental Design",
+    "text": "Experimental Design"
+  },
+  {
+    "objectID": "lectures/11-censorship/censorship.html#usage-of-ny-times-chinese-version",
+    "href": "lectures/11-censorship/censorship.html#usage-of-ny-times-chinese-version",
+    "title": "Censorship in Authoritarian Regimes",
+    "section": "Usage of NY Times (Chinese Version)",
+    "text": "Usage of NY Times (Chinese Version)"
+  },
+  {
+    "objectID": "lectures/11-censorship/censorship.html#demand-for-uncensored-content",
+    "href": "lectures/11-censorship/censorship.html#demand-for-uncensored-content",
+    "title": "Censorship in Authoritarian Regimes",
+    "section": "Demand for Uncensored Content",
+    "text": "Demand for Uncensored Content"
+  },
+  {
+    "objectID": "lectures/11-censorship/censorship.html#effects-on-attitudes",
+    "href": "lectures/11-censorship/censorship.html#effects-on-attitudes",
+    "title": "Censorship in Authoritarian Regimes",
+    "section": "Effects on Attitudes",
+    "text": "Effects on Attitudes"
   },
   {
     "objectID": "lectures/06-inference/inference.html#hypothesis-testing",

@@ -25,64 +25,68 @@
     <lastmod>2024-02-08T14:14:30.489Z</lastmod>
   </url>
   <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/lectures/00-template/00-template.html</loc>
-    <lastmod>2024-02-01T16:34:30.389Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/materials.html</loc>
-    <lastmod>2024-03-19T13:15:55.660Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/resources/r_setup.html</loc>
-    <lastmod>2024-02-05T18:21:12.992Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/materials/week_3.html</loc>
-    <lastmod>2024-03-01T19:59:07.020Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/materials/week_6.html</loc>
-    <lastmod>2024-03-19T13:12:18.572Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/materials/week_5.html</loc>
-    <lastmod>2024-03-12T13:23:12.884Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/assignments.html</loc>
-    <lastmod>2024-03-15T21:00:39.510Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/psets/pset3.html</loc>
-    <lastmod>2024-03-15T18:51:25.791Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/materials/week_4.html</loc>
-    <lastmod>2024-03-04T21:04:22.054Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/materials/week_7.html</loc>
-    <lastmod>2024-03-20T14:37:35.088Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/materials/week_2.html</loc>
-    <lastmod>2024-03-01T19:58:53.463Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/materials/week_1.html</loc>
-    <lastmod>2024-02-20T19:07:49.728Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/index.html</loc>
-    <lastmod>2024-02-08T14:10:35.927Z</lastmod>
+    <loc>https://fdhidalgo.github.io/data_politics-24/lectures/01-introduction/introduction.html</loc>
+    <lastmod>2024-02-06T14:09:47.960Z</lastmod>
   </url>
   <url>
     <loc>https://fdhidalgo.github.io/data_politics-24/syllabus.html</loc>
     <lastmod>2024-02-22T00:07:17.642Z</lastmod>
   </url>
   <url>
-    <loc>https://fdhidalgo.github.io/data_politics-24/lectures/01-introduction/introduction.html</loc>
-    <lastmod>2024-02-06T14:09:47.960Z</lastmod>
+    <loc>https://fdhidalgo.github.io/data_politics-24/index.html</loc>
+    <lastmod>2024-02-08T14:10:35.927Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/materials/week_1.html</loc>
+    <lastmod>2024-02-20T19:07:49.728Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/materials/week_2.html</loc>
+    <lastmod>2024-03-01T19:58:53.463Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/materials/week_7.html</loc>
+    <lastmod>2024-03-21T13:16:45.464Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/materials/week_4.html</loc>
+    <lastmod>2024-03-04T21:04:22.054Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/psets/pset3.html</loc>
+    <lastmod>2024-03-15T18:51:25.791Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/assignments.html</loc>
+    <lastmod>2024-03-15T21:00:39.510Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/materials/week_5.html</loc>
+    <lastmod>2024-03-12T13:23:12.884Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/materials/week_6.html</loc>
+    <lastmod>2024-03-19T13:12:18.572Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/materials/week_3.html</loc>
+    <lastmod>2024-03-01T19:59:07.020Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/resources/r_setup.html</loc>
+    <lastmod>2024-02-05T18:21:12.992Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/materials.html</loc>
+    <lastmod>2024-03-19T13:15:55.660Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/lectures/00-template/00-template.html</loc>
+    <lastmod>2024-02-01T16:34:30.389Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fdhidalgo.github.io/data_politics-24/lectures/11-censorship/censorship.html</loc>
+    <lastmod>2024-03-21T13:15:30.663Z</lastmod>
   </url>
   <url>
     <loc>https://fdhidalgo.github.io/data_politics-24/lectures/06-inference/inference.html</loc>
