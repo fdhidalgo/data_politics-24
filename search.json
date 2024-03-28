@@ -25,7 +25,7 @@
     "href": "schedule.html#assignments-schedule",
     "title": "Schedule",
     "section": "Assignments Schedule",
-    "text": "Assignments Schedule\n\n\nAssignments ScheduleWeekDue DateAssignment22/12Reading Quiz2/14Tutorial42/26Reading Quiz2/28Tutorial2/29*Problem Set 1*53/4Reading Quiz3/8*Problem Set 2*73/18Reading Quiz3/21Tutorial3/22*Problem Set 3*84/1Reading Quiz4/3Tutorial94/9Reading Quiz4/10Tutorial4/11*Problem Set 4*104/16Reading Quiz114/25*Problem Set 5*135/9*Problem Set 6*145/14*Class Project Writeup*"
+    "text": "Assignments Schedule\n\n\nAssignments ScheduleWeekDue DateAssignment22/12Reading Quiz2/14Tutorial42/26Reading Quiz2/28Tutorial2/29*Problem Set 1*53/4Reading Quiz3/8*Problem Set 2*73/18Reading Quiz3/21Tutorial3/22*Problem Set 3*84/2Reading Quiz4/3Tutorial94/9Reading Quiz4/10Tutorial4/11*Problem Set 4*104/16Reading Quiz114/25*Problem Set 5*135/9*Problem Set 6*145/14*Class Project Writeup*"
   },
   {
     "objectID": "lectures/03-contact_dataviz/contact_dataviz.html#what-works-to-reduce-prejudice",
@@ -1383,14 +1383,14 @@
     "href": "assignments.html",
     "title": "Assignments",
     "section": "",
-    "text": "Tutorial 1: Introduction to R and Data Visualization\nTutorial 2: Data Wrangling\nTutorial 3: Pivoting and Logical Functions"
+    "text": "Tutorial 1: Introduction to R and Data Visualization\nTutorial 2: Data Wrangling\nTutorial 3: Pivoting and Logical Functions\nTutorial 4: Tidying Data, Joining Data, and Linear Models"
   },
   {
     "objectID": "assignments.html#tutorials",
     "href": "assignments.html#tutorials",
     "title": "Assignments",
     "section": "",
-    "text": "Tutorial 1: Introduction to R and Data Visualization\nTutorial 2: Data Wrangling\nTutorial 3: Pivoting and Logical Functions"
+    "text": "Tutorial 1: Introduction to R and Data Visualization\nTutorial 2: Data Wrangling\nTutorial 3: Pivoting and Logical Functions\nTutorial 4: Tidying Data, Joining Data, and Linear Models"
   },
   {
     "objectID": "assignments.html#problem-sets",
