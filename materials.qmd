@@ -15,3 +15,5 @@ title: "Materials"
 **Week 6**: [Combatting Electoral Fraud](materials/week_6.qmd)
 
 **Week 7**: [Censorship](materials/week_7.qmd)
+
+**Week 8**: [Misinformation](materials/week_8.qmd)

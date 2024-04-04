@@ -1,0 +1,12 @@
+---
+title: "Week 8"
+---
+
+## Readings
+
+- Arechar et al (2023): [link](https://www.nature.com/articles/s41562-023-01641-6)
+- Gerber and Green, pgs. 95-105
+
+## Slides
+
+- Lecture 12 (4/4): [Linear Models](/lectures/12-linear_model/linear_model.qmd)

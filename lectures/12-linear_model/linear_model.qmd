@@ -1,0 +1,431 @@
+---
+title: "Linear Regression"
+subtitle: "Lecture 12"
+date: last-modified
+author: 
+  - name: F. Daniel Hidalgo
+    email: dhidalgo@mit.edu
+    affiliations: MIT
+format: 
+  clean-revealjs:
+    incremental: false
+engine: knitr
+execute: 
+  cache: true
+webr:
+  packages: ['tidyverse'] # Install R packages on document open
+  show-startup-message: false
+filters: 
+  - timer
+  - webr
+bibliography: ../data_politics_2024.bib
+editor:
+  render-on-save: true
+---
+
+```{r}
+#| label: setup
+#| echo: false
+#| warning: false
+#| cache: false
+
+library(tidyverse)
+library(hrbrthemes)
+library(gganimate)
+theme_set(theme_ipsum())
+
+```
+
+## Misinformation and Covid-19
+
+- @arecharUnderstandingCombattingMisinformation2023 study misinformation about Covid-19 in 16 countries, with a sample 34K respondents. 
+
+- Ask respondents to rate whether 20 headlines are true or false.
+  - Also test interventions designed to increase discernment of misinformation:
+    - **Accuracy**: Just ask respondents to rate headlines on accuracy
+    - **Sharing**: Ask respondents whether they would share the headline on social media
+    - **Prompt**: Ask respondents to rate 1 headline on accuracy before asking about sharing
+    - **Tips**: Minimial digital literacy intervention, i.e. prompt respondents to think about accuracy before sharing (used by Facebook)
+
+## Dicernment Across Countries
+
+![](images/discernment.png)
+
+# Prediction
+
+## Discerning Misinformation
+```{r}
+#| label: misinfo_data
+misinfo <- read_csv("CR.csv.gz") |>
+        filter(pass_Screener1 == 1 & pass_Screener2 == 1) |> # Drop those who failed attention checks
+        filter(no == FALSE) |> # Drop those who don't use social media
+        ## change variable names to lower case
+        rename_with(tolower)
+ratings <- filter(misinfo, condition == 3) |>
+        select(id, starts_with("rating")) |>
+        pivot_longer(cols = starts_with("rating"), names_to = "headline", values_to = "rating") |>
+        mutate(headline = as.numeric(str_remove(headline, "rating_"))) |>
+        filter(!is.na(rating)) |>
+        mutate(headline_type = ifelse(headline <= 30, "FALSE", "TRUE"))
+
+discernment <- ratings |>
+        group_by(id) |>
+        mutate(sd_rating = sd(rating)) |>
+        group_by(id, sd_rating, headline_type) |>
+        summarize(
+                mean_rating = mean(rating)
+        ) |>
+        pivot_wider(names_from = headline_type, values_from = mean_rating) |>
+        ungroup() |>
+        mutate(discernment = (`TRUE` - `FALSE`) / sd_rating) |>
+        filter(!is.na(discernment)) |>
+        select(id, discernment) |>
+        left_join(
+                select(misinfo, id, country, age, sex, wvs250),
+                by = "id"
+        ) |>
+        mutate(sex = ifelse(sex == 1, "Male", "Female")) |>
+        rename(
+                "gender" = sex,
+                "demo_impt" = wvs250
+        )
+
+# filter(discernment, country == "us") |> ggplot(
+#        aes(x = age, y = discernment)
+# ) +
+#        stat_summary(fun = mean, geom = "point", size = 3) +
+#        geom_point(alpha = 0.1)
+
+
+```
+
+ We use the dataset from @arecharUnderstandingCombattingMisinformation2023, which contains information on how people rate the credibility of headlines: 
+
+| Variable    | Description                                                     |
+|-------------|-----------------------------------------------------------------|
+| `discernment` | Standardized difference between the mean rating of true and false headlines |
+| `country`    | Country                                                         |
+| `age`        | Age                                                             |
+| `gender`     | Gender                                                          |
+| `demo_impt`  | How important is it for you to live in a country that is governed democratically?|                                      |
+
+## Bivariate Prediction
+
+- [**Goal**]{.alert}: What's our best guess for a respondent's misinformation discernment given their age? 
+
+. . .
+
+```{r}
+#| label: bivariate
+#| echo: true
+#| output-location: column
+#| fig.height: 8
+
+misinfo_age_plot <- 
+  filter(discernment, country == "us") |>
+        ggplot(aes(
+                x = age,
+                y = discernment
+        )) +
+        geom_point() +
+        labs(
+                x = "Age",
+                y = "Misinformation Discernment"
+        )
+misinfo_age_plot
+```
+
+## Bivariate Prediction
+
+- For a given value of *X*, what's the best guess for *Y*?
+  - We need a function that maps values of *X* predictions about *Y*.
+  
+- [**Example**]{.alert}: what is the level of misinformation discernment for a 22-year-old?
+
+```{r}
+#| label: prediction_22
+#| echo: true
+
+misinfo_age22 <- filter(discernment, country == "us") |>
+  summarise(mean(discernment[age == 22])) |>
+  pull()
+misinfo_age22
+
+```
+
+## Plot the Prediction
+
+```{r}
+#| label: one_prediction_plot
+#| echo: true
+#| output-location: column
+#| fig.height: 10
+
+misinfo_age_plot +
+  geom_point(aes(x = 22,
+                 y = misinfo_age22), 
+             color = "red", size = 5)
+
+```
+## Predictions for All Ages
+
+We can use the `stat_summary` function to plot the mean misinformation discernment for each age.
+
+```{r}
+#| label: all_predictions_plot
+#| echo: true
+#| output-location: column
+#| fig.height: 10
+
+misinfo_age_plot +
+  stat_summary(fun = mean, 
+               geom = "point",
+               size = 5, 
+               color = "red") 
+
+```
+## Binned Means
+
+- While age-specific means are informative, they are pretty noisy. Is it really the case that a 22-year-old is that different from a 23-year-old?
+- We might reduce noise by binning ages and calculating the mean misinformation discernment for each bin.
+- We can use the `stat_summary_bin` function to do this.
+
+```{r}
+#| label: binned_means
+#| echo: true
+#| output-location: column
+#| fig.height: 10
+
+misinfo_age_plot +
+  stat_summary_bin(fun = mean, 
+                   geom = "point",
+                   size = 5, 
+                   color = "red",
+                   binwidth = 2) 
+
+
+```
+
+## Bigger Bins
+
+```{r}
+#| label: bigger_binned_means
+#| echo: true
+#| output-location: column
+#| fig.height: 10
+
+misinfo_age_plot +
+  stat_summary_bin(fun = mean, 
+                   geom = "point",
+                   size = 5, 
+                   color = "red",
+                   binwidth = 5) 
+
+
+```
+
+# Prediction with a Linear Model
+
+## Using a line to predict
+
+- Rather than discrete bins, we can use a linear model to predict misinformation discernment from age.
+
+- Simplest possible way to relate two variables: a line
+
+$$ y = mx + b $$
+
+- [**Problem:**]{.alert} for any line we draw, not all the data is on the line. 
+  - Some points will be above the line, some below. 
+  - Need a way to account for **chance variation** away from the line. 
+
+## Linear regression model
+
+- Model for the line of best fit: 
+
+$$ Y_i = \underbrace{\alpha}_{\text{intercept}} + \underbrace{\beta}_{\text{slope}} \cdot X_i + \underbrace{\epsilon_i}_{\text{error term}} $$
+- [**Coefficients/parameters**]{.alert} ($\alpha$ and $\beta$): true unknown intercept / slope of  the line of best fit
+  - "True" refers to the slopes we could estimate if we the slope on the full population. 
+  
+- [**Error term**]{.alert} ($\epsilon_i$): the difference between the predicted value and the true value of $Y_i$.
+  - Chance errors are 0 on average, and uncorrelated with $X_i$.
+  
+  
+## Interpretation of the regression line
+
+$$ Y_i = \alpha + \beta \cdot X_i + \epsilon_i $$
+
+- [**Intercept**]{.alert} ($\alpha$): the value of $Y$ when $X = 0$.
+  - Average misinformation discernment for a 0-year-old. 
+- [**Slope**]{.alert} ($\beta$): the change in $Y$ for a one-unit change in $X$.
+  - Average change in misinformation discernment for a one-year change in age.
+
+## Parameters vs Estimates
+
+- [**Parameters**]{.alert} ($\alpha$ and $\beta$): 
+  - The  values of $\alpha$ and $\beta$ if we could observe all the data.
+  - Because we almost always only have a sample, we can only estimate these values.
+- [**Estimates**]{.alert} ($\hat\alpha$ and $\hat{\beta}$): 
+  - The values of $\alpha$ and $\beta$ we calculate from the data.
+  - These estimates are our best guess at the true values of $\alpha$ and $\beta$.
+- [**Regression Line**]{.alert}: $\hat{Y} = \hat\alpha + \hat\beta \cdot X$
+  - According to the model, average value of $Y$ for a given $X$ ([**predicted value**]{.alert})
+  
+## Line of Best Fit
+
+```{r}
+#| label: regression_line
+#| echo: true
+#| output-location: column
+#| fig.height: 10
+
+misinfo_age_plot +
+  geom_smooth(method = "lm", 
+              se = FALSE, 
+              color = "red",
+              size = 3)
+```
+
+## Why not this line? 
+
+```{r}
+#| label: regression_line_bad
+#| echo: false
+#| fig.height: 10
+
+misinfo_age_plot +
+  geom_abline(intercept = 2, slope = -0.03, color = "orange", size = 3)
+
+```
+## Prediction Error
+
+- [**Prediction Error**]{.alert}: the difference between the predicted value and the true value of $Y_i$:
+$$Y_i - (\hat \alpha + \hat \beta X_i) $$
+- We can't predict the exact value of $Y_i$ for a given $X_i$ for two reasons:
+  - The conditional average does not capture all the variation in $Y_i$.
+  - The true function is not linear.
+- In our sampled data, we call this difference the **residual**.
+
+
+
+## Least Squares
+
+How do we get the line of best fit?
+
+- [**Least Squares**]{.alert}: the method of finding the line of best fit by minimizing the sum of the squared residuals (SSR)
+$$\text{SSR} = \sum_{i=1}^n (\text{prediction error}_i)^2 = \sum_{i=1}^n (Y_i - \hat \alpha - \hat \beta \cdot X_i)^2 $$
+- The line of best fit is the one that minimizes the magnitude of prediction errors.
+
+# Linear Regression in R
+
+## Linear Regressionion in R
+
+- `R` will calculate the line of best fit for us using the `lm` function.
+  - Syntax is `lm(y ~ x, data = data_frame)`
+  - `y` is the outcome variable, `x` is the predictor variable.
+  - `data_frame` is the data frame containing the variables.
+  
+```{r}
+#| label: lm_fit
+#| echo: true
+fit <- lm(discernment ~ age, data = discernment)
+fit
+```
+## Extracting Coefficients
+
+Use the `coef` function to extract the coefficients from the model object.
+
+```{r}
+#| label: coef_extract
+#| echo: true
+
+coef(fit)
+
+```
+
+A 1-unit increase in age (1 year) is associated with a .006 increase in the average level of discernment. 
+
+## broom package
+
+- The `broom` package provides a suite of functions for working with model objects.
+
+- The `tidy` function extracts the coefficients from a model object in a data frame.
+
+```{r}
+#| label: tidy_extract
+#| echo: true
+
+library(broom)
+tidy(fit)
+```
+
+## More on broom
+
+The `augment` function adds the predicted values and residuals to the original data frame.
+
+```{r}
+#| label: augment_extract
+#| echo: true
+
+augment(fit)
+
+```
+
+## Plotting the Residuals
+
+```{r}
+#| label: residuals_plot
+#| echo: true
+#| output-location: column
+#| fig.height: 10
+
+augment_out <- augment(fit)
+
+ggplot(augment_out, aes(x = age, y = .resid)) +
+  geom_point() +
+  labs(title = "Residuals Plot",
+       x = "Age",
+       y = "Residuals") +
+  geom_smooth(method = "lm", 
+              se = FALSE, 
+              color = "red",
+              size = 3)
+
+
+```
+
+
+## Prediction with the Model
+
+- We can use the `predict` function to get the predicted values from the model.
+- The `newdata` argument is a data frame with the values of the predictor variable(s) we want to predict for.
+
+```{r}
+#| label: predict_model
+#| echo: true
+
+predict(fit, newdata = data.frame(age = c(20, 70)))
+
+``` 
+
+## Back to the Binned Means
+
+```{r}
+#| label: binned_means_lm
+#| echo: true
+#| output-location: column
+#| fig.height: 10
+
+misinfo_age_plot +
+  stat_summary(fun = mean, 
+               geom = "point",
+               size = 5, 
+               color = "red") + 
+  geom_smooth(method = "lm",
+              se = FALSE,
+              color = "red",
+              size = 3)
+```
+
+
+
+## References
