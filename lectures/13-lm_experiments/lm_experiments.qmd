@@ -93,6 +93,8 @@ group_by(exp_data, treatment) %>%
 
 - We can do this by including the block as a categorical variable in the regression model:
   - To include a categorical variable in a regression model, we create a set of binary variables that indicate the level of the categorical variable.
+
+. . .  
   
 | Unit | Block | High | Medium | Low |
 |------|-------|------|--------|-----|
@@ -297,6 +299,8 @@ lm(hisp_to_2006 ~ treatment + block + hisp_to_2002, data = exp_data)  |>
 
 (1) $X_i  = \gamma_0 + \gamma_1 Z_i + u_i$ (regression of $X_i$ on $Z_i$)
 (2) $Y_i = \delta_0 + \delta_1 X_i + v_i$  (regression of $Y_i$ on $X_i$)
+
+. . .
 
 To adjust for $Z_i$ when estimating the effect of $X_i$ on $Y_i$:
 
