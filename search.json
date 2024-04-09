@@ -1145,7 +1145,7 @@
     "href": "lectures/13-lm_experiments/lm_experiments.html#linear-regression-with-a-categorical-variables",
     "title": "Linear Regression and Experiments",
     "section": "Linear Regression with a Categorical Variables",
-    "text": "Linear Regression with a Categorical Variables\n\nIn this experiment, the treatment was randomized within 3 blocks.\nAs we learned earlier, one needs to “analyze as ye randomize”, which means that we need to account for the blocking in our analysis.\nWe can do this by including the block as a categorical variable in the regression model:\n\nTo include a categorical variable in a regression model, we create a set of binary variables that indicate the level of the categorical variable.\n\n\n\n\n\nUnit\nBlock\nHigh\nMedium\nLow\n\n\n\n\n1\nHigh\n1\n0\n0\n\n\n2\nMedium\n0\n1\n0\n\n\n3\nLow\n0\n0\n1"
+    "text": "Linear Regression with a Categorical Variables\n\nIn this experiment, the treatment was randomized within 3 blocks.\nAs we learned earlier, one needs to “analyze as ye randomize”, which means that we need to account for the blocking in our analysis.\nWe can do this by including the block as a categorical variable in the regression model:\n\nTo include a categorical variable in a regression model, we create a set of binary variables that indicate the level of the categorical variable.\n\n\n\n\n\n\nUnit\nBlock\nHigh\nMedium\nLow\n\n\n\n\n1\nHigh\n1\n0\n0\n\n\n2\nMedium\n0\n1\n0\n\n\n3\nLow\n0\n0\n1"
   },
   {
     "objectID": "lectures/13-lm_experiments/lm_experiments.html#linear-regression-with-a-categorical-variables-1",
@@ -1243,7 +1243,7 @@
     "href": "lectures/13-lm_experiments/lm_experiments.html#partialling-out",
     "title": "Linear Regression and Experiments",
     "section": "Partialling Out",
-    "text": "Partialling Out\n\n\\(X_i  = \\gamma_0 + \\gamma_1 Z_i + u_i\\) (regression of \\(X_i\\) on \\(Z_i\\))\n\\(Y_i = \\delta_0 + \\delta_1 X_i + v_i\\) (regression of \\(Y_i\\) on \\(X_i\\))\n\nTo adjust for \\(Z_i\\) when estimating the effect of \\(X_i\\) on \\(Y_i\\):\n\nGet the residuals from model 1: \\(\\hat u_i = X_i - \\hat \\gamma_0 - \\hat \\gamma_1 Z_i\\) (\\(\\hat u_i\\) is the part of \\(X_i\\) that is not explained by \\(Z_i\\))\nGet the residuals from model 2: \\(\\hat v_i = Y_i - \\hat \\delta_0 - \\hat \\delta_1 X_i\\) (\\(\\hat v_i\\) is the part of \\(Y_i\\) that is not explained by \\(X_i\\))\nRegress \\(\\hat v_i\\) on \\(\\hat u_i\\) to get the effect of \\(X_i\\) on \\(Y_i\\) after adjusting for \\(Z_i\\)."
+    "text": "Partialling Out\n\n\\(X_i  = \\gamma_0 + \\gamma_1 Z_i + u_i\\) (regression of \\(X_i\\) on \\(Z_i\\))\n\\(Y_i = \\delta_0 + \\delta_1 X_i + v_i\\) (regression of \\(Y_i\\) on \\(X_i\\))\n\n\nTo adjust for \\(Z_i\\) when estimating the effect of \\(X_i\\) on \\(Y_i\\):\n\nGet the residuals from model 1: \\(\\hat u_i = X_i - \\hat \\gamma_0 - \\hat \\gamma_1 Z_i\\) (\\(\\hat u_i\\) is the part of \\(X_i\\) that is not explained by \\(Z_i\\))\nGet the residuals from model 2: \\(\\hat v_i = Y_i - \\hat \\delta_0 - \\hat \\delta_1 X_i\\) (\\(\\hat v_i\\) is the part of \\(Y_i\\) that is not explained by \\(X_i\\))\nRegress \\(\\hat v_i\\) on \\(\\hat u_i\\) to get the effect of \\(X_i\\) on \\(Y_i\\) after adjusting for \\(Z_i\\)."
   },
   {
     "objectID": "lectures/13-lm_experiments/lm_experiments.html#partialling-out-in-experiments",

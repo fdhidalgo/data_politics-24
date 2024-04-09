@@ -477,6 +477,7 @@ F. Daniel Hidalgo
 <li class="fragment">To include a categorical variable in a regression model, we create a set of binary variables that indicate the level of the categorical variable.</li>
 </ul></li>
 </ul>
+<div class="fragment">
 <table>
 <thead>
 <tr class="header">
@@ -511,6 +512,7 @@ F. Daniel Hidalgo
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="linear-regression-with-a-categorical-variables-1" class="slide level2">
 <h2>Linear Regression with a Categorical Variables</h2>
@@ -662,12 +664,14 @@ F. Daniel Hidalgo
 <li class="fragment"><span class="math inline">\(X_i  = \gamma_0 + \gamma_1 Z_i + u_i\)</span> (regression of <span class="math inline">\(X_i\)</span> on <span class="math inline">\(Z_i\)</span>)</li>
 <li class="fragment"><span class="math inline">\(Y_i = \delta_0 + \delta_1 X_i + v_i\)</span> (regression of <span class="math inline">\(Y_i\)</span> on <span class="math inline">\(X_i\)</span>)</li>
 </ol>
+<div class="fragment">
 <p>To adjust for <span class="math inline">\(Z_i\)</span> when estimating the effect of <span class="math inline">\(X_i\)</span> on <span class="math inline">\(Y_i\)</span>:</p>
 <ol type="1">
 <li class="fragment"><p>Get the residuals from model 1: <span class="math inline">\(\hat u_i = X_i - \hat \gamma_0 - \hat \gamma_1 Z_i\)</span> (<span class="math inline">\(\hat u_i\)</span> is the part of <span class="math inline">\(X_i\)</span> that is not explained by <span class="math inline">\(Z_i\)</span>)</p></li>
 <li class="fragment"><p>Get the residuals from model 2: <span class="math inline">\(\hat v_i = Y_i - \hat \delta_0 - \hat \delta_1 X_i\)</span> (<span class="math inline">\(\hat v_i\)</span> is the part of <span class="math inline">\(Y_i\)</span> that is not explained by <span class="math inline">\(X_i\)</span>)</p></li>
 <li class="fragment"><p>Regress <span class="math inline">\(\hat v_i\)</span> on <span class="math inline">\(\hat u_i\)</span> to get the effect of <span class="math inline">\(X_i\)</span> on <span class="math inline">\(Y_i\)</span> after adjusting for <span class="math inline">\(Z_i\)</span>.</p></li>
 </ol>
+</div>
 </section>
 <section id="partialling-out-in-experiments" class="slide level2">
 <h2>Partialling Out in Experiments</h2>
