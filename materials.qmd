@@ -17,3 +17,5 @@ title: "Materials"
 **Week 7**: [Censorship](materials/week_7.qmd)
 
 **Week 8**: [Misinformation](materials/week_8.qmd)
+
+**Week 9**: [Link](materials/week_9.qmd)

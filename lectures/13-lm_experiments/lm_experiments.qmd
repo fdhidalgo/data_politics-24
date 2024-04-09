@@ -1,0 +1,410 @@
+---
+title: "Linear Regression and Experiments"
+subtitle: "Lecture 13"
+date: last-modified
+author: 
+  - name: F. Daniel Hidalgo
+    email: dhidalgo@mit.edu
+    affiliations: MIT
+format: 
+  clean-revealjs:
+    incremental: true
+engine: knitr
+execute: 
+  cache: true
+webr:
+  packages: ['tidyverse'] # Install R packages on document open
+  show-startup-message: false
+filters: 
+  - timer
+  - webr
+bibliography: ../data_politics_2024.bib
+editor:
+  render-on-save: true
+---
+
+```{r}
+#| label: setup
+#| echo: false
+#| warning: false
+#| cache: false
+
+library(tidyverse)
+library(hrbrthemes)
+library(gganimate)
+theme_set(theme_ipsum())
+
+```
+
+## Models and Experiments
+
+- One of the benefits of randomized experiments is their simplicity:
+  - We can estimate causal effects using simple statistics like the difference-in-means that are easily communicated. 
+  - Permutation tests give us a way to communicate uncertainty with very few assumptions. 
+- But we can also use more complex models to estimate causal effects because:
+  - They can help us increase precision by accounting for more sources of variation.
+  - They can be used to examine heterogeneity 
+  - They can be used to generate predictions
+- Running example: Effect of Voter Mobilization Messages in Spanish Media on Hispanic Turnout
+  
+## Linear Regression with a Binary Covariate
+
+```{r}
+#| label: import_data
+#| echo: false
+
+exp_data <- read_csv("PanagopoulosGreen_PRQ_2010_082010.csv")  |>
+  rename_with(tolower) |>
+  mutate(treatment = ifelse(grp_buy > 0, 1, 0)) |>
+  select(hisp_to_2006, hisp_perc_reg, treatment, hisp_to_2002, strata75, strata50) |>
+  filter(hisp_perc_reg > 6) |>
+  mutate(block = case_when(strata75 == 1 ~ "High", strata50 == 1 ~ "Medium", TRUE ~ "Low"))
+
+```
+
+To translate the difference-in-means into a regression model, we can use a linear regression with a binary covariate:
+
+$$\texttt{hisp_to_2006}_i = \alpha + \beta_1 \texttt{treatment} + \epsilon_i$$
+
+- When independent variable is **binary** (like the treatment variable):
+  - Intercept $\alpha$ is average value of the outcome when $\texttt{treatment} = 0$.
+  - Coefficient $\beta_1$ is the difference in the average outcome when $\texttt{treatment} = 1$ compared to when $\texttt{treatment} = 0$; i.e., the treatment effect.
+  
+## Linear Regression with a Binary Covariate
+
+```{r}
+#| label: lm_binary
+#| echo: true
+library(broom)
+
+lm_hisp <- lm(hisp_to_2006 ~ treatment, data = exp_data)
+tidy(lm_hisp)
+
+group_by(exp_data, treatment) %>%
+  summarize(mean_hisp = mean(hisp_to_2006))
+
+```
+
+## Linear Regression with a Categorical Variables
+
+- In this experiment, the treatment was randomized within 3 **blocks**. 
+
+- As we learned earlier, one needs to "analyze as ye randomize", which means that we need to account for the blocking in our analysis.
+
+- We can do this by including the block as a categorical variable in the regression model:
+  - To include a categorical variable in a regression model, we create a set of binary variables that indicate the level of the categorical variable.
+  
+| Unit | Block | High | Medium | Low |
+|------|-------|------|--------|-----|
+| 1    | High  | 1    | 0      | 0   |
+| 2    | Medium| 0    | 1      | 0   |
+| 3    | Low   | 0    | 0      | 1   |
+
+## Linear Regression with a Categorical Variables
+
+Then we include **all but one** of these binary variables in the regression model:
+  $$ \texttt{hisp_to_2006}_i = \alpha + \beta_1 \texttt{treatment} + \beta_2 \texttt{block}_{\texttt{1}} + \beta_3 \texttt{block}_{\texttt{2}} + \epsilon_i$$
+
+- The intercept $\alpha$ is the average value of the outcome when $\texttt{treatment} = 0$ and $\texttt{block} = \texttt{Low}$.
+- The coefficient $\beta_1$ is the difference in the average outcome when $\texttt{treatment} = 1$ compared to when $\texttt{treatment} = 0$.
+- The coefficients $\beta_2$ and $\beta_3$ are the differences in the average outcome when $\texttt{block} = \texttt{High}$ and $\texttt{block} = \texttt{Medium}$ compared to when $\texttt{block} = \texttt{Low}$.
+
+## Linear Regression with a Categorical Variables
+
+
+```{r}
+#| label: lm_categorical
+#| echo: true
+
+lm_hisp_block <- lm(hisp_to_2006 ~ treatment + block, data = exp_data)
+tidy(lm_hisp_block)
+
+```
+
+## Inference with the Bootstrap
+
+- We can use the bootstrap to estimate generate confidence intervals for coefficient estimates.
+- As with the difference-in-means test, we simply resample the data with replacement and estimate the model for each resample.
+- We can then use the distribution of the coefficient estimates to generate confidence intervals.
+
+## Population Regression
+
+```{r}
+#| label: bootstrap_lm
+#| echo: false
+
+
+hisp_to_plot <- ggplot(exp_data, aes(x = hisp_to_2002, y = hisp_to_2006)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme(legend.position = "none")
+
+hisp_to_plot
+
+```
+
+## Randomly Sample from the Data
+
+```{r}
+#| label: bootstrap_lm1
+#| echo: false
+
+bs_samp1 <- exp_data %>% 
+  sample_n(size = nrow(exp_data), replace = TRUE)
+
+hisp_to_plot +
+  geom_point(data = bs_samp1, aes(x = hisp_to_2002, y = hisp_to_2006), color = "red") +
+  geom_smooth(data = bs_samp1, method = "lm", se = FALSE, color = "red")
+
+
+```
+
+## Randomly Sample from the Data
+
+```{r}
+#| label: bootstrap_lm2
+#| echo: false
+
+bs_samp2 <- exp_data %>% 
+  sample_n(size = nrow(exp_data), replace = TRUE)
+
+hisp_to_plot +
+  geom_point(data = bs_samp2, aes(x = hisp_to_2002, y = hisp_to_2006), color = "red") +
+  geom_smooth(data = bs_samp2, method = "lm", se = FALSE, color = "red")
+```
+
+## Randomly Sample from the Data
+
+```{r}
+#| label: bootstrap_lm3
+#| echo: false
+
+bs_samp3 <- exp_data %>% 
+  sample_n(size = nrow(exp_data), replace = TRUE)
+
+hisp_to_plot +
+  geom_point(data = bs_samp3, aes(x = hisp_to_2002, y = hisp_to_2006), color = "red") +
+  geom_smooth(data = bs_samp3, method = "lm", se = FALSE, color = "red")
+```
+
+## Bootstrap Distribution
+
+```{r}
+#| label: bootstrap_dist
+#| echo: false
+#| fig.width: 6
+#| fig.height: 4
+
+
+## Generate 100 sets of predicted values from bootstrapped models
+bs_preds <- function(data) {
+  bs_model <- lm(hisp_to_2006 ~ hisp_to_2002, 
+                 data = sample_n(data, size = nrow(data), replace = TRUE))
+  fitted <- augment(bs_model)
+}
+
+bs_preds_list <- map(1:100, ~bs_preds(exp_data))
+## Add bootstrap index to each set of predictions
+bs_preds_list <- map2(bs_preds_list, 1:100, ~mutate(.x, bs_index = .y))
+
+## Combine all the bootstrapped predictions
+bs_preds_df <- bind_rows(bs_preds_list)
+
+## Plot the bootstrapped predictions
+ggplot(exp_data, aes(x = hisp_to_2002, y = hisp_to_2006)) +
+  geom_point() +
+  theme(legend.position = "none") +
+    geom_line(data = bs_preds_df, aes(x = hisp_to_2002, y = .fitted, group = bs_index), 
+            alpha = 0.2, color = "red") +
+    geom_smooth(method = "lm", se = FALSE, color = "black") 
+
+```
+
+## Confidence Intervals for Treatment Effect
+
+```{r}
+#| label: bootstrap_lm_ci
+#| echo: true
+#| output-location: slide
+
+bs_lm <- function(data) {
+  lm(hisp_to_2006 ~ treatment + block, 
+     data = sample_n(data, 
+                     size = nrow(data), 
+                     replace = TRUE)) |>
+    tidy() |>
+    filter(term == "treatment") |>
+    pull(estimate)
+}
+
+bs_lm_ci <- map(1:1000, ~bs_lm(exp_data)) |>
+  unlist()
+
+## Plot 95% confidence interval
+ggplot() +
+  geom_histogram(aes(x = bs_lm_ci), bins = 30, alpha = 0.5) +
+  geom_vline(xintercept = c(quantile(bs_lm_ci, .025),
+                            quantile(bs_lm_ci, .975)),
+             color = "red") 
+```
+
+## Increasing Precision
+
+- We used a linear model to estimate the treatment effect, but the confidence interval is quite wide. 
+- How can we use predictive modeling to increase the precision of our estimate?
+  - We can use predictive pre-treatment covariates to remove unexplained variation in the outcome. 
+  - This will help us estimate the treatment effect more precisely by removing variation not related to the treatment.
+  
+. . . 
+
+Model (ignoring block variables for now) with pre-treatment covariate:
+  
+$$ \texttt{hisp_to_2006}_i = \alpha + \beta_1 \texttt{treatment}  + \beta_2 \texttt{hisp_to_2002} + \epsilon $$  
+
+## "Adjusting" for Pre-Treatment Covariates
+
+$$ \texttt{hisp_to_2006}_i = \alpha + \beta_1 \texttt{treatment}  + \beta_2 \texttt{hisp_to_2002} + \epsilon $$  
+
+```{r}
+#| label: lm_adjusted
+#| echo: true
+
+lm(hisp_to_2006 ~ treatment + block, data = exp_data)  |>
+  tidy() |>
+  filter(term == "treatment") 
+
+lm(hisp_to_2006 ~ treatment + block + hisp_to_2002, data = exp_data)  |>
+  tidy() |>
+  filter(term == "treatment") 
+
+```
+
+## Adjusting for Pre-Treatment Covariates
+
+- Two models:
+  1. Short model: $Y_i = \alpha + \beta_1 X_i + \epsilon_i$
+  2. Long model: $Y_i = \alpha + \beta_1 X_i + \beta_2 Z_i + \epsilon_i$
+
+
+- How $\hat \beta_1$ in the long model differ from $\hat \beta_1$ in the short model?
+  - $\hat \beta_1$ in the long model is the effect of $X_i$ on $Y_i$ after adjusting for $Z_i$.
+  
+- Mathematically, what does it mean to "adjust" for $Z_i$? Start with two models:
+ 1.  $X_i  = \gamma_0 + \gamma_1 Z_i + u_i$ (regression of $X_i$ on $Z_i$)
+ 2. $Y_i = \delta_0 + \delta_1 X_i + v_i$  (regression of $Y_i$ on $X_i$)
+
+## Partialling Out
+
+(1) $X_i  = \gamma_0 + \gamma_1 Z_i + u_i$ (regression of $X_i$ on $Z_i$)
+(2) $Y_i = \delta_0 + \delta_1 X_i + v_i$  (regression of $Y_i$ on $X_i$)
+
+To adjust for $Z_i$ when estimating the effect of $X_i$ on $Y_i$:
+
+1. Get the residuals from model 1: $\hat u_i = X_i - \hat \gamma_0 - \hat \gamma_1 Z_i$ ($\hat u_i$ is the part of $X_i$ that is not explained by $Z_i$)
+  
+2. Get the residuals from model 2: $\hat v_i = Y_i - \hat \delta_0 - \hat \delta_1 X_i$ ($\hat v_i$ is the part of $Y_i$ that is not explained by $X_i$)
+  
+3. Regress $\hat v_i$ on $\hat u_i$ to get the effect of $X_i$ on $Y_i$ after adjusting for $Z_i$.
+
+## Partialling Out in Experiments
+
+(1) $X_i  = \gamma_0 + \gamma_1 Z_i + u_i$ (regression of $X_i$ on $Z_i$)
+(2) $Y_i = \delta_0 + \delta_1 X_i + v_i$  (regression of $Y_i$ on $X_i$)
+
+- In experiments, $X_i$ is the treatment, $Z_i$ are pre-treatment covariates, and $Y_i$ is the outcome.
+- What should $\gamma_1$ be in the regression of $X_i$ on $Z_i$? 
+  -  $\gamma_1$ should be zero because $Z_i$ should not be related to the treatment in an experiment.
+  - So in most cases, variation in $u_i$ is the same as variation in $X_i$.
+- $v_i$ however should be less variable than $Y_i$ because it removes the part of $Y_i$ that is not related to $X_i$.
+
+## Partialling Out in Practice
+
+```{r}
+#| label: residuals
+#| echo: true
+#| output-location: slide
+
+residuals_yz <- lm(hisp_to_2006 ~ hisp_to_2002, data = exp_data) |>
+  residuals()
+demeaned_y <- exp_data$hisp_to_2006 - mean(exp_data$hisp_to_2006)
+
+bind_rows(tibble(Y = demeaned_y, 
+       Type = "Unadjusted Y"),
+          tibble(Y = residuals_yz,
+                 Type = "Adjusted Y")) |>
+  ggplot(aes(x = Y, fill = Type)) +
+  geom_density(alpha = .5) +
+  theme(legend.position = "top")
+
+```
+
+## Partialling Out in Practice
+```{r}
+#| label: partialling_out
+#| echo: true
+
+yx_resid <- lm(hisp_to_2006 ~ hisp_to_2002, data = exp_data) |>
+  residuals()
+xz_resid <- lm(treatment ~ hisp_to_2002, data = exp_data) |>
+  residuals()
+
+lm(yx_resid ~ xz_resid) |>
+  tidy() |>
+  filter(term == "xz_resid") |>
+  pull(estimate)
+
+mod <- lm(hisp_to_2006 ~ treatment + hisp_to_2002, data = exp_data)
+tidy(mod) |>
+  filter(term == "treatment") |>
+  pull(estimate)
+
+
+```
+## Confidence Intervals
+
+```{r}
+#| label: ci_adjust
+#| echo: true
+
+bs_lm_adj <- function(data) {
+  lm(hisp_to_2006 ~ treatment + block + hisp_to_2002,
+     data = sample_n(data, 
+                     size = nrow(data), 
+                     replace = TRUE)) |>
+    tidy() |>
+    filter(term == "treatment") |>
+    pull(estimate)
+}
+
+bs_lm_adj_ci <- map(1:1000, ~bs_lm_adj(exp_data)) |>
+  unlist()
+
+##Unadjusted Confidence Intervals
+quantile(bs_lm_ci, c(.025, .975))
+## Adjusted Confidence Intervals
+quantile(bs_lm_adj_ci, c(.025, .975))
+
+```
+## Alternative Perspective on Covariate Adjustment
+
+![](images/bad_draw_plot_1.png)
+
+## Alternative Perspective on Covariate Adjustment
+
+![](images/bad_draw_plot_2.png)
+
+## Alternative Perspective on Covariate Adjustment
+
+![](images/bad_draw_plot_3.png)
+
+## Alternative Perspective on Covariate Adjustment
+
+![](images/bad_draw_plot_4.png)
+
+## Alternative Perspective on Covariate Adjustment
+
+![](images/bad_draw_plot_5.png)
+
+## Alternative Perspective on Covariate Adjustment
+
+![](images/bad_draw_plot_6.png)
