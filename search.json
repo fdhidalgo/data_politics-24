@@ -1120,165 +1120,298 @@
     "text": "Effects on Attitudes"
   },
   {
-    "objectID": "lectures/00-template/00-template.html#example-slide",
-    "href": "lectures/00-template/00-template.html#example-slide",
-    "title": "Quarto reveal.js clean",
-    "section": "Example slide",
-    "text": "Example slide\nThis is a subtitle\nBefore we dive a bit deeper, here is a simple example of the clean theme in action.\n\nNo pictures or anything fancy. Just text for the moment.\n\nNext, we’ll take a brief tour of some theme components.\n\nWe’ll use the same basic structure as the original LaTeX slides.\nNote that the full suite of Reveal.js features are available for this Quarto implementation, even if we don’t cover everything here."
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#models-and-experiments",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#models-and-experiments",
+    "title": "Linear Regression and Experiments",
+    "section": "Models and Experiments",
+    "text": "Models and Experiments\n\nOne of the benefits of randomized experiments is their simplicity:\n\nWe can estimate causal effects using simple statistics like the difference-in-means that are easily communicated.\nPermutation tests give us a way to communicate uncertainty with very few assumptions.\n\nBut we can also use more complex models to estimate causal effects because:\n\nThey can help us increase precision by accounting for more sources of variation.\nThey can be used to examine heterogeneity\nThey can be used to generate predictions\n\nRunning example: Effect of Voter Mobilization Messages in Spanish Media on Hispanic Turnout"
   },
   {
-    "objectID": "lectures/00-template/00-template.html#before-you-proceed",
-    "href": "lectures/00-template/00-template.html#before-you-proceed",
-    "title": "Quarto reveal.js clean",
-    "section": "Before you proceed…",
-    "text": "Before you proceed…\nRequirements for the coding examples in this demo\n\n\n\n\n\n\nR libraries\n\n\nWhile the clean theme is language agnostic, we will use several R coding examples in this demo to highlight some advanced theme features.\nYou will need the following libraries if you’d like to render the template “as-is”:\ninstall.packages(c(\"modelsummary\", \"gt\", \"fixest\", \"pdftools\", \"tinytex\", \"threejs\"))\n\n\n\n\n\n\n\n\n\nTinyTex\n\n\nWhile reveal.js presentations are HTML format, we will show an example of how to embed LaTeX tables as images. This requires a working Tex distribution, of which TinyTex provides by far the easiest and lightest integration with Quarto. More details here.\nquarto install tinytex"
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#linear-regression-with-a-binary-covariate",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#linear-regression-with-a-binary-covariate",
+    "title": "Linear Regression and Experiments",
+    "section": "Linear Regression with a Binary Covariate",
+    "text": "Linear Regression with a Binary Covariate\nTo translate the difference-in-means into a regression model, we can use a linear regression with a binary covariate:\n\\[\\texttt{hisp_to_2006}_i = \\alpha + \\beta_1 \\texttt{treatment} + \\epsilon_i\\]\n\nWhen independent variable is binary (like the treatment variable):\n\nIntercept \\(\\alpha\\) is average value of the outcome when \\(\\texttt{treatment} = 0\\).\nCoefficient \\(\\beta_1\\) is the difference in the average outcome when \\(\\texttt{treatment} = 1\\) compared to when \\(\\texttt{treatment} = 0\\); i.e., the treatment effect."
   },
   {
-    "objectID": "lectures/00-template/00-template.html#components-1",
-    "href": "lectures/00-template/00-template.html#components-1",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nOrdered and Unordered Lists\nHere we have an unordered list.\n\nfirst item\n\nsub-item\n\nsecond item\n\nAnd next we have an ordered one.\n\nfirst item\n\nsub-item\n\nsecond item"
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#linear-regression-with-a-binary-covariate-1",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#linear-regression-with-a-binary-covariate-1",
+    "title": "Linear Regression and Experiments",
+    "section": "Linear Regression with a Binary Covariate",
+    "text": "Linear Regression with a Binary Covariate\n\nlibrary(broom)\n\nlm_hisp &lt;- lm(hisp_to_2006 ~ treatment, data = exp_data)\ntidy(lm_hisp)\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)    32.1       2.07     15.5  5.65e-22\n2 treatment       7.01      3.94      1.78 8.04e- 2\n\ngroup_by(exp_data, treatment) %&gt;%\n  summarize(mean_hisp = mean(hisp_to_2006))\n\n# A tibble: 2 × 2\n  treatment mean_hisp\n      &lt;dbl&gt;     &lt;dbl&gt;\n1         0      32.1\n2         1      39.2"
   },
   {
-    "objectID": "lectures/00-template/00-template.html#components-2",
-    "href": "lectures/00-template/00-template.html#components-2",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nAlerts & Cross-refs\nTo emphasize specific words or text, you can:\n\nUse the default .alert class, e.g. important note.\nUse the .fg class for custom colour, e.g. important note.\nUse the .bg class for custom background, e.g. important note.\n\nTo cross-reference, you have several options, for example:\n\nBeamer-like .button class provided by this theme, e.g. Appendix\nQuarto’s native cross-ref syntax, e.g., “See Section 4.3.”"
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#linear-regression-with-a-categorical-variables",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#linear-regression-with-a-categorical-variables",
+    "title": "Linear Regression and Experiments",
+    "section": "Linear Regression with a Categorical Variables",
+    "text": "Linear Regression with a Categorical Variables\n\nIn this experiment, the treatment was randomized within 3 blocks.\nAs we learned earlier, one needs to “analyze as ye randomize”, which means that we need to account for the blocking in our analysis.\nWe can do this by including the block as a categorical variable in the regression model:\n\nTo include a categorical variable in a regression model, we create a set of binary variables that indicate the level of the categorical variable.\n\n\n\n\n\nUnit\nBlock\nHigh\nMedium\nLow\n\n\n\n\n1\nHigh\n1\n0\n0\n\n\n2\nMedium\n0\n1\n0\n\n\n3\nLow\n0\n0\n1"
   },
   {
-    "objectID": "lectures/00-template/00-template.html#components-3",
-    "href": "lectures/00-template/00-template.html#components-3",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nCitations\nCitations follow the standard Quarto format and be sourced from BibLaTex, BibTeX, or CLS files. For example:\n\nTopic 1: Spatial Frictions (Fajgelbaum et al. 2018; Hsieh and Moretti 2019; Moretti 2011)\nTopic 2: Blah (Suárez Serrato and Zidar 2016)"
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#linear-regression-with-a-categorical-variables-1",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#linear-regression-with-a-categorical-variables-1",
+    "title": "Linear Regression and Experiments",
+    "section": "Linear Regression with a Categorical Variables",
+    "text": "Linear Regression with a Categorical Variables\nThen we include all but one of these binary variables in the regression model: \\[ \\texttt{hisp_to_2006}_i = \\alpha + \\beta_1 \\texttt{treatment} + \\beta_2 \\texttt{block}_{\\texttt{1}} + \\beta_3 \\texttt{block}_{\\texttt{2}} + \\epsilon_i\\]\n\nThe intercept \\(\\alpha\\) is the average value of the outcome when \\(\\texttt{treatment} = 0\\) and \\(\\texttt{block} = \\texttt{Low}\\).\nThe coefficient \\(\\beta_1\\) is the difference in the average outcome when \\(\\texttt{treatment} = 1\\) compared to when \\(\\texttt{treatment} = 0\\).\nThe coefficients \\(\\beta_2\\) and \\(\\beta_3\\) are the differences in the average outcome when \\(\\texttt{block} = \\texttt{High}\\) and \\(\\texttt{block} = \\texttt{Medium}\\) compared to when \\(\\texttt{block} = \\texttt{Low}\\)."
   },
   {
-    "objectID": "lectures/00-template/00-template.html#components-4",
-    "href": "lectures/00-template/00-template.html#components-4",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nBlocks\nQuarto provides dedicated environments for theorems, lemmas, and so forth.\nBut in presentation format, it’s arguably more effective just to use a Callout Block.\n\n\n\n\n\n\nRegression Specification\n\n\nThe main specification is as follows:\n\\[\ny_{it} = X_{it} \\beta + \\mu_i + \\varepsilon_{it}\n\\]"
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#linear-regression-with-a-categorical-variables-2",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#linear-regression-with-a-categorical-variables-2",
+    "title": "Linear Regression and Experiments",
+    "section": "Linear Regression with a Categorical Variables",
+    "text": "Linear Regression with a Categorical Variables\n\nlm_hisp_block &lt;- lm(hisp_to_2006 ~ treatment + block, data = exp_data)\ntidy(lm_hisp_block)\n\n# A tibble: 4 × 5\n  term        estimate std.error statistic       p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1 (Intercept)   32.5        4.60     7.06  0.00000000333\n2 treatment      6.26       4.06     1.54  0.129        \n3 blockLow       4.15       6.67     0.622 0.536        \n4 blockMedium   -0.957      4.98    -0.192 0.848"
   },
   {
-    "objectID": "lectures/00-template/00-template.html#components-5",
-    "href": "lectures/00-template/00-template.html#components-5",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nMulticolumn I: Text only\n\n\nColumn 1\nHere is a long sentence that will wrap onto the next line as it hits the column width, and continue this way until it stops.\n\nColumn 2\nSome other text in another column.\nA second paragraph.\n\n\nMulticolumn support is very flexible and we can continue with a single full span column in the same slide."
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#inference-with-the-bootstrap",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#inference-with-the-bootstrap",
+    "title": "Linear Regression and Experiments",
+    "section": "Inference with the Bootstrap",
+    "text": "Inference with the Bootstrap\n\nWe can use the bootstrap to estimate generate confidence intervals for coefficient estimates.\nAs with the difference-in-means test, we simply resample the data with replacement and estimate the model for each resample.\nWe can then use the distribution of the coefficient estimates to generate confidence intervals."
   },
   {
-    "objectID": "lectures/00-template/00-template.html#components-6",
-    "href": "lectures/00-template/00-template.html#components-6",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nMulticolumn II: Text and figures\n\n\n\n\n\nA point about the figure that is potentially important.\nAnother point about the figure that is also potentially important.\n\n\n\nNote that sub- and multi-panel figures are also natively supported by Quarto. See here."
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#population-regression",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#population-regression",
+    "title": "Linear Regression and Experiments",
+    "section": "Population Regression",
+    "text": "Population Regression"
   },
   {
-    "objectID": "lectures/00-template/00-template.html#components-7",
-    "href": "lectures/00-template/00-template.html#components-7",
-    "title": "Quarto reveal.js clean",
-    "section": "Components",
-    "text": "Components\nMulticolumn III: Code and output\n\n\npalette(\"Classic Tableau\")\n\npar(\n        family = \"HersheySans\",\n        las = 1, pch = 19, cex = 1.5\n)\n\npairs(\n        iris[, 1:4],\n        col = iris$Species\n)\n\n\n\n\n\n\n\n\nFigure 1: Pairwise scatterplot"
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#randomly-sample-from-the-data",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#randomly-sample-from-the-data",
+    "title": "Linear Regression and Experiments",
+    "section": "Randomly Sample from the Data",
+    "text": "Randomly Sample from the Data"
   },
   {
-    "objectID": "lectures/00-template/00-template.html#tables-1",
-    "href": "lectures/00-template/00-template.html#tables-1",
-    "title": "Quarto reveal.js clean",
-    "section": "Tables",
-    "text": "Tables\nRegression example\nQuarto offers excellent table support, with further customization via user libraries. Let’s illustrate with a regression example:\n\nlibrary(fixest)\n\nmods &lt;- feols(\n        rating ~ complaints + privileges + learning + csw0(raises + critical) + advance,\n        data = attitude\n)\n\ndict &lt;- c(\n        \"rating\" = \"Overall Rating\",\n        \"complaints\" = \"Handling of Complaints\",\n        \"privileges\" = \"No Special Priviledges\",\n        \"learning\" = \"Opportunity to Learn\",\n        \"raises\" = \"Performance-Based Raises\",\n        \"critical\" = \"Too Critical\",\n        \"advance\" = \"Advancement\"\n)"
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#randomly-sample-from-the-data-1",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#randomly-sample-from-the-data-1",
+    "title": "Linear Regression and Experiments",
+    "section": "Randomly Sample from the Data",
+    "text": "Randomly Sample from the Data"
   },
   {
-    "objectID": "lectures/00-template/00-template.html#regression-table",
-    "href": "lectures/00-template/00-template.html#regression-table",
-    "title": "Quarto reveal.js clean",
-    "section": "Regression table",
-    "text": "Regression table\nmodelsummary\nIf you use modelsummary with this Quarto theme, we advise setting the gt backend for a cleaner aesthetic. More details here.\n\nlibrary(modelsummary)\noptions(modelsummary_factory_default = \"gt\")\n\nmodelsummary(\n        setNames(mods, c(\"(1)\", \"(2)\")),\n        coef_map = dict, stars = TRUE,\n        gof_omit = \"Adj|IC|F|Log|RMSE\"\n) |&gt;\n        gt::tab_spanner(\n                label = \"Dependent variable: Overall Rating\",\n                columns = 2:3\n        )"
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#randomly-sample-from-the-data-2",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#randomly-sample-from-the-data-2",
+    "title": "Linear Regression and Experiments",
+    "section": "Randomly Sample from the Data",
+    "text": "Randomly Sample from the Data"
   },
   {
-    "objectID": "lectures/00-template/00-template.html#regression-table-output",
-    "href": "lectures/00-template/00-template.html#regression-table-output",
-    "title": "Quarto reveal.js clean",
-    "section": "Regression table",
-    "text": "Regression table\n\n\n\n\n\n\n\n\n\nDependent variable: Overall Rating\n\n\n(1)\n(2)\n\n\n\n\nHandling of Complaints\n0.653***\n0.613***\n\n\n\n(0.131)\n(0.161)\n\n\nNo Special Priviledges\n-0.077\n-0.073\n\n\n\n(0.131)\n(0.136)\n\n\nOpportunity to Learn\n0.324+\n0.320+\n\n\n\n(0.157)\n(0.169)\n\n\nPerformance-Based Raises\n\n0.082\n\n\n\n\n(0.221)\n\n\nToo Critical\n\n0.038\n\n\n\n\n(0.147)\n\n\nAdvancement\n-0.172\n-0.217\n\n\n\n(0.149)\n(0.178)\n\n\nNum.Obs.\n30\n30\n\n\nR2\n0.729\n0.733\n\n\nStd.Errors\nIID\nIID\n\n\n\n+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001"
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#bootstrap-distribution",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#bootstrap-distribution",
+    "title": "Linear Regression and Experiments",
+    "section": "Bootstrap Distribution",
+    "text": "Bootstrap Distribution"
   },
   {
-    "objectID": "lectures/00-template/00-template.html#regression-table-1",
-    "href": "lectures/00-template/00-template.html#regression-table-1",
-    "title": "Quarto reveal.js clean",
-    "section": "Regression table",
-    "text": "Regression table\netable\nfixest’s powerful native tabling functions were designed for LaTeX output. But we can use the markdown = TRUE option to make them work with this theme too. (Details here.) Quick notes:\n\nInstall the tinytex & pdftools packages first.\nSet the R chunk option output: asis.\n\n```{{r}}\n#| output: asis\n\nsetFixest_etable(markdown = TRUE, drop = \"Constant\")\nsetFixest_dict(dict)\n\netable(mods, highlight = .(\"se\" = \"complaints\"))\n```"
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#confidence-intervals-for-treatment-effect",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#confidence-intervals-for-treatment-effect",
+    "title": "Linear Regression and Experiments",
+    "section": "Confidence Intervals for Treatment Effect",
+    "text": "Confidence Intervals for Treatment Effect\n\nbs_lm &lt;- function(data) {\n  lm(hisp_to_2006 ~ treatment + block, \n     data = sample_n(data, \n                     size = nrow(data), \n                     replace = TRUE)) |&gt;\n    tidy() |&gt;\n    filter(term == \"treatment\") |&gt;\n    pull(estimate)\n}\n\nbs_lm_ci &lt;- map(1:1000, ~bs_lm(exp_data)) |&gt;\n  unlist()\n\n## Plot 95% confidence interval\nggplot() +\n  geom_histogram(aes(x = bs_lm_ci), bins = 30, alpha = 0.5) +\n  geom_vline(xintercept = c(quantile(bs_lm_ci, .025),\n                            quantile(bs_lm_ci, .975)),\n             color = \"red\")"
   },
   {
-    "objectID": "lectures/00-template/00-template.html#regression-table-2",
-    "href": "lectures/00-template/00-template.html#regression-table-2",
-    "title": "Quarto reveal.js clean",
-    "section": "Regression table",
-    "text": "Regression table\netable (cont.)"
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#confidence-intervals-for-treatment-effect-output",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#confidence-intervals-for-treatment-effect-output",
+    "title": "Linear Regression and Experiments",
+    "section": "Confidence Intervals for Treatment Effect",
+    "text": "Confidence Intervals for Treatment Effect"
   },
   {
-    "objectID": "lectures/00-template/00-template.html#figure",
-    "href": "lectures/00-template/00-template.html#figure",
-    "title": "Quarto reveal.js clean",
-    "section": "Figure",
-    "text": "Figure"
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#increasing-precision",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#increasing-precision",
+    "title": "Linear Regression and Experiments",
+    "section": "Increasing Precision",
+    "text": "Increasing Precision\n\nWe used a linear model to estimate the treatment effect, but the confidence interval is quite wide.\nHow can we use predictive modeling to increase the precision of our estimate?\n\nWe can use predictive pre-treatment covariates to remove unexplained variation in the outcome.\nThis will help us estimate the treatment effect more precisely by removing variation not related to the treatment.\n\n\n\nModel (ignoring block variables for now) with pre-treatment covariate:\n\\[ \\texttt{hisp_to_2006}_i = \\alpha + \\beta_1 \\texttt{treatment}  + \\beta_2 \\texttt{hisp_to_2002} + \\epsilon \\]"
   },
   {
-    "objectID": "lectures/00-template/00-template.html#figure-1",
-    "href": "lectures/00-template/00-template.html#figure-1",
-    "title": "Quarto reveal.js clean",
-    "section": "Figure",
-    "text": "Figure\nFull-size Figures\nYou can use the {.background-image} container environment to completely fill the slide background with an image.\nIdeally, your figure will be the same aspect ratio as the screen that you’re presenting on.\n\nThis can be a bit tricky because of the dynamic nature of reveal.js / HTML. But it’s probably something close to 16:9.\nAspect ratio can also matter for a regular full-frame images (previous slide)."
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#adjusting-for-pre-treatment-covariates",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#adjusting-for-pre-treatment-covariates",
+    "title": "Linear Regression and Experiments",
+    "section": "“Adjusting” for Pre-Treatment Covariates",
+    "text": "“Adjusting” for Pre-Treatment Covariates\n\\[ \\texttt{hisp_to_2006}_i = \\alpha + \\beta_1 \\texttt{treatment}  + \\beta_2 \\texttt{hisp_to_2002} + \\epsilon \\]\n\nlm(hisp_to_2006 ~ treatment + block, data = exp_data)  |&gt;\n  tidy() |&gt;\n  filter(term == \"treatment\") \n\n# A tibble: 1 × 5\n  term      estimate std.error statistic p.value\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 treatment     6.26      4.06      1.54   0.129\n\nlm(hisp_to_2006 ~ treatment + block + hisp_to_2002, data = exp_data)  |&gt;\n  tidy() |&gt;\n  filter(term == \"treatment\") \n\n# A tibble: 1 × 5\n  term      estimate std.error statistic p.value\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 treatment     4.67      1.95      2.39  0.0203"
   },
   {
-    "objectID": "lectures/00-template/00-template.html#interactive-plots",
-    "href": "lectures/00-template/00-template.html#interactive-plots",
-    "title": "Quarto reveal.js clean",
-    "section": "Interactive plots",
-    "text": "Interactive plots\n\n\n\n\n\n\nNote: Simple flight data example using threejs. There are many interactive plotting options beyond this. (More details.)"
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#adjusting-for-pre-treatment-covariates-1",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#adjusting-for-pre-treatment-covariates-1",
+    "title": "Linear Regression and Experiments",
+    "section": "Adjusting for Pre-Treatment Covariates",
+    "text": "Adjusting for Pre-Treatment Covariates\n\nTwo models:\n\nShort model: \\(Y_i = \\alpha + \\beta_1 X_i + \\epsilon_i\\)\nLong model: \\(Y_i = \\alpha + \\beta_1 X_i + \\beta_2 Z_i + \\epsilon_i\\)\n\nHow \\(\\hat \\beta_1\\) in the long model differ from \\(\\hat \\beta_1\\) in the short model?\n\n\\(\\hat \\beta_1\\) in the long model is the effect of \\(X_i\\) on \\(Y_i\\) after adjusting for \\(Z_i\\).\n\nMathematically, what does it mean to “adjust” for \\(Z_i\\)? Start with two models:\n\n\n\\(X_i  = \\gamma_0 + \\gamma_1 Z_i + u_i\\) (regression of \\(X_i\\) on \\(Z_i\\))\n\\(Y_i = \\delta_0 + \\delta_1 X_i + v_i\\) (regression of \\(Y_i\\) on \\(X_i\\))"
   },
   {
-    "objectID": "lectures/00-template/00-template.html#summary-1",
-    "href": "lectures/00-template/00-template.html#summary-1",
-    "title": "Quarto reveal.js clean",
-    "section": "Summary",
-    "text": "Summary\nA minimal and elegant presentation theme\nThe Quarto reveal.js clean theme aims to be a minimal and elegant presention theme.\nWe have highlighted some theme-specific components. But all of the regular reveal.js functionality is supported (chalkboard, etc.)\nInstall the theme:\nquarto install extension grantmcdermott/quarto-revealjs-clean\nUse these demo slides as a template:\nquarto use template grantmcdermott/quarto-revealjs-clean-demo"
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#partialling-out",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#partialling-out",
+    "title": "Linear Regression and Experiments",
+    "section": "Partialling Out",
+    "text": "Partialling Out\n\n\\(X_i  = \\gamma_0 + \\gamma_1 Z_i + u_i\\) (regression of \\(X_i\\) on \\(Z_i\\))\n\\(Y_i = \\delta_0 + \\delta_1 X_i + v_i\\) (regression of \\(Y_i\\) on \\(X_i\\))\n\nTo adjust for \\(Z_i\\) when estimating the effect of \\(X_i\\) on \\(Y_i\\):\n\nGet the residuals from model 1: \\(\\hat u_i = X_i - \\hat \\gamma_0 - \\hat \\gamma_1 Z_i\\) (\\(\\hat u_i\\) is the part of \\(X_i\\) that is not explained by \\(Z_i\\))\nGet the residuals from model 2: \\(\\hat v_i = Y_i - \\hat \\delta_0 - \\hat \\delta_1 X_i\\) (\\(\\hat v_i\\) is the part of \\(Y_i\\) that is not explained by \\(X_i\\))\nRegress \\(\\hat v_i\\) on \\(\\hat u_i\\) to get the effect of \\(X_i\\) on \\(Y_i\\) after adjusting for \\(Z_i\\)."
   },
   {
-    "objectID": "lectures/00-template/00-template.html#references",
-    "href": "lectures/00-template/00-template.html#references",
-    "title": "Quarto reveal.js clean",
-    "section": "References",
-    "text": "References\n\n\nFajgelbaum, Pablo D, Eduardo Morales, Juan Carlos Suarez Serrato, and Owen Zidar. 2018. “State Taxes and Spatial Misallocation,” 90.\n\n\nHsieh, Chang-Tai, and Enrico Moretti. 2019. “Housing Constraints and Spatial Misallocation.” American Economic Journal: Macroeconomics 11 (2): 39.\n\n\nMoretti, Enrico. 2011. “Local Labor Markets.” In Handbook of Labor Economics. Vol. 4. Elsevier.\n\n\nSuárez Serrato, Juan Carlos, and Owen Zidar. 2016. “Who Benefits from State Corporate Tax Cuts? A Local Labor Markets Approach with Heterogeneous Firms.” American Economic Review 106 (9)."
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#partialling-out-in-experiments",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#partialling-out-in-experiments",
+    "title": "Linear Regression and Experiments",
+    "section": "Partialling Out in Experiments",
+    "text": "Partialling Out in Experiments\n\n\\(X_i  = \\gamma_0 + \\gamma_1 Z_i + u_i\\) (regression of \\(X_i\\) on \\(Z_i\\))\n\\(Y_i = \\delta_0 + \\delta_1 X_i + v_i\\) (regression of \\(Y_i\\) on \\(X_i\\))\n\n\nIn experiments, \\(X_i\\) is the treatment, \\(Z_i\\) are pre-treatment covariates, and \\(Y_i\\) is the outcome.\nWhat should \\(\\gamma_1\\) be in the regression of \\(X_i\\) on \\(Z_i\\)?\n\n\\(\\gamma_1\\) should be zero because \\(Z_i\\) should not be related to the treatment in an experiment.\nSo in most cases, variation in \\(u_i\\) is the same as variation in \\(X_i\\).\n\n\\(v_i\\) however should be less variable than \\(Y_i\\) because it removes the part of \\(Y_i\\) that is not related to \\(X_i\\)."
   },
   {
-    "objectID": "lectures/00-template/00-template.html#sec-appendix",
-    "href": "lectures/00-template/00-template.html#sec-appendix",
-    "title": "Quarto reveal.js clean",
-    "section": "Appendix",
-    "text": "Appendix\n\n\n\n\nTable 1: Summary of the base R attitude dataset\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnique (#)\nMissing (%)\nMean\nSD\nMin\nMedian\nMax\n\n\n\n\n\nrating\n22\n0\n64.6\n12.2\n40.0\n65.5\n85.0\n\n\n\n   \n\n\n\ncomplaints\n23\n0\n66.6\n13.3\n37.0\n65.0\n90.0\n\n\n\n   \n\n\n\nprivileges\n24\n0\n53.1\n12.2\n30.0\n51.5\n83.0\n\n\n\n   \n\n\n\nlearning\n23\n0\n56.4\n11.7\n34.0\n56.5\n75.0\n\n\n\n   \n\n\n\nraises\n21\n0\n64.6\n10.4\n43.0\n63.5\n88.0\n\n\n\n   \n\n\n\ncritical\n21\n0\n74.8\n9.9\n49.0\n77.5\n92.0\n\n\n\n   \n\n\n\nadvance\n20\n0\n42.9\n10.3\n25.0\n41.0\n72.0\n\n\n\n   \n\n\n\n\n\n\n\n\n\n\n\n\nBack to main"
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#partialling-out-in-practice",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#partialling-out-in-practice",
+    "title": "Linear Regression and Experiments",
+    "section": "Partialling Out in Practice",
+    "text": "Partialling Out in Practice\n\nresiduals_yz &lt;- lm(hisp_to_2006 ~ hisp_to_2002, data = exp_data) |&gt;\n  residuals()\ndemeaned_y &lt;- exp_data$hisp_to_2006 - mean(exp_data$hisp_to_2006)\n\nbind_rows(tibble(Y = demeaned_y, \n       Type = \"Unadjusted Y\"),\n          tibble(Y = residuals_yz,\n                 Type = \"Adjusted Y\")) |&gt;\n  ggplot(aes(x = Y, fill = Type)) +\n  geom_density(alpha = .5) +\n  theme(legend.position = \"top\")"
   },
   {
-    "objectID": "materials.html",
-    "href": "materials.html",
-    "title": "Materials",
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#partialling-out-in-practice-output",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#partialling-out-in-practice-output",
+    "title": "Linear Regression and Experiments",
+    "section": "Partialling Out in Practice",
+    "text": "Partialling Out in Practice"
+  },
+  {
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#partialling-out-in-practice-1",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#partialling-out-in-practice-1",
+    "title": "Linear Regression and Experiments",
+    "section": "Partialling Out in Practice",
+    "text": "Partialling Out in Practice\n\nyx_resid &lt;- lm(hisp_to_2006 ~ hisp_to_2002, data = exp_data) |&gt;\n  residuals()\nxz_resid &lt;- lm(treatment ~ hisp_to_2002, data = exp_data) |&gt;\n  residuals()\n\nlm(yx_resid ~ xz_resid) |&gt;\n  tidy() |&gt;\n  filter(term == \"xz_resid\") |&gt;\n  pull(estimate)\n\n[1] 4.957391\n\nmod &lt;- lm(hisp_to_2006 ~ treatment + hisp_to_2002, data = exp_data)\ntidy(mod) |&gt;\n  filter(term == \"treatment\") |&gt;\n  pull(estimate)\n\n[1] 4.957391"
+  },
+  {
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#confidence-intervals",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#confidence-intervals",
+    "title": "Linear Regression and Experiments",
+    "section": "Confidence Intervals",
+    "text": "Confidence Intervals\n\nbs_lm_adj &lt;- function(data) {\n  lm(hisp_to_2006 ~ treatment + block + hisp_to_2002,\n     data = sample_n(data, \n                     size = nrow(data), \n                     replace = TRUE)) |&gt;\n    tidy() |&gt;\n    filter(term == \"treatment\") |&gt;\n    pull(estimate)\n}\n\nbs_lm_adj_ci &lt;- map(1:1000, ~bs_lm_adj(exp_data)) |&gt;\n  unlist()\n\n##Unadjusted Confidence Intervals\nquantile(bs_lm_ci, c(.025, .975))\n\n     2.5%     97.5% \n-1.401392 13.482128 \n\n## Adjusted Confidence Intervals\nquantile(bs_lm_adj_ci, c(.025, .975))\n\n     2.5%     97.5% \n0.4214788 9.0160956"
+  },
+  {
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#alternative-perspective-on-covariate-adjustment",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#alternative-perspective-on-covariate-adjustment",
+    "title": "Linear Regression and Experiments",
+    "section": "Alternative Perspective on Covariate Adjustment",
+    "text": "Alternative Perspective on Covariate Adjustment"
+  },
+  {
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#alternative-perspective-on-covariate-adjustment-1",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#alternative-perspective-on-covariate-adjustment-1",
+    "title": "Linear Regression and Experiments",
+    "section": "Alternative Perspective on Covariate Adjustment",
+    "text": "Alternative Perspective on Covariate Adjustment"
+  },
+  {
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#alternative-perspective-on-covariate-adjustment-2",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#alternative-perspective-on-covariate-adjustment-2",
+    "title": "Linear Regression and Experiments",
+    "section": "Alternative Perspective on Covariate Adjustment",
+    "text": "Alternative Perspective on Covariate Adjustment"
+  },
+  {
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#alternative-perspective-on-covariate-adjustment-3",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#alternative-perspective-on-covariate-adjustment-3",
+    "title": "Linear Regression and Experiments",
+    "section": "Alternative Perspective on Covariate Adjustment",
+    "text": "Alternative Perspective on Covariate Adjustment"
+  },
+  {
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#alternative-perspective-on-covariate-adjustment-4",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#alternative-perspective-on-covariate-adjustment-4",
+    "title": "Linear Regression and Experiments",
+    "section": "Alternative Perspective on Covariate Adjustment",
+    "text": "Alternative Perspective on Covariate Adjustment"
+  },
+  {
+    "objectID": "lectures/13-lm_experiments/lm_experiments.html#alternative-perspective-on-covariate-adjustment-5",
+    "href": "lectures/13-lm_experiments/lm_experiments.html#alternative-perspective-on-covariate-adjustment-5",
+    "title": "Linear Regression and Experiments",
+    "section": "Alternative Perspective on Covariate Adjustment",
+    "text": "Alternative Perspective on Covariate Adjustment"
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
     "section": "",
-    "text": "Week 1: Course Introduction\nWeek 2: Intergroup Prejudice\nWeek 3: Intergroup Prejudice\nWeek 4: Partisanship vs Ideology\nWeek 5: Persuasion\nWeek 6: Combatting Electoral Fraud\nWeek 7: Censorship\nWeek 8: Misinformation"
+    "text": "F. Daniel Hidalgo\n E53-402\n dhidalgo@mit.edu\n Office Hours\n\n\n\n\n Tuesdays and Thursdays\n 9:30-11:00am\n 56-154\n Piazza"
   },
   {
-    "objectID": "resources/r_setup.html",
-    "href": "resources/r_setup.html",
-    "title": "Setting up R and RStudio",
-    "section": "",
-    "text": "Go to the CRAN website and click on the download link for your operating system (Windows, Mac, or Linux).\n\n\nMacWindows\n\n\nClick on the R-X.X.X-arm64.pkg or R-X.X.X-x86_64.pkg link to download the installer. The precise file name depends on the latest version and whether you have an Intel processor or a newer ARM processor such as the M1, i.e. R-4.3.2-arm64.pkg. Once the download is complete, open the file and follow the installation instructions.\n\n\n\n\n\n\nTip\n\n\n\nTo determine whether you have an Intel or ARM processor, click on the Apple logo in the top left corner of your screen, select “About This Mac”, and look for the line that indicates “Chip” or “Processor”. If the line says something like “Apple M1” or “Apple M1 Pro”, you have an ARM processor. If it says something like “Intel Core i5” or “Intel Core i7”, you have an Intel processor.\n\n\n\n\nClick on the link that says base. Then click on the “Download R-X.X.X for Windows” link to download the installer. Once the download is complete, open the file and follow the installation instructions.\n\n\n\n\nOnce you have installed R, go to the download page for RStudio Desktop and click on the button that says “Download RStudio Desktop”. Once the download is complete, open the file and follow the installation instructions.\n\n\n\nThere are a few packages that we will use throughout the course. You can install them by starting RStudio and running the following commands in the console (lower left panel by default):\n\npackages &lt;- c(\n        \"tidyverse\", \"learnr\", \"estimatr\",\n        \"randomizr\", \"srvyr\"\n)\ninstall.packages(packages, repos = \"http://cran.rstudio.com\")\n\nFor assignments, we’ll need to produce PDFs from R and that requires a LaTeX distribution. We recommend using tinytex to install a minimal LaTeX distribution if you haven’t already installed LaTex on your system. You can install it by running the following command in the console:\n\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex() # install TinyTeX"
+    "objectID": "syllabus.html#course-objectives",
+    "href": "syllabus.html#course-objectives",
+    "title": "Syllabus",
+    "section": "Course Objectives",
+    "text": "Course Objectives\nMany of the most pressing social problems have political causes and consequences. Rather than just passively observing these problems, social scientists have developed a range of tools that involve interventions and data collection to understand and address these problems. This course will focus on two essential data-intensive tools for understanding social dynamics: experiments and surveys. Experiments allow us to understand the causal effects of policies and interventions, while surveys allow us to measure difficult-to-observe attitudes and behaviors in a population. This course will provide an introduction to the design and analysis of experiments and surveys through the lens of innovative research in political science and public policy. The course will focus on various substantive topics, including discriminatory attitudes, political participation, combatting voter fraud, and misinformation. Students will analyze actual data and design and field their survey experiment on a chosen topic.\nBy the end of this course, students will be able to:\n\nDescribe how experimental and survey methods can be used to understand pressing social problems.\nDesign surveys and experiments that are applicable to a variety of social settings.\nUse statistical principles to evaluate the quality of survey and experimental designs.\nApply statistical models to experimental and survey data.\nAnalyze data using modern statistical computing tools, in particular the statistical programming language R.\n\n\nExpectations\nIn this course, you will be expected to:\n\nComplete six problem sets.\nComplete regular reading quizzes.\nComplete eight weekly tutorials.\nParticipate in in-person and online class discussions.\nDesign and implement a survey experiment with a diverse sample.\n\n\n\nPrerequisites\nNo prerequisites will be assumed."
   },
   {
-    "objectID": "resources/r_setup.html#installing-required-r-packages",
-    "href": "resources/r_setup.html#installing-required-r-packages",
-    "title": "Setting up R and RStudio",
+    "objectID": "syllabus.html#course-structure",
+    "href": "syllabus.html#course-structure",
+    "title": "Syllabus",
+    "section": "Course Structure",
+    "text": "Course Structure\nThe basic cadence of the course will be as follows, though there may be small differences depending on the week:\n\nMonday: Complete reading, watch course lectures, and complete reading quiz.\nTuesday: Class meets.\nWednesday: Complete coding tutorial, submit assignments (if due)\nThursday: Class meets; assignments are posted\n\n\nClass Lectures\nClass lectures will be a mix of traditional lectures, in-class activities, and group discussions. In addition to in-class lectures, I may occasionally post a recorded lecture. During lecture, we will often be working with data and code, so please bring a computer to class, if possible.\n\n\nTutorials\nWe will assign short weekly coding tutorials that will assess your knowledge of the class materials and prepare you for the in-class activities. Tutorials will primarily be graded based on completion and not whether the answers are correct. Tutorials will generally be due on Wednesday by 11:59pm ET.\n\n\nProblem Sets\nCompetence at the design and analysis of experiments and surveys requires practice with real world datasets and the design of simulations. For the first 2/3 of the course, I will assign problem sets that will give you the opportunity to practice the methods you learn in the course. The problem sets will often involve the creation of a simulation and/or the analysis of data from an assigned reading. In the second half of the course, substantial parts of the problem set will be devoted to the design of the class project.\nI will assign six problem sets throughout the semester. They will be due on Thursdays by 11:59pm ET. I encourage students to work in groups, but each student must submit their own assignment.\n\n\n\n\n\n\nLowest Homework Grade is Dropped\n\n\n\nWhen calculating the overall homework grade, I will drop the lowest homework grade. This is to account for unexpected events that may prevent you from completing an assignment on time.\n\n\n\n\nOnline Forum\nWe will use Piazza for class discussions. If you are having trouble with a question on a problem set or on a reading, please post your question using Piazza. I strongly encourage students to assist in answering questions as they come up. Except under unusual circumstances, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours. The site is: https://piazza.com/mit/spring2024/17831/home\n\n\nGrading\nThe final grade in the course will be based on the following components:\n\n\n\nCategory\nPercent of Final Grade\n\n\n\n\nCoding Tutorials\n5%\n\n\nReading Quizzes\n5%\n\n\nProblem Sets\n50%\n\n\nClass Participation\n25%\n\n\nClass Project Writeup\n15%\n\n\n\nClass participation is based on participation in class discussions, presentations, and activities, as well as participation in Piazza discussions."
+  },
+  {
+    "objectID": "syllabus.html#class-project",
+    "href": "syllabus.html#class-project",
+    "title": "Syllabus",
+    "section": "Class Project",
+    "text": "Class Project\nFor the final project, we will collectively design and implement an experiment embedded in a short survey. In the second half of the semester, we will devote time each week to design the survey and experiment. The goal of this project is to give students experience crafting a research design and collecting real data on a question of interest. The data will be collected on US adults through a crowd-sourcing platform. While we will collectively design the survey and experiment, each student will be responsible for pre-registering their analysis, analyzing the data and writing up the results on their own.\nStudents in the class will:\n\nPropose a research question.\nDesign an intervention suitable for a survey experiment.\nWrite a questionnaire.\nDesign a sampling plan and analysis strategy sufficient for answering their research question.\nPre-register their study.\nAnalyze and write up the results of the study."
+  },
+  {
+    "objectID": "syllabus.html#course-policies",
+    "href": "syllabus.html#course-policies",
+    "title": "Syllabus",
+    "section": "Course Policies",
+    "text": "Course Policies\n\nLate Policy\nFor problem sets submitted late, we will deduct 10% of the grade for each day late. Problem sets will not be accepted more than three days after the due date. This penalty will be waived in the case of a documented medical or family emergency.\n\n\nOffice Hours and Getting Help\nI hold regular weekly office hours on Friday afternoons. Please sign up for in-person or zoom office hours at the following link: https://fantastical.app/dhidalgo/office-hours.\nIf you run into problems that you can’t solve on your own, please use the class website on Piazza to post questions. I strongly encourage students to assist in answering questions as they come up. Unless absolutely necessary, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours.\n\n\nAI Tools\nThe use of generative AI tools such as ChatGPT is allowed for your assignments in this class. However, a central goal of the class is to help you become independent and critical thinkers, so we discourage you from the extensive use of generative AI tools for writing code or answers to problem sets.\nIf you do use AI-generated content in your assignments, you must clearly indicate what work is yours and what part is AI-generated through proper attribution. We also ask you provide a short one-paragraph summary at the beginning of the assignment on how you used AI tools."
+  },
+  {
+    "objectID": "syllabus.html#course-materials",
+    "href": "syllabus.html#course-materials",
+    "title": "Syllabus",
+    "section": "Course Materials",
+    "text": "Course Materials\n\nReadings\nAlmost all readings for the course are available online and linked from the course website in the schedule page or in each week’s materials page page.\nThe one exception is that you should purchase the following book:\n\n\n\n\n\n\nRequired Purchase\n\n\n\nGerber, Alan S., and Donald P. Green. Field Experiments: Design, Analysis, and Interpretation. New York London: W. W. Norton & Company, 2012.\n\n\n\n\nComputing\nWe will use R for all of the data analysis in this course. R is a free, open-source statistical programming language that is widely used in the social sciences. We will use the RStudio integrated development environment (IDE) to write and execute R code. RStudio is also free and open-source.\nYou should install R on your own computer, but to forestall any installation problems, we will provide the option to use the Posit Cloud service for the first few weeks of the course. This service allows you to run R and RStudio in your web browser. This cloud service can be resource constrained, however, so it is strongly recommended that you install R and RStudio on your own computer as soon as possible."
+  },
+  {
+    "objectID": "syllabus.html#acknowledgements",
+    "href": "syllabus.html#acknowledgements",
+    "title": "Syllabus",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nPartly inspired by courses offered by Graeme Blair, Brendan Nyan, Matt Blackwell, and Andrew Heiss. Many thanks to them for sharing their materials and syllabi."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data and Politics",
     "section": "",
-    "text": "There are a few packages that we will use throughout the course. You can install them by starting RStudio and running the following commands in the console (lower left panel by default):\n\npackages &lt;- c(\n        \"tidyverse\", \"learnr\", \"estimatr\",\n        \"randomizr\", \"srvyr\"\n)\ninstall.packages(packages, repos = \"http://cran.rstudio.com\")\n\nFor assignments, we’ll need to produce PDFs from R and that requires a LaTeX distribution. We recommend using tinytex to install a minimal LaTeX distribution if you haven’t already installed LaTex on your system. You can install it by running the following command in the console:\n\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex() # install TinyTeX"
+    "text": "Welcome to the course website of 17.831 Data and Politics. This course is taught by F. Daniel Hidalgo at MIT in the Spring of 2024."
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "Data and Politics",
+    "section": "Instructor",
+    "text": "Instructor\n\n F. Daniel Hidalgo\n E53-402\n dhidalgo@mit.edu"
+  },
+  {
+    "objectID": "index.html#course-details",
+    "href": "index.html#course-details",
+    "title": "Data and Politics",
+    "section": "Course Details",
+    "text": "Course Details\n\n Tuesdays and Thursdays\n 9:30-11:00am\n 56-154"
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "Data and Politics",
+    "section": "Contact",
+    "text": "Contact\n\n Office Hours\n Piazza\n Canvas"
+  },
+  {
+    "objectID": "materials/week_9.html",
+    "href": "materials/week_9.html",
+    "title": "Week 8",
+    "section": "",
+    "text": "Lecture 13 (4/9): Linear Models and Experiments"
+  },
+  {
+    "objectID": "materials/week_9.html#slides",
+    "href": "materials/week_9.html#slides",
+    "title": "Week 8",
+    "section": "",
+    "text": "Lecture 13 (4/9): Linear Models and Experiments"
   },
   {
     "objectID": "materials/week_1.html",
@@ -1575,81 +1708,165 @@
     "text": "Slides\n\nLecture 12 (4/4): Linear Models"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Data and Politics",
+    "objectID": "resources/r_setup.html",
+    "href": "resources/r_setup.html",
+    "title": "Setting up R and RStudio",
     "section": "",
-    "text": "Welcome to the course website of 17.831 Data and Politics. This course is taught by F. Daniel Hidalgo at MIT in the Spring of 2024."
+    "text": "Go to the CRAN website and click on the download link for your operating system (Windows, Mac, or Linux).\n\n\nMacWindows\n\n\nClick on the R-X.X.X-arm64.pkg or R-X.X.X-x86_64.pkg link to download the installer. The precise file name depends on the latest version and whether you have an Intel processor or a newer ARM processor such as the M1, i.e. R-4.3.2-arm64.pkg. Once the download is complete, open the file and follow the installation instructions.\n\n\n\n\n\n\nTip\n\n\n\nTo determine whether you have an Intel or ARM processor, click on the Apple logo in the top left corner of your screen, select “About This Mac”, and look for the line that indicates “Chip” or “Processor”. If the line says something like “Apple M1” or “Apple M1 Pro”, you have an ARM processor. If it says something like “Intel Core i5” or “Intel Core i7”, you have an Intel processor.\n\n\n\n\nClick on the link that says base. Then click on the “Download R-X.X.X for Windows” link to download the installer. Once the download is complete, open the file and follow the installation instructions.\n\n\n\n\nOnce you have installed R, go to the download page for RStudio Desktop and click on the button that says “Download RStudio Desktop”. Once the download is complete, open the file and follow the installation instructions.\n\n\n\nThere are a few packages that we will use throughout the course. You can install them by starting RStudio and running the following commands in the console (lower left panel by default):\n\npackages &lt;- c(\n        \"tidyverse\", \"learnr\", \"estimatr\",\n        \"randomizr\", \"srvyr\"\n)\ninstall.packages(packages, repos = \"http://cran.rstudio.com\")\n\nFor assignments, we’ll need to produce PDFs from R and that requires a LaTeX distribution. We recommend using tinytex to install a minimal LaTeX distribution if you haven’t already installed LaTex on your system. You can install it by running the following command in the console:\n\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex() # install TinyTeX"
   },
   {
-    "objectID": "index.html#instructor",
-    "href": "index.html#instructor",
-    "title": "Data and Politics",
-    "section": "Instructor",
-    "text": "Instructor\n\n F. Daniel Hidalgo\n E53-402\n dhidalgo@mit.edu"
-  },
-  {
-    "objectID": "index.html#course-details",
-    "href": "index.html#course-details",
-    "title": "Data and Politics",
-    "section": "Course Details",
-    "text": "Course Details\n\n Tuesdays and Thursdays\n 9:30-11:00am\n 56-154"
-  },
-  {
-    "objectID": "index.html#contact",
-    "href": "index.html#contact",
-    "title": "Data and Politics",
-    "section": "Contact",
-    "text": "Contact\n\n Office Hours\n Piazza\n Canvas"
-  },
-  {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
+    "objectID": "resources/r_setup.html#installing-required-r-packages",
+    "href": "resources/r_setup.html#installing-required-r-packages",
+    "title": "Setting up R and RStudio",
     "section": "",
-    "text": "F. Daniel Hidalgo\n E53-402\n dhidalgo@mit.edu\n Office Hours\n\n\n\n\n Tuesdays and Thursdays\n 9:30-11:00am\n 56-154\n Piazza"
+    "text": "There are a few packages that we will use throughout the course. You can install them by starting RStudio and running the following commands in the console (lower left panel by default):\n\npackages &lt;- c(\n        \"tidyverse\", \"learnr\", \"estimatr\",\n        \"randomizr\", \"srvyr\"\n)\ninstall.packages(packages, repos = \"http://cran.rstudio.com\")\n\nFor assignments, we’ll need to produce PDFs from R and that requires a LaTeX distribution. We recommend using tinytex to install a minimal LaTeX distribution if you haven’t already installed LaTex on your system. You can install it by running the following command in the console:\n\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex() # install TinyTeX"
   },
   {
-    "objectID": "syllabus.html#course-objectives",
-    "href": "syllabus.html#course-objectives",
-    "title": "Syllabus",
-    "section": "Course Objectives",
-    "text": "Course Objectives\nMany of the most pressing social problems have political causes and consequences. Rather than just passively observing these problems, social scientists have developed a range of tools that involve interventions and data collection to understand and address these problems. This course will focus on two essential data-intensive tools for understanding social dynamics: experiments and surveys. Experiments allow us to understand the causal effects of policies and interventions, while surveys allow us to measure difficult-to-observe attitudes and behaviors in a population. This course will provide an introduction to the design and analysis of experiments and surveys through the lens of innovative research in political science and public policy. The course will focus on various substantive topics, including discriminatory attitudes, political participation, combatting voter fraud, and misinformation. Students will analyze actual data and design and field their survey experiment on a chosen topic.\nBy the end of this course, students will be able to:\n\nDescribe how experimental and survey methods can be used to understand pressing social problems.\nDesign surveys and experiments that are applicable to a variety of social settings.\nUse statistical principles to evaluate the quality of survey and experimental designs.\nApply statistical models to experimental and survey data.\nAnalyze data using modern statistical computing tools, in particular the statistical programming language R.\n\n\nExpectations\nIn this course, you will be expected to:\n\nComplete six problem sets.\nComplete regular reading quizzes.\nComplete eight weekly tutorials.\nParticipate in in-person and online class discussions.\nDesign and implement a survey experiment with a diverse sample.\n\n\n\nPrerequisites\nNo prerequisites will be assumed."
+    "objectID": "materials.html",
+    "href": "materials.html",
+    "title": "Materials",
+    "section": "",
+    "text": "Week 1: Course Introduction\nWeek 2: Intergroup Prejudice\nWeek 3: Intergroup Prejudice\nWeek 4: Partisanship vs Ideology\nWeek 5: Persuasion\nWeek 6: Combatting Electoral Fraud\nWeek 7: Censorship\nWeek 8: Misinformation\nWeek 9: Link"
   },
   {
-    "objectID": "syllabus.html#course-structure",
-    "href": "syllabus.html#course-structure",
-    "title": "Syllabus",
-    "section": "Course Structure",
-    "text": "Course Structure\nThe basic cadence of the course will be as follows, though there may be small differences depending on the week:\n\nMonday: Complete reading, watch course lectures, and complete reading quiz.\nTuesday: Class meets.\nWednesday: Complete coding tutorial, submit assignments (if due)\nThursday: Class meets; assignments are posted\n\n\nClass Lectures\nClass lectures will be a mix of traditional lectures, in-class activities, and group discussions. In addition to in-class lectures, I may occasionally post a recorded lecture. During lecture, we will often be working with data and code, so please bring a computer to class, if possible.\n\n\nTutorials\nWe will assign short weekly coding tutorials that will assess your knowledge of the class materials and prepare you for the in-class activities. Tutorials will primarily be graded based on completion and not whether the answers are correct. Tutorials will generally be due on Wednesday by 11:59pm ET.\n\n\nProblem Sets\nCompetence at the design and analysis of experiments and surveys requires practice with real world datasets and the design of simulations. For the first 2/3 of the course, I will assign problem sets that will give you the opportunity to practice the methods you learn in the course. The problem sets will often involve the creation of a simulation and/or the analysis of data from an assigned reading. In the second half of the course, substantial parts of the problem set will be devoted to the design of the class project.\nI will assign six problem sets throughout the semester. They will be due on Thursdays by 11:59pm ET. I encourage students to work in groups, but each student must submit their own assignment.\n\n\n\n\n\n\nLowest Homework Grade is Dropped\n\n\n\nWhen calculating the overall homework grade, I will drop the lowest homework grade. This is to account for unexpected events that may prevent you from completing an assignment on time.\n\n\n\n\nOnline Forum\nWe will use Piazza for class discussions. If you are having trouble with a question on a problem set or on a reading, please post your question using Piazza. I strongly encourage students to assist in answering questions as they come up. Except under unusual circumstances, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours. The site is: https://piazza.com/mit/spring2024/17831/home\n\n\nGrading\nThe final grade in the course will be based on the following components:\n\n\n\nCategory\nPercent of Final Grade\n\n\n\n\nCoding Tutorials\n5%\n\n\nReading Quizzes\n5%\n\n\nProblem Sets\n50%\n\n\nClass Participation\n25%\n\n\nClass Project Writeup\n15%\n\n\n\nClass participation is based on participation in class discussions, presentations, and activities, as well as participation in Piazza discussions."
+    "objectID": "lectures/00-template/00-template.html#example-slide",
+    "href": "lectures/00-template/00-template.html#example-slide",
+    "title": "Quarto reveal.js clean",
+    "section": "Example slide",
+    "text": "Example slide\nThis is a subtitle\nBefore we dive a bit deeper, here is a simple example of the clean theme in action.\n\nNo pictures or anything fancy. Just text for the moment.\n\nNext, we’ll take a brief tour of some theme components.\n\nWe’ll use the same basic structure as the original LaTeX slides.\nNote that the full suite of Reveal.js features are available for this Quarto implementation, even if we don’t cover everything here."
   },
   {
-    "objectID": "syllabus.html#class-project",
-    "href": "syllabus.html#class-project",
-    "title": "Syllabus",
-    "section": "Class Project",
-    "text": "Class Project\nFor the final project, we will collectively design and implement an experiment embedded in a short survey. In the second half of the semester, we will devote time each week to design the survey and experiment. The goal of this project is to give students experience crafting a research design and collecting real data on a question of interest. The data will be collected on US adults through a crowd-sourcing platform. While we will collectively design the survey and experiment, each student will be responsible for pre-registering their analysis, analyzing the data and writing up the results on their own.\nStudents in the class will:\n\nPropose a research question.\nDesign an intervention suitable for a survey experiment.\nWrite a questionnaire.\nDesign a sampling plan and analysis strategy sufficient for answering their research question.\nPre-register their study.\nAnalyze and write up the results of the study."
+    "objectID": "lectures/00-template/00-template.html#before-you-proceed",
+    "href": "lectures/00-template/00-template.html#before-you-proceed",
+    "title": "Quarto reveal.js clean",
+    "section": "Before you proceed…",
+    "text": "Before you proceed…\nRequirements for the coding examples in this demo\n\n\n\n\n\n\nR libraries\n\n\nWhile the clean theme is language agnostic, we will use several R coding examples in this demo to highlight some advanced theme features.\nYou will need the following libraries if you’d like to render the template “as-is”:\ninstall.packages(c(\"modelsummary\", \"gt\", \"fixest\", \"pdftools\", \"tinytex\", \"threejs\"))\n\n\n\n\n\n\n\n\n\nTinyTex\n\n\nWhile reveal.js presentations are HTML format, we will show an example of how to embed LaTeX tables as images. This requires a working Tex distribution, of which TinyTex provides by far the easiest and lightest integration with Quarto. More details here.\nquarto install tinytex"
   },
   {
-    "objectID": "syllabus.html#course-policies",
-    "href": "syllabus.html#course-policies",
-    "title": "Syllabus",
-    "section": "Course Policies",
-    "text": "Course Policies\n\nLate Policy\nFor problem sets submitted late, we will deduct 10% of the grade for each day late. Problem sets will not be accepted more than three days after the due date. This penalty will be waived in the case of a documented medical or family emergency.\n\n\nOffice Hours and Getting Help\nI hold regular weekly office hours on Friday afternoons. Please sign up for in-person or zoom office hours at the following link: https://fantastical.app/dhidalgo/office-hours.\nIf you run into problems that you can’t solve on your own, please use the class website on Piazza to post questions. I strongly encourage students to assist in answering questions as they come up. Unless absolutely necessary, it is better to post on Piazza than email me as everyone can benefit from the posted responses. I will monitor Piazza and try to answer within 24 hours.\n\n\nAI Tools\nThe use of generative AI tools such as ChatGPT is allowed for your assignments in this class. However, a central goal of the class is to help you become independent and critical thinkers, so we discourage you from the extensive use of generative AI tools for writing code or answers to problem sets.\nIf you do use AI-generated content in your assignments, you must clearly indicate what work is yours and what part is AI-generated through proper attribution. We also ask you provide a short one-paragraph summary at the beginning of the assignment on how you used AI tools."
+    "objectID": "lectures/00-template/00-template.html#components-1",
+    "href": "lectures/00-template/00-template.html#components-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nOrdered and Unordered Lists\nHere we have an unordered list.\n\nfirst item\n\nsub-item\n\nsecond item\n\nAnd next we have an ordered one.\n\nfirst item\n\nsub-item\n\nsecond item"
   },
   {
-    "objectID": "syllabus.html#course-materials",
-    "href": "syllabus.html#course-materials",
-    "title": "Syllabus",
-    "section": "Course Materials",
-    "text": "Course Materials\n\nReadings\nAlmost all readings for the course are available online and linked from the course website in the schedule page or in each week’s materials page page.\nThe one exception is that you should purchase the following book:\n\n\n\n\n\n\nRequired Purchase\n\n\n\nGerber, Alan S., and Donald P. Green. Field Experiments: Design, Analysis, and Interpretation. New York London: W. W. Norton & Company, 2012.\n\n\n\n\nComputing\nWe will use R for all of the data analysis in this course. R is a free, open-source statistical programming language that is widely used in the social sciences. We will use the RStudio integrated development environment (IDE) to write and execute R code. RStudio is also free and open-source.\nYou should install R on your own computer, but to forestall any installation problems, we will provide the option to use the Posit Cloud service for the first few weeks of the course. This service allows you to run R and RStudio in your web browser. This cloud service can be resource constrained, however, so it is strongly recommended that you install R and RStudio on your own computer as soon as possible."
+    "objectID": "lectures/00-template/00-template.html#components-2",
+    "href": "lectures/00-template/00-template.html#components-2",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nAlerts & Cross-refs\nTo emphasize specific words or text, you can:\n\nUse the default .alert class, e.g. important note.\nUse the .fg class for custom colour, e.g. important note.\nUse the .bg class for custom background, e.g. important note.\n\nTo cross-reference, you have several options, for example:\n\nBeamer-like .button class provided by this theme, e.g. Appendix\nQuarto’s native cross-ref syntax, e.g., “See Section 4.3.”"
   },
   {
-    "objectID": "syllabus.html#acknowledgements",
-    "href": "syllabus.html#acknowledgements",
-    "title": "Syllabus",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nPartly inspired by courses offered by Graeme Blair, Brendan Nyan, Matt Blackwell, and Andrew Heiss. Many thanks to them for sharing their materials and syllabi."
+    "objectID": "lectures/00-template/00-template.html#components-3",
+    "href": "lectures/00-template/00-template.html#components-3",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nCitations\nCitations follow the standard Quarto format and be sourced from BibLaTex, BibTeX, or CLS files. For example:\n\nTopic 1: Spatial Frictions (Fajgelbaum et al. 2018; Hsieh and Moretti 2019; Moretti 2011)\nTopic 2: Blah (Suárez Serrato and Zidar 2016)"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#components-4",
+    "href": "lectures/00-template/00-template.html#components-4",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nBlocks\nQuarto provides dedicated environments for theorems, lemmas, and so forth.\nBut in presentation format, it’s arguably more effective just to use a Callout Block.\n\n\n\n\n\n\nRegression Specification\n\n\nThe main specification is as follows:\n\\[\ny_{it} = X_{it} \\beta + \\mu_i + \\varepsilon_{it}\n\\]"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#components-5",
+    "href": "lectures/00-template/00-template.html#components-5",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nMulticolumn I: Text only\n\n\nColumn 1\nHere is a long sentence that will wrap onto the next line as it hits the column width, and continue this way until it stops.\n\nColumn 2\nSome other text in another column.\nA second paragraph.\n\n\nMulticolumn support is very flexible and we can continue with a single full span column in the same slide."
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#components-6",
+    "href": "lectures/00-template/00-template.html#components-6",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nMulticolumn II: Text and figures\n\n\n\n\n\nA point about the figure that is potentially important.\nAnother point about the figure that is also potentially important.\n\n\n\nNote that sub- and multi-panel figures are also natively supported by Quarto. See here."
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#components-7",
+    "href": "lectures/00-template/00-template.html#components-7",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\nMulticolumn III: Code and output\n\n\npalette(\"Classic Tableau\")\n\npar(\n        family = \"HersheySans\",\n        las = 1, pch = 19, cex = 1.5\n)\n\npairs(\n        iris[, 1:4],\n        col = iris$Species\n)\n\n\n\n\n\n\n\n\nFigure 1: Pairwise scatterplot"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#tables-1",
+    "href": "lectures/00-template/00-template.html#tables-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Tables",
+    "text": "Tables\nRegression example\nQuarto offers excellent table support, with further customization via user libraries. Let’s illustrate with a regression example:\n\nlibrary(fixest)\n\nmods &lt;- feols(\n        rating ~ complaints + privileges + learning + csw0(raises + critical) + advance,\n        data = attitude\n)\n\ndict &lt;- c(\n        \"rating\" = \"Overall Rating\",\n        \"complaints\" = \"Handling of Complaints\",\n        \"privileges\" = \"No Special Priviledges\",\n        \"learning\" = \"Opportunity to Learn\",\n        \"raises\" = \"Performance-Based Raises\",\n        \"critical\" = \"Too Critical\",\n        \"advance\" = \"Advancement\"\n)"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#regression-table",
+    "href": "lectures/00-template/00-template.html#regression-table",
+    "title": "Quarto reveal.js clean",
+    "section": "Regression table",
+    "text": "Regression table\nmodelsummary\nIf you use modelsummary with this Quarto theme, we advise setting the gt backend for a cleaner aesthetic. More details here.\n\nlibrary(modelsummary)\noptions(modelsummary_factory_default = \"gt\")\n\nmodelsummary(\n        setNames(mods, c(\"(1)\", \"(2)\")),\n        coef_map = dict, stars = TRUE,\n        gof_omit = \"Adj|IC|F|Log|RMSE\"\n) |&gt;\n        gt::tab_spanner(\n                label = \"Dependent variable: Overall Rating\",\n                columns = 2:3\n        )"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#regression-table-output",
+    "href": "lectures/00-template/00-template.html#regression-table-output",
+    "title": "Quarto reveal.js clean",
+    "section": "Regression table",
+    "text": "Regression table\n\n\n\n\n\n\n\n\n\nDependent variable: Overall Rating\n\n\n(1)\n(2)\n\n\n\n\nHandling of Complaints\n0.653***\n0.613***\n\n\n\n(0.131)\n(0.161)\n\n\nNo Special Priviledges\n-0.077\n-0.073\n\n\n\n(0.131)\n(0.136)\n\n\nOpportunity to Learn\n0.324+\n0.320+\n\n\n\n(0.157)\n(0.169)\n\n\nPerformance-Based Raises\n\n0.082\n\n\n\n\n(0.221)\n\n\nToo Critical\n\n0.038\n\n\n\n\n(0.147)\n\n\nAdvancement\n-0.172\n-0.217\n\n\n\n(0.149)\n(0.178)\n\n\nNum.Obs.\n30\n30\n\n\nR2\n0.729\n0.733\n\n\nStd.Errors\nIID\nIID\n\n\n\n+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#regression-table-1",
+    "href": "lectures/00-template/00-template.html#regression-table-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Regression table",
+    "text": "Regression table\netable\nfixest’s powerful native tabling functions were designed for LaTeX output. But we can use the markdown = TRUE option to make them work with this theme too. (Details here.) Quick notes:\n\nInstall the tinytex & pdftools packages first.\nSet the R chunk option output: asis.\n\n```{{r}}\n#| output: asis\n\nsetFixest_etable(markdown = TRUE, drop = \"Constant\")\nsetFixest_dict(dict)\n\netable(mods, highlight = .(\"se\" = \"complaints\"))\n```"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#regression-table-2",
+    "href": "lectures/00-template/00-template.html#regression-table-2",
+    "title": "Quarto reveal.js clean",
+    "section": "Regression table",
+    "text": "Regression table\netable (cont.)"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#figure",
+    "href": "lectures/00-template/00-template.html#figure",
+    "title": "Quarto reveal.js clean",
+    "section": "Figure",
+    "text": "Figure"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#figure-1",
+    "href": "lectures/00-template/00-template.html#figure-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Figure",
+    "text": "Figure\nFull-size Figures\nYou can use the {.background-image} container environment to completely fill the slide background with an image.\nIdeally, your figure will be the same aspect ratio as the screen that you’re presenting on.\n\nThis can be a bit tricky because of the dynamic nature of reveal.js / HTML. But it’s probably something close to 16:9.\nAspect ratio can also matter for a regular full-frame images (previous slide)."
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#interactive-plots",
+    "href": "lectures/00-template/00-template.html#interactive-plots",
+    "title": "Quarto reveal.js clean",
+    "section": "Interactive plots",
+    "text": "Interactive plots\n\n\n\n\n\n\nNote: Simple flight data example using threejs. There are many interactive plotting options beyond this. (More details.)"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#summary-1",
+    "href": "lectures/00-template/00-template.html#summary-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Summary",
+    "text": "Summary\nA minimal and elegant presentation theme\nThe Quarto reveal.js clean theme aims to be a minimal and elegant presention theme.\nWe have highlighted some theme-specific components. But all of the regular reveal.js functionality is supported (chalkboard, etc.)\nInstall the theme:\nquarto install extension grantmcdermott/quarto-revealjs-clean\nUse these demo slides as a template:\nquarto use template grantmcdermott/quarto-revealjs-clean-demo"
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#references",
+    "href": "lectures/00-template/00-template.html#references",
+    "title": "Quarto reveal.js clean",
+    "section": "References",
+    "text": "References\n\n\nFajgelbaum, Pablo D, Eduardo Morales, Juan Carlos Suarez Serrato, and Owen Zidar. 2018. “State Taxes and Spatial Misallocation,” 90.\n\n\nHsieh, Chang-Tai, and Enrico Moretti. 2019. “Housing Constraints and Spatial Misallocation.” American Economic Journal: Macroeconomics 11 (2): 39.\n\n\nMoretti, Enrico. 2011. “Local Labor Markets.” In Handbook of Labor Economics. Vol. 4. Elsevier.\n\n\nSuárez Serrato, Juan Carlos, and Owen Zidar. 2016. “Who Benefits from State Corporate Tax Cuts? A Local Labor Markets Approach with Heterogeneous Firms.” American Economic Review 106 (9)."
+  },
+  {
+    "objectID": "lectures/00-template/00-template.html#sec-appendix",
+    "href": "lectures/00-template/00-template.html#sec-appendix",
+    "title": "Quarto reveal.js clean",
+    "section": "Appendix",
+    "text": "Appendix\n\n\n\n\nTable 1: Summary of the base R attitude dataset\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnique (#)\nMissing (%)\nMean\nSD\nMin\nMedian\nMax\n\n\n\n\n\nrating\n22\n0\n64.6\n12.2\n40.0\n65.5\n85.0\n\n\n\n   \n\n\n\ncomplaints\n23\n0\n66.6\n13.3\n37.0\n65.0\n90.0\n\n\n\n   \n\n\n\nprivileges\n24\n0\n53.1\n12.2\n30.0\n51.5\n83.0\n\n\n\n   \n\n\n\nlearning\n23\n0\n56.4\n11.7\n34.0\n56.5\n75.0\n\n\n\n   \n\n\n\nraises\n21\n0\n64.6\n10.4\n43.0\n63.5\n88.0\n\n\n\n   \n\n\n\ncritical\n21\n0\n74.8\n9.9\n49.0\n77.5\n92.0\n\n\n\n   \n\n\n\nadvance\n20\n0\n42.9\n10.3\n25.0\n41.0\n72.0\n\n\n\n   \n\n\n\n\n\n\n\n\n\n\n\n\nBack to main"
   },
   {
     "objectID": "lectures/01-introduction/introduction.html#data-and-politics",
