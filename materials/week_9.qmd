@@ -5,3 +5,4 @@ title: "Week 8"
 ## Slides
 
 -   Lecture 13 (4/9): [Linear Models and Experiments](/lectures/13-lm_experiments/lm_experiments.qmd)
+-   Lecture 14 (4/11): [Surveys in Politics](/lectures/14-surveys/surveys.qmd)
