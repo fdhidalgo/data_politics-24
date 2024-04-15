@@ -13,4 +13,5 @@ title: "Assignments"
 
 -   Problem Set 1: [qmd link](https://www.dropbox.com/scl/fi/d8ywmrj5jk3olgmji9pd6/pset1.qmd?rlkey=g609rnq5kckjiq0rohwb7w8eb&dl=1)
 -   Problem Set 2: [qmd link](https://www.dropbox.com/scl/fi/bx2xw731n3b5g77y5h604/pset2.qmd?rlkey=j189jf2wsrzflybr6s446oil3&dl=1)
-- Problem Set 3: [qmd link](https://www.dropbox.com/scl/fi/h5g4nucqgbt93on11vzt9/pset3.qmd?rlkey=6lbsbro12dcqlflzdt14dnl0o&dl=0), [html version](/psets/pset3.qmd)
+-   Problem Set 3: [qmd link](https://www.dropbox.com/scl/fi/h5g4nucqgbt93on11vzt9/pset3.qmd?rlkey=6lbsbro12dcqlflzdt14dnl0o&dl=0), [html version](/psets/pset3.qmd)
+- Problem Set 4: [qmd link](https://www.dropbox.com/scl/fi/2d2ojakd0iizy1rwm34kl/pset4.qmd?rlkey=n4n02mlz2e9x1mx7rgutuqbzq&dl=0)
