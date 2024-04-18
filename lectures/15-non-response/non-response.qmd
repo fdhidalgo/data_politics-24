@@ -1,0 +1,250 @@
+---
+title: "Surveys in Politics"
+subtitle: "Lecture 13"
+date: last-modified
+author: 
+  - name: F. Daniel Hidalgo
+    email: dhidalgo@mit.edu
+    affiliations: MIT
+format: 
+  clean-revealjs:
+    incremental: true
+engine: knitr
+execute: 
+  cache: true
+webr:
+  packages: ['tidyverse'] # Install R packages on document open
+  show-startup-message: false
+filters: 
+  - timer
+  - webr
+bibliography: ../data_politics_2024.bib
+editor:
+  render-on-save: true
+---
+
+```{r}
+#| label: setup
+#| echo: false
+#| warning: false
+#| cache: false
+
+library(tidyverse)
+library(hrbrthemes)
+library(gganimate)
+theme_set(theme_ipsum())
+
+```
+
+## Non-Response Over Time
+
+![](images/pew_nonresponse_time.png)
+
+## A Crisis in Traditional Telephone Surveys
+
+- Basic sampling theory predicated on no non-response.
+- Violated in the extreme with contemporary samples.
+- Extreme non-response raises the spectre of pervasive .red[bias] in our sampliing estimates.
+- But the possibility of bias, does not necessarily mean that surveys will be biased!
+- Bias is a function of:
+  1. Level of nonresponse
+  2. Correlation between propensity to respond and the variable of interest.
+
+
+## Demographics: How Severe is the Problem?
+
+::: columns
+::: {.column width="50%"}
+![](images/non-response_edu.png)
+:::
+
+::: {.column .fragment width="50%"}
+![](images/non-response_race.png)
+:::
+:::
+
+## Partisanship: How Severe is the Problem?
+
+::: columns
+::: {.column width="50%"}
+![](images/non-response_partisanship.png)
+
+From [Pew Research Center](https://www.pewresearch.org/fact-tank/2019/02/27/response-rates-in-telephone-surveys-have-resumed-their-decline/)
+
+:::
+
+::: {.column .fragment width="50%"}
+
+Without adjustment, bias in:
+
+::: {.nonincremental}
+
+- Levels of educational attainment
+- Race (though varies across time)
+- Propensity to participate.
+:::
+
+Less bias in partisanship.
+
+Weighting can remove these *observed* biases, as we know the extent of the bias using other data sources.
+
+**Key question**: But what about unobserved gaps where don't have external data?
+
+
+:::
+:::
+
+## 2012 US Presidential Election
+
+- In 2012, exit-poll indicated Obama won with **39%** of white voters.
+- Spurred GOP to:
+  - Move towards center on immigration
+  - Convene task force to address non-white voters.
+
+. . .  
+
+But better data revealed:
+  
+| Group | Exit Poll | CPS
+|-------|-----------|----
+| White, non-Hispanic | 72% | 74%
+| No bachelor's degree | 53% | 63%
+| Age 45+ | 54% | 61%
+| White, non-college, 45+ | 23 | 30
+
+## 2012 US Presidential Election
+
+![](images/upshot_obama_white_voters.png)
+
+## 2016 Presidential Election
+
+![](images/upshot_prob.png)
+
+## 2016 Presidential Election
+
+![](images/edu_weighting_nytimes.png)
+
+## Polling Bias Across Time
+
+![](images/average_poll_bias_year.png)
+
+## 2020 Polling Bias
+
+[**AAPOR Report**](https://aapor.org/wp-content/uploads/2022/11/Task-Force-on-2020-Pre-Election-Polling_Executive-Summary.pdf):
+
+- 2020 Polling error was highest in 40 years 
+- Not caused by: 
+  - Late deciding voters
+  - Failing to weight by education
+  - Assumptions about demographic composition of electorate
+- Some possibilities:
+  - Social trust among Trump voters
+  - Covid
+  - Great "awokening" 
+
+## Partisanship and Non-Response
+
+![](images/2020_dem_survey_response.png)
+
+## A Model of Non-Response
+
+- Assume all respondents $k$ have a .red[unknown] response probability $\rho_k$ and some value of $Y_k$. We want to esitmate $\bar Y = \frac{Y}{N}$ (our **estimand**)
+- When a respondent is selected into the sample, they respond or do not respond and these responses are collected in the vector:
+$R_1, R_2, \ldots, R_N$ where $R_k = 1$ if respondent $k$ would answer the survey and $R_k=0$ if she would not.
+- Now suppose we conduct a simple random sample of size $n$, where whether or not one is selected is denoted by the vector of indicators $a_1, a_2, \ldots, a_N$ where $a_k$ is a 1 if respondent $k$ is selected to be surveyed. We only observe a response if **both** $a_k=1$ and $R_k=1$.
+- The number of respondents successfully recruited into the sample is:
+$n_{R}=\sum_{k=1}^{N} a_{k} R_{k}$
+
+## A Model of Non-Response
+
+- Our **estimator** of public opinion is
+$$\bar{y}_{R}=\frac{1}{n_{R}} \sum_{k=1}^{N} a_{k} R_{k} Y_{k}$$
+
+- One can show that
+$$\mathbb{E}[\bar y_R] = \tilde{Y}=\frac{1}{N} \sum_{k=1}^{N} \frac{\rho_{k} Y_{k}}{\bar{\rho}}$$
+where $\bar{\rho}$ is the average response probability in the population.
+
+- The expectation of our estimator does not equal the population mean. This is **bias**.
+
+## Non-Response Bias
+
+## Non-Response Bias
+
+Given the above model, the nonresponse bias is approximately:
+$$\tilde{Y}-\bar{Y}=\frac{R_{\rho Y} S_{\rho} S_{Y}}{\bar{\rho}}$$
+where $R_{\rho Y}$ is the **correlation** the target variable and the response variable, $S_{Y}$ is the standard deviation of $Y$, and $S_{\rho}$ is the standard deviation of the response probability.
+
+So this expression shows that:
+
+1. Bias ↓ as the correlation between the target variable and response variable ↓.
+2. Bias ↓ as the response probabilities get more equal.
+3. Bias ↓ as the mean response probability ↓ (non-response is decreasing)
+
+# Weighting for Non-Response
+
+## Weighting Workflow
+
+![](images/workflow_survey_inference.png)
+
+## Weighting for Non-Response
+
+ One can use survey weights to estimate sample means:
+$$\bar{y}_{H T}=\frac{1}{N} \sum_{i=1}^{n} \frac{y_{i}}{\pi_{i}} = \frac{1}{N} \sum_{i=1}^{n} d_{i} y_{i}$$
+where $\pi$ is the probability of being included in the sample. Inverse probabily weights are $d_i = \frac{1}{\pi_i}$.
+
+We can use **adjustment weights** in a new estimator:
+$$\bar{y}_{W}=\frac{1}{N} \sum_{i=1}^{n} w_{i} y_{i}$$
+where $w_{i}=g_{i} \times d_{i}$ and $g_i$ is a **correction weight** produced by a weighting adjustment technique.
+
+## Constructing Weights
+
+Weights are constructed such that:
+$$\frac{1}{N} \sum_{i=1}^{n} w_{i} x_{i}=\bar{X}$$
+
+where $X$ is some auxiliary variable known for the population (like region or education or race) and $\bar X$ is the population average
+
+## Post-Stratification Weights
+
+The most common form of weighting is **post-stratification**. The basic idea is to create representative samples by stratifying respondents into *cells* or bins and adjusting the weights such that $w_i$ match the probability from being from each group.
+
+Suppose the population can be divided into $L$ stratum, where the proportion of respondents in stratum $h$ should be equal to $\frac{N_h}{N}$ for all stratum. However, in your sample, you have $\frac{n_h}{n}$. To correct for the fact that these may not be equal, assign a correction weight
+$$g_{i}=\frac{N_{b} / N}{n_{b} / n}$$.
+
+## Post-Stratification Weights
+
+Substituting into the expression from the earlier slide, the post-stratification estimator is:
+$$\bar{y}_{P S}=\frac{1}{N} \sum_{h=1}^{L} N_{h} \bar{y}^{(h)}$$
+
+where $\bar{y}^{(h)}$ is the sample mean in strata $h$.  So the poststratification estimator is equal to a weighted sum of sample stratum means.
+
+## Bias in Post-Stratification Weights
+
+One can show that the bias in the post-stratification estimator is
+
+$$B\left(\bar{y}_{P S, R}\right)=\frac{1}{N} \sum_{b=1}^{L} N_{b} \frac{R_{\rho Y}^{(h)} S_{\rho}^{(h)} S_{Y}^{(h)}}{\bar{\rho}^{(b)}}$$
+
+where $R_{\rho Y}^{(h)}$ is correlation between $Y$ and the response probability ( $\rho$ ) on stratum $h$, and $S_{\rho}^{(h)}$ and $S_{Y}^{(h)}$ are the standard errors of the response probabilities and $Y$.
+
+## Bias in Post-Stratification Weights
+
+So bias is small if:
+
+- There is little or no relationship between the target variable and response behavior within all strata. So their correlations are small.
+- All response probabilities within a stratum are more or less equal. So their standard errors are small.
+- All values of the target variable within a stratum are more or less equal. So their standard errors are small.
+
+## Wang, Rothschild, Goel, and Gelman 2015
+
+![](images/xbox.png)
+
+~750k interviews
+
+## X-Box Demographics
+
+![](images/xbox_demo_diff.png)
+
+## X-Box Poll Results
+
+![](images/xbox_intent.png)
+
+## Citations
