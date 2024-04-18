@@ -19,3 +19,5 @@ title: "Materials"
 **Week 8**: [Misinformation](materials/week_8.qmd)
 
 **Week 9**: [Link](materials/week_9.qmd)
+
+**Week 10**: [Link](materials/week_10.qmd)
