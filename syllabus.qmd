@@ -17,8 +17,6 @@ title: "Syllabus"
 :::
 :::
 
-
-
 ::: {.column width="50%"}
 ::: course-details
 ### Course Details
@@ -35,22 +33,20 @@ title: "Syllabus"
 :::
 
 ::: course-details
-
 ### TA
 
 {{< fa user >}} Alejandro Frydman
 
 {{< fa building >}} 3rd Floor Lounge, E53
 
-{{< fa envelope >}} [afrydman@mit.edu](mailto:afrydman@mit.edu)
+{{< fa envelope >}} [afrydman\@mit.edu](mailto:afrydman@mit.edu)
 
 {{< fa calendar >}} Office hours: Tuesdays, 2-4pm
-::: 
-
+:::
 
 ## Course Objectives
 
-Many of the most pressing social problems have political causes and consequences. Rather than just passively observing these problems, social scientists have developed a range of tools that involve interventions and data collection to understand and address these problems. This course will focus on two essential data-intensive tools for understanding social dynamics: experiments and surveys. Experiments allow us to understand the causal effects of policies and interventions, while surveys allow us to measure difficult-to-observe attitudes and behaviors in a population. This course will provide an introduction to the design and analysis of experiments and surveys through the lens of innovative research in political science and public policy. The course will focus on various substantive [topics](schedule.qmd##topics-overview), including discriminatory attitudes, political participation, combatting voter fraud, and misinformation. Students will analyze actual data and design and field their survey experiment on a chosen topic.
+Many of the most pressing social problems have political causes and consequences. Rather than just passively observing these problems, social scientists have developed a range of tools that involve interventions and data collection to understand and address these problems. This course will focus on two essential data-intensive tools for understanding social dynamics: experiments and surveys. Experiments allow us to understand the causal effects of policies and interventions, while surveys allow us to measure difficult-to-observe attitudes and behaviors in a population. This course will provide an introduction to the design and analysis of experiments and surveys through the lens of innovative research in political science and public policy. The course will focus on various substantive [topics](schedule.qmd##topics-overview), including discriminatory attitudes, political participation, combatting voter fraud, and misinformation. Students will analyze  data and design and field their survey experiment on a chosen topic.
 
 By the end of this course, students will be able to:
 
